@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sri Takshashila Gurukul – Empowering young minds through education, health, and holistic development." />
+  <title>Sri Takshashila Gurukul | Home</title>
+  <link rel="icon" href="Assests/Logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#001e8c',
+            accent: '#df5030',
+            warm: '#f3d8b2',
+          },
+          fontFamily: {
+            sans: ['Outfit', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    [x-cloak] { display: none !important; }
+    .hero-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+    .hero-slide { flex: 0 0 100%; width: 100%; min-height: 75vh; }
+    @media (min-width: 768px) { .hero-slide { min-height: 88vh; } }
+    .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,30,140,0.35) 50%, rgba(0,0,0,0.75) 100%); }
+    .hero-content { text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+    .carousel-dot { transition: transform 0.2s ease, background-color 0.2s ease; }
+    .carousel-dot:hover { transform: scale(1.15); }
+    .carousel-arrow { transition: background-color 0.2s ease, transform 0.2s ease; }
+    .carousel-arrow:hover { transform: translateY(-50%) scale(1.05); }
+    .hero-cta { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,30,140,0.4); }
+    .dropdown-menu { display: none; }
+    .dropdown-menu.open { display: block; }
+    @media (min-width: 768px) {
+      .dropdown:hover .dropdown-menu { display: block; }
+    }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; left: 50%; bottom: 4px; width: 0; height: 2px; background: #001e8c; transition: width 0.2s ease, left 0.2s ease; }
+    .nav-link:hover::after { width: 80%; left: 10%; }
+    .dropdown-menu a { transition: background 0.15s ease, padding-left 0.15s ease; }
+    .dropdown-menu a:hover { padding-left: 1.25rem; background: rgba(0, 30, 140, 0.06); }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+  <div id="site-header"></div>
+
+  <!-- Hero Carousel -->
+  <section class="relative overflow-hidden">
+    <div id="hero-carousel" class="relative overflow-hidden">
+      <div id="hero-track" class="hero-track">
+        <div class="hero-slide relative bg-cover bg-center" style="background-image: url('Assests/carousel_5.jpeg');">
+          <div class="absolute inset-0 hero-overlay"></div>
+          <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto text-white text-center hero-content">
+  
+  <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+    Sri Takshashila Gurukul
+  </span>
+
+  <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-5 tracking-tight">
+    From Seeds to Forests – Building Future-Ready Lives
+  </h1>
+
+  <p class="text-lg sm:text-xl md:text-2xl text-white/95 mb-6 max-w-2xl mx-auto leading-relaxed">
+    Empowering students. Enabling communities. Creating leaders.
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-3">
+    
+    <a href="donate.html" class="hero-cta inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl shadow-lg">
+      Donate Now
+    </a>
+
+    <a href="get-involved.html" class="hero-cta inline-flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm border border-white/40 text-white font-semibold rounded-xl hover:bg-white/25">
+      Become a Volunteer
+    </a>
+
+  </div>
+
+</div>
+          </div>
+        </div>
+        <div class="hero-slide relative bg-cover bg-center" style="background-image: url('Assests/carousel_10.jpeg');">
+          <div class="absolute inset-0 hero-overlay"></div>
+          <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto text-white text-center hero-content">
+              <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-[0.2em] mb-3">Education</span>
+              <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-5 tracking-tight">Education First</h1>
+              <p class="text-lg sm:text-xl md:text-2xl text-white/95 mb-6 max-w-2xl mx-auto leading-relaxed">Quality education and learning opportunities for every child.</p>
+              <p class="text-base md:text-lg text-white/85 mb-8">Education and hope for every child</p>
+              <div class="flex flex-wrap justify-center gap-3">
+                <a href="get-involved.html" class="hero-cta inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl shadow-lg">Get Involved <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                <a href="about-us.html" class="hero-cta inline-flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm border border-white/40 text-white font-semibold rounded-xl hover:bg-white/25">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide relative bg-cover bg-center" style="background-image: url('Assests/carousel_11.jpeg');">
+          <div class="absolute inset-0 hero-overlay"></div>
+          <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto text-white text-center hero-content">
+              <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-[0.2em] mb-3">Community</span>
+              <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-5 tracking-tight">Community Impact</h1>
+              <p class="text-lg sm:text-xl md:text-2xl text-white/95 mb-6 max-w-2xl mx-auto leading-relaxed">Creating lasting change through community-driven initiatives.</p>
+              <p class="text-base md:text-lg text-white/85 mb-8">Together we can change lives for the better</p>
+              <div class="flex flex-wrap justify-center gap-3">
+                <a href="get-involved.html" class="hero-cta inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl shadow-lg">Get Involved <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                <a href="about-us.html" class="hero-cta inline-flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm border border-white/40 text-white font-semibold rounded-xl hover:bg-white/25">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide relative bg-cover bg-center" style="background-image: url('Assests/carousel_9.jpeg');">
+          <div class="absolute inset-0 hero-overlay"></div>
+          <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto text-white text-center hero-content">
+              <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-[0.2em] mb-3">Sustainability</span>
+              <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-5 tracking-tight">Sustainable Future</h1>
+              <p class="text-lg sm:text-xl md:text-2xl text-white/95 mb-6 max-w-2xl mx-auto leading-relaxed">Eco-friendly solutions that benefit people and the planet.</p>
+              <p class="text-base md:text-lg text-white/85 mb-8">Building sustainable solutions for tomorrow</p>
+              <div class="flex flex-wrap justify-center gap-3">
+                <a href="get-involved.html" class="hero-cta inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl shadow-lg">Get Involved <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                <a href="about-us.html" class="hero-cta inline-flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm border border-white/40 text-white font-semibold rounded-xl hover:bg-white/25">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide relative bg-cover bg-center" style="background-image: url('Assests/carousel_12.jpeg');">
+          <div class="absolute inset-0 hero-overlay"></div>
+          <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto text-white text-center hero-content">
+              <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-[0.2em] mb-3">Hope &amp; Humanity</span>
+              <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-5 tracking-tight">Hope &amp; Humanity</h1>
+              <p class="text-lg sm:text-xl md:text-2xl text-white/95 mb-6 max-w-2xl mx-auto leading-relaxed">Bringing hope and humanitarian support to those who need it most.</p>
+              <p class="text-base md:text-lg text-white/85 mb-8">Hope, help, and humanity in action</p>
+              <div class="flex flex-wrap justify-center gap-3">
+                <a href="get-involved.html" class="hero-cta inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl shadow-lg">Get Involved <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                <a href="about-us.html" class="hero-cta inline-flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm border border-white/40 text-white font-semibold rounded-xl hover:bg-white/25">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2.5 z-10">
+      <button type="button" aria-label="Slide 1" class="carousel-dot w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white shadow-lg" data-index="0"></button>
+      <button type="button" aria-label="Slide 2" class="carousel-dot w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white/80 shadow-lg" data-index="1"></button>
+      <button type="button" aria-label="Slide 3" class="carousel-dot w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white/80 shadow-lg" data-index="2"></button>
+      <button type="button" aria-label="Slide 4" class="carousel-dot w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white/80 shadow-lg" data-index="3"></button>
+      <button type="button" aria-label="Slide 5" class="carousel-dot w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white/80 shadow-lg" data-index="4"></button>
+    </div>
+    <button type="button" id="carousel-prev" class="carousel-arrow absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white z-10" aria-label="Previous slide"><i class="fa-solid fa-chevron-left text-sm md:text-base"></i></button>
+    <button type="button" id="carousel-next" class="carousel-arrow absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white z-10" aria-label="Next slide"><i class="fa-solid fa-chevron-right text-sm md:text-base"></i></button>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+        <!-- Image -->
+        <div class="order-2 lg:order-1 relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+            <img src="Assests/about_us.jpeg" alt="We help achieve your academic goals" class="w-full h-full object-cover aspect-[4/3] lg:aspect-[3/4] lg:max-h-[520px]" />
+            <div class="absolute inset-0 rounded-2xl ring-2 ring-primary/20 ring-inset pointer-events-none"></div>
+          </div>
+          <!-- Decorative badge -->
+          <div class="absolute -bottom-4 -right-4 lg:right-4 bg-primary text-white px-6 py-4 rounded-xl shadow-xl">
+            <span class="block text-2xl md:text-3xl font-bold">200+</span>
+            <span class="block text-xs font-medium uppercase tracking-wider opacity-90">Satisfied Clients</span>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="order-1 lg:order-2">
+          <span class="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-3">About Us</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">Trusted by families for quality education &amp; holistic growth</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-6"><strong class="text-gray-900">Sri Takshashila Gurukul</strong> is committed to providing an enriching educational roadmap for children, helping them achieve their academic goals and beyond.</p>
+          <p class="text-gray-600 leading-relaxed mb-8">Our mission is to empower students with the knowledge, skills, and mindset they need to excel in their studies and future endeavors.</p>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary"><i class="fa-solid fa-bullseye"></i></span>
+              <div>
+                <span class="font-semibold text-gray-900 block">Our Vision</span>
+                <span class="text-gray-600 text-sm">A journey of academic excellence, creative discovery, and personal growth. Your success is our mission!</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary"><i class="fa-solid fa-heart"></i></span>
+              <div>
+                <span class="font-semibold text-gray-900 block">Our Commitment</span>
+                <span class="text-gray-600 text-sm">Holistic development with no personal gain—only the fulfillment of empowering young minds.</span>
+              </div>
+            </li>
+          </ul>
+
+          <a href="vision.html" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition shadow-lg shadow-primary/25">
+            <span>Learn more about us</span>
+            <i class="fa-solid fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold tracking-widest text-primary mb-6"><i class="fa-solid fa-eye mr-2"></i>VISION</h2>
+      <p class="text-lg md:text-xl text-gray-600 leading-relaxed">Sri Takshashila Gurukul is a sanctuary of wisdom, dedicated to those who have the zeal to learn and grow. As a non-profit organization, we focus on the holistic development of such passionate individuals, seeking no personal gain—only the fulfillment of empowering young minds for a brighter future.</p>
+      <a href="vision.html" class="inline-block mt-6 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Mission cards -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-primary mb-4">Our Mission</h2>
+      <p class="text-center text-gray-600 mb-12">Our Commitment to Excellence</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition text-center">
+          <div class="text-4xl mb-4 text-primary"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">Bridge Educational Gaps</h3>
+          <p class="text-gray-600 text-sm">Offering <span class="font-semibold text-primary">Residential School Entrance Exam Training</span> to help talented students secure quality education.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition text-center">
+          <div class="text-4xl mb-4 text-primary"><i class="fa-solid fa-comments"></i></div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">Enhance Communication Skills</h3>
+          <p class="text-gray-600 text-sm">Conducting <span class="font-semibold text-primary">Free English Spoken Classes</span> for government school children.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition text-center">
+          <div class="text-4xl mb-4 text-primary"><i class="fa-solid fa-rocket"></i></div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">Ignite Scientific Curiosity</h3>
+          <p class="text-gray-600 text-sm">Showcasing the <span class="font-semibold text-primary">Indian Space Show</span> to inspire young learners.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition text-center">
+          <div class="text-4xl mb-4 text-primary"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">Promote Digital Safety</h3>
+          <p class="text-gray-600 text-sm">Spreading <span class="font-semibold text-primary">Cyber Security Awareness</span> for a safer digital future.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs (Courses/Workshops) -->
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-primary mb-12">
+      <i class="fa-solid fa-book-open mr-2"></i>Our Programs
+    </h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Scholarships -->
+      <div class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+        <img src="Assests/scholarship.jpg" alt="Scholarships" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4 bg-white">
+          <h3 class="font-bold text-primary">Scholarships</h3>
+          <p class="text-sm text-gray-600 mt-1">
+            Providing financial support to help students access quality education and opportunities.
+          </p>
+        </div>
+      </div>
+
+      <!-- STEM Learning -->
+      <div class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+        <img src="Assests/stem.jpg" alt="STEM Learning" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4 bg-white">
+          <h3 class="font-bold text-primary">STEM Learning</h3>
+          <p class="text-sm text-gray-600 mt-1">
+            Encouraging innovation through science, technology, engineering, and mathematics programs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Career Guidance -->
+      <div class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+        <img src="Assests/career.jpg" alt="Career Guidance" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4 bg-white">
+          <h3 class="font-bold text-primary">Career Guidance</h3>
+          <p class="text-sm text-gray-600 mt-1">
+            Helping students discover career paths with mentorship, counseling, and future planning.
+          </p>
+        </div>
+      </div>
+
+      <!-- Skill Development -->
+      <div class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+        <img src="Assests/skills.jpg" alt="Skill Development" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4 bg-white">
+          <h3 class="font-bold text-primary">Skill Development</h3>
+          <p class="text-sm text-gray-600 mt-1">
+            Building practical and life skills to prepare students for real-world challenges.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Latest Notifications -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-primary mb-8"><i class="fa-solid fa-bell mr-2"></i>Latest Notifications</h2>
+      <p class="text-center text-gray-500">Updates will be listed here. Visit our <a href="https://blog.sritakshashilagurukul.com/" target="_blank" rel="noopener" class="text-primary font-medium hover:underline">blog</a> for more.</p>
+    </div>
+  </section>
+
+  <!-- YouTube Feed -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center text-primary mb-4"><i class="fab fa-youtube mr-2 text-red-600"></i>YouTube Feed</h2>
+      <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Watch our latest videos on education, hoop art, and space for kids.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-video bg-gray-900 relative overflow-hidden">
+            <iframe
+              class="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/n5LBMWhscq8?rel=0"
+              title="Indian Space Journey - The comprehensive learning for Kids"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-gray-900 text-base mb-2 line-clamp-2 group-hover:text-primary transition">Indian Space Journey - The comprehensive learning for Kids</h3>
+            <p class="text-gray-500 text-xs mb-3">1m 35s</p>
+            <a href="https://www.whatsapp.com/channel/0029VaMRwERDuMRbNDXKsn2d" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline">
+              <i class="fab fa-whatsapp"></i> Join our WhatsApp Channel
+            </a>
+          </div>
+        </article>
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-video bg-gray-900 relative overflow-hidden">
+            <iframe
+              class="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/nz4ilsmExBw?rel=0"
+              title="How To Adjust Hoop Ring"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-gray-900 text-base mb-2 line-clamp-2 group-hover:text-primary transition">How To Adjust Hoop Ring</h3>
+            <p class="text-gray-500 text-xs mb-3">1m 47s</p>
+            <a href="https://www.whatsapp.com/channel/0029VaMRwERDuMRbNDXKsn2d" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline">
+              <i class="fab fa-whatsapp"></i> Join our WhatsApp Channel
+            </a>
+          </div>
+        </article>
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-video bg-gray-900 relative overflow-hidden">
+            <iframe
+              class="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/tY_65h5WiuM?rel=0"
+              title="Level Up Your Hoop Art Skills with Knot-2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-gray-900 text-base mb-2 line-clamp-2 group-hover:text-primary transition">Level Up Your Hoop Art Skills with Knot-2</h3>
+            <p class="text-gray-500 text-xs mb-3">1m 35s</p>
+            <a href="https://www.whatsapp.com/channel/0029VaMRwERDuMRbNDXKsn2d" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline">
+              <i class="fab fa-whatsapp"></i> Join our WhatsApp Channel
+            </a>
+          </div>
+        </article>
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-video bg-gray-900 relative overflow-hidden">
+            <iframe
+              class="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/m_NKoOJXt6w?rel=0"
+              title="Indian Space Journey - Exploring space with school Kids"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-gray-900 text-base mb-2 line-clamp-2 group-hover:text-primary transition">Indian Space Journey - Exploring space with school Kids</h3>
+            <p class="text-gray-500 text-xs mb-3">1m 24s</p>
+            <a href="https://www.whatsapp.com/channel/0029VaMRwERDuMRbNDXKsn2d" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline">
+              <i class="fab fa-whatsapp"></i> Join our WhatsApp Channel
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-primary mb-4"><i class="fa-solid fa-quote-left mr-2"></i>Testimonials</h2>
+      <div class="text-center mb-8">
+        <a href="coming-soon.html" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition">
+          <i class="fa-solid fa-book-open"></i> Read More Testimonials
+        </a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div class="w-16 h-16 rounded-full bg-primary/10 mx-auto mb-3 flex items-center justify-center text-3xl text-primary"><i class="fa-solid fa-user"></i></div>
+          <h4 class="font-bold text-center text-gray-900">Janvi</h4>
+          <p class="text-center text-amber-600 font-medium text-sm">Amazing Experience!</p>
+          <p class="text-center text-amber-500 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+          <p class="text-gray-600 text-sm mt-2">The Sri Takshashila Gurukul app has transformed my learning journey. Highly recommend!</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div class="w-16 h-16 rounded-full bg-primary/10 mx-auto mb-3 flex items-center justify-center text-3xl text-primary"><i class="fa-solid fa-user"></i></div>
+          <h4 class="font-bold text-center text-gray-900">Smitha</h4>
+          <p class="text-center text-amber-600 font-medium text-sm">Excellent Service!</p>
+          <p class="text-center text-amber-500 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+          <p class="text-gray-600 text-sm mt-2">The app is easy to use and has greatly improved my learning experience.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div class="w-16 h-16 rounded-full bg-primary/10 mx-auto mb-3 flex items-center justify-center text-3xl text-primary"><i class="fa-solid fa-user"></i></div>
+          <h4 class="font-bold text-center text-gray-900">Suraj</h4>
+          <p class="text-center text-amber-600 font-medium text-sm">Happy Learner!</p>
+          <p class="text-center text-amber-500 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+          <p class="text-gray-600 text-sm mt-2">Sri Takshashila Gurukul helped me enhance my skills. The courses are well informative.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div class="w-16 h-16 rounded-full bg-primary/10 mx-auto mb-3 flex items-center justify-center text-3xl text-primary"><i class="fa-solid fa-user"></i></div>
+          <h4 class="font-bold text-center text-gray-900">Shambhavi Kamkar</h4>
+          <p class="text-center text-amber-600 font-medium text-sm">Outstanding Experience!</p>
+          <p class="text-center text-amber-500 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+          <p class="text-gray-600 text-sm mt-2">Skillfully combines spiritual and educational information.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="py-16 md:py-24 bg-primary text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+        <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
+          <span class="text-4xl block mb-2"><i class="fa-solid fa-school"></i></span>
+          <span class="text-4xl md:text-5xl font-bold block stat-value" data-target="15">0</span>
+          <span class="text-sm uppercase tracking-wide opacity-90">Schools Covered</span>
+        </div>
+        <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
+          <span class="text-4xl block mb-2"><i class="fa-solid fa-user-graduate"></i></span>
+          <span class="text-4xl md:text-5xl font-bold block stat-value" data-target="1850">0</span>
+          <span class="text-sm uppercase tracking-wide opacity-90">Students</span>
+        </div>
+        <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
+          <span class="text-4xl block mb-2"><i class="fa-solid fa-chalkboard-user"></i></span>
+          <span class="text-4xl md:text-5xl font-bold block stat-value" data-target="50">0</span>
+          <span class="text-sm uppercase tracking-wide opacity-90">Teachers Awarded</span>
+        </div>
+        <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
+          <span class="text-4xl block mb-2"><i class="fa-solid fa-trophy"></i></span>
+          <span class="text-4xl md:text-5xl font-bold block stat-value" data-target="4">0</span>
+          <span class="text-sm uppercase tracking-wide opacity-90">Competitions</span>
+        </div>
+        <div class="bg-white/10 rounded-xl p-6 col-span-2 md:col-span-1 backdrop-blur-sm">
+          <span class="text-4xl block mb-2"><i class="fa-solid fa-users"></i></span>
+          <span class="text-4xl md:text-5xl font-bold block stat-value" data-target="200">0</span>
+          <span class="text-sm uppercase tracking-wide opacity-90">Women Got Exposure</span>
+        </div>
+      </div>
+      <div class="mt-8 rounded-xl overflow-hidden">
+        <img src="Assests/statics.png" alt="Community and students" class="w-full h-auto object-cover object-top max-h-[480px]" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2 flex items-center justify-center gap-2">
+          <span class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center"><i class="fa-solid fa-envelope text-lg"></i></span>
+          Contact
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Get in touch for any queries. We'd love to hear from you.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Contact Us For Any Queries!</h3>
+          <form id="contact-form" class="space-y-4" action="#" method="post" novalidate>
+            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition placeholder-gray-400" />
+            <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition placeholder-gray-400" />
+            <input type="tel" name="mobile" placeholder="Your Mobile" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition placeholder-gray-400" />
+            <select name="hear_about" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition text-gray-700 bg-white cursor-pointer">
+              <option value="">How did you hear about us?</option>
+              <option value="social">Social Media</option>
+              <option value="friends">Friends</option>
+              <option value="teachers">Teachers</option>
+              <option value="others">Others</option>
+            </select>
+            <textarea name="message" placeholder="Your Message" rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition placeholder-gray-400 resize-none"></textarea>
+            <button type="submit" class="w-full py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition uppercase tracking-wide">Submit Now</button>
+          </form>
+          <div id="contact-form-success" class="hidden text-center py-6">
+            <div class="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xl mx-auto mb-3"><i class="fa-solid fa-check"></i></div>
+            <p class="text-gray-700 font-medium">Thank you! We will get back to you soon.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <span class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center"><i class="fa-solid fa-mobile-screen-button"></i></span>
+            Explore our app
+          </h3>
+          <p class="text-gray-600 mb-6">Develop and enhance skills with tailored programs and resources. Benefit from structured schedules, progress tracking, and personalized feedback.</p>
+          <div class="flex justify-center mb-4">
+            <img src="Assests/QR_CODE.png" alt="Scan to download the app" class="w-40 h-40 object-contain p-3 border-2 border-primary rounded-xl bg-white" />
+          </div>
+          <p class="text-center text-sm text-gray-500 mb-6">Scan the QR code to download the app</p>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 w-5 flex-shrink-0"></i>Exciting Features</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 w-5 flex-shrink-0"></i>Improved User Interface</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 w-5 flex-shrink-0"></i>Free Study Materials</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 w-5 flex-shrink-0"></i>Kids Activity &amp; more</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="py-16 bg-[#DF5030] text-white">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      Support a Student’s Future
+    </h2>
+
+    <p class="text-lg md:text-xl mb-6">
+      ₹500 = Support 1 Student
+    </p>
+
+    <a href="donate.html" 
+       class="inline-block bg-white text-[#DF5030] font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">
+      Donate Now
+    </a>
+
+  </div>
+</section>
+
+  <div id="site-footer"></div>
+
+  <script src="includes/load-header-footer.js"></script>
+  <script>
+    // Hero carousel: sliding
+    var heroTrack = document.getElementById('hero-track');
+    var slides = document.querySelectorAll('#hero-track .hero-slide');
+    var dots = document.querySelectorAll('.carousel-dot');
+    var current = 0;
+    function goTo(n) {
+      current = n;
+      if (heroTrack) heroTrack.style.transform = 'translateX(-' + current * 100 + '%)';
+      dots.forEach(function (d, i) {
+        d.classList.toggle('bg-white', i === current);
+        d.classList.toggle('bg-white/60', i !== current);
+      });
+    }
+    document.getElementById('carousel-next').addEventListener('click', function () { goTo((current + 1) % slides.length); });
+    document.getElementById('carousel-prev').addEventListener('click', function () { goTo((current - 1 + slides.length) % slides.length); });
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { goTo(i); }); });
+    setInterval(function () { goTo((current + 1) % slides.length); }, 5000);
+    // Stats counter when in view
+    var statEls = document.querySelectorAll('.stat-value');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        var step = target / 50;
+        var now = 0;
+        var timer = setInterval(function () {
+          now += step;
+          if (now >= target) { el.textContent = target >= 1000 ? target.toLocaleString() : target; clearInterval(timer); return; }
+          el.textContent = Math.floor(now) >= 1000 ? Math.floor(now).toLocaleString() : Math.floor(now);
+        }, 40);
+        observer.unobserve(el);
+      });
+    }, { threshold: 0.3 });
+    statEls.forEach(function (el) { observer.observe(el); });
+    // Contact form: show success state (connect to your backend for real submit)
+    var contactForm = document.getElementById('contact-form');
+    var contactSuccess = document.getElementById('contact-form-success');
+    if (contactForm && contactSuccess) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        contactForm.classList.add('hidden');
+        contactSuccess.classList.remove('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

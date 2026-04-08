@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Gallery – Sri Takshashila Gurukul. Moments from our programs, workshops, and community." />
+  <title>Gallery | Sri Takshashila Gurukul</title>
+  <link rel="icon" href="Assests/Logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#001e8c', accent: '#df5030', warm: '#f3d8b2' },
+          fontFamily: { sans: ['Outfit', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="font-sans antialiased text-gray-800 bg-white">
+  <div id="site-header"></div>
+
+  <!-- Page hero -->
+  <section class="relative py-16 md:py-24 bg-gradient-to-br from-primary/95 to-primary text-white overflow-hidden">
+    <div class="absolute inset-0 bg-[url('Assests/carousel_10.jpeg')] bg-cover bg-center opacity-20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-widest mb-3">Moments</span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Our Gallery</h1>
+      <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">Programs, workshops, and community in action.</p>
+    </div>
+  </section>
+
+ <!-- Gallery Section -->
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Programs Gallery</h2>
+      <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
+        Explore our initiatives through category-wise program folders.
+      </p>
+    </div>
+
+    <!-- Main Filters -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <button class="main-filter-btn px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium transition" data-category="all">All</button>
+      <button class="main-filter-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium transition" data-category="scholarship">Scholarships</button>
+      <button class="main-filter-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium transition" data-category="career">Career Counseling</button>
+      <button class="main-filter-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium transition" data-category="environment">Environmental Care</button>
+      <button class="main-filter-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium transition" data-category="social">Social Awareness</button>
+      <button class="main-filter-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium transition" data-category="health">Health & Nutrition</button>
+    </div>
+
+    <!-- Folder Grid -->
+    <div id="folderGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+      <!-- Scholarships -->
+      <div class="program-card" data-main="scholarship">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-gallery="talent-search-scholarship">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Takshashila Talent Search Scholarship</h3>
+              <p class="text-sm text-gray-500">Scholarships</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">View Photos</span>
+        </div>
+      </div>
+<!-- 
+      <div class="program-card" data-main="scholarship">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-gallery="tech-giant-scholarship">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Takshashila Tech Giant Scholarship</h3>
+              <p class="text-sm text-gray-500">Scholarships</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">View Photos</span>
+        </div>
+      </div> -->
+
+      <!-- Career Counseling -->
+      <div class="program-card" data-main="career">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="Career Counseling">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Career Counseling</h3>
+              <p class="text-sm text-gray-500">Career Counseling</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- Environmental Care -->
+      <div class="program-card" data-main="environment">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="Plantation Drive">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Plantation</h3>
+              <p class="text-sm text-gray-500">Environmental Care</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="environment">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-gallery="environmental-day">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Environmental Day</h3>
+              <p class="text-sm text-gray-500">Environmental Care</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">View Photos</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="environment">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-gallery="god-photo-recycle">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">God Photo Collection & Recycle</h3>
+              <p class="text-sm text-gray-500">Environmental Care</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">View Photos</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="environment">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-gallery="school-painting-ennov">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">School Painting  - CSR Initiative by Ennov</h3>
+              <p class="text-sm text-gray-500">Environmental Care</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">View Photos</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="environment">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-gallery="school-painting-dharwad">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">School Painting - Dharwad Kalle School</h3>
+              <p class="text-sm text-gray-500">Environmental Care</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">View Photos</span>
+        </div>
+      </div>
+
+      <!-- Social Awareness -->
+      <div class="program-card" data-main="social">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="International Yoga Day (June 21)">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">International Yoga Day (June 21)</h3>
+              <p class="text-sm text-gray-500">Social Awareness</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="social">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="Independence Day (Aug 15)">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Independence Day (Aug 15)</h3>
+              <p class="text-sm text-gray-500">Social Awareness</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="social">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-gallery="national-space-day">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">National Space Day (Aug 23)</h3>
+              <p class="text-sm text-gray-500">Social Awareness</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">View Photos</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="social">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="National Sports Day (Aug 29)">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">National Sports Day (Aug 29)</h3>
+              <p class="text-sm text-gray-500">Social Awareness</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="social">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="Karnataka Rajyotsava (Nov 1)">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Karnataka Rajyotsava (Nov 1)</h3>
+              <p class="text-sm text-gray-500">Social Awareness</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="social">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="National Children’s Day (Nov 14)">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">National Children’s Day (Nov 14)</h3>
+              <p class="text-sm text-gray-500">Social Awareness</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="social">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="Republic Day (Jan 26)">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Republic Day (Jan 26)</h3>
+              <p class="text-sm text-gray-500">Social Awareness</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="social">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="Army Day (Jan 12)">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Army Day (Jan 12)</h3>
+              <p class="text-sm text-gray-500">Social Awareness</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="social">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="National Science Day (Feb 28)">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">National Science Day (Feb 28)</h3>
+              <p class="text-sm text-gray-500">Social Awareness</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="social">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-gallery="womens-day">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">International Women’s Day (March 8)</h3>
+              <p class="text-sm text-gray-500">Social Awareness</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">View Photos</span>
+        </div>
+      </div>
+
+      <!-- Health & Nutrition -->
+      <div class="program-card" data-main="health">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="Students Dental Checkup">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Students Dental Checkup</h3>
+              <p class="text-sm text-gray-500">Health & Nutrition</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="health">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="Students Eye Checkup">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Students Eye Checkup</h3>
+              <p class="text-sm text-gray-500">Health & Nutrition</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="health">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="Students Blood Checkup">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Students Blood Checkup</h3>
+              <p class="text-sm text-gray-500">Health & Nutrition</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="health">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="Students Growth Monitoring">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Students Growth Monitoring</h3>
+              <p class="text-sm text-gray-500">Health & Nutrition</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="health">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-status="coming-soon" data-title="Nutrition">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Nutrition</h3>
+              <p class="text-sm text-gray-500">Health & Nutrition</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="program-card" data-main="health">
+        <div class="folder-card cursor-pointer bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition h-full"
+             data-gallery="food-distribution">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 leading-snug">Food Distribution</h3>
+              <p class="text-sm text-gray-500">Health & Nutrition</p>
+            </div>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">View Photos</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Program Gallery Modal -->
+<div id="programGalleryModal" class="fixed inset-0 z-[100] hidden bg-black/80 p-4 overflow-y-auto">
+  <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl mt-10 mb-10 relative">
+    <button id="closeProgramGallery"
+      class="absolute top-4 right-4 z-10 w-11 h-11 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-xl">
+      &times;
+    </button>
+
+    <div class="p-6 md:p-8 border-b border-gray-200">
+      <h3 id="programGalleryTitle" class="text-2xl md:text-3xl font-bold text-gray-900">Program Title</h3>
+      <p class="text-gray-600 mt-2">Click any image to view in full size.</p>
+    </div>
+
+    <div id="programGalleryGrid" class="p-6 md:p-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+  </div>
+</div>
+
+<!-- Coming Soon Modal -->
+<div id="comingSoonModal" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/70 p-4">
+  <div class="bg-white rounded-2xl max-w-md w-full p-6 relative text-center shadow-2xl">
+    <button id="closeComingSoon"
+      class="absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-xl">
+      &times;
+    </button>
+
+    <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-blue-50 flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.5A2.25 2.25 0 014.5 5.25h4.19a2.25 2.25 0 011.59.66l1.06 1.06a2.25 2.25 0 001.59.66h6.57a2.25 2.25 0 012.25 2.25v6A2.25 2.25 0 0119.5 18.75h-15A2.25 2.25 0 012.25 16.5v-9z" />
+      </svg>
+    </div>
+
+    <h3 id="comingSoonTitle" class="text-2xl font-bold text-gray-900 mb-3">Program Title</h3>
+    <p class="text-gray-600 mb-4">Photos for this program will be updated soon.</p>
+    <span class="inline-block px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium">Coming Soon</span>
+  </div>
+</div>
+
+<!-- Single Image Lightbox -->
+<div id="imageLightbox" class="fixed inset-0 z-[120] hidden items-center justify-center bg-black/90 p-4">
+  <button id="closeImageLightbox"
+    class="absolute top-4 right-4 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-2xl">
+    &times;
+  </button>
+  <img id="lightboxImage" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
+</div>
+
+<script>
+  const galleries = {
+    "talent-search-scholarship": {
+      title: "Takshashila Talent Search Scholarship",
+      images: [
+        "images/Darshan.jpg",
+        "images/Srusti.jpg"
+      ]
+    },
+    "tech-giant-scholarship": {
+      title: "Takshashila Tech Giant Scholarship",
+      images: [
+        "images/tech-giant/1.jpg",
+        "images/tech-giant/2.jpg",
+        "images/tech-giant/3.jpg",
+        "images/tech-giant/4.jpg",
+        "images/tech-giant/5.jpg",
+        "images/tech-giant/6.jpg",
+        "images/tech-giant/7.jpg",
+        "images/tech-giant/8.jpg",
+        "images/tech-giant/9.jpg",
+        "images/tech-giant/10.jpg"
+      ]
+    },
+    "environmental-day": {
+      title: "Environmental Day",
+      images: [
+        "images/ed1.jpg",
+        "images/ed2.jpg",
+        "images/ed3.jpg",
+        "images/ed4.jpg",
+        "images/ed5.jpg",
+        "images/ed6.jpg",
+        "images/ed7.jpg",
+        "images/ed8.jpg"
+      ]
+    },
+    "god-photo-recycle": {
+      title: "God Photo Collection & Recycle",
+      images: [
+        "images/gpc1.jpg",
+        "images/gpc2.jpg",
+        "images/gpc3.jpg",
+        "images/gpc4.jpg",
+        "images/gpc5.jpg"
+      ]
+    },
+    "school-painting-ennov": {
+      title: "School Painting Drive - CSR Initiative by Ennov",
+      images: [
+        "images/spe1.jpg",
+        "images/spe2.jpg",
+        "images/spe3.jpg",
+        "images/spe4.jpg",
+        "images/spe5.jpg",
+        "images/spe6.jpg"
+      ]
+    },
+    "school-painting-dharwad": {
+      title: "School Painting Drive - Dharwad Kalle School",
+      images: [
+        "images/spd.jpg",
+        "images/spd1.jpg",
+        "images/spd2.jpg",
+        "images/spd3.jpg",
+        "images/spd4.jpg",
+        "images/spd5.jpg"
+      ]
+    },
+    "national-space-day": {
+      title: "National Space Day (Aug 23)",
+      images: [
+        "images/isro1.jpg",
+        "images/isro2.jpg",
+        "images/isro3.jpg",
+        "images/isro4.jpg",
+        "images/isro5.jpg",
+        "images/isro6.jpg"
+      ]
+    },
+    "womens-day": {
+      title: "International Women’s Day (March 8)",
+      images: [
+        "images/w1.jpg",
+        "images/w2.jpg",
+        "images/w3.jpg",
+        "images/w4.jpg",
+        "images/w5.jpg",
+        "images/w6.jpg"
+        
+      ]
+    },
+    "food-distribution": {
+      title: "Food Distribution",
+      images: [
+        "images/fd1.jpg",
+        "images/fd2.jpg",
+        "images/fd3.jpg",
+        "images/fd4.jpg",
+        "images/fd5.jpg",
+        "images/fd6.jpg"
+      ]
+    }
+  };
+
+  const mainFilterBtns = document.querySelectorAll('.main-filter-btn');
+  const programCards = document.querySelectorAll('.program-card');
+
+  mainFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selected = btn.dataset.category;
+
+      mainFilterBtns.forEach(b => {
+        b.classList.remove('bg-primary', 'text-white');
+        b.classList.add('bg-gray-100', 'text-gray-700');
+      });
+
+      btn.classList.remove('bg-gray-100', 'text-gray-700');
+      btn.classList.add('bg-primary', 'text-white');
+
+      programCards.forEach(card => {
+        const category = card.dataset.main;
+        card.style.display = (selected === 'all' || selected === category) ? 'block' : 'none';
+      });
+    });
+  });
+
+  const programGalleryModal = document.getElementById('programGalleryModal');
+  const closeProgramGallery = document.getElementById('closeProgramGallery');
+  const programGalleryTitle = document.getElementById('programGalleryTitle');
+  const programGalleryGrid = document.getElementById('programGalleryGrid');
+
+  document.querySelectorAll('.folder-card[data-gallery]').forEach(card => {
+    card.addEventListener('click', () => {
+      const galleryKey = card.dataset.gallery;
+      const gallery = galleries[galleryKey];
+      if (!gallery) return;
+
+      programGalleryTitle.textContent = gallery.title;
+      programGalleryGrid.innerHTML = '';
+
+    gallery.images.forEach((imgSrc, index) => {
+  const item = document.createElement('div');
+  item.className = 'rounded-xl shadow-sm border border-gray-200 bg-white cursor-pointer p-2';
+
+  item.innerHTML = `
+    <div class="w-full h-48 bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center">
+      <img src="${imgSrc}" alt="${gallery.title} ${index + 1}" class="max-w-full max-h-full object-contain hover:scale-105 transition duration-300">
+    </div>
+  `;
+
+  item.addEventListener('click', () => {
+    openImageLightbox(imgSrc);
+  });
+
+  programGalleryGrid.appendChild(item);
+});
+
+      programGalleryModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeProgramGalleryModal() {
+    programGalleryModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  closeProgramGallery.addEventListener('click', closeProgramGalleryModal);
+
+  programGalleryModal.addEventListener('click', (e) => {
+    if (e.target === programGalleryModal) {
+      closeProgramGalleryModal();
+    }
+  });
+
+  const comingSoonModal = document.getElementById('comingSoonModal');
+  const comingSoonTitle = document.getElementById('comingSoonTitle');
+  const closeComingSoon = document.getElementById('closeComingSoon');
+
+  document.querySelectorAll('.folder-card[data-status="coming-soon"]').forEach(card => {
+    card.addEventListener('click', () => {
+      comingSoonTitle.textContent = card.dataset.title || 'Program';
+      comingSoonModal.classList.remove('hidden');
+      comingSoonModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeComingSoonModal() {
+    comingSoonModal.classList.add('hidden');
+    comingSoonModal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  closeComingSoon.addEventListener('click', closeComingSoonModal);
+
+  comingSoonModal.addEventListener('click', (e) => {
+    if (e.target === comingSoonModal) {
+      closeComingSoonModal();
+    }
+  });
+
+  const imageLightbox = document.getElementById('imageLightbox');
+  const closeImageLightboxBtn = document.getElementById('closeImageLightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+
+  function openImageLightbox(src) {
+    lightboxImage.src = src;
+    imageLightbox.classList.remove('hidden');
+    imageLightbox.classList.add('flex');
+  }
+
+  function closeImageLightbox() {
+    imageLightbox.classList.add('hidden');
+    imageLightbox.classList.remove('flex');
+    lightboxImage.src = '';
+  }
+
+  closeImageLightboxBtn.addEventListener('click', closeImageLightbox);
+
+  imageLightbox.addEventListener('click', (e) => {
+    if (e.target === imageLightbox) {
+      closeImageLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeImageLightbox();
+      closeComingSoonModal();
+      closeProgramGalleryModal();
+    }
+  });
+</script>
+
+  <div id="site-footer"></div>
+
+  <script src="includes/load-header-footer.js"></script>
+  <script>
+    (function () {
+      var lightbox = document.getElementById('gallery-lightbox');
+      var lightboxImg = document.getElementById('lightbox-img');
+      var lightboxClose = document.getElementById('lightbox-close');
+      if (!lightbox || !lightboxImg) return;
+
+      function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.gallery-item').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var src = this.getAttribute('data-src');
+          var alt = this.getAttribute('data-alt');
+          if (src) openLightbox(src, alt);
+        });
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+  <script>
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+
+        // active button style
+        filterBtns.forEach(b => b.classList.remove("bg-primary", "text-white"));
+        btn.classList.add("bg-primary", "text-white");
+
+        galleryItems.forEach(item => {
+          const category = item.getAttribute("data-category");
+
+          if (filter === "all" || category === filter) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Subscribe – Sri Takshashila Gurukul" />
+  <title>Subscribe | Sri Takshashila Gurukul</title>
+  <link rel="icon" href="Assests/Logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { primary: '#001e8c' } } } };</script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="font-sans antialiased bg-gray-50 min-h-screen flex flex-col">
+  <div id="site-header"></div>
+  <main class="flex-1 flex flex-col items-center justify-center px-4">
+    <img src="Assests/Logo.png" alt="Sri Takshashila Gurukul" class="h-20 w-auto mb-6" />
+    <div class="text-5xl text-primary mb-4"><i class="fa-solid fa-envelope-circle-check"></i></div>
+    <h1 class="text-3xl font-bold text-primary mb-4 text-center">Subscribe to our updates</h1>
+    <p class="text-gray-600 text-center max-w-md mb-6">Get notifications and newsletters from Sri Takshashila Gurukul.</p>
+    <form id="sub-form" class="w-full max-w-sm flex gap-2" action="#" method="post">
+      <input type="email" name="email" placeholder="Your email" class="flex-1 px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent" required />
+      <button type="submit" class="px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition"><i class="fa-solid fa-paper-plane mr-2"></i>Subscribe</button>
+    </form>
+    <a href="index.html" class="mt-6 text-primary font-medium hover:underline inline-flex items-center gap-2"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="includes/load-header-footer.js"></script>
+  <script>document.getElementById('sub-form').addEventListener('submit', function(e){ e.preventDefault(); alert('Thank you for subscribing!'); });</script>
+</body>
+</html>

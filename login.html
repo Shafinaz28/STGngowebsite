@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login – Sri Takshashila Gurukul" />
+  <title>Login | Sri Takshashila Gurukul</title>
+  <link rel="icon" href="Assests/Logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { primary: '#001e8c' } } } };</script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="font-sans antialiased bg-gray-50 min-h-screen flex flex-col">
+  <div id="site-header"></div>
+  <main class="flex-1 flex flex-col items-center justify-center px-4">
+    <img src="Assests/Logo.png" alt="Sri Takshashila Gurukul" class="h-20 w-auto mb-6" />
+    <div class="text-5xl text-primary mb-4"><i class="fa-solid fa-right-to-bracket"></i></div>
+    <h1 class="text-3xl font-bold text-primary mb-4 text-center">Login</h1>
+    <p class="text-gray-600 text-center max-w-md mb-6">Admin login. For dashboard access, integrate with your backend.</p>
+    <form id="login-form" class="w-full max-w-sm space-y-4" action="#" method="post">
+      <div class="relative">
+        <i class="fa-solid fa-user absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        <input type="text" name="username" placeholder="Username" class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent" required />
+      </div>
+      <div class="relative">
+        <i class="fa-solid fa-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        <input type="password" name="password" placeholder="Password" class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent" required />
+      </div>
+      <button type="submit" class="w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition"><i class="fa-solid fa-sign-in-alt mr-2"></i>Login</button>
+    </form>
+    <a href="index.html" class="mt-6 text-primary font-medium hover:underline inline-flex items-center gap-2"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="includes/load-header-footer.js"></script>
+  <script>document.getElementById('login-form').addEventListener('submit', function(e){ e.preventDefault(); alert('Connect this form to your backend for authentication.'); });</script>
+</body>
+</html>

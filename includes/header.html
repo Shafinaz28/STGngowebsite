@@ -1,29 +1,140 @@
 <style>
-  .dropdown-menu { display: none; }
-  .dropdown-menu.open { display: block; }
-  @media (min-width: 768px) { .dropdown:hover .dropdown-menu { display: block; } }
-  .nav-link { position: relative; }
-  .nav-link::after { content: ''; position: absolute; left: 50%; bottom: 4px; width: 0; height: 2px; background: #001e8c; transition: width 0.2s ease, left 0.2s ease; }
-  .nav-link:hover::after { width: 80%; left: 10%; }
-  .dropdown-menu a { transition: background 0.15s ease, padding-left 0.15s ease; }
-  .dropdown-menu a:hover { padding-left: 1.25rem; background: rgba(0, 30, 140, 0.06); }
+  .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown-menu.open {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  }
+
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    width: 0;
+    height: 2px;
+    background: #001e8c;
+    transition: width 0.2s ease, left 0.2s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 80%;
+    left: 10%;
+  }
+
+  .dropdown-menu a {
+    transition: background 0.15s ease, padding-left 0.15s ease;
+  }
+
+  .dropdown-menu a:hover {
+    padding-left: 1.25rem;
+    background: rgba(0, 30, 140, 0.06);
+  }
+
   /* Mobile menu overlay + smooth open/close (top aligns with bottom of header: blue bar + nav row) */
-  #nav-mobile { position: fixed; left: 0; right: 0; top: 5.5rem; bottom: 0; z-index: 40; overflow-y: auto; background: white; border-top: 1px solid #f3f4f6; box-shadow: 0 -4px 20px rgba(0,0,0,0.08); visibility: hidden; opacity: 0; transform: translateY(-8px); transition: visibility 0.25s ease, opacity 0.25s ease, transform 0.25s ease; }
-  #nav-mobile.open { visibility: visible; opacity: 1; transform: translateY(0); }
-  #nav-mobile-backdrop { position: fixed; inset: 0; top: 5.5rem; z-index: 39; background: rgba(0,0,0,0.35); visibility: hidden; opacity: 0; transition: visibility 0.25s ease, opacity 0.25s ease; }
-  #nav-mobile-backdrop.open { visibility: visible; opacity: 1; }
-  @media (min-width: 768px) { #nav-mobile, #nav-mobile-backdrop { display: none !important; } }
+  #nav-mobile {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 5.5rem;
+    bottom: 0;
+    z-index: 40;
+    overflow-y: auto;
+    background: white;
+    border-top: 1px solid #f3f4f6;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: visibility 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  #nav-mobile.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #nav-mobile-backdrop {
+    position: fixed;
+    inset: 0;
+    top: 5.5rem;
+    z-index: 39;
+    background: rgba(0, 0, 0, 0.35);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.25s ease, opacity 0.25s ease;
+  }
+
+  #nav-mobile-backdrop.open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @media (min-width: 768px) {
+
+    #nav-mobile,
+    #nav-mobile-backdrop {
+      display: none !important;
+    }
+  }
+
   /* Mobile Programs sub-menu */
-  .nav-mobile-programs-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-  .nav-mobile-programs-content.open { max-height: 20rem; }
-  .nav-mobile-programs-btn.open i { transform: rotate(180deg); }
-  .nav-mobile-programs-btn i { transition: transform 0.25s ease; }
+  .nav-mobile-programs-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-mobile-programs-content.open {
+    max-height: 20rem;
+  }
+
+  .nav-mobile-programs-btn.open i {
+    transform: rotate(180deg);
+  }
+
+  .nav-mobile-programs-btn i {
+    transition: transform 0.25s ease;
+  }
+
   /* Top bar: mobile ticker */
   @media (max-width: 767px) {
-    .top-bar-ticker-wrap { overflow: hidden; }
-    .top-bar-ticker-track { display: flex; gap: 2rem; animation: top-bar-ticker 18s linear infinite; width: max-content; }
-    .top-bar-ticker-track:hover { animation-play-state: paused; }
-    @keyframes top-bar-ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .top-bar-ticker-wrap {
+      overflow: hidden;
+    }
+
+    .top-bar-ticker-track {
+      display: flex;
+      gap: 2rem;
+      animation: top-bar-ticker 18s linear infinite;
+      width: max-content;
+    }
+
+    .top-bar-ticker-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes top-bar-ticker {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
   }
 </style>
 <!-- Top header: blue bar with contact + social -->
@@ -66,12 +177,24 @@
         </a>
       </div>
       <div class="flex items-center gap-2">
-        <a href="https://www.facebook.com/people/Sri-Takshashila-Gurukul/pfbid09ndAnBbn9AjdzvRR84QcVNJh8zj7Eem2gQMqrPo86yC58n6L8uXJCeuamrR8GarGl/" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/sritakshashila/" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.whatsapp.com/channel/0029VaMRwERDuMRbNDXKsn2d" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.youtube.com/@SriTakshashilaGurukul" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://t.me/SriTakshashilaGurukul" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="https://www.linkedin.com/company/sritakshashila-gurukul" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/people/Sri-Takshashila-Gurukul/pfbid09ndAnBbn9AjdzvRR84QcVNJh8zj7Eem2gQMqrPo86yC58n6L8uXJCeuamrR8GarGl/"
+          class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+          aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sritakshashila/"
+          class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+          aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.whatsapp.com/channel/0029VaMRwERDuMRbNDXKsn2d"
+          class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+          aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.youtube.com/@SriTakshashilaGurukul"
+          class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+          aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://t.me/SriTakshashilaGurukul"
+          class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+          aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://www.linkedin.com/company/sritakshashila-gurukul"
+          class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+          aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
   </div>
@@ -80,106 +203,154 @@
 <!-- Navbar -->
 <nav class="sticky top-0 z-50 bg-white shadow-md border-b border-gray-100">
   <div id="nav-bar-row" class="max-w-7xl mx-auto px-4 sm:px-6 relative z-[51] bg-white">
-    <div class="flex items-center justify-between h-14 md:h-16 relative">
-      <a href="index.html" class="flex items-center gap-3 shrink-0 z-10">
-        <img src="Assests/Logo.png" alt="Sri Takshashila Gurukul" class="h-12 md:h-14 w-auto object-contain" />
-        <div class="hidden sm:block">
-          <span class="block text-[13px] font-semibold text-primary tracking-wide leading-tight">Sri Takshashila</span>
-          <span class="block text-xl md:text-2xl font-bold text-primary leading-tight tracking-tight">Gurukul</span>
-        </div>
-      </a>
-      <a href="index.html" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center sm:hidden z-0">
-        <span class="block text-[13px] font-semibold text-primary tracking-wide leading-tight">Sri Takshashila</span>
-        <span class="block text-xl font-bold text-primary leading-tight tracking-tight">Gurukul</span>
-      </a>
+    <div class="flex items-center justify-between h-14 relative">
 
-      <div id="nav-menu" class="hidden md:flex items-center gap-4">
-
-  <!-- MENU LINKS -->
-  <div class="flex items-center gap-2">
-
-    <a href="index.html" class="nav-link px-3 py-2 text-gray-700 font-medium hover:text-primary rounded-lg">Home</a>
-
-    <a href="about-us.html" class="nav-link px-3 py-2 text-gray-700 font-medium hover:text-primary rounded-lg">About</a>
-
-    <a href="vision.html" class="nav-link px-3 py-2 text-gray-700 font-medium hover:text-primary rounded-lg">Impact</a>
-
-    <!-- DROPDOWN -->
-    <div class="dropdown relative">
-      <button class="px-3 py-2 text-gray-700 font-medium hover:text-primary rounded-lg flex items-center gap-1">
-        Programs <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
-      </button>
-
-      <div class="dropdown-menu absolute left-0 top-full mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
-        <span class="block px-4 py-2 text-primary text-sm font-semibold">Education</span>
-        <a href="#" class="block px-4 py-2 text-gray-600 hover:text-primary text-sm">NMMS</a>
-        <a href="#" class="block px-4 py-2 text-gray-600 hover:text-primary text-sm">STEM</a>
-        <a href="#" class="block px-4 py-2 text-gray-600 hover:text-primary text-sm">Robotics</a>
-      </div>
+  <!-- LEFT LOGO -->
+  <a href="index.html" class="flex items-center gap-2 shrink-0 z-20">
+    <img src="Assests/Logo.png" alt="Sri Takshashila Gurukul" class="h-10 w-auto object-contain" />
+    <div class="hidden sm:block">
+      <span class="block text-[13px] font-semibold text-primary tracking-wide leading-tight">Sri Takshashila</span>
+      <span class="block text-xl md:text-2xl font-bold text-primary leading-tight tracking-tight">Gurukul</span>
     </div>
+  </a>
 
-    <a href="get-involved.html" class="nav-link px-3 py-2 text-gray-700 font-medium hover:text-primary rounded-lg">Get Involved</a>
+  <!-- MOBILE CENTER TEXT -->
+  <a href="index.html"
+    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center sm:hidden z-10 pointer-events-none">
+    <span class="block text-[11px] font-semibold text-primary leading-tight tracking-wide">Sri Takshashila</span>
+    <span class="block text-base font-bold text-primary leading-tight">Gurukul</span>
+  </a>
 
-    <a href="#" class="nav-link px-3 py-2 text-gray-700 font-medium hover:text-primary rounded-lg">CSR</a>
+  <!-- DESKTOP NAV -->
+  <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 text-[14px]">
 
-    <a href="gallery.html" class="nav-link px-3 py-2 text-gray-700 font-medium hover:text-primary rounded-lg">Gallery</a>
+  <a href="index.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">Home</a>
 
-    <a href="#" class="nav-link px-3 py-2 text-gray-700 font-medium hover:text-primary rounded-lg">Learn</a>
+  <a href="about-us.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">About</a>
 
-    <a href="contact-us.html" class="nav-link px-3 py-2 text-gray-700 font-medium hover:text-primary rounded-lg">Contact</a>
+  <a href="vision.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">Impact</a>
 
+  <!-- PROGRAMS DROPDOWN -->
+  <div class="dropdown relative">
+    <button class="px-2 py-2 text-gray-700 font-medium hover:text-primary flex items-center gap-1 whitespace-nowrap">
+      Programs <i class="fa-solid fa-chevron-down text-[10px]"></i>
+    </button>
+
+    <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 bg-white rounded-lg shadow-xl border py-2 z-50">
+      <span class="block px-4 py-2 text-primary text-sm font-semibold">Education</span>
+      <a href="#" class="block px-4 py-2 text-gray-600 hover:text-primary text-sm">NMMS</a>
+      <a href="#" class="block px-4 py-2 text-gray-600 hover:text-primary text-sm">STEM</a>
+      <a href="#" class="block px-4 py-2 text-gray-600 hover:text-primary text-sm">Robotics</a>
+    </div>
   </div>
 
-  <!-- DONATE BUTTON (SEPARATED) -->
-  <a href="donate.html"
-     class="ml-3 px-5 py-2.5 bg-[#DF5030] text-white font-semibold rounded-lg shadow-sm hover:opacity-90 transition">
-    Donate
+  <a href="get-involved.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">
+    Get Involved
   </a>
+
+  <a href="#" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">CSR</a>
+
+  <a href="gallery.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">Gallery</a>
+
+  <a href="blogs.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">Blogs</a>
+
+  <a href="#" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">Learn</a>
+
+  <a href="contact-us.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">Contact</a>
 
 </div>
 
-      <button type="button" id="nav-toggle" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-primary hover:bg-gray-100 transition z-10 relative" aria-label="Toggle menu" aria-expanded="false">
-        <i class="fa-solid fa-bars text-xl"></i>
-      </button>
-    </div>
+  <!-- RIGHT SIDE -->
+  <div class="flex items-center gap-2 z-20">
+    <a href="donate.html"
+      class="hidden md:block px-5 py-2.5 bg-[#DF5030] text-white font-semibold rounded-lg shadow-sm hover:opacity-90 transition">
+      Donate
+    </a>
+
+    <button type="button" id="nav-toggle"
+      class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-primary hover:bg-gray-100 transition z-20 relative"
+      aria-label="Toggle menu" aria-expanded="false">
+      <i class="fa-solid fa-bars text-xl"></i>
+    </button>
+  </div>
+
+</div>
   </div>
 
   <div id="nav-mobile-backdrop" class="md:hidden" aria-hidden="true"></div>
   <div id="nav-mobile" class="md:hidden flex flex-col" aria-hidden="true">
     <div class="flex-1 overflow-y-auto min-h-0">
       <div class="max-w-7xl mx-auto px-4 pt-1 pb-4 space-y-0.5">
-        <a href="index.html" class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100" data-page="index.html">Home</a>
-        <a href="about-us.html" class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100" data-page="about-us.html">About Us</a>
-        <a href="vision.html" class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100" data-page="vision.html">Vision &amp; Mission</a>
+        <a href="index.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
+          data-page="index.html">Home</a>
+        <a href="about-us.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
+          data-page="about-us.html">About Us</a>
+        <a href="vision.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
+          data-page="vision.html">Vision &amp; Mission</a>
         <div class="md:hidden">
-          <button type="button" class="nav-mobile-programs-btn flex items-center justify-between w-full gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100 text-left" aria-expanded="false" aria-controls="nav-mobile-programs-content">
+          <button type="button"
+            class="nav-mobile-programs-btn flex items-center justify-between w-full gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100 text-left"
+            aria-expanded="false" aria-controls="nav-mobile-programs-content">
             <span>Programs</span>
             <i class="fa-solid fa-chevron-down text-sm text-gray-500"></i>
           </button>
-          <div id="nav-mobile-programs-content" class="nav-mobile-programs-content bg-gray-50/80 rounded-lg mx-2" role="region" aria-label="Programs submenu">
-            <a href="coming-soon.html" class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">NMMS</a>
-            <a href="coming-soon.html" class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">STEM</a>
-            <a href="coming-soon.html" class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">Robotics</a>
-            <a href="coming-soon.html" class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">Health</a>
-            <a href="coming-soon.html" class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">Women Empowerment</a>
+          <div id="nav-mobile-programs-content" class="nav-mobile-programs-content bg-gray-50/80 rounded-lg mx-2"
+            role="region" aria-label="Programs submenu">
+            <a href="coming-soon.html"
+              class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">NMMS</a>
+            <a href="coming-soon.html"
+              class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">STEM</a>
+            <a href="coming-soon.html"
+              class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">Robotics</a>
+            <a href="coming-soon.html"
+              class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">Health</a>
+            <a href="coming-soon.html"
+              class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">Women
+              Empowerment</a>
           </div>
         </div>
-        <a href="team.html" class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100" data-page="team.html">Team</a>
-        <a href="gallery.html" class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100" data-page="gallery.html">Gallery</a>
-        <a href="donate.html" class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100" data-page="donate.html">Donate</a>
-        <a href="get-involved.html" class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100" data-page="get-involved.html">Get Involved &amp; Participate</a>
-        <a href="contact-us.html" class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100" data-page="contact-us.html">Contact Us</a>
+        <a href="team.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
+          data-page="team.html">Team</a>
+        <a href="gallery.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
+          data-page="gallery.html">Gallery</a>
+        <a href="donate.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
+          data-page="donate.html">Donate</a>
+        <a href="get-involved.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
+          data-page="get-involved.html">Get Involved &amp; Participate</a>
+        <a href="contact-us.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
+          data-page="contact-us.html">Contact Us</a>
       </div>
     </div>
     <div class="flex-shrink-0 border-t border-gray-200 py-4 px-4 text-center">
       <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Follow us on</p>
       <div class="flex flex-wrap justify-center gap-3">
-        <a href="https://www.facebook.com/people/Sri-Takshashila-Gurukul/pfbid02DgQJDa9AL824jBX6eSxTBhfkHV7ZQrisnZGoWJcgtwyqinJEZ5XSPe4K184xQWuhl/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/sritakshashila/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.whatsapp.com/channel/0029VaMRwERDuMRbNDXKsn2d" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.youtube.com/@SriTakshashilaGurukul" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://t.me/SriTakshashilaGurukul" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="https://www.linkedin.com/company/sritakshashila-gurukul" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/people/Sri-Takshashila-Gurukul/pfbid02DgQJDa9AL824jBX6eSxTBhfkHV7ZQrisnZGoWJcgtwyqinJEZ5XSPe4K184xQWuhl/"
+          target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sritakshashila/" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.whatsapp.com/channel/0029VaMRwERDuMRbNDXKsn2d" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.youtube.com/@SriTakshashilaGurukul" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://t.me/SriTakshashilaGurukul" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://www.linkedin.com/company/sritakshashila-gurukul" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
   </div>

@@ -27,6 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     [x-cloak] { display: none !important; }
     .hero-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -178,7 +179,7 @@
           <!-- Decorative badge -->
           <div class="absolute -bottom-4 -right-4 lg:right-4 bg-primary text-white px-6 py-4 rounded-xl shadow-xl">
             <span class="block text-2xl md:text-3xl font-bold">200+</span>
-            <span class="block text-xs font-medium uppercase tracking-wider opacity-90">Satisfied Clients</span>
+            <span class="block text-xs font-medium uppercase tracking-wider opacity-90">Students</span>
           </div>
         </div>
 
@@ -257,54 +258,83 @@
   <!-- Programs (Courses/Workshops) -->
 <section class="py-16 md:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4">
+    
     <h2 class="text-3xl font-bold text-center text-primary mb-12">
       <i class="fa-solid fa-book-open mr-2"></i>Our Programs
     </h2>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid md:grid-cols-3 gap-8">
 
-      <!-- Scholarships -->
-      <div class="group rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition bg-white">
-        <div class="text-5xl text-primary mb-4 group-hover:scale-110 transition">
-          <i class="fa-solid fa-graduation-cap"></i>
+      <!-- Kalpavruksha Program -->
+      <div class="rounded-2xl p-8 shadow-lg hover:shadow-xl transition bg-white text-center">
+        <div class="flex justify-center items-center text-5xl text-primary mb-4">
+          <i class="fa-solid fa-seedling"></i>
         </div>
-        <h3 class="font-bold text-primary">Scholarships</h3>
-        <p class="text-sm text-gray-600 mt-2">
-          Providing financial support to help students access quality education and opportunities.
-        </p>
+        <h3 class="text-xl font-bold text-primary mb-2">
+          🌳 Kalpavruksha Program
+        </h3>
+        <p class="text-sm text-gray-500 mb-4">(Future Ready Students)</p>
+        <ul class="text-gray-700 space-y-2 text-sm">
+          <li class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-check text-primary"></i> Scholarships
+          </li>
+          <li class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-check text-primary"></i> STEM Learning
+          </li>
+          <li class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-check text-primary"></i> Career Guidance
+          </li>
+          <li class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-check text-primary"></i> Skill Development
+          </li>
+        </ul>
       </div>
 
-      <!-- STEM Learning -->
-      <div class="group rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition bg-white">
-        <div class="text-5xl text-primary mb-4 group-hover:scale-110 transition">
-          <i class="fa-solid fa-microchip"></i>
+      <!-- GreenLife Communities -->
+      <div class="rounded-2xl p-8 shadow-lg hover:shadow-xl transition bg-white text-center">
+        <div class="flex justify-center items-center text-5xl text-primary mb-4">
+          <i class="fa-solid fa-earth-asia"></i>
         </div>
-        <h3 class="font-bold text-primary">STEM Learning</h3>
-        <p class="text-sm text-gray-600 mt-2">
-          Encouraging innovation through science, technology, engineering, and mathematics programs.
-        </p>
+        <h3 class="text-xl font-bold text-primary mb-2">
+          🌍 GreenLife Communities
+        </h3>
+        <p class="text-sm text-gray-500 mb-4">(Sustainable Impact)</p>
+        <ul class="text-gray-700 space-y-2 text-sm">
+          <li class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-check text-primary"></i> Health Camps
+          </li>
+          <li class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-check text-primary"></i> Environmental Initiatives
+          </li>
+          <li class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-check text-primary"></i> Awareness Programs
+          </li>
+          <li class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-check text-primary"></i> Community Support
+          </li>
+        </ul>
       </div>
 
-      <!-- Career Guidance -->
-      <div class="group rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition bg-white">
-        <div class="text-5xl text-primary mb-4 group-hover:scale-110 transition">
-          <i class="fa-solid fa-briefcase"></i>
+      <!-- Impact Catalyst -->
+      <div class="rounded-2xl p-8 shadow-lg hover:shadow-xl transition bg-white text-center">
+        <div class="flex justify-center items-center text-5xl text-primary mb-4">
+          <i class="fa-solid fa-rocket"></i>
         </div>
-        <h3 class="font-bold text-primary">Career Guidance</h3>
-        <p class="text-sm text-gray-600 mt-2">
-          Helping students discover career paths with mentorship, counseling, and future planning.
-        </p>
-      </div>
-
-      <!-- Skill Development -->
-      <div class="group rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition bg-white">
-        <div class="text-5xl text-primary mb-4 group-hover:scale-110 transition">
-          <i class="fa-solid fa-lightbulb"></i>
-        </div>
-        <h3 class="font-bold text-primary">Skill Development</h3>
-        <p class="text-sm text-gray-600 mt-2">
-          Building practical and life skills to prepare students for real-world challenges.
-        </p>
+        <h3 class="text-xl font-bold text-primary mb-2">
+          🚀 Impact Catalyst
+        </h3>
+        <p class="text-sm text-gray-500 mb-4">(Volunteers & Leadership)</p>
+        <ul class="text-gray-700 space-y-2 text-sm">
+          <li class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-check text-primary"></i> Volunteer Network
+          </li>
+          <li class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-check text-primary"></i> Leadership Development
+          </li>
+          <li class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-check text-primary"></i> Youth Engagement
+          </li>
+        </ul>
       </div>
 
     </div>
@@ -488,60 +518,86 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 md:py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-10 md:mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2 flex items-center justify-center gap-2">
-          <span class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center"><i class="fa-solid fa-envelope text-lg"></i></span>
-          Contact
-        </h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Get in touch for any queries. We'd love to hear from you.</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
-        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
-          <h3 class="text-xl font-bold text-gray-900 mb-6">Contact Us For Any Queries!</h3>
-          <form id="contact-form" class="space-y-4" action="#" method="post" novalidate>
-            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition placeholder-gray-400" />
-            <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition placeholder-gray-400" />
-            <input type="tel" name="mobile" placeholder="Your Mobile" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition placeholder-gray-400" />
-            <select name="hear_about" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition text-gray-700 bg-white cursor-pointer">
-              <option value="">How did you hear about us?</option>
-              <option value="social">Social Media</option>
-              <option value="friends">Friends</option>
-              <option value="teachers">Teachers</option>
-              <option value="others">Others</option>
-            </select>
-            <textarea name="message" placeholder="Your Message" rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition placeholder-gray-400 resize-none"></textarea>
-            <button type="submit" class="w-full py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition uppercase tracking-wide">Submit Now</button>
-          </form>
-          <div id="contact-form-success" class="hidden text-center py-6">
-            <div class="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xl mx-auto mb-3"><i class="fa-solid fa-check"></i></div>
-            <p class="text-gray-700 font-medium">Thank you! We will get back to you soon.</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
-          <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <span class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center"><i class="fa-solid fa-mobile-screen-button"></i></span>
-            Explore our app
-          </h3>
-          <p class="text-gray-600 mb-6">Develop and enhance skills with tailored programs and resources. Benefit from structured schedules, progress tracking, and personalized feedback.</p>
-          <div class="flex justify-center mb-4">
-            <img src="Assests/QR_CODE.png" alt="Scan to download the app" class="w-40 h-40 object-contain p-3 border-2 border-primary rounded-xl bg-white" />
-          </div>
-          <p class="text-center text-sm text-gray-500 mb-6">Scan the QR code to download the app</p>
-          <ul class="space-y-3 text-gray-700">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 w-5 flex-shrink-0"></i>Exciting Features</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 w-5 flex-shrink-0"></i>Improved User Interface</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 w-5 flex-shrink-0"></i>Free Study Materials</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-600 w-5 flex-shrink-0"></i>Kids Activity &amp; more</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="py-16 md:py-24 bg-[#f7f7f7]">
+  <div class="max-w-3xl mx-auto px-4">
 
-    <section class="py-16 bg-[#DF5030] text-white">
+    <div class="rounded-[24px] bg-white p-6 md:p-10 shadow-lg border border-gray-200">
+      
+      <h2 class="text-2xl md:text-3xl font-bold text-[#0B1730] mb-8 text-center">
+        Contact Us For Any Queries!
+      </h2>
+
+      <form class="space-y-5">
+
+        <!-- Name -->
+        <div class="relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <input type="text" placeholder="Your Name"
+            class="w-full h-14 pl-12 pr-4 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0D2A9D]" />
+        </div>
+
+        <!-- Email -->
+        <div class="relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+            <i class="fa-solid fa-envelope"></i>
+          </span>
+          <input type="email" placeholder="Your Email"
+            class="w-full h-14 pl-12 pr-4 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0D2A9D]" />
+        </div>
+
+        <!-- Mobile -->
+        <div class="relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+            <i class="fa-solid fa-phone"></i>
+          </span>
+          <input type="tel" placeholder="Your Mobile"
+            class="w-full h-14 pl-12 pr-4 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0D2A9D]" />
+        </div>
+
+        <!-- Dropdown -->
+        <div class="relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+            <i class="fa-solid fa-circle-question"></i>
+          </span>
+          <select
+            class="w-full h-14 pl-12 pr-10 appearance-none rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0D2A9D] bg-white">
+            <option selected disabled>How did you hear about us?</option>
+            <option>Social Media</option>
+            <option>Friends</option>
+            <option>Teachers</option>
+            <option>Others</option>
+          </select>
+
+          <!-- Dropdown Arrow -->
+          <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+          </span>
+        </div>
+
+        <!-- Message -->
+        <div class="relative">
+          <span class="absolute left-4 top-4 text-gray-400">
+            <i class="fa-solid fa-pen"></i>
+          </span>
+          <textarea rows="5" placeholder="Your Message"
+            class="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0D2A9D] resize-none"></textarea>
+        </div>
+
+        <!-- Button -->
+        <button type="submit"
+          class="w-full rounded-2xl bg-[#0D2A9D] py-4 text-base font-bold uppercase text-white hover:bg-[#0B2385] transition">
+          Submit Now
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-16 bg-white text-[#0B1730]">
   <div class="max-w-6xl mx-auto px-4 text-center">
 
     <h2 class="text-3xl md:text-4xl font-bold mb-4">
@@ -553,7 +609,7 @@
     </p>
 
     <a href="donate.html" 
-       class="inline-block bg-white text-[#DF5030] font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">
+       class="inline-block bg-[#0D2A9D] text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-[#0B2385] transition">
       Donate Now
     </a>
 

@@ -3,374 +3,440 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About Sri Takshashila Gurukul – Our story, values, and commitment to education and holistic development as a non-profit NGO in Belagavi." />
+  <meta name="description" content="About Sri Takshashila Gurukul – Education, awareness, community impact, vision, mission, values, and trustees." />
   <title>About Us | Sri Takshashila Gurukul</title>
   <link rel="icon" href="Assests/Logo.png" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { primary: '#001e8c', accent: '#df5030', warm: '#f3d8b2' },
-          fontFamily: { sans: ['Outfit', 'system-ui', 'sans-serif'] },
-        },
-      },
+          colors: {
+            primary: '#0f3d91',
+            secondary: '#0b2f73',
+            accent: '#78b943',
+            donate: '#df5030',
+            softgreen: '#edf8ea',
+            lightgreen: '#f7fbf5',
+            softblue: '#eef4ff',
+            darktext: '#132238'
+          },
+          fontFamily: {
+            sans: ['Outfit', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 12px 35px rgba(0,0,0,0.08)',
+          }
+        }
+      }
     };
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .section-title {
+      font-size: 2rem;
+      line-height: 1.2;
+      font-weight: 800;
+      color: #132238;
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-lift {
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    }
+  </style>
 </head>
+
 <body class="font-sans antialiased text-gray-800 bg-white">
   <div id="site-header"></div>
 
-<!-- Page hero -->
-<section class="relative py-16 md:py-24 bg-gradient-to-br from-primary/95 to-primary text-white overflow-hidden">
-  
-  <div class="absolute inset-0 bg-[url('Assests/about_us.jpeg')] bg-cover bg-center opacity-20"></div>
-  
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
-    
-    <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-widest mb-3">
-      Who We Are
-    </span>
-
-    <!-- Updated Heading -->
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-      Sri Takshashila Gurukul
-    </h1>
-
-    <!-- Updated Content -->
-    <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-      Empowering Young Minds Through Education, Innovation & Opportunity
-    </p>
-
-  </div>
-
-</section>
-
-<!-- Our Story -->
-<section class="py-16 md:py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-      <!-- Image -->
- <div class="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5 w-full h-full">
-
-  <iframe 
-    class="w-full h-full min-h-[350px] lg:min-h-[450px]"
-    src="https://www.youtube.com/embed/m_NKoOJXt6w"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-
-</div>
-
-      <!-- Content -->
-      <div>
-        <span class="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-3">
-          Our Story
-        </span>
-
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-          Journey of Growth & Impact
-        </h2>
-
-        <p class="text-gray-600 leading-relaxed mb-8 max-w-xl">
-          From a vision to meaningful impact, our journey reflects a structured and scalable approach to transforming lives.
-        </p>
-
-        <!-- 2x2 GRID -->
-        <div class="grid sm:grid-cols-2 gap-6">
-
-          <!-- ROOT -->
-          <div>
-            <div class="flex items-center gap-3 mb-2">
-              <span class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
-                <i class="fa-solid fa-seedling text-sm"></i>
-              </span>
-              <h3 class="font-semibold text-gray-900">ROOT – Foundation Phase</h3>
-            </div>
-            <ul class="text-gray-600 text-sm space-y-1 pl-11 list-disc">
-              <li>Awareness programs in schools and communities</li>
-              <li>Establishing partnerships with institutions</li>
-              <li>Creating a dedicated volunteer network</li>
-            </ul>
-          </div>
-
-          <!-- SEED -->
-          <div>
-            <div class="flex items-center gap-3 mb-2">
-              <span class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-500">
-                <i class="fa-solid fa-leaf text-sm"></i>
-              </span>
-              <h3 class="font-semibold text-gray-900">SEED – Support Phase</h3>
-            </div>
-            <ul class="text-gray-600 text-sm space-y-1 pl-11 list-disc">
-              <li>Scholarships for deserving students</li>
-              <li>School kit distribution drives</li>
-              <li>Basic educational support initiatives</li>
-            </ul>
-          </div>
-
-          <!-- TREE -->
-          <div>
-            <div class="flex items-center gap-3 mb-2">
-              <span class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-700">
-                <i class="fa-solid fa-tree text-sm"></i>
-              </span>
-              <h3 class="font-semibold text-gray-900">TREE – Growth Phase</h3>
-            </div>
-            <ul class="text-gray-600 text-sm space-y-1 pl-11 list-disc">
-              <li>STEM and technology learning programs</li>
-              <li>Career guidance and psychometric assessments</li>
-              <li>Skill development and FutureReady Lab initiatives</li>
-            </ul>
-          </div>
-
-          <!-- FOREST -->
-          <div>
-            <div class="flex items-center gap-3 mb-2">
-              <span class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-blue-800">
-                <i class="fa-solid fa-tree-city text-sm"></i>
-              </span>
-              <h3 class="font-semibold text-gray-900">FOREST – Impact Phase</h3>
-            </div>
-            <ul class="text-gray-600 text-sm space-y-1 pl-11 list-disc">
-              <li>Health and hygiene awareness programs</li>
-              <li>Environmental and sustainability initiatives</li>
-              <li>Cyber safety and digital awareness (CyberSmart Program)</li>
-              <li>Community development and outreach</li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Why We Exist -->
-<section class="py-16 md:py-24 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
-
-    <!-- Heading -->
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 flex items-center justify-center gap-3">
-        <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary text-xl">
-          <i class="fa-solid fa-bullseye"></i>
-        </span>
-        Why we exist
-      </h2>
-
-      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-        Millions of talented students in underserved communities face barriers such as lack of access, guidance, and opportunities.
+  <!-- PAGE HERO -->
+  <section class="relative py-16 md:py-24 bg-gradient-to-br from-primary to-secondary text-white overflow-hidden">
+    <div class="absolute inset-0 bg-[url('Assests/about_us.jpeg')] bg-cover bg-center opacity-20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-widest mb-3">
+        About Us
+      </span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+        Sri Takshashila Gurukul
+      </h1>
+      <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+        Empowering Students. Transforming Communities.
       </p>
     </div>
+  </section>
 
-    <!-- 3 COLUMN GRID -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- Our Belief -->
-      <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition">
-        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-xl mb-4">
-          <i class="fa-solid fa-lightbulb"></i>
-        </div>
-        <h3 class="font-bold text-gray-900 text-lg mb-3">Our Belief</h3>
-        <ul class="text-gray-600 text-sm space-y-1 list-disc pl-5">
-          <li>Talent exists everywhere</li>
-          <li>Opportunity does not</li>
-        </ul>
-      </div>
-
-      <!-- Our Purpose -->
-      <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition">
-        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-xl mb-4">
-          <i class="fa-solid fa-rocket"></i>
-        </div>
-        <h3 class="font-bold text-gray-900 text-lg mb-3">Our Purpose</h3>
-        <p class="text-gray-600 text-sm mb-3">
-          Sri Takshashila Gurukul exists to bridge this gap by:
-        </p>
-        <ul class="text-gray-600 text-sm space-y-1 list-disc pl-5">
-          <li>Identifying potential in students</li>
-          <li>Providing structured learning and awareness programs</li>
-          <li>Enabling access to opportunities and mentorship</li>
-        </ul>
-      </div>
-
-      <!-- Our Commitment -->
-      <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition">
-        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-xl mb-4">
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <h3 class="font-bold text-gray-900 text-lg mb-3">Our Commitment</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">
-          We are committed to ensuring that every deserving student is empowered with the knowledge, skills, and confidence needed to build a meaningful and successful future.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-  <!-- What We Do -->
+  <!-- WHO WE ARE -->
   <section class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <span class="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-3">What We Do</span>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our focus areas</h2>
-      <p class="text-gray-600 max-w-2xl mb-12">We run programs across education, health, women empowerment, and community awareness—all free and open to those who need them most.</p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="group rounded-2xl p-6 bg-primary text-white shadow-lg hover:shadow-xl transition hover:-translate-y-1">
-          <div class="text-3xl mb-4"><i class="fa-solid fa-book-open"></i></div>
-          <h3 class="font-bold text-lg mb-2">Education</h3>
-          <p class="text-white/90 text-sm leading-relaxed">Free tuition, spoken English, NMMS prep, STEM, robotics, and career guidance. We also run the Takshashila Talent Scholarship and support school transformation.</p>
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="reveal">
+          <span class="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-3">
+            Who We Are
+          </span>
+          <h2 class="section-title mb-5">A Mission-Driven Platform for Education, Awareness & Future Readiness</h2>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            Sri Takshashila Gurukul is a mission-driven organization dedicated to nurturing students and creating sustainable community impact through education, awareness, and future-ready skill development.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            We go beyond traditional learning by offering an integrated platform for education, awareness, and future-ready skill development. Our work is focused on bridging educational gaps, enabling access to opportunities, and building responsible, confident, and capable individuals.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            We support underserved students through scholarships, foundational learning, technology-enabled exposure, career guidance, and volunteer-driven initiatives that create measurable and meaningful impact.
+          </p>
+          <p class="text-gray-600 leading-relaxed font-medium text-darktext">
+            We don’t just educate students — we prepare them for life, careers, and the future.
+          </p>
         </div>
-        <div class="group rounded-2xl p-6 bg-primary/90 text-white shadow-lg hover:shadow-xl transition hover:-translate-y-1">
-          <div class="text-3xl mb-4"><i class="fa-solid fa-heart-pulse"></i></div>
-          <h3 class="font-bold text-lg mb-2">Health & Wellness</h3>
-          <p class="text-white/90 text-sm leading-relaxed">Growth monitoring, addiction relief support, yoga, and Satvik Dinacharya. We believe a healthy mind and body are the foundation of learning.</p>
-        </div>
-        <div class="group rounded-2xl p-6 bg-primary/90 text-white shadow-lg hover:shadow-xl transition hover:-translate-y-1">
-          <div class="text-3xl mb-4"><i class="fa-solid fa-hands-holding-circle"></i></div>
-          <h3 class="font-bold text-lg mb-2">Women Empowerment</h3>
-          <p class="text-white/90 text-sm leading-relaxed">Hoop Art Mastery and livelihood programs that build skills and confidence. We have given exposure and training to hundreds of women.</p>
-        </div>
-        <div class="group rounded-2xl p-6 bg-primary/90 text-white shadow-lg hover:shadow-xl transition hover:-translate-y-1">
-          <div class="text-3xl mb-4"><i class="fa-solid fa-globe"></i></div>
-          <h3 class="font-bold text-lg mb-2">Awareness & Outreach</h3>
-          <p class="text-white/90 text-sm leading-relaxed">Cyber security awareness, Indian Space Show for schools, and campaigns around national and global days—building informed, responsible citizens.</p>
+
+        <div class="reveal">
+          <div class="relative rounded-3xl overflow-hidden shadow-soft">
+            <img src="Assests/about_us.jpeg" alt="Sri Takshashila Gurukul" class="w-full h-[420px] object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-<!-- Our Values -->
-<section class="py-16 md:py-24 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
-
-    <span class="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-3">
-      Our Values
-    </span>
-
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">
-      What We Stand For
-    </h2>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-
-      <!-- Integrity -->
-      <div class="bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100">
-        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mx-auto mb-4">
-          <i class="fa-solid fa-scale-balanced"></i>
-        </div>
-        <h3 class="font-bold text-gray-900 mb-2">Integrity</h3>
-        <p class="text-gray-600 text-sm">
-          Honest, transparent, ethical in all actions
-        </p>
-      </div>
-
-      <!-- Inclusiveness -->
-      <div class="bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100">
-        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mx-auto mb-4">
-          <i class="fa-solid fa-users"></i>
-        </div>
-        <h3 class="font-bold text-gray-900 mb-2">Inclusiveness</h3>
-        <p class="text-gray-600 text-sm">
-          Equal opportunities for all students
-        </p>
-      </div>
-
-      <!-- Innovation -->
-      <div class="bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100">
-        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mx-auto mb-4">
-          <i class="fa-solid fa-lightbulb"></i>
-        </div>
-        <h3 class="font-bold text-gray-900 mb-2">Innovation</h3>
-        <p class="text-gray-600 text-sm">
-          Encouraging creativity and critical thinking
-        </p>
-      </div>
-
-      <!-- Responsibility -->
-      <div class="bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100">
-        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mx-auto mb-4">
-          <i class="fa-solid fa-leaf"></i>
-        </div>
-        <h3 class="font-bold text-gray-900 mb-2">Responsibility</h3>
-        <p class="text-gray-600 text-sm">
-          Sustainable and ethical practices
-        </p>
-      </div>
-
-      <!-- Collaboration -->
-      <div class="bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100">
-        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mx-auto mb-4">
-          <i class="fa-solid fa-handshake"></i>
-        </div>
-        <h3 class="font-bold text-gray-900 mb-2">Collaboration</h3>
-        <p class="text-gray-600 text-sm">
-          Working together for greater impact
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-  <!-- Impact in numbers -->
-  <section class="py-16 md:py-24 bg-primary text-white">
+  <!-- WHAT WE DO -->
+  <section class="py-16 md:py-24 bg-softgreen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our impact so far</h2>
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
-        <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-          <span class="text-4xl md:text-5xl font-bold block mb-1">5000+</span>
-          <span class="text-sm uppercase tracking-wide opacity-90">Students Supported</span>
+      <div class="text-center mb-12 reveal">
+        <span class="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-3">
+          What We Do
+        </span>
+        <h2 class="section-title mb-4">A Structured Growth Journey for Students & Communities</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          We create a practical pathway that supports students from awareness and access to skill development and long-term community transformation.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-3xl p-6 shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-4">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darktext mb-3">Bridge Educational Gaps</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Supporting underserved students with opportunities, guidance, and learning access.
+          </p>
         </div>
-        <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-          <span class="text-4xl md:text-5xl font-bold block mb-1">120+</span>
-          <span class="text-sm uppercase tracking-wide opacity-90">Students Reached</span>
+
+        <div class="bg-white rounded-3xl p-6 shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-4">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darktext mb-3">Enable Access</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Creating access through scholarships, foundational learning, and student support systems.
+          </p>
         </div>
-        <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-          <span class="text-4xl md:text-5xl font-bold block mb-1">500+</span>
-          <span class="text-sm uppercase tracking-wide opacity-90">Volunteers</span>
+
+        <div class="bg-white rounded-3xl p-6 shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-4">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darktext mb-3">Build Future-Ready Skills</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Developing technology exposure, career guidance, and practical skills for tomorrow.
+          </p>
         </div>
-        <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-          <span class="text-4xl md:text-5xl font-bold block mb-1">150</span>
-          <span class="text-sm uppercase tracking-wide opacity-90">Workshops</span>
-        </div>
-        <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm col-span-2 md:col-span-1">
-          <span class="text-4xl md:text-5xl font-bold block mb-1">200+</span>
-          <span class="text-sm uppercase tracking-wide opacity-90">Women Got Exposure</span>
+
+        <div class="bg-white rounded-3xl p-6 shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-4">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darktext mb-3">Promote Responsible Awareness</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Spreading awareness in cyber safety, health, environment, and responsible citizenship.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-16 md:py-24 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Want to know more or get involved?</h2>
-      <p class="text-gray-600 mb-8">Explore our vision, meet our team, or reach out. We would love to hear from you.</p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="vision.html" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition shadow-lg">
-          <i class="fa-solid fa-eye"></i> Vision & Mission
+  <!-- VISION & MISSION -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="section-title mb-4">Vision & Mission</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Short, strong, and purpose-led statements that define our direction.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-softgreen rounded-3xl p-8 shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-5">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-darktext mb-4">Our Mission</h3>
+          <p class="text-gray-700 leading-relaxed">
+            To identify, support, and nurture students through a structured journey—from awareness and access to skill development and community impact—using education, technology, and volunteer-driven initiatives.
+          </p>
+        </div>
+
+        <div class="bg-softgreen rounded-3xl p-8 shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-5">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-darktext mb-4">Our Vision</h3>
+          <p class="text-gray-700 leading-relaxed">
+            To create a generation of future-ready and responsible individuals by connecting education, technology, and community impact.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="py-16 md:py-24 bg-lightgreen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-3">
+          Our Approach
+        </span>
+        <h2 class="section-title mb-4">From Nurturing a Seed to Building a Forest of Change</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          Our model is designed to move from awareness and support to growth and long-term transformation.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="rounded-3xl bg-[#9e5a2a] text-white p-7 text-center shadow-soft card-lift reveal">
+          <div class="text-4xl mb-4"><i class="fa-solid fa-seedling"></i></div>
+          <h3 class="text-xl font-bold mb-2">ROOT</h3>
+          <p class="text-sm text-white/90">Awareness & outreach</p>
+        </div>
+
+        <div class="rounded-3xl bg-accent text-white p-7 text-center shadow-soft card-lift reveal">
+          <div class="text-4xl mb-4"><i class="fa-solid fa-leaf"></i></div>
+          <h3 class="text-xl font-bold mb-2">SEED</h3>
+          <p class="text-sm text-white/90">Student support</p>
+        </div>
+
+        <div class="rounded-3xl bg-[#3f8d3f] text-white p-7 text-center shadow-soft card-lift reveal">
+          <div class="text-4xl mb-4"><i class="fa-solid fa-tree"></i></div>
+          <h3 class="text-xl font-bold mb-2">TREE</h3>
+          <p class="text-sm text-white/90">Skill & career growth</p>
+        </div>
+
+        <div class="rounded-3xl bg-primary text-white p-7 text-center shadow-soft card-lift reveal">
+          <div class="text-4xl mb-4"><i class="fa-solid fa-tree-city"></i></div>
+          <h3 class="text-xl font-bold mb-2">FOREST</h3>
+          <p class="text-sm text-white/90">Community transformation</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 reveal">
+        <p class="text-lg font-semibold text-darktext">
+          From nurturing a seed to building a forest of change.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR COMMITMENT -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="section-title mb-4">Our Commitment</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          We are committed to delivering equal opportunities, practical learning, responsible awareness, and transparent impact.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-softgreen rounded-3xl p-6 shadow-soft border border-green-100 card-lift reveal">
+          <div class="text-primary text-2xl mb-4"><i class="fa-solid fa-user-graduate"></i></div>
+          <h3 class="font-bold text-darktext mb-2">Equal Opportunities</h3>
+          <p class="text-gray-600 text-sm">Creating meaningful learning access for every deserving student.</p>
+        </div>
+
+        <div class="bg-softgreen rounded-3xl p-6 shadow-soft border border-green-100 card-lift reveal">
+          <div class="text-primary text-2xl mb-4"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3 class="font-bold text-darktext mb-2">Practical Learning</h3>
+          <p class="text-gray-600 text-sm">Delivering real, useful, and impactful learning experiences.</p>
+        </div>
+
+        <div class="bg-softgreen rounded-3xl p-6 shadow-soft border border-green-100 card-lift reveal">
+          <div class="text-primary text-2xl mb-4"><i class="fa-solid fa-earth-asia"></i></div>
+          <h3 class="font-bold text-darktext mb-2">Responsible Citizens</h3>
+          <p class="text-gray-600 text-sm">Building awareness, ethics, responsibility, and future readiness.</p>
+        </div>
+
+        <div class="bg-softgreen rounded-3xl p-6 shadow-soft border border-green-100 card-lift reveal">
+          <div class="text-primary text-2xl mb-4"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="font-bold text-darktext mb-2">Measurable Impact</h3>
+          <p class="text-gray-600 text-sm">Ensuring transparency, accountability, and visible outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE VALUES -->
+  <section class="py-16 md:py-24 bg-softgreen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="section-title mb-4">Core Values</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          The values that guide our work, decisions, and long-term impact.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl p-6 text-center shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 class="font-bold text-darktext mb-2">Student-Centric Growth</h3>
+          <p class="text-gray-600 text-sm">Every initiative begins with student needs and potential.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 text-center shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h3 class="font-bold text-darktext mb-2">Future Readiness</h3>
+          <p class="text-gray-600 text-sm">Preparing learners for life, careers, and the future.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 text-center shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <h3 class="font-bold text-darktext mb-2">Integrity & Transparency</h3>
+          <p class="text-gray-600 text-sm">Honest, ethical, and accountable in all our actions.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 text-center shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3 class="font-bold text-darktext mb-2">Community Impact</h3>
+          <p class="text-gray-600 text-sm">Creating transformation that extends beyond individuals.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 text-center shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <h3 class="font-bold text-darktext mb-2">Collaborative Ecosystem</h3>
+          <p class="text-gray-600 text-sm">Building partnerships, volunteer engagement, and shared action.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 text-center shadow-soft border border-green-100 card-lift reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <h3 class="font-bold text-darktext mb-2">Responsible Awareness</h3>
+          <p class="text-gray-600 text-sm">Promoting cyber safety, health, environment, and social responsibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUSTEES -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="section-title mb-4">Trustees</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          A committed leadership team guiding the organization with purpose, vision, and responsibility.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-softgreen rounded-3xl p-6 text-center shadow-soft border border-green-100 card-lift reveal">
+          <img src="Assests/trustee1.jpeg" alt="Trustee 1" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-white shadow" />
+          <h3 class="text-lg font-bold text-darktext">Trustee Name</h3>
+          <p class="text-primary text-sm font-medium mb-2">Chairperson</p>
+          <p class="text-gray-600 text-sm">Guiding the vision and long-term impact of the organization.</p>
+        </div>
+
+        <div class="bg-softgreen rounded-3xl p-6 text-center shadow-soft border border-green-100 card-lift reveal">
+          <img src="Assests/trustee2.jpeg" alt="Trustee 2" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-white shadow" />
+          <h3 class="text-lg font-bold text-darktext">Trustee Name</h3>
+          <p class="text-primary text-sm font-medium mb-2">Managing Trustee</p>
+          <p class="text-gray-600 text-sm">Supporting strategy, execution, and operational growth.</p>
+        </div>
+
+        <div class="bg-softgreen rounded-3xl p-6 text-center shadow-soft border border-green-100 card-lift reveal">
+          <img src="Assests/trustee3.jpeg" alt="Trustee 3" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-white shadow" />
+          <h3 class="text-lg font-bold text-darktext">Trustee Name</h3>
+          <p class="text-primary text-sm font-medium mb-2">Trustee</p>
+          <p class="text-gray-600 text-sm">Helping strengthen programs and partnerships for greater reach.</p>
+        </div>
+
+        <div class="bg-softgreen rounded-3xl p-6 text-center shadow-soft border border-green-100 card-lift reveal">
+          <img src="Assests/trustee4.jpeg" alt="Trustee 4" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-white shadow" />
+          <h3 class="text-lg font-bold text-darktext">Trustee Name</h3>
+          <p class="text-primary text-sm font-medium mb-2">Trustee</p>
+          <p class="text-gray-600 text-sm">Contributing to community outreach and sustainable growth initiatives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BUTTONS SECTION -->
+  <section class="py-16 md:py-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap justify-center gap-5">
+
+        <a href="vision.html"
+           class="inline-flex items-center justify-center gap-3 min-w-[220px] px-8 py-5 rounded-xl bg-white text-primary font-bold text-xl shadow-lg hover:bg-[#eef4ff] transition duration-300">
+          <i class="fa-solid fa-eye text-xl"></i>
+          <span>Vision &amp; Mission</span>
         </a>
-        <a href="team.html" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary font-semibold rounded-lg border-2 border-primary hover:bg-primary/5 transition">
-          <i class="fa-solid fa-users"></i> Our Team
+
+        <a href="our-team.html"
+           class="inline-flex items-center justify-center gap-3 min-w-[220px] px-8 py-5 rounded-xl border-2 border-white bg-transparent text-white font-bold text-xl shadow-sm hover:bg-white/10 transition duration-300">
+          <i class="fa-solid fa-users text-xl"></i>
+          <span>Our Team</span>
         </a>
-        <a href="donate.html" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition">
-          <i class="fa-solid fa-hand-holding-heart"></i> Donate
+
+        <a href="donate.html"
+           class="inline-flex items-center justify-center gap-3 min-w-[220px] px-8 py-5 rounded-xl bg-donate text-white font-bold text-xl shadow-lg hover:bg-[#c94426] transition duration-300">
+          <i class="fa-solid fa-hand-holding-heart text-xl"></i>
+          <span>Donate</span>
         </a>
-        <a href="contact-us.html" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition">
-          <i class="fa-solid fa-envelope"></i> Contact Us
+
+        <a href="contact-us.html"
+           class="inline-flex items-center justify-center gap-3 min-w-[220px] px-8 py-5 rounded-xl bg-[#263245] text-white font-bold text-xl shadow-lg hover:bg-[#1d2635] transition duration-300">
+          <i class="fa-solid fa-envelope text-xl"></i>
+          <span>Contact Us</span>
         </a>
+
       </div>
     </div>
   </section>
@@ -378,5 +444,20 @@
   <div id="site-footer"></div>
 
   <script src="includes/load-header-footer.js"></script>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach((el) => revealObserver.observe(el));
+  </script>
 </body>
 </html>

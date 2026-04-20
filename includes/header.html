@@ -13,8 +13,12 @@
     }
   }
 
+  /* =========================
+     DESKTOP NAV LINKS
+  ========================= */
   .nav-link {
     position: relative;
+    transition: color 0.25s ease;
   }
 
   .nav-link::after {
@@ -25,7 +29,12 @@
     width: 0;
     height: 2px;
     background: #001e8c;
-    transition: width 0.2s ease, left 0.2s ease;
+    border-radius: 999px;
+    transition: width 0.25s ease, left 0.25s ease;
+  }
+
+  .nav-link:hover {
+    color: #001e8c;
   }
 
   .nav-link:hover::after {
@@ -33,16 +42,57 @@
     left: 10%;
   }
 
+  /* Active Desktop Link */
+  .nav-link.active {
+    color: #001e8c !important;
+    font-weight: 700;
+  }
+
+  .nav-link.active::after {
+    width: 80%;
+    left: 10%;
+  }
+
+  /* Active Programs Dropdown Main Link */
+  .nav-main-active {
+    color: #001e8c !important;
+    font-weight: 700;
+    position: relative;
+  }
+
+  .nav-main-active::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    bottom: 4px;
+    width: 80%;
+    height: 2px;
+    background: #001e8c;
+    border-radius: 999px;
+  }
+
+  .nav-main-active i {
+    color: #001e8c !important;
+  }
+
   .dropdown-menu a {
-    transition: background 0.15s ease, padding-left 0.15s ease;
+    transition: background 0.15s ease, padding-left 0.15s ease, color 0.15s ease;
   }
 
   .dropdown-menu a:hover {
     padding-left: 1.25rem;
     background: rgba(0, 30, 140, 0.06);
+    color: #001e8c;
   }
 
-  /* Mobile menu overlay + smooth open/close (top aligns with bottom of header: blue bar + nav row) */
+  /* Active submenu item desktop */
+  .dropdown-menu a.active-submenu {
+    color: #001e8c !important;
+    font-weight: 700;
+    background: rgba(0, 30, 140, 0.05);
+  }
+
+  /* Mobile menu overlay + smooth open/close */
   #nav-mobile {
     position: fixed;
     left: 0;
@@ -83,7 +133,6 @@
   }
 
   @media (min-width: 768px) {
-
     #nav-mobile,
     #nav-mobile-backdrop {
       display: none !important;
@@ -107,6 +156,19 @@
 
   .nav-mobile-programs-btn i {
     transition: transform 0.25s ease;
+  }
+
+  /* Mobile active */
+  .nav-mobile-item.active {
+    background: rgba(0, 30, 140, 0.08);
+    color: #001e8c !important;
+    font-weight: 700;
+  }
+
+  .nav-mobile-sub.active {
+    color: #001e8c !important;
+    font-weight: 700;
+    background: rgba(0, 30, 140, 0.05);
   }
 
   /* Top bar: mobile ticker */
@@ -137,10 +199,11 @@
     }
   }
 </style>
+
 <!-- Top header: blue bar with contact + social -->
 <div class="bg-primary text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-1.5">
-    <!-- Mobile: scrolling phone + email (social hidden) -->
+    <!-- Mobile -->
     <div class="top-bar-ticker-wrap md:hidden">
       <div class="top-bar-ticker-track text-sm">
         <a href="tel:+916361664811" class="flex items-center gap-2 hover:opacity-90 transition shrink-0">
@@ -164,7 +227,8 @@
         </a>
       </div>
     </div>
-    <!-- Desktop: contact left, social right -->
+
+    <!-- Desktop -->
     <div class="hidden md:flex flex-wrap items-center justify-between gap-3 text-sm">
       <div class="flex flex-wrap items-center gap-4 md:gap-6">
         <a href="tel:+916361664811" class="flex items-center gap-2 hover:opacity-90 transition">
@@ -176,22 +240,28 @@
           <span>sritakshashila@gmail.com</span>
         </a>
       </div>
+
       <div class="flex items-center gap-2">
         <a href="https://www.facebook.com/people/Sri-Takshashila-Gurukul/pfbid09ndAnBbn9AjdzvRR84QcVNJh8zj7Eem2gQMqrPo86yC58n6L8uXJCeuamrR8GarGl/"
           class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
           aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+
         <a href="https://www.instagram.com/sritakshashila/"
           class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
           aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
         <a href="https://www.whatsapp.com/channel/0029VaMRwERDuMRbNDXKsn2d"
           class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
           aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
         <a href="https://www.youtube.com/@SriTakshashilaGurukul"
           class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
           aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+
         <a href="https://t.me/SriTakshashilaGurukul"
           class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
           aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+
         <a href="https://www.linkedin.com/company/sritakshashila-gurukul"
           class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
           aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -205,203 +275,333 @@
   <div id="nav-bar-row" class="max-w-7xl mx-auto px-4 sm:px-6 relative z-[51] bg-white">
     <div class="flex items-center justify-between h-14 relative">
 
-  <!-- LEFT LOGO -->
-  <a href="index.html" class="flex items-center gap-2 shrink-0 z-20">
-    <img src="Assests/Logo.png" alt="Sri Takshashila Gurukul" class="h-10 w-auto object-contain" />
-    <div class="hidden sm:block">
-      <span class="block text-[13px] font-semibold text-primary tracking-wide leading-tight">Sri Takshashila</span>
-      <span class="block text-xl md:text-2xl font-bold text-primary leading-tight tracking-tight">Gurukul</span>
+      <!-- LEFT LOGO -->
+      <a href="index.html" class="flex items-center gap-2 shrink-0 z-20">
+        <img src="Assests/Logo.png" alt="Sri Takshashila Gurukul" class="h-10 w-auto object-contain" />
+        <div class="hidden sm:block">
+          <span class="block text-[13px] font-semibold text-primary tracking-wide leading-tight">Sri Takshashila</span>
+          <span class="block text-xl md:text-2xl font-bold text-primary leading-tight tracking-tight">Gurukul</span>
+        </div>
+      </a>
+
+      <!-- MOBILE CENTER TEXT -->
+      <a href="index.html"
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center sm:hidden z-10 pointer-events-none">
+        <span class="block text-[11px] font-semibold text-primary leading-tight tracking-wide">Sri Takshashila</span>
+        <span class="block text-base font-bold text-primary leading-tight">Gurukul</span>
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 text-[14px]">
+
+        <a href="index.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Home</a>
+
+        <a href="about-us.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">About</a>
+
+        <div class="dropdown relative group">
+          <a href="ourprograms.html"
+            class="programs-main-link px-2 py-2 text-gray-700 font-medium flex items-center gap-1 whitespace-nowrap">
+            Programs
+            <i class="fa-solid fa-chevron-down text-[10px]"></i>
+          </a>
+
+          <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 bg-white rounded-lg shadow-xl border py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
+            <a href="learn.html" class="block px-4 py-2 text-gray-600 text-sm">Career Counseling</a>
+            <a href="KalpavrukshaProgram.html" class="block px-4 py-2 text-gray-600 text-sm">Kalpavruksha Program</a>
+            <a href="SustainableCommunities.html" class="block px-4 py-2 text-gray-600 text-sm">Sustainable Communities</a>
+            <a href="Impactcatalyst.html" class="block px-4 py-2 text-gray-600 text-sm">Impact Catalyst</a>
+          </div>
+        </div>
+
+        <a href="get-involved.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Get Involved</a>
+
+        <a href="collaborations.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">CSR</a>
+
+        <a href="gallery.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Gallery</a>
+
+        <a href="blogs.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Blogs</a>
+
+        <a href="learn.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Learn</a>
+
+        <a href="contact-us.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Contact</a>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="flex items-center gap-2 z-20">
+        <a href="donate.html"
+          class="hidden md:block px-5 py-2.5 bg-[#DF5030] text-white font-semibold rounded-lg shadow-sm hover:opacity-90 transition">
+          Donate
+        </a>
+
+        <button type="button" id="nav-toggle"
+          class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-primary hover:bg-gray-100 transition z-20 relative"
+          aria-label="Toggle menu" aria-expanded="false">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+
     </div>
-  </a>
-
-  <!-- MOBILE CENTER TEXT -->
-  <a href="index.html"
-    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center sm:hidden z-10 pointer-events-none">
-    <span class="block text-[11px] font-semibold text-primary leading-tight tracking-wide">Sri Takshashila</span>
-    <span class="block text-base font-bold text-primary leading-tight">Gurukul</span>
-  </a>
-
-  <!-- DESKTOP NAV -->
-  <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 text-[14px]">
-
-  <a href="index.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">Home</a>
-
-  <a href="about-us.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">About</a>
-
-
-<div class="dropdown relative group">
-  
-  <!-- CLICKABLE LINK -->
-  <a href="ourprograms.html"
-     class="px-2 py-2 text-gray-700 font-medium hover:text-primary flex items-center gap-1 whitespace-nowrap">
-    Programs 
-    <i class="fa-solid fa-chevron-down text-[10px]"></i>
-  </a>
-
-  <!-- DROPDOWN -->
-  <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 bg-white rounded-lg shadow-xl border py-2 z-50
-              opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-
-    <a href="learn.html" class="block px-4 py-2 text-gray-600 hover:text-primary text-sm">
-      Career Counseling
-    </a>
-
-    <a href="KalpavrukshaProgram.html" class="block px-4 py-2 text-gray-600 hover:text-primary text-sm">
-      Kalpavruksha Program
-    </a>
-
-    <a href="SustainableCommunities.html" class="block px-4 py-2 text-gray-600 hover:text-primary text-sm">
-      Sustainable Communities
-    </a>
-
-    <a href="Impactcatalyst.html" class="block px-4 py-2 text-gray-600 hover:text-primary text-sm">
-      Impact Catalyst
-    </a>
-
-  </div>
-</div>
-
-  <a href="get-involved.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">
-    Get Involved
-  </a>
-
-  <a href="collaborations.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">CSR</a>
-
-  <a href="gallery.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">Gallery</a>
-
-  <a href="blogs.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">Blogs</a>
-
-  <a href="learn.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">Learn</a>
-
-  <a href="contact-us.html" class="nav-link px-2 py-2 text-gray-700 font-medium hover:text-primary whitespace-nowrap">Contact</a>
-
-</div>
-
-  <!-- RIGHT SIDE -->
-  <div class="flex items-center gap-2 z-20">
-    <a href="donate.html"
-      class="hidden md:block px-5 py-2.5 bg-[#DF5030] text-white font-semibold rounded-lg shadow-sm hover:opacity-90 transition">
-      Donate
-    </a>
-
-    <button type="button" id="nav-toggle"
-      class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-primary hover:bg-gray-100 transition z-20 relative"
-      aria-label="Toggle menu" aria-expanded="false">
-      <i class="fa-solid fa-bars text-xl"></i>
-    </button>
-  </div>
-
-</div>
   </div>
 
   <div id="nav-mobile-backdrop" class="md:hidden" aria-hidden="true"></div>
- <div id="nav-mobile" class="md:hidden flex flex-col" aria-hidden="true">
-  <div class="flex-1 overflow-y-auto min-h-0">
-    <div class="max-w-7xl mx-auto px-4 pt-1 pb-4 space-y-0.5">
 
-      <a href="index.html"
-        class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
-        data-page="index.html">
-        Home
-      </a>
+  <div id="nav-mobile" class="md:hidden flex flex-col" aria-hidden="true">
+    <div class="flex-1 overflow-y-auto min-h-0">
+      <div class="max-w-7xl mx-auto px-4 pt-1 pb-4 space-y-0.5">
 
-      <a href="about-us.html"
-        class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
-        data-page="about-us.html">
-        About
-      </a>
+        <a href="index.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
+          Home
+        </a>
+
+        <a href="about-us.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
+          About
+        </a>
 
         <!-- Programs -->
-      <div class="md:hidden">
-        <button type="button"
-          class="nav-mobile-programs-btn flex items-center justify-between w-full gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100 text-left"
-          aria-expanded="false" aria-controls="nav-mobile-programs-content">
-          <span>Programs</span>
-          <i class="fa-solid fa-chevron-down text-sm text-gray-500"></i>
-        </button>
+        <div class="md:hidden">
+          <button type="button"
+            class="nav-mobile-programs-btn flex items-center justify-between w-full gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100 text-left"
+            aria-expanded="false" aria-controls="nav-mobile-programs-content">
+            <span>Programs</span>
+            <i class="fa-solid fa-chevron-down text-sm text-gray-500"></i>
+          </button>
 
-        <div id="nav-mobile-programs-content" class="nav-mobile-programs-content bg-gray-50/80 rounded-lg mx-2"
-          role="region" aria-label="Programs submenu">
-          <a href="KalpavrukshaProgram.html"
-            class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
-            Kalpavruksha Program
-          </a>
-          <a href="SustainableCommunities.html"
-            class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
-            Sustainable Communities
-          </a>
-          <a href="Impactcatalyst.html"
-            class="flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
-            Impact Catalyst
-          </a>
+          <div id="nav-mobile-programs-content" class="nav-mobile-programs-content bg-gray-50/80 rounded-lg mx-2"
+            role="region" aria-label="Programs submenu">
+            <a href="learn.html"
+              class="nav-mobile-sub flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
+              Career Counseling
+            </a>
+
+            <a href="KalpavrukshaProgram.html"
+              class="nav-mobile-sub flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
+              Kalpavruksha Program
+            </a>
+
+            <a href="SustainableCommunities.html"
+              class="nav-mobile-sub flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
+              Sustainable Communities
+            </a>
+
+            <a href="Impactcatalyst.html"
+              class="nav-mobile-sub flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
+              Impact Catalyst
+            </a>
+          </div>
         </div>
+
+        <a href="get-involved.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
+          Get Involved
+        </a>
+
+        <a href="collaborations.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
+          CSR
+        </a>
+
+        <a href="gallery.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
+          Gallery
+        </a>
+
+        <a href="blogs.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
+          Blogs
+        </a>
+
+        <a href="learn.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
+          Learn
+        </a>
+
+        <a href="contact-us.html"
+          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
+          Contact
+        </a>
       </div>
+    </div>
 
-      <a href="get-involved.html"
-        class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
-        data-page="get-involved.html">
-        Get Involved
-      </a>
+    <div class="flex-shrink-0 border-t border-gray-200 py-4 px-4 text-center">
+      <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Follow us on</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="https://www.facebook.com/people/Sri-Takshashila-Gurukul/pfbid02DgQJDa9AL824jBX6eSxTBhfkHV7ZQrisnZGoWJcgtwyqinJEZ5XSPe4K184xQWuhl/"
+          target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
 
-      <a href="csrpage.html"
-        class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
-        CSR
-      </a>
+        <a href="https://www.instagram.com/sritakshashila/" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 
-      <a href="gallery.html"
-        class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
-        data-page="gallery.html">
-        Gallery
-      </a>
+        <a href="https://www.whatsapp.com/channel/0029VaMRwERDuMRbNDXKsn2d" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-      <a href="blogs.html"
-        class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
-        data-page="blogs.html">
-        Blogs
-      </a>
+        <a href="https://www.youtube.com/@SriTakshashilaGurukul" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="YouTube"><i class="fab fa-youtube"></i></a>
 
-      <a href="learn.html"
-        class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
-        Learn
-      </a>
+        <a href="https://t.me/SriTakshashilaGurukul" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
 
-      <a href="contact-us.html"
-        class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100"
-        data-page="contact-us.html">
-        Contact
-      </a>
-
+        <a href="https://www.linkedin.com/company/sritakshashila-gurukul" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
+          aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
   </div>
-
-  <div class="flex-shrink-0 border-t border-gray-200 py-4 px-4 text-center">
-    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Follow us on</p>
-    <div class="flex flex-wrap justify-center gap-3">
-      <a href="https://www.facebook.com/people/Sri-Takshashila-Gurukul/pfbid02DgQJDa9AL824jBX6eSxTBhfkHV7ZQrisnZGoWJcgtwyqinJEZ5XSPe4K184xQWuhl/"
-        target="_blank" rel="noopener noreferrer"
-        class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
-        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-
-      <a href="https://www.instagram.com/sritakshashila/" target="_blank" rel="noopener noreferrer"
-        class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
-        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-
-      <a href="https://www.whatsapp.com/channel/0029VaMRwERDuMRbNDXKsn2d" target="_blank" rel="noopener noreferrer"
-        class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
-        aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-
-      <a href="https://www.youtube.com/@SriTakshashilaGurukul" target="_blank" rel="noopener noreferrer"
-        class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
-        aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-
-      <a href="https://t.me/SriTakshashilaGurukul" target="_blank" rel="noopener noreferrer"
-        class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
-        aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-
-      <a href="https://www.linkedin.com/company/sritakshashila-gurukul" target="_blank" rel="noopener noreferrer"
-        class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition"
-        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-  </div>
-</div>
 </nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  /* Desktop nav links active */
+  document.querySelectorAll(".nav-link").forEach(link => {
+    const href = link.getAttribute("href");
+    if (href === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+  /* Programs dropdown active */
+  const programPages = [
+    "ourprograms.html",
+    "KalpavrukshaProgram.html",
+    "SustainableCommunities.html",
+    "Impactcatalyst.html",
+    "learn.html"
+  ];
+
+  if (programPages.includes(currentPage)) {
+    const desktopProgramMain = document.querySelector(".programs-main-link");
+    if (desktopProgramMain) {
+      desktopProgramMain.classList.add("nav-main-active");
+    }
+
+    document.querySelectorAll(".dropdown-menu a").forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentPage) {
+        link.classList.add("active-submenu");
+      }
+    });
+  }
+
+  /* Mobile nav active */
+  document.querySelectorAll(".nav-mobile-item").forEach(link => {
+    const href = link.getAttribute("href");
+    if (href === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+  /* Mobile programs submenu active */
+  document.querySelectorAll("#nav-mobile-programs-content a").forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === currentPage) {
+      link.classList.add("active");
+
+      const btn = document.querySelector(".nav-mobile-programs-btn");
+      const content = document.getElementById("nav-mobile-programs-content");
+
+      if (btn && content) {
+        btn.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+        content.classList.add("open");
+      }
+    }
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
+
+  /* ===============================
+     DESKTOP NORMAL LINKS ACTIVE
+  =============================== */
+  document.querySelectorAll(".nav-link").forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+  /* ===============================
+     PROGRAMS DROPDOWN ACTIVE
+  =============================== */
+  const programPages = [
+    "ourprograms.html",
+    "KalpavrukshaProgram.html",
+    "SustainableCommunities.html",
+    "Impactcatalyst.html",
+    "learn.html"
+  ];
+
+  if (programPages.includes(currentPage)) {
+
+    /* Main Programs Link */
+    const desktopProgramMain =
+      document.querySelector(".programs-main-link");
+
+    if (desktopProgramMain) {
+      desktopProgramMain.classList.add("nav-main-active");
+    }
+
+    /* Dropdown Submenu */
+    document.querySelectorAll(".dropdown-menu a").forEach(link => {
+      const href = link.getAttribute("href");
+
+      if (href === currentPage) {
+        link.classList.add("active-submenu");
+      }
+    });
+  }
+
+  /* ===============================
+     MOBILE MENU ACTIVE LINKS
+  =============================== */
+  document.querySelectorAll(".nav-mobile-item").forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+  /* ===============================
+     MOBILE PROGRAMS SUBMENU
+  =============================== */
+  document.querySelectorAll("#nav-mobile-programs-content a")
+    .forEach(link => {
+
+      const href = link.getAttribute("href");
+
+      if (href === currentPage) {
+
+        link.classList.add("active");
+
+        const btn =
+          document.querySelector(".nav-mobile-programs-btn");
+
+        const content =
+          document.getElementById("nav-mobile-programs-content");
+
+        if (btn && content) {
+          btn.classList.add("open");
+          btn.setAttribute("aria-expanded", "true");
+          content.classList.add("open");
+        }
+      }
+    });
+
+});
+</script>

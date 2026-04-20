@@ -6,47 +6,224 @@
   <meta name="description" content="Get Involved – Donate, Sponsor a Child, School Kit | Sri Takshashila Gurukul" />
   <title>Get Involved | Sri Takshashila Gurukul</title>
   <link rel="icon" href="Assests/Logo.png" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme: { extend: { colors: { primary: '#001e8c', accent: '#df5030' } } } };</script>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#001e8c',
+            accent: '#df5030',
+            darkblue: '#0f3d91',
+            softbg: '#f8f9fc'
+          },
+          fontFamily: {
+            sans: ['Outfit', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 12px 35px rgba(0,0,0,0.08)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-lift {
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+    }
+  </style>
 </head>
+
 <body class="font-sans antialiased text-gray-800 bg-white">
   <div id="site-header"></div>
 
-  <!-- Page hero -->
+  <!-- HERO -->
   <section class="relative py-16 md:py-24 bg-gradient-to-br from-primary/95 to-primary text-white overflow-hidden">
     <div class="absolute inset-0 bg-[url('Assests/carousel_5.jpeg')] bg-cover bg-center opacity-20"></div>
+
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
-      <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-widest mb-3">Support us</span>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Donate</h1>
-      <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">Together we can see our grand vision come true—a world where every bright student has access to quality education and caring mentorship.</p>
+      <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-widest mb-3">
+        Support Us
+      </span>
+
+      <div class="flex items-center justify-center gap-3 md:gap-4 mb-4">
+        <div class="w-12 md:w-20 h-[2px] bg-white/40 rounded-full"></div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          Donate
+        </h1>
+
+        <div class="w-12 md:w-20 h-[2px] bg-white/40 rounded-full"></div>
+      </div>
+
+      <p class="text-lg md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+        Together we can see our grand vision come true — a world where every bright student has access to quality education and caring mentorship.
+      </p>
     </div>
   </section>
 
-  <main class="max-w-5xl mx-auto px-4 py-16">
-    <div class="grid sm:grid-cols-2 gap-8">
-      <a href="coming-soon.html" class="block bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition text-center">
-        <div class="w-28 h-28 rounded-full bg-primary/10 mx-auto mb-4 flex items-center justify-center text-5xl text-primary"><i class="fa-solid fa-child"></i></div>
-        <h2 class="text-xl font-bold text-primary">Sponsor a Child</h2>
-      </a>
-      <a href="coming-soon.html" class="block bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition text-center">
-        <img src="Assests/School_kit.png" alt="Sponsor a school kit" class="w-28 h-28 object-contain mx-auto mb-4" onerror="this.onerror=null; this.src='Assests/No_Image.png';" />
-        <h2 class="text-xl font-bold text-primary"><i class="fa-solid fa-briefcase mr-2"></i>Sponsor a School Kit</h2>
-      </a>
-      <a href="coming-soon.html" class="block bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition text-center">
-        <img src="Assests/books.png" alt="Books and study materials" class="w-32 h-32 object-contain mx-auto mb-4" />
-        <h2 class="text-xl font-bold text-primary"><i class="fa-solid fa-book mr-2"></i>Sponsor Books &amp; Study Materials</h2>
-      </a>
-      <a href="coming-soon.html" class="block bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition text-center">
-        <img src="Assests/Give_money.png" alt="Way to give" class="w-32 h-32 object-contain mx-auto mb-4" />
-        <h2 class="text-xl font-bold text-primary"><i class="fa-solid fa-indian-rupee-sign mr-2"></i>Way to Give (Money)</h2>
-      </a>
+  <!-- MAIN SECTION -->
+  <main class="bg-softbg py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+      <!-- Heading -->
+      <div class="text-center mb-14 reveal">
+        <span class="inline-block text-accent text-sm font-semibold uppercase tracking-[3px] mb-3">
+          Get Involved
+        </span>
+
+        <div class="flex items-center justify-center gap-3 md:gap-4 mb-4">
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+          <h2 class="text-[24px] md:text-[32px] font-extrabold text-darkblue leading-tight text-center">
+            Choose How You Want to Support
+          </h2>
+
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+        </div>
+
+        <p class="text-gray-600 max-w-2xl mx-auto text-[14px] md:text-[16px] leading-relaxed">
+          Every contribution creates impact. Support a child, provide school essentials, sponsor study materials, or contribute directly to our mission.
+        </p>
+      </div>
+
+      <!-- Cards -->
+      <div class="grid sm:grid-cols-2 gap-8">
+
+        <!-- Sponsor a Child -->
+        <a href="coming-soon.html" class="block bg-white rounded-[28px] p-8 md:p-10 shadow-soft border border-gray-100 text-center card-lift reveal">
+          <div class="w-28 h-28 rounded-full bg-primary/10 mx-auto mb-5 flex items-center justify-center text-5xl text-primary">
+            <i class="fa-solid fa-child-reaching"></i>
+          </div>
+
+          <h3 class="text-[22px] font-bold text-primary mb-3">
+            Sponsor a Child
+          </h3>
+
+          <p class="text-gray-600 text-[14px] leading-relaxed mb-5">
+            Help a deserving student continue their education with the support they need to learn, grow, and succeed.
+          </p>
+
+          <span class="inline-flex items-center gap-2 text-primary font-semibold">
+            Learn More
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </a>
+
+        <!-- Sponsor a School Kit -->
+        <a href="coming-soon.html" class="block bg-white rounded-[28px] p-8 md:p-10 shadow-soft border border-gray-100 text-center card-lift reveal">
+          <img
+            src="Assests/School_kit.png"
+            alt="Sponsor a school kit"
+            class="w-28 h-28 object-contain mx-auto mb-5"
+            onerror="this.onerror=null; this.src='Assests/No_Image.png';"
+          />
+
+          <h3 class="text-[22px] font-bold text-primary mb-3">
+            Sponsor a School Kit
+          </h3>
+
+          <p class="text-gray-600 text-[14px] leading-relaxed mb-5">
+            Provide students with essential stationery, bags, and school supplies for a better academic journey.
+          </p>
+
+          <span class="inline-flex items-center gap-2 text-primary font-semibold">
+            Learn More
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </a>
+
+        <!-- Sponsor Books & Study Materials -->
+        <a href="coming-soon.html" class="block bg-white rounded-[28px] p-8 md:p-10 shadow-soft border border-gray-100 text-center card-lift reveal">
+          <img
+            src="Assests/books.png"
+            alt="Books and study materials"
+            class="w-32 h-32 object-contain mx-auto mb-5"
+            onerror="this.onerror=null; this.src='Assests/No_Image.png';"
+          />
+
+          <h3 class="text-[22px] font-bold text-primary mb-3">
+            Sponsor Books &amp; Study Materials
+          </h3>
+
+          <p class="text-gray-600 text-[14px] leading-relaxed mb-5">
+            Help students access books, guides, and learning resources that strengthen their education.
+          </p>
+
+          <span class="inline-flex items-center gap-2 text-primary font-semibold">
+            Learn More
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </a>
+
+        <!-- Way to Give -->
+        <a href="coming-soon.html" class="block bg-white rounded-[28px] p-8 md:p-10 shadow-soft border border-gray-100 text-center card-lift reveal">
+          <img
+            src="Assests/Give_money.png"
+            alt="Way to give money"
+            class="w-32 h-32 object-contain mx-auto mb-5"
+            onerror="this.onerror=null; this.src='Assests/No_Image.png';"
+          />
+
+          <h3 class="text-[22px] font-bold text-primary mb-3">
+            Way to Give (Money)
+          </h3>
+
+          <p class="text-gray-600 text-[14px] leading-relaxed mb-5">
+            Contribute directly and help us fund educational programs, outreach initiatives, and community impact.
+          </p>
+
+          <span class="inline-flex items-center gap-2 text-primary font-semibold">
+            Learn More
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </a>
+
+      </div>
+
     </div>
   </main>
 
   <div id="site-footer"></div>
 
   <script src="includes/load-header-footer.js"></script>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach((el) => revealObserver.observe(el));
+  </script>
 </body>
 </html>

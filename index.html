@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sri Takshashila Gurukul – Empowering students through education, awareness, and technology." />
+  <meta name="description"
+    content="Sri Takshashila Gurukul – Empowering students through education, awareness, and technology." />
   <title>Sri Takshashila Gurukul | Home</title>
   <link rel="icon" href="Assests/Logo.png" />
 
@@ -12,16 +14,16 @@
     tailwind.config = {
       theme: {
         extend: {
-         colors: {
-  primary: '#0f3d91',
-  secondary: '#0b2f73',
-  accent: '#78b943',
-  donate: '#e24d3b',
-  lightbg: '#f7fbf5',
-  softblue: '#eef4ff',
-  softgreen: '#edf8ea',
-  darktext: '#132238'
-},
+          colors: {
+            primary: '#0f3d91',
+            secondary: '#0b2f73',
+            accent: '#78b943',
+            donate: '#e24d3b',
+            lightbg: '#f7fbf5',
+            softblue: '#eef4ff',
+            softgreen: '#edf8ea',
+            darktext: '#132238'
+          },
           fontFamily: {
             sans: ['Outfit', 'system-ui', 'sans-serif'],
           },
@@ -37,10 +39,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     .hero-track {
       display: flex;
@@ -55,18 +60,21 @@
     }
 
     .hero-overlay {
-      background: linear-gradient(
-        to bottom,
-        rgba(18, 68, 36, 0.18) 0%,
-        rgba(31, 95, 59, 0.40) 35%,
-        rgba(15, 61, 145, 0.28) 68%,
-        rgba(11, 24, 18, 0.72) 100%
-      );
+      background: linear-gradient(to bottom,
+          rgba(18, 68, 36, 0.18) 0%,
+          rgba(31, 95, 59, 0.40) 35%,
+          rgba(15, 61, 145, 0.28) 68%,
+          rgba(11, 24, 18, 0.72) 100%);
     }
 
     @keyframes heroZoom {
-      from { transform: scale(1.08); }
-      to { transform: scale(1); }
+      from {
+        transform: scale(1.08);
+      }
+
+      to {
+        transform: scale(1);
+      }
     }
 
     @keyframes fadeUp {
@@ -74,6 +82,7 @@
         opacity: 0;
         transform: translateY(36px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -85,9 +94,17 @@
       animation: fadeUp 0.9s ease forwards;
     }
 
-    .hero-delay-1 { animation-delay: 0.15s; }
-    .hero-delay-2 { animation-delay: 0.35s; }
-    .hero-delay-3 { animation-delay: 0.55s; }
+    .hero-delay-1 {
+      animation-delay: 0.15s;
+    }
+
+    .hero-delay-2 {
+      animation-delay: 0.35s;
+    }
+
+    .hero-delay-3 {
+      animation-delay: 0.55s;
+    }
 
     .reveal {
       opacity: 0;
@@ -128,7 +145,7 @@
 
     .hover-lift:hover {
       transform: translateY(-8px);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
     }
 
     .btn-pop {
@@ -137,7 +154,7 @@
 
     .btn-pop:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
     }
 
     .carousel-dot {
@@ -148,10 +165,21 @@
       transform: scale(1.15);
     }
 
-    .stagger-1 { transition-delay: 0.05s; }
-    .stagger-2 { transition-delay: 0.12s; }
-    .stagger-3 { transition-delay: 0.20s; }
-    .stagger-4 { transition-delay: 0.28s; }
+    .stagger-1 {
+      transition-delay: 0.05s;
+    }
+
+    .stagger-2 {
+      transition-delay: 0.12s;
+    }
+
+    .stagger-3 {
+      transition-delay: 0.20s;
+    }
+
+    .stagger-4 {
+      transition-delay: 0.28s;
+    }
 
     .section-title {
       font-size: 2rem;
@@ -165,37 +193,37 @@
         font-size: 2.5rem;
       }
     }
- 
-  /* 2 */
 
-  .shadow-soft {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-  }
+    /* 2 */
 
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+    .shadow-soft {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    }
 
-  .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.10);
-  }
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-  /* 3 */
- 
-  .shadow-soft {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  }
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+    }
 
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-  }
+    /* 3 */
 
-</style>
+    .shadow-soft {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+  </style>
 </head>
 
 <body class="font-sans antialiased text-gray-800 bg-white">
@@ -211,30 +239,36 @@
           <div class="absolute inset-0 hero-overlay"></div>
           <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
             <div class="max-w-5xl mx-auto text-center text-white">
-              <span class="hero-animate hero-delay-1 inline-block text-white/90 text-sm font-semibold uppercase tracking-[0.25em] mb-4">
+              <span
+                class="hero-animate hero-delay-1 inline-block text-white/90 text-sm font-semibold uppercase tracking-[0.25em] mb-4">
                 Sri Takshashila Gurukul
               </span>
 
-              <h1 class="hero-animate hero-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-5">
+              <h1
+                class="hero-animate hero-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-5">
                 From Seeds to Forests – Building Future-Ready Lives
               </h1>
 
-              <p class="hero-animate hero-delay-2 text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+              <p
+                class="hero-animate hero-delay-2 text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
                 Empowering students through education, awareness, and technology
               </p>
 
               <div class="hero-animate hero-delay-3 flex flex-wrap justify-center gap-4">
-                <a href="donate.html" class="btn-pop inline-flex items-center gap-2 px-6 py-3 bg-donate text-white font-semibold rounded-xl shadow-lg hover:bg-[#cf412f]">
+                <a href="donate.html"
+                  class="btn-pop inline-flex items-center gap-2 px-6 py-3 bg-donate text-white font-semibold rounded-xl shadow-lg hover:bg-[#cf412f]">
                   <i class="fa-solid fa-heart"></i>
                   Donate Now
                 </a>
 
-                <a href="contact-us.html" class="btn-pop inline-flex items-center gap-2 px-6 py-3 bg-white/15 border border-white/40 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/25">
-                  <i class="fa-solid fa-hand-holding-heart"></i>
-                  Become Volunteer
+                <a href="contact-us.html"
+                  class="btn-pop inline-flex items-center gap-2 px-6 py-3 bg-[#0f3d91] border border-[#0f3d91] text-white font-semibold rounded-xl hover:bg-[#0c3278] hover:border-[#0c3278] transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <i class="fa-solid fa-hand-holding-heart text-[15px]"></i>
+                  <span>Become Volunteer</span>
                 </a>
 
-                <a href="learn.html" class="btn-pop inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-xl hover:bg-[#67a936]">
+                <a href="learn.html"
+                  class="btn-pop inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-xl hover:bg-[#67a936]">
                   <i class="fa-solid fa-graduation-cap"></i>
                   Start Learning
                 </a>
@@ -248,7 +282,8 @@
           <div class="absolute inset-0 hero-overlay"></div>
           <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
             <div class="max-w-4xl mx-auto text-center text-white">
-              <span class="hero-animate hero-delay-1 inline-block text-white/90 text-sm font-semibold uppercase tracking-[0.25em] mb-4">
+              <span
+                class="hero-animate hero-delay-1 inline-block text-white/90 text-sm font-semibold uppercase tracking-[0.25em] mb-4">
                 Future Ready Impact
               </span>
               <h2 class="hero-animate hero-delay-2 text-4xl sm:text-5xl md:text-6xl font-extrabold mb-5">
@@ -266,7 +301,8 @@
           <div class="absolute inset-0 hero-overlay"></div>
           <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
             <div class="max-w-4xl mx-auto text-center text-white">
-              <span class="hero-animate hero-delay-1 inline-block text-white/90 text-sm font-semibold uppercase tracking-[0.25em] mb-4">
+              <span
+                class="hero-animate hero-delay-1 inline-block text-white/90 text-sm font-semibold uppercase tracking-[0.25em] mb-4">
                 Community & Leadership
               </span>
               <h2 class="hero-animate hero-delay-2 text-4xl sm:text-5xl md:text-6xl font-extrabold mb-5">
@@ -283,176 +319,334 @@
     </div>
 
     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2.5 z-10">
-      <button type="button" aria-label="Slide 1" class="carousel-dot w-3 h-3 rounded-full bg-white" data-index="0"></button>
-      <button type="button" aria-label="Slide 2" class="carousel-dot w-3 h-3 rounded-full bg-white/50" data-index="1"></button>
-      <button type="button" aria-label="Slide 3" class="carousel-dot w-3 h-3 rounded-full bg-white/50" data-index="2"></button>
+      <button type="button" aria-label="Slide 1" class="carousel-dot w-3 h-3 rounded-full bg-white"
+        data-index="0"></button>
+      <button type="button" aria-label="Slide 2" class="carousel-dot w-3 h-3 rounded-full bg-white/50"
+        data-index="1"></button>
+      <button type="button" aria-label="Slide 3" class="carousel-dot w-3 h-3 rounded-full bg-white/50"
+        data-index="2"></button>
     </div>
 
-    <button type="button" id="carousel-prev" class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-black/35 hover:bg-black/50 flex items-center justify-center text-white z-10" aria-label="Previous slide">
+    <button type="button" id="carousel-prev"
+      class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-black/35 hover:bg-black/50 flex items-center justify-center text-white z-10"
+      aria-label="Previous slide">
       <i class="fa-solid fa-chevron-left"></i>
     </button>
 
-    <button type="button" id="carousel-next" class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-black/35 hover:bg-black/50 flex items-center justify-center text-white z-10" aria-label="Next slide">
+    <button type="button" id="carousel-next"
+      class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-black/35 hover:bg-black/50 flex items-center justify-center text-white z-10"
+      aria-label="Next slide">
       <i class="fa-solid fa-chevron-right"></i>
     </button>
   </section>
 
-<!-- SECTION 2: ROOT TO FOREST -->
-<section class="py-10 md:py-14 relative overflow-hidden bg-gradient-to-b from-[#f9f7ef] via-[#f3f8ec] to-[#e8f3df]">
+<!-- ABOUT US SECTION -->
+<section class="py-14 md:py-20 bg-white relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
-  <!-- Soft gradient glow -->
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute -top-10 left-0 w-72 h-72 bg-[#dfeccf] opacity-40 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#d4e8c8] opacity-40 rounded-full blur-3xl"></div>
-  </div>
+    <!-- Main Section Heading -->
+    <div class="text-center mb-12 reveal">
+      <div class="flex items-center justify-center gap-4 mb-3">
+        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <h2 class="text-[24px] md:text-[30px] font-extrabold text-[#0f3d91] whitespace-nowrap">
+          About Us
+        </h2>
 
-    <!-- Heading -->
-    <div class="text-center mb-8 reveal">
-      <h2 class="text-[24px] md:text-[30px] font-extrabold text-secondary">
-        Our Growth Model
-      </h2>
-      <p class="text-[13px] md:text-[14px] text-gray-600 mt-1 max-w-xl mx-auto">
-        From Roots to Forest – A Journey of Impact
+        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+      </div>
+
+      <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto">
+        Building brighter futures through education, awareness, and impact.
       </p>
     </div>
 
-    <!-- Cards -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
 
-      <!-- ROOT -->
-      <div class="rounded-2xl bg-[#9d5a22] text-white px-4 py-5 text-center shadow-soft hover-lift reveal stagger-1">
-        <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center text-lg">
-          <i class="fa-solid fa-seedling"></i>
+      <!-- Left Side Video -->
+      <div class="reveal">
+        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-[#e8ecf3] aspect-video">
+          <iframe 
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/BxGk4TP55G8"
+            title="About Us Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
-        <h3 class="text-sm md:text-base font-bold mb-2">ROOT</h3>
-        <p class="text-[11px] md:text-[12px] text-white/90 leading-relaxed">
-          Plant trust and care through early support and strong foundations.
-        </p>
       </div>
 
-      <!-- SEED -->
-      <div class="rounded-2xl bg-[#72b63f] text-white px-4 py-5 text-center shadow-soft hover-lift reveal stagger-2">
-        <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center text-lg">
-          <i class="fa-solid fa-wheat-awn"></i>
-        </div>
-        <h3 class="text-sm md:text-base font-bold mb-2">SEED</h3>
-        <p class="text-[11px] md:text-[12px] text-white/90 leading-relaxed">
-          Nurture young minds with opportunities to learn and grow.
-        </p>
-      </div>
+      <!-- Right Side Content -->
+      <div class="reveal">
 
-      <!-- TREE -->
-      <div class="rounded-2xl bg-[#4b8d39] text-white px-4 py-5 text-center shadow-soft hover-lift reveal stagger-3">
-        <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center text-lg">
-          <i class="fa-solid fa-tree"></i>
-        </div>
-        <h3 class="text-sm md:text-base font-bold mb-2">TREE</h3>
-        <p class="text-[11px] md:text-[12px] text-white/90 leading-relaxed">
-          Build skills, awareness, and confidence through programs.
-        </p>
-      </div>
+        <h3 class="text-[28px] md:text-[40px] leading-tight font-extrabold text-[#0f3d91] mb-4">
+          Empowering Students.<br>
+          Transforming Communities.
+        </h3>
 
-      <!-- FOREST -->
-      <div class="rounded-2xl bg-[#2e6b38] text-white px-4 py-5 text-center shadow-soft hover-lift reveal stagger-4">
-        <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center text-lg">
-          <i class="fa-solid fa-tree-city"></i>
-        </div>
-        <h3 class="text-sm md:text-base font-bold mb-2">FOREST</h3>
-        <p class="text-[11px] md:text-[12px] text-white/90 leading-relaxed">
-          Create lasting ecosystems of impact across generations.
+        <p class="text-[14px] md:text-[15px] text-[#666] leading-relaxed mb-6">
+          Sri Takshashila Gurukul is a mission-driven organization dedicated to nurturing 
+          students and creating sustainable community impact through education, awareness, 
+          and future-ready skill development.
         </p>
+
+        <!-- Points -->
+        <div class="space-y-4 mb-7">
+
+          <div class="flex gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#eef4ff] flex items-center justify-center text-[#0f3d91]">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#222] text-[14px]">Student Growth</h4>
+              <p class="text-[13px] text-gray-600">Helping young minds unlock confidence, creativity, and leadership.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#eef8ea] flex items-center justify-center text-[#6d8f2f]">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#222] text-[14px]">Community Impact</h4>
+              <p class="text-[13px] text-gray-600">Building awareness programs that uplift families and communities.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#fff4e8] flex items-center justify-center text-[#d97706]">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#222] text-[14px]">Future Skills</h4>
+              <p class="text-[13px] text-gray-600">Equipping students with digital literacy and practical life skills.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA -->
+        <a href="about-us.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#0f3d91] text-white font-semibold rounded-xl hover:bg-[#0c3278] transition-all duration-300 hover:scale-105">
+          Learn More
+          <i class="fa-solid fa-arrow-right text-[13px]"></i>
+        </a>
+
       </div>
 
     </div>
+
   </div>
 </section>
 
+  <!-- SECTION 2: ROOT TO FOREST -->
+  <section class="py-10 md:py-14 relative overflow-hidden bg-gradient-to-b from-[#f9f7ef] via-[#f3f8ec] to-[#e8f3df]">
 
-<!-- SECTION 3: IMPACT COUNTERS -->
-<section class="py-10 md:py-14 relative overflow-hidden">
-  <!-- Background image -->
-  <div class="absolute inset-0">
-    <img src="Assests/carousel_5.jpeg" alt="Impact Background" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-[#f4f0e6]/80"></div>
-  </div>
-
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-    <!-- Top line -->
-    <div class="text-center mb-6 reveal">
-      <p class="text-[13px] md:text-[15px] text-[#6f5d43] font-medium">
-        From awareness to impact — we nurture every stage of a student’s journey.
-      </p>
+    <!-- Soft gradient glow -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-10 left-0 w-72 h-72 bg-[#dfeccf] opacity-40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#d4e8c8] opacity-40 rounded-full blur-3xl"></div>
     </div>
 
-    <!-- Counter strip -->
-    <div class="bg-white/95 backdrop-blur-sm rounded-xl shadow-soft overflow-hidden reveal">
-      <div class="grid grid-cols-2 md:grid-cols-4">
-        
-        <!-- Item 1 -->
-        <div class="px-4 py-5 md:px-6 md:py-6 text-center border-b md:border-b-0 md:border-r border-[#e8e1d2]">
-          <div class="flex items-center justify-center gap-2 mb-1">
-            <i class="fa-solid fa-graduation-cap text-[#718b2f] text-xl"></i>
-            <div class="text-3xl md:text-4xl font-extrabold text-[#4d4a22] stat-value" data-target="5000">0</div>
-          </div>
-          <p class="text-[11px] md:text-[12px] text-gray-700 font-semibold">Students Impacted</p>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+
+      <!-- Heading -->
+      <div class="text-center mb-8 reveal">
+
+        <!-- Heading with Lines -->
+        <div class="flex items-center justify-center gap-4 mb-2">
+
+          <!-- Left Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+          <!-- Heading -->
+          <h2 class="text-[24px] md:text-[30px] font-extrabold text-secondary whitespace-nowrap">
+            Our Growth Model
+          </h2>
+
+          <!-- Right Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
         </div>
 
-        <!-- Item 2 -->
-        <div class="px-4 py-5 md:px-6 md:py-6 text-center border-b md:border-b-0 md:border-r border-[#e8e1d2]">
-          <div class="flex items-center justify-center gap-2 mb-1">
-            <i class="fa-solid fa-school text-[#718b2f] text-xl"></i>
-            <div class="text-3xl md:text-4xl font-extrabold text-[#4d4a22] stat-value" data-target="100">0</div>
+        <!-- Sub Text -->
+        <p class="text-[13px] md:text-[14px] text-gray-600 mt-1 max-w-xl mx-auto">
+          From Roots to Forest – A Journey of Impact
+        </p>
+
+      </div>
+
+      <!-- Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+
+        <!-- ROOT -->
+        <div class="rounded-2xl bg-[#9d5a22] text-white px-4 py-5 text-center shadow-soft hover-lift reveal stagger-1">
+          <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-seedling"></i>
           </div>
-          <p class="text-[11px] md:text-[12px] text-gray-700 font-semibold">Schools Reached</p>
+          <h3 class="text-sm md:text-base font-bold mb-2">ROOT</h3>
+          <p class="text-[11px] md:text-[12px] text-white/90 leading-relaxed">
+            Plant trust and care through early support and strong foundations.
+          </p>
         </div>
 
-        <!-- Item 3 -->
-        <div class="px-4 py-5 md:px-6 md:py-6 text-center border-r border-[#e8e1d2]">
-          <div class="flex items-center justify-center gap-2 mb-1">
-            <i class="fa-solid fa-heart text-[#8aa031] text-xl"></i>
-            <div class="text-3xl md:text-4xl font-extrabold text-[#4d4a22] stat-value" data-target="300">0</div>
+        <!-- SEED -->
+        <div class="rounded-2xl bg-[#72b63f] text-white px-4 py-5 text-center shadow-soft hover-lift reveal stagger-2">
+          <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-wheat-awn"></i>
           </div>
-          <p class="text-[11px] md:text-[12px] text-gray-700 font-semibold">Volunteers</p>
+          <h3 class="text-sm md:text-base font-bold mb-2">SEED</h3>
+          <p class="text-[11px] md:text-[12px] text-white/90 leading-relaxed">
+            Nurture young minds with opportunities to learn and grow.
+          </p>
         </div>
 
-        <!-- Item 4 -->
-        <div class="px-4 py-5 md:px-6 md:py-6 text-center">
-          <div class="flex items-center justify-center gap-2 mb-1">
-            <i class="fa-solid fa-bullseye text-[#c86d2f] text-xl"></i>
-            <div class="text-3xl md:text-4xl font-extrabold text-[#4d4a22] stat-value" data-target="100">0</div>
+        <!-- TREE -->
+        <div class="rounded-2xl bg-[#4b8d39] text-white px-4 py-5 text-center shadow-soft hover-lift reveal stagger-3">
+          <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-tree"></i>
           </div>
-          <p class="text-[11px] md:text-[12px] text-gray-700 font-semibold">Programs Conducted</p>
+          <h3 class="text-sm md:text-base font-bold mb-2">TREE</h3>
+          <p class="text-[11px] md:text-[12px] text-white/90 leading-relaxed">
+            Build skills, awareness, and confidence through programs.
+          </p>
+        </div>
+
+        <!-- FOREST -->
+        <div class="rounded-2xl bg-[#2e6b38] text-white px-4 py-5 text-center shadow-soft hover-lift reveal stagger-4">
+          <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-tree-city"></i>
+          </div>
+          <h3 class="text-sm md:text-base font-bold mb-2">FOREST</h3>
+          <p class="text-[11px] md:text-[12px] text-white/90 leading-relaxed">
+            Create lasting ecosystems of impact across generations.
+          </p>
         </div>
 
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  
-<!-- SECTION 4: PROGRAMS -->
-<section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
-  </div>
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-    <!-- Heading -->
-    <div class="text-center mb-8 reveal">
-      <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91]">
-    Our Programs
-  </h2>
-      
+  <!-- SECTION 3: IMPACT COUNTERS -->
+  <section class="py-10 md:py-14 relative overflow-hidden">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img src="Assests/impactbg.jpg" alt="Impact Background" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-[#f4f0e6]/80"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+
+      <!-- Heading -->
+      <div class="text-center mb-3 reveal">
+        <div class="flex items-center justify-center gap-4">
+
+          <!-- Left Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+          <!-- Heading -->
+          <h2 class="text-[24px] md:text-[30px] font-extrabold text-secondary whitespace-nowrap">
+            Impact Counters
+          </h2>
+
+          <!-- Right Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+        </div>
+      </div>
+
+      <!-- Top line -->
+      <div class="text-center mb-6 reveal">
+        <p class="text-[13px] md:text-[15px] text-[#6f5d43] font-medium">
+          From awareness to impact — we nurture every stage of a student’s journey.
+        </p>
+      </div>
+
+      <!-- Counter strip -->
+      <div class="bg-white/95 backdrop-blur-sm rounded-xl shadow-soft overflow-hidden reveal">
+        <div class="grid grid-cols-2 md:grid-cols-4">
+
+          <!-- Item 1 -->
+          <div class="px-4 py-5 md:px-6 md:py-6 text-center border-b md:border-b-0 md:border-r border-[#e8e1d2]">
+            <div class="flex items-center justify-center gap-2 mb-1">
+              <i class="fa-solid fa-graduation-cap text-[#718b2f] text-xl"></i>
+              <div class="text-3xl md:text-4xl font-extrabold text-[#4d4a22] stat-value" data-target="5000">0</div>
+            </div>
+            <p class="text-[11px] md:text-[12px] text-gray-700 font-semibold">Students Impacted</p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="px-4 py-5 md:px-6 md:py-6 text-center border-b md:border-b-0 md:border-r border-[#e8e1d2]">
+            <div class="flex items-center justify-center gap-2 mb-1">
+              <i class="fa-solid fa-school text-[#718b2f] text-xl"></i>
+              <div class="text-3xl md:text-4xl font-extrabold text-[#4d4a22] stat-value" data-target="100">0</div>
+            </div>
+            <p class="text-[11px] md:text-[12px] text-gray-700 font-semibold">Schools Reached</p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="px-4 py-5 md:px-6 md:py-6 text-center border-r border-[#e8e1d2]">
+            <div class="flex items-center justify-center gap-2 mb-1">
+              <i class="fa-solid fa-heart text-[#8aa031] text-xl"></i>
+              <div class="text-3xl md:text-4xl font-extrabold text-[#4d4a22] stat-value" data-target="300">0</div>
+            </div>
+            <p class="text-[11px] md:text-[12px] text-gray-700 font-semibold">Volunteers</p>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="px-4 py-5 md:px-6 md:py-6 text-center">
+            <div class="flex items-center justify-center gap-2 mb-1">
+              <i class="fa-solid fa-bullseye text-[#c86d2f] text-xl"></i>
+              <div class="text-3xl md:text-4xl font-extrabold text-[#4d4a22] stat-value" data-target="100">0</div>
+            </div>
+            <p class="text-[11px] md:text-[12px] text-gray-700 font-semibold">Programs Conducted</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 4: PROGRAMS -->
+  <section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-30">
+      <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+
+      <!-- Heading -->
+      <div class="text-center mb-8 reveal">
+
+        <!-- Title with Lines -->
+        <div class="flex items-center justify-center gap-4">
+
+          <!-- Left Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+          <!-- Heading -->
+          <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91] whitespace-nowrap">
+            Our Programs
+          </h2>
+
+          <!-- Right Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+        </div>
+
+      </div>
+
     </div>
 
     <!-- Cards -->
     <div class="grid md:grid-cols-3 gap-5 md:gap-6">
-      
+
       <!-- Card 1 -->
-      <div class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-1">
+      <div
+        class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-1">
         <img src="Assests/carousel_10.jpeg" alt="Future Ready Students" class="w-full h-44 object-cover">
         <div class="p-5 text-center">
           <h3 class="text-[18px] md:text-[20px] font-bold text-[#4b3f2b] mb-2">
@@ -461,14 +655,16 @@
           <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
             Empowering students with scholarships, STEM learning, digital awareness, and future-focused development.
           </p>
-          <a href="KalpavrukshaProgram.html" class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[11px] font-semibold px-4 py-2 rounded-sm tracking-wide uppercase">
+          <a href="KalpavrukshaProgram.html"
+            class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[11px] font-semibold px-4 py-2 rounded-sm tracking-wide uppercase">
             Learn More
           </a>
         </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-2">
+      <div
+        class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-2">
         <img src="Assests/carousel_11.jpeg" alt="Green Life Communities" class="w-full h-44 object-cover">
         <div class="p-5 text-center">
           <h3 class="text-[18px] md:text-[20px] font-bold text-[#4b3f2b] mb-2">
@@ -477,14 +673,16 @@
           <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
             Supporting healthier and more sustainable communities through awareness, environment, and outreach.
           </p>
-          <a href="SustainableCommunities.html" class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[11px] font-semibold px-4 py-2 rounded-sm tracking-wide uppercase">
+          <a href="SustainableCommunities.html"
+            class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[11px] font-semibold px-4 py-2 rounded-sm tracking-wide uppercase">
             Learn More
           </a>
         </div>
       </div>
 
       <!-- Card 3 -->
-      <div class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-3">
+      <div
+        class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-3">
         <img src="Assests/carousel_5.jpeg" alt="Impact Catalyst" class="w-full h-44 object-cover">
         <div class="p-5 text-center">
           <h3 class="text-[18px] md:text-[20px] font-bold text-[#4b3f2b] mb-2">
@@ -493,408 +691,494 @@
           <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
             Creating leaders and changemakers who can multiply impact through volunteering and community action.
           </p>
-          <a href="Impactcatalyst.html" class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[11px] font-semibold px-4 py-2 rounded-sm tracking-wide uppercase">
+          <a href="Impactcatalyst.html"
+            class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[11px] font-semibold px-4 py-2 rounded-sm tracking-wide uppercase">
             Learn More
           </a>
         </div>
       </div>
 
     </div>
-  </div>
-</section>
+    </div>
+  </section>
 
- 
-<!-- SECTION 5: LEARN & EXPLORE -->
-<section class="py-12 md:py-16 bg-white relative overflow-hidden">
 
-  <!-- Soft background shapes -->
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="absolute top-0 right-0 w-80 h-80 bg-[#e8efd8] rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-72 h-72 bg-[#eef4ff] rounded-full blur-3xl"></div>
-  </div>
+  <!-- SECTION 5: LEARN & EXPLORE -->
+  <section class="py-12 md:py-16 bg-white relative overflow-hidden">
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-
-    <!-- Heading -->
-    <div class="text-center mb-10 reveal">
-      <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91]">
-        Learn &amp; Explore
-      </h2>
-      <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mt-3 leading-relaxed">
-        Engaging learning experiences that help students build confidence, practical skills, and digital awareness.
-      </p>
+    <!-- Soft background shapes -->
+    <div class="absolute inset-0 pointer-events-none opacity-30">
+      <div class="absolute top-0 right-0 w-80 h-80 bg-[#e8efd8] rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-72 h-72 bg-[#eef4ff] rounded-full blur-3xl"></div>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-6 items-stretch">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
 
-      <!-- Left Feature Block -->
-      <div class="bg-gradient-to-br from-[#f7f4ea] to-[#edf8ea] border border-[#ddd8c8] rounded-[20px] p-6 md:p-8 shadow-[0_6px_18px_rgba(0,0,0,0.06)] reveal-left flex flex-col justify-between">
-        <div>
-          <span class="inline-block text-[11px] font-semibold uppercase tracking-wide text-[#6d8f2f] bg-[#edf8ea] px-3 py-1 rounded-full mb-4">
-            Learning Journey
-          </span>
+      <!-- Heading -->
+      <div class="text-center mb-10 reveal">
 
-          <h3 class="text-[24px] md:text-[30px] font-extrabold text-[#4b3f2b] leading-tight mb-4">
-            Building Future-Ready Students Through Guided Learning
-          </h3>
+        <!-- Heading with Lines -->
+        <div class="flex items-center justify-center gap-4 mb-3">
 
-          <p class="text-[13px] md:text-[14px] text-[#7a7468] leading-relaxed mb-6">
-            We create accessible learning experiences that help students grow with clarity, confidence, curiosity, and responsible digital habits.
-          </p>
+          <!-- Left Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
 
-          <div class="space-y-3 mb-6">
-            <div class="flex items-start gap-3">
-              <div class="w-9 h-9 rounded-full bg-[#eef4ff] flex items-center justify-center text-[#0f3d91] text-sm shrink-0">
-                <i class="fa-solid fa-graduation-cap"></i>
-              </div>
-              <div>
-                <h4 class="text-[15px] font-bold text-[#4b3f2b]">Practical Learning</h4>
-                <p class="text-[12px] text-[#7a7468] leading-relaxed">
-                  Structured learning modules that make concepts easier to understand and apply.
-                </p>
-              </div>
-            </div>
+          <!-- Heading -->
+          <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91] whitespace-nowrap">
+            Learn &amp; Explore
+          </h2>
 
-            <div class="flex items-start gap-3">
-              <div class="w-9 h-9 rounded-full bg-[#edf8ea] flex items-center justify-center text-[#6d8f2f] text-sm shrink-0">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
-              <div>
-                <h4 class="text-[15px] font-bold text-[#4b3f2b]">Digital Awareness</h4>
-                <p class="text-[12px] text-[#7a7468] leading-relaxed">
-                  Helping students stay informed, aware, and responsible in the digital world.
-                </p>
-              </div>
-            </div>
+          <!-- Right Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
 
-            <div class="flex items-start gap-3">
-              <div class="w-9 h-9 rounded-full bg-[#fff3e8] flex items-center justify-center text-[#c86d2f] text-sm shrink-0">
-                <i class="fa-solid fa-lightbulb"></i>
-              </div>
-              <div>
-                <h4 class="text-[15px] font-bold text-[#4b3f2b]">Confidence Building</h4>
-                <p class="text-[12px] text-[#7a7468] leading-relaxed">
-                  Encouraging curiosity, participation, and future-focused thinking.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div>
-          <a href="learn.html" class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[12px] font-semibold px-6 py-2.5 rounded-sm tracking-wide uppercase">
-            Explore Learning
-          </a>
-        </div>
+        <!-- Sub Text -->
+        <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mt-3 leading-relaxed">
+          Engaging learning experiences that help students build confidence, practical skills, and digital awareness.
+        </p>
+
       </div>
 
-      <!-- Right Cards -->
-      <div class="grid gap-5">
+      <div class="grid lg:grid-cols-2 gap-6 items-stretch">
 
-        <!-- Card 1 -->
-        <div class="bg-white border border-[#ddd8c8] rounded-[18px] overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal-right">
-          <div class="grid md:grid-cols-[180px_1fr] items-center">
-            <img src="Assests/carousel_10.jpeg" alt="Future Ready Certifications" class="w-full h-full min-h-[180px] object-cover">
-            <div class="p-5 md:p-6">
-              <h3 class="text-[18px] md:text-[20px] font-bold text-[#4b3f2b] mb-2">
-                Future Ready Certifications
-              </h3>
-              <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
-                Helping students build confidence through guided learning and practical skill development.
-              </p>
-              <a href="learn.html" class="inline-block text-[12px] font-semibold text-[#0f3d91] hover:underline">
-                Learn More →
-              </a>
+        <!-- Left Feature Block -->
+        <div
+          class="bg-gradient-to-br from-[#f7f4ea] to-[#edf8ea] border border-[#ddd8c8] rounded-[20px] p-6 md:p-8 shadow-[0_6px_18px_rgba(0,0,0,0.06)] reveal-left flex flex-col justify-between">
+          <div>
+            <span
+              class="inline-block text-[11px] font-semibold uppercase tracking-wide text-[#6d8f2f] bg-[#edf8ea] px-3 py-1 rounded-full mb-4">
+              Learning Journey
+            </span>
+
+            <h3 class="text-[24px] md:text-[30px] font-extrabold text-[#4b3f2b] leading-tight mb-4">
+              Building Future-Ready Students Through Guided Learning
+            </h3>
+
+            <p class="text-[13px] md:text-[14px] text-[#7a7468] leading-relaxed mb-6">
+              We create accessible learning experiences that help students grow with clarity, confidence, curiosity, and
+              responsible digital habits.
+            </p>
+
+            <div class="space-y-3 mb-6">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-9 h-9 rounded-full bg-[#eef4ff] flex items-center justify-center text-[#0f3d91] text-sm shrink-0">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                  <h4 class="text-[15px] font-bold text-[#4b3f2b]">Practical Learning</h4>
+                  <p class="text-[12px] text-[#7a7468] leading-relaxed">
+                    Structured learning modules that make concepts easier to understand and apply.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-9 h-9 rounded-full bg-[#edf8ea] flex items-center justify-center text-[#6d8f2f] text-sm shrink-0">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                  <h4 class="text-[15px] font-bold text-[#4b3f2b]">Digital Awareness</h4>
+                  <p class="text-[12px] text-[#7a7468] leading-relaxed">
+                    Helping students stay informed, aware, and responsible in the digital world.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-9 h-9 rounded-full bg-[#fff3e8] flex items-center justify-center text-[#c86d2f] text-sm shrink-0">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div>
+                  <h4 class="text-[15px] font-bold text-[#4b3f2b]">Confidence Building</h4>
+                  <p class="text-[12px] text-[#7a7468] leading-relaxed">
+                    Encouraging curiosity, participation, and future-focused thinking.
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div>
+            <a href="learn.html"
+              class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[12px] font-semibold px-6 py-2.5 rounded-sm tracking-wide uppercase">
+              Explore Learning
+            </a>
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="bg-white border border-[#ddd8c8] rounded-[18px] overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal-right">
-          <div class="grid md:grid-cols-[180px_1fr] items-center">
-            <img src="Assests/carousel_11.jpeg" alt="CyberSmart Tips and Guidelines" class="w-full h-full min-h-[180px] object-cover">
-            <div class="p-5 md:p-6">
-              <h3 class="text-[18px] md:text-[20px] font-bold text-[#4b3f2b] mb-2">
-                CyberSmart Tips &amp; Guidelines
-              </h3>
-              <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
-                Creating awareness around safe digital habits, responsibility, and cyber confidence.
-              </p>
-              <a href="learn.html" class="inline-block text-[12px] font-semibold text-[#0f3d91] hover:underline">
-                Learn More →
-              </a>
+        <!-- Right Cards -->
+        <div class="grid gap-5">
+
+          <!-- Card 1 -->
+          <div
+            class="bg-white border border-[#ddd8c8] rounded-[18px] overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal-right">
+            <div class="grid md:grid-cols-[180px_1fr] items-center">
+              <img src="Assests/carousel_10.jpeg" alt="Future Ready Certifications"
+                class="w-full h-full min-h-[180px] object-cover">
+              <div class="p-5 md:p-6">
+                <h3 class="text-[18px] md:text-[20px] font-bold text-[#4b3f2b] mb-2">
+                  Future Ready Certifications
+                </h3>
+                <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
+                  Helping students build confidence through guided learning and practical skill development.
+                </p>
+                <a href="learn.html" class="inline-block text-[12px] font-semibold text-[#0f3d91] hover:underline">
+                  Learn More →
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Card 3 -->
-        <div class="bg-white border border-[#ddd8c8] rounded-[18px] overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal-right">
-          <div class="grid md:grid-cols-[180px_1fr] items-center">
-            <img src="Assests/carousel_5.jpeg" alt="Future Skills Student Corner" class="w-full h-full min-h-[180px] object-cover">
-            <div class="p-5 md:p-6">
-              <h3 class="text-[18px] md:text-[20px] font-bold text-[#4b3f2b] mb-2">
-                Future Skills Student Corner
-              </h3>
-              <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
-                Encouraging curiosity, exploration, and everyday learning for future-ready growth.
-              </p>
-              <a href="learn.html" class="inline-block text-[12px] font-semibold text-[#0f3d91] hover:underline">
-                Learn More →
-              </a>
+          <!-- Card 2 -->
+          <div
+            class="bg-white border border-[#ddd8c8] rounded-[18px] overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal-right">
+            <div class="grid md:grid-cols-[180px_1fr] items-center">
+              <img src="Assests/carousel_11.jpeg" alt="CyberSmart Tips and Guidelines"
+                class="w-full h-full min-h-[180px] object-cover">
+              <div class="p-5 md:p-6">
+                <h3 class="text-[18px] md:text-[20px] font-bold text-[#4b3f2b] mb-2">
+                  CyberSmart Tips &amp; Guidelines
+                </h3>
+                <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
+                  Creating awareness around safe digital habits, responsibility, and cyber confidence.
+                </p>
+                <a href="learn.html" class="inline-block text-[12px] font-semibold text-[#0f3d91] hover:underline">
+                  Learn More →
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
+          <!-- Card 3 -->
+          <div
+            class="bg-white border border-[#ddd8c8] rounded-[18px] overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal-right">
+            <div class="grid md:grid-cols-[180px_1fr] items-center">
+              <img src="Assests/carousel_5.jpeg" alt="Future Skills Student Corner"
+                class="w-full h-full min-h-[180px] object-cover">
+              <div class="p-5 md:p-6">
+                <h3 class="text-[18px] md:text-[20px] font-bold text-[#4b3f2b] mb-2">
+                  Future Skills Student Corner
+                </h3>
+                <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
+                  Encouraging curiosity, exploration, and everyday learning for future-ready growth.
+                </p>
+                <a href="learn.html" class="inline-block text-[12px] font-semibold text-[#0f3d91] hover:underline">
+                  Learn More →
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- COMMON STYLE -->
-<style>
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  <!-- COMMON STYLE -->
+  <style>
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-  .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-  }
-</style>
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+  </style>
 
 
   <!-- SECTION 7: CSR -->
 
-<section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
+  <section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
 
-  <!-- Soft background glow -->
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
-  </div>
-
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-
-    <!-- Box -->
-    <div class="bg-gradient-to-r from-[#eef4ff] to-[#edf8ea] rounded-[20px] p-8 md:p-12 shadow-[0_6px_18px_rgba(0,0,0,0.06)] text-center reveal border border-[#e2e6d9]">
-
-      <!-- Heading -->
-      <h2 class="text-[24px] md:text-[30px] font-extrabold text-[#0f3d91] mb-4">
-        Partner With Us
-      </h2>
-
-      <!-- Content -->
-      <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mb-6 leading-relaxed">
-        Collaborate through CSR partnerships to create visible and meaningful impact in education and community development.
-      </p>
-
-      <!-- Button -->
-      <a href="sponsors.html" class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[12px] font-semibold px-6 py-2.5 rounded-sm tracking-wide uppercase">
-        Become CSR Partner
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 8: STORIES -->
-<section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
-
-  <!-- Soft background glow -->
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
-  </div>
-
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-
-    <!-- Heading -->
-    <div class="text-center mb-8 reveal">
-      <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91]">
-        Stories
-      </h2>
-      <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mt-4 leading-relaxed">
-        Real stories of transformation from students, volunteers, and communities we have reached.
-      </p>
+    <!-- Soft background glow -->
+    <div class="absolute inset-0 pointer-events-none opacity-30">
+      <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
     </div>
 
-    <!-- Cards -->
-    <div class="grid md:grid-cols-3 gap-5 md:gap-6">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
 
-      <!-- Card 1 -->
-      <div class="bg-white rounded-md border border-[#ddd8c8] p-6 shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-1 text-center">
-        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#eef4ff] flex items-center justify-center text-[#0f3d91] text-xl">
-          <i class="fa-solid fa-quote-left"></i>
+      <!-- Box -->
+      <div
+        class="bg-gradient-to-r from-[#eef4ff] to-[#edf8ea] rounded-[20px] p-8 md:p-12 shadow-[0_6px_18px_rgba(0,0,0,0.06)] text-center reveal border border-[#e2e6d9]">
+
+        <!-- Heading with Lines -->
+        <div class="flex items-center justify-center gap-4 mb-4">
+
+          <!-- Left Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+          <!-- Heading -->
+          <h2 class="text-[24px] md:text-[30px] font-extrabold text-[#0f3d91] whitespace-nowrap">
+            Partner With Us
+          </h2>
+
+          <!-- Right Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
         </div>
-        <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
-          “This guidance gave me confidence to dream bigger and move forward with clarity.”
+
+        <!-- Content -->
+        <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mb-6 leading-relaxed">
+          Collaborate through CSR partnerships to create visible and meaningful impact in education and community
+          development.
         </p>
-        <h4 class="text-[16px] font-bold text-[#4b3f2b]">
-          Student Testimonial
-        </h4>
-      </div>
 
-      <!-- Card 2 -->
-      <div class="bg-white rounded-md border border-[#ddd8c8] p-6 shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-2 text-center">
-        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#edf8ea] flex items-center justify-center text-[#6d8f2f] text-xl">
-          <i class="fa-solid fa-quote-left"></i>
-        </div>
-        <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
-          “Volunteering here showed me how meaningful change begins with one step.”
-        </p>
-        <h4 class="text-[16px] font-bold text-[#4b3f2b]">
-          Volunteer Story
-        </h4>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-white rounded-md border border-[#ddd8c8] p-6 shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-3 text-center">
-        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#fff3e8] flex items-center justify-center text-[#c86d2f] text-xl">
-          <i class="fa-solid fa-quote-left"></i>
-        </div>
-        <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
-          “The awareness sessions created real confidence and participation in our school community.”
-        </p>
-        <h4 class="text-[16px] font-bold text-[#4b3f2b]">
-          School Testimonial
-        </h4>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 9: BLOG -->
-<section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
-
-  <!-- Soft background glow -->
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
-  </div>
-
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-
-    <!-- Heading -->
-    <div class="text-center mb-8 reveal">
-      <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91]">
-        Latest From Our Blog
-      </h2>
-      <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mt-4 leading-relaxed">
-        Insights, updates, and learnings from our journey of impact.
-      </p>
-    </div>
-
-    <!-- Cards -->
-    <div class="grid md:grid-cols-3 gap-5 md:gap-6">
-
-      <!-- Blog 1 -->
-      <article class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-1">
-        <img src="Assests/carousel_9.jpeg" alt="Blog 1" class="w-full h-44 object-cover">
-        <div class="p-5">
-          <p class="text-[11px] font-semibold text-[#6d8f2f] mb-2 uppercase">Education</p>
-
-          <h3 class="text-[16px] md:text-[18px] font-bold text-[#4b3f2b] mb-2 leading-snug">
-            Why Future-Ready Learning Matters
-          </h3>
-
-          <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
-            Preparing students early helps them face tomorrow with stronger confidence and skills.
-          </p>
-
-          <a href="https://blog.sritakshashilagurukul.com/" target="_blank"
-            class="inline-block text-[11px] font-semibold text-[#6d8f2f] hover:underline">
-            Read More →
-          </a>
-        </div>
-      </article>
-
-      <!-- Blog 2 -->
-      <article class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-2">
-        <img src="Assests/carousel_10.jpeg" alt="Blog 2" class="w-full h-44 object-cover">
-        <div class="p-5">
-          <p class="text-[11px] font-semibold text-[#0f3d91] mb-2 uppercase">Community</p>
-
-          <h3 class="text-[16px] md:text-[18px] font-bold text-[#4b3f2b] mb-2 leading-snug">
-            How Awareness Builds Stronger Communities
-          </h3>
-
-          <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
-            Awareness creates responsibility, safety, and long-term positive action.
-          </p>
-
-          <a href="https://blog.sritakshashilagurukul.com/" target="_blank"
-            class="inline-block text-[11px] font-semibold text-[#0f3d91] hover:underline">
-            Read More →
-          </a>
-        </div>
-      </article>
-
-      <!-- Blog 3 -->
-      <article class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-3">
-        <img src="Assests/carousel_11.jpeg" alt="Blog 3" class="w-full h-44 object-cover">
-        <div class="p-5">
-          <p class="text-[11px] font-semibold text-[#c86d2f] mb-2 uppercase">Leadership</p>
-
-          <h3 class="text-[16px] md:text-[18px] font-bold text-[#4b3f2b] mb-2 leading-snug">
-            Youth Leadership and Long-Term Impact
-          </h3>
-
-          <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
-            When young leaders are empowered, communities grow stronger and more resilient.
-          </p>
-
-          <a href="https://blog.sritakshashilagurukul.com/" target="_blank"
-            class="inline-block text-[11px] font-semibold text-[#c86d2f] hover:underline">
-            Read More →
-          </a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- SECTION: FINAL CTA -->
-<section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
-
-  <!-- Soft glow -->
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
-  </div>
-
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-
-    <div class="bg-gradient-to-r from-[#eef4ff] to-[#edf8ea] rounded-[20px] p-8 md:p-12 text-center border border-[#e2e6d9] shadow-[0_6px_18px_rgba(0,0,0,0.06)] reveal">
-
-      <!-- Heading -->
-      <h2 class="text-[24px] md:text-[30px] font-extrabold text-[#0f3d91] mb-4">
-        Join Us in Building a Better Future
-      </h2>
-
-      <!-- Content -->
-      <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mb-6 leading-relaxed">
-        Every contribution, partnership, and learning step helps shape a stronger tomorrow.
-      </p>
-
-      <!-- Buttons -->
-      <div class="flex flex-wrap justify-center gap-3">
-
-        <a href="contact.html"
-          class="inline-block bg-white border border-[#dcd6c5] text-[#4b3f2b] text-[12px] font-semibold px-5 py-2.5 rounded-sm hover:bg-[#f3f0e6]">
-          Contact Us
-        </a>
-
-        <a href="donate.html"
-          class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[12px] font-semibold px-5 py-2.5 rounded-sm tracking-wide uppercase">
-          Support Now
+        <!-- Button -->
+        <a href="sponsors.html"
+          class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[12px] font-semibold px-6 py-2.5 rounded-sm tracking-wide uppercase">
+          Become CSR Partner
         </a>
 
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- SECTION 8: STORIES -->
+  <section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
+
+    <!-- Soft background glow -->
+    <div class="absolute inset-0 pointer-events-none opacity-30">
+      <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+
+      <!-- Heading -->
+      <div class="text-center mb-8 reveal">
+
+        <!-- Heading with Lines -->
+        <div class="flex items-center justify-center gap-4 mb-3">
+
+          <!-- Left Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+          <!-- Heading -->
+          <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91] whitespace-nowrap">
+            Stories
+          </h2>
+
+          <!-- Right Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+        </div>
+
+        <!-- Sub Text -->
+        <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mt-4 leading-relaxed">
+          Real stories of transformation from students, volunteers, and communities we have reached.
+        </p>
+
+      </div>
+
+      <!-- Cards -->
+      <div class="grid md:grid-cols-3 gap-5 md:gap-6">
+
+        <!-- Card 1 -->
+        <div
+          class="bg-white rounded-md border border-[#ddd8c8] p-6 shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-1 text-center">
+          <div
+            class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#eef4ff] flex items-center justify-center text-[#0f3d91] text-xl">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
+            “This guidance gave me confidence to dream bigger and move forward with clarity.”
+          </p>
+          <h4 class="text-[16px] font-bold text-[#4b3f2b]">
+            Student Testimonial
+          </h4>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-white rounded-md border border-[#ddd8c8] p-6 shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-2 text-center">
+          <div
+            class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#edf8ea] flex items-center justify-center text-[#6d8f2f] text-xl">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
+            “Volunteering here showed me how meaningful change begins with one step.”
+          </p>
+          <h4 class="text-[16px] font-bold text-[#4b3f2b]">
+            Volunteer Story
+          </h4>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-white rounded-md border border-[#ddd8c8] p-6 shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-3 text-center">
+          <div
+            class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#fff3e8] flex items-center justify-center text-[#c86d2f] text-xl">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
+            “The awareness sessions created real confidence and participation in our school community.”
+          </p>
+          <h4 class="text-[16px] font-bold text-[#4b3f2b]">
+            School Testimonial
+          </h4>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: BLOG -->
+  <section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
+
+    <!-- Soft background glow -->
+    <div class="absolute inset-0 pointer-events-none opacity-30">
+      <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+
+      <!-- Heading -->
+      <div class="text-center mb-8 reveal">
+
+        <!-- Heading with Lines -->
+        <div class="flex items-center justify-center gap-4 mb-3">
+
+          <!-- Left Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+          <!-- Heading -->
+          <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91] whitespace-nowrap">
+            Latest From Our Blog
+          </h2>
+
+          <!-- Right Line -->
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+        </div>
+
+        <!-- Sub Text -->
+        <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mt-4 leading-relaxed">
+          Insights, updates, and learnings from our journey of impact.
+        </p>
+
+      </div>
+
+      <!-- Cards -->
+      <div class="grid md:grid-cols-3 gap-5 md:gap-6">
+
+        <!-- Blog 1 -->
+        <article
+          class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-1">
+          <img src="Assests/carousel_9.jpeg" alt="Blog 1" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <p class="text-[11px] font-semibold text-[#6d8f2f] mb-2 uppercase">Education</p>
+
+            <h3 class="text-[16px] md:text-[18px] font-bold text-[#4b3f2b] mb-2 leading-snug">
+              Why Future-Ready Learning Matters
+            </h3>
+
+            <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
+              Preparing students early helps them face tomorrow with stronger confidence and skills.
+            </p>
+
+            <a href="https://blog.sritakshashilagurukul.com/" target="_blank"
+              class="inline-block text-[11px] font-semibold text-[#6d8f2f] hover:underline">
+              Read More →
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog 2 -->
+        <article
+          class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-2">
+          <img src="Assests/carousel_10.jpeg" alt="Blog 2" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <p class="text-[11px] font-semibold text-[#0f3d91] mb-2 uppercase">Community</p>
+
+            <h3 class="text-[16px] md:text-[18px] font-bold text-[#4b3f2b] mb-2 leading-snug">
+              How Awareness Builds Stronger Communities
+            </h3>
+
+            <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
+              Awareness creates responsibility, safety, and long-term positive action.
+            </p>
+
+            <a href="https://blog.sritakshashilagurukul.com/" target="_blank"
+              class="inline-block text-[11px] font-semibold text-[#0f3d91] hover:underline">
+              Read More →
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog 3 -->
+        <article
+          class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-3">
+          <img src="Assests/carousel_11.jpeg" alt="Blog 3" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <p class="text-[11px] font-semibold text-[#c86d2f] mb-2 uppercase">Leadership</p>
+
+            <h3 class="text-[16px] md:text-[18px] font-bold text-[#4b3f2b] mb-2 leading-snug">
+              Youth Leadership and Long-Term Impact
+            </h3>
+
+            <p class="text-[12px] text-[#7a7468] leading-relaxed mb-4">
+              When young leaders are empowered, communities grow stronger and more resilient.
+            </p>
+
+            <a href="https://blog.sritakshashilagurukul.com/" target="_blank"
+              class="inline-block text-[11px] font-semibold text-[#c86d2f] hover:underline">
+              Read More →
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: FINAL CTA -->
+  <section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
+
+    <!-- Soft glow -->
+    <div class="absolute inset-0 pointer-events-none opacity-30">
+      <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+
+      <div
+        class="bg-gradient-to-r from-[#eef4ff] to-[#edf8ea] rounded-[20px] p-8 md:p-12 text-center border border-[#e2e6d9] shadow-[0_6px_18px_rgba(0,0,0,0.06)] reveal">
+
+        <!-- Heading -->
+        <h2 class="text-[24px] md:text-[30px] font-extrabold text-[#0f3d91] mb-4">
+          Join Us in Building a Better Future
+        </h2>
+
+        <!-- Content -->
+        <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mb-6 leading-relaxed">
+          Every contribution, partnership, and learning step helps shape a stronger tomorrow.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex flex-wrap justify-center gap-3">
+
+          <a href="contact.html"
+            class="inline-block bg-white border border-[#dcd6c5] text-[#4b3f2b] text-[12px] font-semibold px-5 py-2.5 rounded-sm hover:bg-[#f3f0e6]">
+            Contact Us
+          </a>
+
+          <a href="donate.html"
+            class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[12px] font-semibold px-5 py-2.5 rounded-sm tracking-wide uppercase">
+            Donate Now
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div id="site-footer"></div>
 
@@ -986,4 +1270,5 @@
     statEls.forEach((el) => statObserver.observe(el));
   </script>
 </body>
+
 </html>

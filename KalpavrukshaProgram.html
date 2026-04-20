@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the programs of Sri Takshashila Gurukul focused on student growth, future readiness, and community impact." />
+  <title>Programs | Sri Takshashila Gurukul</title>
+  <link rel="icon" href="Assests/Logo.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#001e8c',
+            accent: '#df5030',
+            warm: '#f3d8b2',
+            darkblue: '#0f3d91',
+            softbg: '#f8f9fc'
+          },
+          fontFamily: {
+            sans: ['Outfit', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 12px 35px rgba(0,0,0,0.08)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-lift {
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.10);
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased text-gray-800 bg-white">
+  <div id="site-header"></div>
+
+  <!-- HERO SECTION -->
+  <section class="relative py-16 md:py-24 bg-gradient-to-br from-primary/95 to-primary text-white overflow-hidden">
+    <div class="absolute inset-0 bg-[url('Assests/carousel_5.jpeg')] bg-cover bg-center opacity-20"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-widest mb-3">
+        Our Programs
+      </span>
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+        Programs That Create Impact
+      </h1>
+
+      <p class="text-lg md:text-2xl text-white/90 max-w-3xl mx-auto">
+        Empowering students with learning, guidance, and future-ready opportunities.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROGRAMS SECTION -->
+  <section class="py-16 md:py-24 bg-softbg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+      <!-- Heading -->
+      <div class="text-center mb-14 reveal">
+        <span class="inline-block text-accent font-semibold uppercase tracking-[0.2em] text-sm mb-3">
+          Programs
+        </span>
+
+        <div class="flex items-center justify-center gap-3 md:gap-4 mb-3">
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+          <h2 class="text-[24px] md:text-[32px] font-extrabold text-darkblue leading-tight">
+            Designed for Holistic and Lasting Impact
+          </h2>
+
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+        </div>
+
+        <p class="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
+          Each initiative reflects our commitment to education, responsibility, and transformation.
+        </p>
+      </div>
+
+      <div class="space-y-10">
+
+        <!-- Program 1 -->
+        <div class="group bg-white rounded-[2rem] shadow-soft border border-gray-100 overflow-hidden reveal">
+          <div class="grid lg:grid-cols-12">
+
+            <div class="lg:col-span-4 bg-gradient-to-br from-primary to-[#1734b5] text-white p-8 md:p-10 flex flex-col justify-between">
+              <div>
+                <div class="w-16 h-16 rounded-2xl bg-white/15 flex items-center justify-center text-3xl mb-6">
+                  <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <p class="text-warm text-sm uppercase tracking-widest font-semibold mb-3">
+                  Future Ready Students
+                </p>
+
+                <h3 class="text-2xl md:text-3xl font-bold leading-snug">
+                  Kalpavruksha Program
+                </h3>
+              </div>
+
+              <div class="mt-8 text-white/85 text-sm leading-relaxed">
+                Building strong academic foundations and preparing students to thrive with confidence,
+                curiosity, and direction.
+              </div>
+            </div>
+
+            <div class="lg:col-span-8 p-8 md:p-10">
+              <div class="grid sm:grid-cols-2 gap-5">
+
+                <div class="rounded-2xl bg-[#f8faff] border border-blue-100 p-5 card-lift">
+                  <h4 class="font-semibold text-darkblue mb-2">Scholarships</h4>
+                  <p class="text-sm text-gray-600">
+                    Financial support for deserving students to continue learning without barriers.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl bg-[#f8faff] border border-blue-100 p-5 card-lift">
+                  <h4 class="font-semibold text-darkblue mb-2">STEM Learning</h4>
+                  <p class="text-sm text-gray-600">
+                    Exposure to robotics, AI, science, and innovation-led education.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl bg-[#f8faff] border border-blue-100 p-5 card-lift">
+                  <h4 class="font-semibold text-darkblue mb-2">Career Guidance</h4>
+                  <p class="text-sm text-gray-600">
+                    Counseling, mentoring, and expert sessions to shape future pathways.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl bg-[#f8faff] border border-blue-100 p-5 card-lift">
+                  <h4 class="font-semibold text-darkblue mb-2">Skill Development</h4>
+                  <p class="text-sm text-gray-600">
+                    Life skills, leadership exposure, and digital confidence for tomorrow.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center reveal">
+
+      <span class="inline-block text-accent text-sm font-semibold uppercase tracking-widest mb-3">
+        Join Us
+      </span>
+
+      <div class="flex items-center justify-center gap-3 md:gap-4 mb-4">
+        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+        <h2 class="text-[24px] md:text-[32px] font-extrabold text-darkblue">
+          Be Part of the Journey
+        </h2>
+
+        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+      </div>
+
+      <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+        Support our mission through volunteering, collaboration, or partnership and help us create stronger futures for students.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="contact-us.html" class="inline-flex items-center gap-2 px-7 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition">
+          <i class="fa-solid fa-paper-plane"></i>
+          Contact Us
+        </a>
+
+        <a href="about-us.html" class="inline-flex items-center gap-2 px-7 py-3 border border-gray-300 text-darkblue font-semibold rounded-xl hover:bg-gray-50 transition">
+          <i class="fa-solid fa-arrow-right"></i>
+          Learn More
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="includes/load-header-footer.js"></script>
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach((el) => revealObserver.observe(el));
+  </script>
+</body>
+</html>

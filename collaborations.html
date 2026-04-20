@@ -6,59 +6,170 @@
   <meta name="description" content="CSR Collaborations – Sri Takshashila Gurukul" />
   <title>CSR Collaborations | Sri Takshashila Gurukul</title>
   <link rel="icon" href="Assests/Logo.png" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme: { extend: { colors: { primary: '#001e8c' } } } };</script>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#001e8c',
+            darkblue: '#0f3d91',
+            accent: '#df5030',
+            softbg: '#f8f9fc'
+          },
+          fontFamily: {
+            sans: ['Outfit', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 12px 35px rgba(0,0,0,0.08)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-lift {
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+    }
+  </style>
 </head>
+
 <body class="font-sans antialiased text-gray-800 bg-white">
   <div id="site-header"></div>
 
-  <!-- Page hero -->
+  <!-- HERO -->
   <section class="relative py-16 md:py-24 bg-gradient-to-br from-primary/95 to-primary text-white overflow-hidden">
     <div class="absolute inset-0 bg-[url('Assests/carousel_5.jpeg')] bg-cover bg-center opacity-20"></div>
+
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
-      <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-widest mb-3">Partners</span>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">CSR &amp; Collaborations</h1>
-      <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">We thank our partners and collaborators for their support.</p>
+      <span class="inline-block text-white/90 text-sm font-semibold uppercase tracking-widest mb-3">
+        Partners
+      </span>
+
+      <div class="flex items-center justify-center gap-3 md:gap-4 mb-4">
+        <div class="w-12 md:w-20 h-[2px] bg-white/40 rounded-full"></div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          CSR &amp; Collaborations
+        </h1>
+
+        <div class="w-12 md:w-20 h-[2px] bg-white/40 rounded-full"></div>
+      </div>
+
+      <p class="text-lg md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+        We thank our partners and collaborators for their support in creating meaningful impact.
+      </p>
     </div>
   </section>
 
-  <main class="max-w-6xl mx-auto px-4 py-16">
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-center min-h-[180px]">
-        <img src="Assests/keitherns.png" alt="Kietherns" class="max-h-16 w-auto object-contain mb-3" onerror="this.style.display='none'" />
-        <span class="font-semibold text-gray-900">Kietherns</span>
+  <!-- MAIN -->
+  <main class="bg-softbg py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+      <!-- Heading -->
+      <div class="text-center mb-14 reveal">
+        <span class="inline-block text-accent text-sm font-semibold uppercase tracking-[3px] mb-3">
+          Our Network
+        </span>
+
+        <div class="flex items-center justify-center gap-3 md:gap-4 mb-4">
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+
+          <h2 class="text-[24px] md:text-[32px] font-extrabold text-darkblue leading-tight text-center">
+            Trusted Partners &amp; Collaborators
+          </h2>
+
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+        </div>
+
+        <p class="text-gray-600 max-w-2xl mx-auto text-[14px] md:text-[16px] leading-relaxed">
+          Together with institutions, organizations, and supporting partners, we continue to strengthen education, community outreach, and social impact.
+        </p>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-center min-h-[180px]">
-        <img src="Assests/Arnima.png" alt="Arnima" class="max-h-16 w-auto object-contain mb-3" onerror="this.style.display='none'" />
-        <span class="font-semibold text-gray-900">Arnima</span>
+
+      <!-- Logos Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+
+        <div class="bg-white rounded-[24px] p-6 md:p-8 shadow-soft border border-gray-100 flex flex-col items-center justify-center text-center min-h-[190px] card-lift reveal">
+          <img src="Assests/keitherns.png" alt="Kietherns" class="max-h-16 w-auto object-contain mb-4" onerror="this.style.display='none'" />
+          <h3 class="font-bold text-darkblue text-[18px]">Kietherns</h3>
+        </div>
+
+        <div class="bg-white rounded-[24px] p-6 md:p-8 shadow-soft border border-gray-100 flex flex-col items-center justify-center text-center min-h-[190px] card-lift reveal">
+          <img src="Assests/Arnima.png" alt="Arnima" class="max-h-16 w-auto object-contain mb-4" onerror="this.style.display='none'" />
+          <h3 class="font-bold text-darkblue text-[18px]">Arnima</h3>
+        </div>
+
+        <div class="bg-white rounded-[24px] p-6 md:p-8 shadow-soft border border-gray-100 flex flex-col items-center justify-center text-center min-h-[190px] card-lift reveal">
+          <img src="Assests/PureIndiaTrust.png" alt="Pure India Trust" class="max-h-16 w-auto object-contain mb-4" onerror="this.style.display='none'" />
+          <h3 class="font-bold text-darkblue text-[18px]">Pure India Trust</h3>
+        </div>
+
+        <div class="bg-white rounded-[24px] p-6 md:p-8 shadow-soft border border-gray-100 flex flex-col items-center justify-center text-center min-h-[190px] card-lift reveal">
+          <img src="Assests/LionsClub.jpg" alt="Lions Club" class="max-h-16 w-auto object-contain mb-4" onerror="this.style.display='none'" />
+          <h3 class="font-bold text-darkblue text-[18px]">Lions Club</h3>
+        </div>
+
+        <div class="bg-white rounded-[24px] p-6 md:p-8 shadow-soft border border-gray-100 flex flex-col items-center justify-center text-center min-h-[190px] card-lift reveal">
+          <img src="Assests/WeReach.jpg" alt="WeReach" class="max-h-16 w-auto object-contain mb-4" onerror="this.style.display='none'" />
+          <h3 class="font-bold text-darkblue text-[18px]">WeReach</h3>
+        </div>
+
+        <div class="bg-white rounded-[24px] p-6 md:p-8 shadow-soft border border-gray-100 flex flex-col items-center justify-center text-center min-h-[190px] card-lift reveal">
+          <img src="Assests/BookMyPooja.png" alt="BookMyPooja" class="max-h-16 w-auto object-contain mb-4" onerror="this.style.display='none'" />
+          <h3 class="font-bold text-darkblue text-[18px]">BookMyPooja</h3>
+        </div>
+
+        <div class="bg-white rounded-[24px] p-6 md:p-8 shadow-soft border border-gray-100 flex flex-col items-center justify-center text-center min-h-[190px] card-lift reveal md:col-span-3 max-w-sm mx-auto w-full">
+          <img src="Assests/Ennovi.png" alt="ENNOVI" class="max-h-16 w-auto object-contain mb-4" onerror="this.style.display='none'" />
+          <h3 class="font-bold text-darkblue text-[18px]">ENNOVI</h3>
+        </div>
+
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-center min-h-[180px]">
-        <img src="Assests/PureIndiaTrust.png" alt="Pure India Trust" class="max-h-16 w-auto object-contain mb-3" onerror="this.style.display='none'" />
-        <span class="font-semibold text-gray-900">Pure India Trust</span>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-center min-h-[180px]">
-        <img src="Assests/LionsClub.jpg" alt="Lions Club" class="max-h-16 w-auto object-contain mb-3" onerror="this.style.display='none'" />
-        <span class="font-semibold text-gray-900">Lions Club</span>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-center min-h-[180px]">
-        <img src="Assests/WeReach.jpg" alt="WeReach" class="max-h-16 w-auto object-contain mb-3" onerror="this.style.display='none'" />
-        <span class="font-semibold text-gray-900">WeReach</span>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-center min-h-[180px]">
-        <img src="Assests/BookMyPooja.png" alt="BookMyPooja" class="max-h-16 w-auto object-contain mb-3" onerror="this.style.display='none'" />
-        <span class="font-semibold text-gray-900">BookMyPooja</span>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-lg flex flex-col items-center justify-center min-h-[180px] md:col-span-2 md:col-start-2">
-        <img src="Assests/Ennovi.png" alt="ENNOVI" class="max-h-16 w-auto object-contain mb-3" onerror="this.style.display='none'" />
-        <span class="font-semibold text-gray-900">ENNOVI</span>
-      </div>
+
     </div>
   </main>
 
   <div id="site-footer"></div>
 
   <script src="includes/load-header-footer.js"></script>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach((el) => revealObserver.observe(el));
+  </script>
 </body>
 </html>

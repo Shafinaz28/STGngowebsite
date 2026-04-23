@@ -1,305 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Impact Catalyst | Sri Takshashila Gurukul</title>
+<title>Learn & Guidance Platform | Sri Takshashila Gurukul</title>
 
-  <meta
-    name="description"
-    content="Impact Catalyst by Sri Takshashila Gurukul develops volunteers, changemakers, youth leaders, and community impact through leadership-driven programs."
-  />
+<meta
+name="description"
+content="Learn & Guidance Platform by Sri Takshashila Gurukul helps students discover strengths, learn skills, get expert guidance, and achieve future success."
+/>
 
-  <link rel="icon" href="Assests/Logo.png" />
+<link rel="icon" href="Assests/Logo.png"/>
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
+<script>
+tailwind.config = {
+theme:{
+extend:{
+ colors: {
             primary: '#001e8c',
             accent: '#df5030',
-            darkblue: '#0f3d91',
-            warm: '#f3d8b2'
+            warm: '#f3d8b2',
+            darkblue: '#0B1730',
+            softbg: '#f8f7f4',
           },
-          fontFamily: {
-            sans: ['Outfit', 'system-ui', 'sans-serif']
-          },
-          boxShadow: {
-            soft: '0 12px 35px rgba(0,0,0,0.08)'
-          }
-        }
-      }
-    }
-  </script>
+fontFamily:{
+sans:['Outfit','sans-serif']
+},
+boxShadow:{
+soft:'0 12px 35px rgba(0,0,0,0.08)'
+}
+}
+}
+}
+</script>
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-  <style>
-    .reveal{
-      opacity:0;
-      transform:translateY(30px);
-      transition:all .8s ease;
-    }
+<style>
+body{
+font-family:'Outfit',sans-serif;
+background:#f5f5f1;
+}
 
-    .reveal.show{
-      opacity:1;
-      transform:translateY(0);
-    }
-  </style>
+.line-title:before,
+.line-title:after{
+content:"";
+display:block;
+width:45px;
+height:2px;
+background:#c7b58d;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(25px);
+transition:.8s ease;
+}
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card-hover{
+transition:.3s ease;
+}
+.card-hover:hover{
+transform:translateY(-5px);
+}
+</style>
 </head>
 
-<body class="font-sans antialiased text-gray-800 bg-white">
+<body class="text-gray-800">
 
-  <!-- Header -->
-  <div id="site-header"></div>
+<div id="site-header"></div>
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden bg-gradient-to-br from-accent to-[#f06f4d] text-white py-16 md:py-24">
+<!-- HERO SECTION -->
+<section class="py-14 md:py-20 bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
 
-    <div class="absolute inset-0 bg-[url('Assests/impactbg.jpg')] bg-cover bg-center opacity-10"></div>
+    <p class="text-[#b9c8ff] text-sm font-semibold uppercase tracking-[0.18em] mb-3">
+      Our Programs
+    </p>
 
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 text-center">
+    <h1 class="text-3xl md:text-5xl font-extrabold mb-4">
+      Learn &amp; Guidance Platform
+    </h1>
 
-      <span class="inline-block text-[#fff0ea] text-sm font-semibold uppercase tracking-[3px] mb-3">
-        Volunteers + Leadership
-      </span>
+    <p class="max-w-3xl mx-auto text-[15px] md:text-[17px] text-white/85 leading-relaxed">
+      A digital platform that helps students discover strengths, learn essential skills, and receive the right guidance for a brighter future.
+    </p>
 
-      <div class="flex items-center justify-center gap-3 md:gap-4 mb-4">
+  </div>
+</section>
 
-        <div class="w-12 md:w-20 h-[2px] bg-white/40 rounded-full"></div>
+<!-- SECTION 1 : JOURNEY -->
+<section class="py-14 md:py-20 bg-softbg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <h1 class="text-[28px] md:text-[48px] font-extrabold leading-tight">
-          Impact Catalyst
-        </h1>
-
-        <div class="w-12 md:w-20 h-[2px] bg-white/40 rounded-full"></div>
-
-      </div>
-
-      <p class="max-w-3xl mx-auto text-white/90 text-[15px] md:text-[20px] leading-relaxed">
-        Turning individuals into active contributors, changemakers, and leaders who multiply impact.
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-4xl font-extrabold text-darkblue mb-3">
+        Learn. Discover. Decide. Succeed.
+      </h2>
+      <p class="max-w-2xl mx-auto text-gray-600">
+        A guided student journey designed to help learners build confidence and achieve future success.
       </p>
-
     </div>
 
-  </section>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-5">
 
-  <!-- ABOUT -->
-  <section class="py-16 md:py-20 bg-[#fffaf8]">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-
-      <div class="grid lg:grid-cols-2 gap-8 items-center">
-
-        <!-- Left -->
-        <div class="reveal">
-
-          <span class="inline-block text-accent text-sm font-semibold uppercase tracking-[3px] mb-3">
-            About Program
-          </span>
-
-          <h2 class="text-[26px] md:text-[36px] font-extrabold text-darkblue leading-tight mb-4">
-            Creating Leaders Who Drive Change
-          </h2>
-
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Impact Catalyst transforms passionate individuals into action-oriented leaders through
-            structured volunteering and leadership opportunities.
-          </p>
-
-          <p class="text-gray-600 leading-relaxed mb-6">
-            By building confidence, ownership, communication, and service mindset, we create a
-            network of changemakers who expand impact across schools, colleges, and communities.
-          </p>
-
-          <div class="space-y-3 text-sm text-gray-700">
-
-            <div class="flex gap-3">
-              <i class="fa-solid fa-circle-check text-accent mt-1"></i>
-              <span>Volunteer growth and training</span>
-            </div>
-
-            <div class="flex gap-3">
-              <i class="fa-solid fa-circle-check text-accent mt-1"></i>
-              <span>Youth leadership development</span>
-            </div>
-
-            <div class="flex gap-3">
-              <i class="fa-solid fa-circle-check text-accent mt-1"></i>
-              <span>Community impact through action</span>
-            </div>
-
-          </div>
-
+      <div class="bg-white rounded-2xl shadow-soft p-6 text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-primary text-white flex items-center justify-center text-2xl">
+          <i class="fa-solid fa-gamepad"></i>
         </div>
+        <h3 class="font-black text-primary mt-4 text-sm uppercase">Discover</h3>
+        <p class="text-xs text-gray-500 mt-2">Find strengths & career interests.</p>
+      </div>
 
-        <!-- Right -->
-        <div class="reveal">
-          <div class="rounded-[28px] overflow-hidden shadow-soft border border-orange-100">
-            <img
-              src="Assests/carousel_4.jpeg"
-              alt="Impact Catalyst"
-              class="w-full h-[420px] object-cover"
-            />
-          </div>
+      <div class="bg-white rounded-2xl shadow-soft p-6 text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-green-600 text-white flex items-center justify-center text-2xl">
+          <i class="fa-solid fa-book-open"></i>
         </div>
+        <h3 class="font-black text-green-700 mt-4 text-sm uppercase">Learn</h3>
+        <p class="text-xs text-gray-500 mt-2">Learn through gamified courses.</p>
+      </div>
 
+      <div class="bg-white rounded-2xl shadow-soft p-6 text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-purple-600 text-white flex items-center justify-center text-2xl">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <h3 class="font-black text-purple-700 mt-4 text-sm uppercase">Guide</h3>
+        <p class="text-xs text-gray-500 mt-2">Receive counseling & support.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-soft p-6 text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-orange-500 text-white flex items-center justify-center text-2xl">
+          <i class="fa-solid fa-chart-column"></i>
+        </div>
+        <h3 class="font-black text-orange-600 mt-4 text-sm uppercase">Grow</h3>
+        <p class="text-xs text-gray-500 mt-2">Build confidence & skills.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-soft p-6 text-center col-span-2 md:col-span-1">
+        <div class="w-16 h-16 mx-auto rounded-full bg-sky-600 text-white flex items-center justify-center text-2xl">
+          <i class="fa-solid fa-bullseye"></i>
+        </div>
+        <h3 class="font-black text-sky-700 mt-4 text-sm uppercase">Succeed</h3>
+        <p class="text-xs text-gray-500 mt-2">Achieve goals & success.</p>
       </div>
 
     </div>
-  </section>
 
-  <!-- INITIATIVES -->
-  <section class="py-16 md:py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+  </div>
+</section>
 
-      <!-- Heading -->
-      <div class="text-center mb-14 reveal">
+<!-- SECTION 2 : WHAT YOU GET -->
+<section class="py-14 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <span class="inline-block text-accent text-sm font-semibold uppercase tracking-[3px] mb-3">
-          Key Initiatives
-        </span>
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-4xl font-extrabold text-darkblue mb-3">
+        What You Get
+      </h2>
+      <p class="max-w-2xl mx-auto text-gray-600">
+        Practical tools, guided learning and future-focused support for every learner.
+      </p>
+    </div>
 
-        <div class="flex items-center justify-center gap-3 md:gap-4 mb-4">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-
-          <h2 class="text-[24px] md:text-[32px] font-extrabold text-darkblue">
-            Leadership & Volunteer Programs
-          </h2>
-
-          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-
-        </div>
-
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Practical programs designed to build contributors, ambassadors, and future leaders.
-        </p>
-
+      <div class="bg-[#eef4ff] rounded-2xl p-6 shadow-soft">
+        <h3 class="font-black text-primary text-sm uppercase mb-2">Gamified Learning</h3>
+        <p class="text-sm text-gray-600">Interactive quizzes, tasks & challenges.</p>
       </div>
 
-      <!-- Cards -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-[#edf7de] rounded-2xl p-6 shadow-soft">
+        <h3 class="font-black text-green-700 text-sm uppercase mb-2">Learning Resources</h3>
+        <p class="text-sm text-gray-600">Life skills, study support & guides.</p>
+      </div>
 
-        <div class="bg-[#fff8f5] border border-orange-100 rounded-3xl p-6 shadow-soft reveal">
-          <div class="text-accent text-2xl mb-4">
-            <i class="fa-solid fa-handshake-angle"></i>
-          </div>
-          <h3 class="font-bold text-darkblue text-xl mb-3">Volunteer Training</h3>
-          <p class="text-gray-600">Prepare volunteers with communication, responsibility, and execution skills.</p>
-        </div>
+      <div class="bg-[#f3ecfb] rounded-2xl p-6 shadow-soft">
+        <h3 class="font-black text-purple-700 text-sm uppercase mb-2">Podcast & Awareness</h3>
+        <p class="text-sm text-gray-600">Motivational talks & awareness sessions.</p>
+      </div>
 
-        <div class="bg-[#fff8f5] border border-orange-100 rounded-3xl p-6 shadow-soft reveal">
-          <div class="text-accent text-2xl mb-4">
-            <i class="fa-solid fa-chess-king"></i>
-          </div>
-          <h3 class="font-bold text-darkblue text-xl mb-3">Leadership Development</h3>
-          <p class="text-gray-600">Develop confident young leaders who can guide teams and initiatives.</p>
-        </div>
-
-        <div class="bg-[#fff8f5] border border-orange-100 rounded-3xl p-6 shadow-soft reveal">
-          <div class="text-accent text-2xl mb-4">
-            <i class="fa-solid fa-bullhorn"></i>
-          </div>
-          <h3 class="font-bold text-darkblue text-xl mb-3">Youth Ambassador Program</h3>
-          <p class="text-gray-600">Create student ambassadors who inspire peers and spread positive action.</p>
-        </div>
-
-        <div class="bg-[#fff8f5] border border-orange-100 rounded-3xl p-6 shadow-soft reveal">
-          <div class="text-accent text-2xl mb-4">
-            <i class="fa-solid fa-building-columns"></i>
-          </div>
-          <h3 class="font-bold text-darkblue text-xl mb-3">Campus Chapters</h3>
-          <p class="text-gray-600">Establish active student communities inside schools and colleges.</p>
-        </div>
-
-        <div class="bg-[#fff8f5] border border-orange-100 rounded-3xl p-6 shadow-soft reveal md:col-span-2 lg:col-span-2">
-          <div class="text-accent text-2xl mb-4">
-            <i class="fa-solid fa-users-rays"></i>
-          </div>
-          <h3 class="font-bold text-darkblue text-xl mb-3">Community Leaders Initiative</h3>
-          <p class="text-gray-600">
-            Identify and empower local changemakers who can solve real community problems and create sustainable impact.
-          </p>
-        </div>
-
+      <div class="bg-[#fff4e4] rounded-2xl p-6 shadow-soft">
+        <h3 class="font-black text-orange-600 text-sm uppercase mb-2">Career Guidance</h3>
+        <p class="text-sm text-gray-600">Mentor connect & career roadmaps.</p>
       </div>
 
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="py-16 md:py-20 bg-[#fffaf8]">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center reveal">
+  </div>
+</section>
 
-      <span class="inline-block text-accent text-sm font-semibold uppercase tracking-[3px] mb-3">
-        Join The Movement
-      </span>
+<!-- SECTION 3 : HOW IT WORKS -->
+<section class="py-14 md:py-20 bg-softbg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-      <div class="flex items-center justify-center gap-3 md:gap-4 mb-4">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-4xl font-extrabold text-darkblue mb-3">
+        How It Works
+      </h2>
+    </div>
 
-        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-5 text-center">
 
-        <h2 class="text-[24px] md:text-[32px] font-extrabold text-darkblue">
-          Become A Catalyst For Change
+      <div class="bg-white rounded-2xl p-6 shadow-soft">
+        <div class="w-12 h-12 mx-auto rounded-full bg-[#eef4ff] text-primary flex items-center justify-center">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <p class="text-sm font-bold mt-3">Take Assessment</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-soft">
+        <div class="w-12 h-12 mx-auto rounded-full bg-[#edf7de] text-green-700 flex items-center justify-center">
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+        <p class="text-sm font-bold mt-3">Learn</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-soft">
+        <div class="w-12 h-12 mx-auto rounded-full bg-[#f3ecfb] text-purple-700 flex items-center justify-center">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <p class="text-sm font-bold mt-3">Get Guidance</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-soft">
+        <div class="w-12 h-12 mx-auto rounded-full bg-[#fff4e4] text-orange-600 flex items-center justify-center">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <p class="text-sm font-bold mt-3">Track Growth</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-soft col-span-2 md:col-span-1">
+        <div class="w-12 h-12 mx-auto rounded-full bg-[#e6fbff] text-sky-700 flex items-center justify-center">
+          <i class="fa-solid fa-bullseye"></i>
+        </div>
+        <p class="text-sm font-bold mt-3">Achieve Goals</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 4 : PLATFORM HIGHLIGHTS -->
+<section class="py-14 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-4xl font-extrabold text-darkblue mb-3">
+        Platform Highlights
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 text-center">
+
+      <div class="bg-softbg rounded-2xl p-6 shadow-soft">
+        <i class="fa-solid fa-mobile-screen text-3xl text-primary"></i>
+        <p class="text-sm font-bold mt-3">Web & Mobile Access</p>
+      </div>
+
+      <div class="bg-softbg rounded-2xl p-6 shadow-soft">
+        <i class="fa-solid fa-brain text-3xl text-purple-700"></i>
+        <p class="text-sm font-bold mt-3">AI Recommendations</p>
+      </div>
+
+      <div class="bg-softbg rounded-2xl p-6 shadow-soft">
+        <i class="fa-solid fa-lock text-3xl text-green-700"></i>
+        <p class="text-sm font-bold mt-3">Safe & Secure</p>
+      </div>
+
+      <div class="bg-softbg rounded-2xl p-6 shadow-soft">
+        <i class="fa-solid fa-language text-3xl text-orange-600"></i>
+        <p class="text-sm font-bold mt-3">Multi-language</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+       <!-- IMPACT SECTION -->
+    <section class="py-14 md:py-20 bg-green-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 class="text-center text-2xl md:text-4xl font-extrabold uppercase mb-10">
+          Our Impact
         </h2>
 
-        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <div class="text-3xl mb-2">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-black">5000+</h3>
+            <p class="text-sm text-white/80">Students Impacted</p>
+          </div>
 
+          <div>
+            <div class="text-3xl mb-2">
+              <i class="fa-solid fa-school"></i>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-black">60+</h3>
+            <p class="text-sm text-white/80">Schools Reached</p>
+          </div>
+
+          <div>
+            <div class="text-3xl mb-2">
+              <i class="fa-solid fa-tree-city"></i>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-black">26+</h3>
+            <p class="text-sm text-white/80">Communities Reached</p>
+          </div>
+
+          <div>
+            <div class="text-3xl mb-2">
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-black">3</h3>
+            <p class="text-sm text-white/80">CSR Partners</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <p class="text-gray-600 max-w-2xl mx-auto mb-8">
-        Volunteer, lead, collaborate, and help build stronger students and communities.
-      </p>
+<div id="site-footer"></div>
 
-      <a
-        href="contact-us.html"
-        class="inline-flex items-center gap-2 px-7 py-3 bg-accent text-white font-semibold rounded-xl hover:opacity-90 transition"
-      >
-        <i class="fa-solid fa-paper-plane"></i>
-        Join Now
-      </a>
+<script src="includes/load-header-footer.js"></script>
 
-    </div>
-  </section>
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{threshold:.15});
 
-  <!-- Footer -->
-  <div id="site-footer"></div>
-
-  <!-- Header/Footer Loader -->
-  <script src="includes/load-header-footer.js"></script>
-
-  <!-- Reveal Script -->
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.12 });
-
-    reveals.forEach(el => observer.observe(el));
-  </script>
+reveals.forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>

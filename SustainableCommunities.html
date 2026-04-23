@@ -1,313 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Sustainable Communities | Sri Takshashila Gurukul</title>
-
-  <meta
-    name="description"
-    content="GreenLeaf Communities by Sri Takshashila Gurukul focuses on health camps, environmental initiatives, and awareness programs for sustainable communities."
-  />
+  <title>Sustainable Communities Program | Sri Takshashila Gurukul</title>
 
   <link rel="icon" href="Assests/Logo.png" />
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
+           colors: {
             primary: '#001e8c',
             accent: '#df5030',
-            darkblue: '#0f3d91',
-            warm: '#f3d8b2'
+            warm: '#f3d8b2',
+            darkblue: '#0B1730',
+            softbg: '#f8f7f4',
           },
           fontFamily: {
-            sans: ['Outfit', 'system-ui', 'sans-serif']
+            sans: ['Outfit', 'system-ui', 'sans-serif'],
           },
           boxShadow: {
-            soft: '0 12px 35px rgba(0,0,0,0.08)'
+            soft: '0 12px 35px rgba(0,0,0,0.08)',
           }
         }
       }
-    }
+    };
   </script>
 
-  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all .8s ease;
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #f7fbf5;
+      color: #132238;
     }
 
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      color: #78b943;
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-line {
+      width: 48px;
+      height: 2px;
+      background: rgba(120, 185, 67, 0.35);
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      font-weight: 800;
+      color: #0f3d91;
+      text-align: center;
+    }
+
+    .section-subtext {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(19, 34, 56, 0.72);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .impact-title {
+      color: #ffffff;
+    }
+
+    .card-hover {
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(15, 61, 145, 0.12);
+    }
+
+    .focus-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .shadow-soft {
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 1.9rem;
+      }
+
+      .section-line {
+        width: 80px;
+      }
+
+      .section-subtext {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 
-<body class="font-sans antialiased text-gray-800 bg-white">
+<body class="font-sans antialiased bg-lightbg text-darktext overflow-x-hidden">
 
-  <!-- Header -->
   <div id="site-header"></div>
 
-  <!-- HERO SECTION -->
-  <section class="relative overflow-hidden bg-gradient-to-br from-[#0f7a5b] to-[#1ca77a] text-white py-16 md:py-24">
-    <div class="absolute inset-0 opacity-10 bg-[url('Assests/impactbg.jpg')] bg-cover bg-center"></div>
+  <main class="w-full mx-auto bg-white shadow-soft overflow-hidden">
 
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 text-center">
+<!-- HERO SECTION -->
+<section class="relative min-h-[240px] md:min-h-[320px] flex items-center justify-center overflow-hidden text-white text-center">
 
-      <span class="inline-block text-[#d9ffe8] text-sm font-semibold uppercase tracking-[3px] mb-3">
-        Sustainable Communities
-      </span>
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-[#0a5cb8]"></div>
 
-      <div class="flex items-center justify-center gap-3 md:gap-4 mb-4">
+  <!-- Decorative Shapes -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-80 h-80 bg-accent/20 rounded-full blur-3xl"></div>
 
-        <div class="w-12 md:w-20 h-[2px] bg-white/40 rounded-full"></div>
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-8 py-10 md:py-14">
 
-        <h1 class="text-[28px] md:text-[48px] font-extrabold leading-tight">
-          GreenLeaf Communities
-        </h1>
+    <div class="max-w-[850px] mx-auto">
 
-        <div class="w-12 md:w-20 h-[2px] bg-white/40 rounded-full"></div>
-
-      </div>
-
-      <p class="max-w-3xl mx-auto text-white/90 text-[15px] md:text-[20px] leading-relaxed">
-        Extending meaningful impact to communities through well-being, sustainability,
-        and social responsibility.
-      </p>
-
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section class="py-16 md:py-20 bg-[#f8fcfa]">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-
-      <div class="grid lg:grid-cols-2 gap-8 items-center">
-
-        <!-- Left -->
-        <div class="reveal">
-
-          <span class="inline-block text-[#118160] text-sm font-semibold uppercase tracking-[3px] mb-3">
-            Our Mission
-          </span>
-
-          <h2 class="text-[26px] md:text-[36px] font-extrabold text-[#0f3d91] leading-tight mb-4">
-            Building Healthier, Greener & Safer Communities
-          </h2>
-
-          <p class="text-gray-600 leading-relaxed mb-4">
-            GreenLeaf Communities is designed to uplift local communities through practical,
-            impactful, and sustainable initiatives.
-          </p>
-
-          <p class="text-gray-600 leading-relaxed mb-6">
-            From health camps to plantation drives and awareness campaigns, we create programs
-            that improve quality of life and inspire collective responsibility.
-          </p>
-
-          <div class="space-y-3 text-sm text-gray-700">
-
-            <div class="flex gap-3">
-              <i class="fa-solid fa-circle-check text-[#118160] mt-1"></i>
-              <span>Community-focused wellness programs</span>
-            </div>
-
-            <div class="flex gap-3">
-              <i class="fa-solid fa-circle-check text-[#118160] mt-1"></i>
-              <span>Environmental sustainability initiatives</span>
-            </div>
-
-            <div class="flex gap-3">
-              <i class="fa-solid fa-circle-check text-[#118160] mt-1"></i>
-              <span>Awareness & social responsibility campaigns</span>
-            </div>
-
-          </div>
-
+      <!-- Label -->
+      <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm mb-5">
+        <div class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center">
+          <i class="fa-solid fa-leaf text-white text-xs"></i>
         </div>
 
-        <!-- Right -->
-        <div class="reveal">
-          <div class="rounded-[28px] overflow-hidden shadow-soft border border-green-100">
-            <img
-              src="Assests/carousel_5.jpeg"
-              alt="GreenLeaf Communities"
-              class="w-full h-[420px] object-cover"
-            />
-          </div>
-        </div>
-
+        <p class="text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.18em] text-white/95">
+          Sustainable Communities Initiative
+        </p>
       </div>
-
-    </div>
-  </section>
-
-  <!-- PROGRAMS -->
-  <section class="py-16 md:py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
       <!-- Heading -->
-      <div class="text-center mb-14 reveal">
+      <h1 class="text-[28px] md:text-[52px] font-extrabold leading-[1.08] uppercase mb-4">
+        Sustainable Communities Program
+      </h1>
 
-        <span class="inline-block text-[#118160] text-sm font-semibold uppercase tracking-[3px] mb-3">
-          What We Do
-        </span>
-
-        <div class="flex items-center justify-center gap-3 md:gap-4 mb-4">
-
-          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-
-          <h2 class="text-[24px] md:text-[32px] font-extrabold text-[#0f3d91]">
-            Key Community Initiatives
-          </h2>
-
-          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-
-        </div>
-
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Programs that create visible and lasting change in communities.
-        </p>
-
-      </div>
-
-      <!-- Cards -->
-      <div class="grid md:grid-cols-3 gap-6">
-
-        <!-- Card 1 -->
-        <div class="bg-[#f5fbf8] rounded-3xl border border-green-100 p-6 shadow-soft reveal">
-
-          <div class="w-14 h-14 rounded-2xl bg-white text-[#118160] flex items-center justify-center text-2xl mb-5 shadow">
-            <i class="fa-solid fa-heart-pulse"></i>
-          </div>
-
-          <h3 class="text-xl font-bold text-[#0f3d91] mb-3">
-            Health Camps
-          </h3>
-
-          <p class="text-gray-600 leading-relaxed">
-            Dental, eye, and general health checkups that support underserved communities.
-          </p>
-
-        </div>
-
-        <!-- Card 2 -->
-        <div class="bg-[#f5fbf8] rounded-3xl border border-green-100 p-6 shadow-soft reveal">
-
-          <div class="w-14 h-14 rounded-2xl bg-white text-[#118160] flex items-center justify-center text-2xl mb-5 shadow">
-            <i class="fa-solid fa-tree"></i>
-          </div>
-
-          <h3 class="text-xl font-bold text-[#0f3d91] mb-3">
-            Environmental Initiatives
-          </h3>
-
-          <p class="text-gray-600 leading-relaxed">
-            Plantation drives and sustainability actions that inspire responsibility.
-          </p>
-
-        </div>
-
-        <!-- Card 3 -->
-        <div class="bg-[#f5fbf8] rounded-3xl border border-green-100 p-6 shadow-soft reveal">
-
-          <div class="w-14 h-14 rounded-2xl bg-white text-[#118160] flex items-center justify-center text-2xl mb-5 shadow">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-
-          <h3 class="text-xl font-bold text-[#0f3d91] mb-3">
-            Awareness Programs
-          </h3>
-
-          <p class="text-gray-600 leading-relaxed">
-            Cyber safety, social awareness, and protection-focused education campaigns.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-16 md:py-20 bg-[#f8fcfa]">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center reveal">
-
-      <span class="inline-block text-[#118160] text-sm font-semibold uppercase tracking-[3px] mb-3">
-        Join Us
-      </span>
-
-      <div class="flex items-center justify-center gap-3 md:gap-4 mb-4">
-
-        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-
-        <h2 class="text-[24px] md:text-[32px] font-extrabold text-[#0f3d91]">
-          Create Sustainable Impact Together
-        </h2>
-
-        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-
-      </div>
-
-      <p class="text-gray-600 max-w-2xl mx-auto mb-8">
-        Support our health, environment, and awareness programs through volunteering or partnerships.
+      <!-- Subtext -->
+      <p class="text-[15px] md:text-[22px] font-semibold text-[#d7f3a8] leading-snug">
+        Building Responsible, Inclusive &amp; Future-Ready Communities
       </p>
 
-      <a
-        href="contact-us.html"
-        class="inline-flex items-center gap-2 px-7 py-3 bg-[#118160] text-white font-semibold rounded-xl hover:bg-[#0d6e52] transition"
-      >
-        <i class="fa-solid fa-paper-plane"></i>
-        Contact Us
-      </a>
-
     </div>
-  </section>
 
-  <!-- Footer -->
+  </div>
+</section>
+
+    <!-- OUR FOCUS AREAS -->
+    <section class="py-16 md:py-20 bg-lightbg px-4 md:px-6">
+      <div class="text-center mb-10">
+        <span class="section-kicker">Our Focus Areas</span>
+
+        <div class="section-heading-wrap">
+          <div class="section-line"></div>
+          <h2 class="section-title">Sustainable Impact Areas</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <p class="section-subtext">
+          Our initiatives focus on sustainability, social inclusion, women empowerment and community wellbeing through
+          practical and meaningful action.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div class="overflow-hidden rounded-[20px] border border-accent/20 bg-softgreen card-hover">
+          <div class="px-4 py-5 text-center">
+            <div class="w-12 h-12 rounded-full mx-auto mb-3 bg-accent text-white flex items-center justify-center">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h3 class="text-[15px] font-extrabold uppercase leading-tight text-primary">
+              Environmental Sustainability
+            </h3>
+            <p class="text-[12px] text-darktext/70 mt-2 leading-snug">
+              Promoting climate action, conservation and sustainable living.
+            </p>
+          </div>
+          <img src="Assests/carousel_5.jpeg" alt="Environmental Sustainability" class="focus-img">
+        </div>
+
+        <div class="overflow-hidden rounded-[20px] border border-primary/15 bg-softblue card-hover">
+          <div class="px-4 py-5 text-center">
+            <div class="w-12 h-12 rounded-full mx-auto mb-3 bg-primary text-white flex items-center justify-center">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3 class="text-[15px] font-extrabold uppercase leading-tight text-primary">
+              Social Responsibility
+            </h3>
+            <p class="text-[12px] text-darktext/70 mt-2 leading-snug">
+              Building inclusive communities through volunteering and social initiatives.
+            </p>
+          </div>
+          <img src="Assests/carousel_5.jpeg" alt="Social Responsibility" class="focus-img">
+        </div>
+
+        <div class="overflow-hidden rounded-[20px] border border-donate/15 bg-white card-hover">
+          <div class="px-4 py-5 text-center">
+            <div class="w-12 h-12 rounded-full mx-auto mb-3 bg-donate text-white flex items-center justify-center">
+              <i class="fa-solid fa-venus"></i>
+            </div>
+            <h3 class="text-[15px] font-extrabold uppercase leading-tight text-primary">
+              Women Empowerment
+            </h3>
+            <p class="text-[12px] text-darktext/70 mt-2 leading-snug">
+              Empowering women with skills, knowledge and opportunities.
+            </p>
+          </div>
+          <img src="Assests/carousel_5.jpeg" alt="Women Empowerment" class="focus-img">
+        </div>
+
+        <div class="overflow-hidden rounded-[20px] border border-accent/20 bg-lightbg card-hover">
+          <div class="px-4 py-5 text-center">
+            <div class="w-12 h-12 rounded-full mx-auto mb-3 bg-secondary text-white flex items-center justify-center">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h3 class="text-[15px] font-extrabold uppercase leading-tight text-primary">
+              Health &amp; Wellbeing Initiatives
+            </h3>
+            <p class="text-[12px] text-darktext/70 mt-2 leading-snug">
+              Creating healthier communities through awareness and support programs.
+            </p>
+          </div>
+          <img src="Assests/carousel_5.jpeg" alt="Health and Wellbeing" class="focus-img">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section class="py-16 md:py-20 bg-white px-4 md:px-6">
+      <div class="text-center mb-10">
+        <span class="section-kicker">What We Do</span>
+
+        <div class="section-heading-wrap">
+          <div class="section-line"></div>
+          <h2 class="section-title">Programs That Build Change</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <p class="section-subtext">
+          We design structured programs that create long-term value through awareness, participation, sustainable
+          living, empowerment and wellbeing support.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+
+        <div class="rounded-[18px] border border-accent/20 bg-softgreen p-4 text-center card-hover">
+          <div class="w-10 h-10 rounded-full mx-auto mb-2 bg-accent text-white flex items-center justify-center">
+            <i class="fa-solid fa-bullhorn text-sm"></i>
+          </div>
+          <h3 class="text-[12px] font-bold leading-tight text-darktext">
+            Awareness Campaigns &amp; Workshops
+          </h3>
+        </div>
+
+        <div class="rounded-[18px] border border-primary/15 bg-softblue p-4 text-center card-hover">
+          <div class="w-10 h-10 rounded-full mx-auto mb-2 bg-primary text-white flex items-center justify-center">
+            <i class="fa-solid fa-people-group text-sm"></i>
+          </div>
+          <h3 class="text-[12px] font-bold leading-tight text-darktext">
+            Community Programs
+          </h3>
+        </div>
+
+        <div class="rounded-[18px] border border-accent/20 bg-softgreen p-4 text-center card-hover">
+          <div class="w-10 h-10 rounded-full mx-auto mb-2 bg-accent text-white flex items-center justify-center">
+            <i class="fa-solid fa-recycle text-sm"></i>
+          </div>
+          <h3 class="text-[12px] font-bold leading-tight text-darktext">
+            Sustainable Living Initiatives
+          </h3>
+        </div>
+
+        <div class="rounded-[18px] border border-donate/15 bg-white p-4 text-center card-hover">
+          <div class="w-10 h-10 rounded-full mx-auto mb-2 bg-donate text-white flex items-center justify-center">
+            <i class="fa-solid fa-person-dress text-sm"></i>
+          </div>
+          <h3 class="text-[12px] font-bold leading-tight text-darktext">
+            Women Skill &amp; Leadership Programs
+          </h3>
+        </div>
+
+        <div class="rounded-[18px] border border-secondary/15 bg-lightbg p-4 text-center card-hover">
+          <div class="w-10 h-10 rounded-full mx-auto mb-2 bg-secondary text-white flex items-center justify-center">
+            <i class="fa-solid fa-hand-holding-heart text-sm"></i>
+          </div>
+          <h3 class="text-[12px] font-bold leading-tight text-darktext">
+            Health &amp; Hygiene Awareness
+          </h3>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+    <section class="py-16 md:py-20 bg-lightbg px-4 md:px-6">
+      <div class="text-center mb-10">
+        <span class="section-kicker">Our Approach</span>
+
+        <div class="section-heading-wrap">
+          <div class="section-line"></div>
+          <h2 class="section-title">How We Create Sustainable Change</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <p class="section-subtext">
+          Our approach begins by understanding community needs, then working collaboratively to implement practical
+          solutions that create measurable long-term impact.
+        </p>
+      </div>
+
+      <div class="rounded-[22px] border border-accent/15 bg-white p-6 md:p-7 shadow-soft">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 text-center items-start">
+
+          <div class="card-hover rounded-[16px] p-3">
+            <div class="w-12 h-12 rounded-full mx-auto mb-3 bg-primary text-white flex items-center justify-center">
+              <i class="fa-solid fa-users-line"></i>
+            </div>
+            <p class="text-[13px] font-semibold text-darktext leading-tight">
+              Community Needs
+            </p>
+          </div>
+
+          <div class="card-hover rounded-[16px] p-3">
+            <div class="w-12 h-12 rounded-full mx-auto mb-3 bg-accent text-white flex items-center justify-center">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <p class="text-[13px] font-semibold text-darktext leading-tight">
+              Collaborate &amp; Engage
+            </p>
+          </div>
+
+          <div class="card-hover rounded-[16px] p-3">
+            <div class="w-12 h-12 rounded-full mx-auto mb-3 bg-secondary text-white flex items-center justify-center">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <p class="text-[13px] font-semibold text-darktext leading-tight">
+              Implement Sustainable Solutions
+            </p>
+          </div>
+
+          <div class="card-hover rounded-[16px] p-3">
+            <div class="w-12 h-12 rounded-full mx-auto mb-3 bg-donate text-white flex items-center justify-center">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+            <p class="text-[13px] font-semibold text-darktext leading-tight">
+              Measure Impact &amp; Create Lasting Change
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+       <!-- IMPACT SECTION -->
+    <section class="py-14 md:py-20 bg-green-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 class="text-center text-2xl md:text-4xl font-extrabold uppercase mb-10">
+          Our Impact
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <div class="text-3xl mb-2">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-black">5000+</h3>
+            <p class="text-sm text-white/80">Students Impacted</p>
+          </div>
+
+          <div>
+            <div class="text-3xl mb-2">
+              <i class="fa-solid fa-school"></i>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-black">60+</h3>
+            <p class="text-sm text-white/80">Schools Reached</p>
+          </div>
+
+          <div>
+            <div class="text-3xl mb-2">
+              <i class="fa-solid fa-tree-city"></i>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-black">26+</h3>
+            <p class="text-sm text-white/80">Communities Reached</p>
+          </div>
+
+          <div>
+            <div class="text-3xl mb-2">
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-black">3</h3>
+            <p class="text-sm text-white/80">CSR Partners</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
   <div id="site-footer"></div>
 
-  <!-- Header Footer Loader -->
   <script src="includes/load-header-footer.js"></script>
-
-  <!-- Reveal -->
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.12 });
-
-    reveals.forEach(el => observer.observe(el));
-  </script>
-
 </body>
+
 </html>

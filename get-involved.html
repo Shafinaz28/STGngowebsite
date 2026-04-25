@@ -157,52 +157,98 @@
       </p>
     </div>
 
-   <form id="leadForm" class="bg-white p-8 rounded-3xl shadow-soft border border-[#e6e0d1] space-y-4">
-<input type="hidden" name="message" id="messageField" value="">
-  <input type="text" name="name" placeholder="Full Name"
-    class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
-    required>
+<form id="leadForm" class="bg-white p-8 rounded-3xl shadow-soft border border-[#e6e0d1] space-y-5">
 
-  <input type="tel" name="phone" placeholder="Phone Number"
-    class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
-    required>
-
-  <input type="email" name="email" placeholder="Email Address"
-    class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
-    required>
-<div>
-  <p class="font-semibold text-[#4b3f2b] mb-3">How Would You Like To Get Involved?</p>
-
-  <div class="grid grid-cols-2 gap-3 text-sm text-[#6f6a5f]">
-
-    <label>
-      <input type="checkbox" name="interest" value="Volunteering" class="mr-2">
-      Volunteering
-    </label>
-
-    <label>
-      <input type="checkbox" name="interest" value="Internship" class="mr-2">
-      Internship
-    </label>
-
-    <label>
-      <input type="checkbox" name="interest" value="Workshops" class="mr-2">
-      Workshops
-    </label>
-
-    <label>
-      <input type="checkbox" name="interest" value="Collaboration" class="mr-2">
-      Collaboration
-    </label>
-
-  </div>
-</div>
+  <!-- Hidden Fields -->
+  <input type="hidden" name="message" id="messageField" value="">
   <input type="hidden" name="source_page" value="Get Involved Page">
   <input type="hidden" name="heard_about" value="">
 
-  <button type="submit" id="submitBtn"
+  <!-- Full Name -->
+  <div>
+    <label class="block text-sm font-semibold text-[#4b3f2b] mb-2">
+      Full Name
+    </label>
+
+    <input
+      type="text"
+      name="name"
+      placeholder="Enter your full name"
+      class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
+      required>
+  </div>
+
+  <!-- Phone Number -->
+  <div>
+    <label class="block text-sm font-semibold text-[#4b3f2b] mb-2">
+      Phone Number
+    </label>
+
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Enter your phone number"
+      inputmode="numeric"
+      pattern="[6-9][0-9]{9}"
+      maxlength="10"
+      oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+      class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
+      required>
+  </div>
+
+  <!-- Email -->
+  <div>
+    <label class="block text-sm font-semibold text-[#4b3f2b] mb-2">
+      Email Address
+    </label>
+
+    <input
+      type="email"
+      name="email"
+      placeholder="Enter your email address"
+      class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
+      required>
+  </div>
+
+  <!-- Interest Selection -->
+  <div>
+    <p class="font-semibold text-[#4b3f2b] mb-3">
+      How Would You Like To Get Involved?
+    </p>
+
+    <div class="grid grid-cols-2 gap-3 text-sm text-[#6f6a5f]">
+
+      <label class="flex items-center gap-2">
+        <input type="checkbox" name="interest" value="Volunteering">
+        <span>Volunteering</span>
+      </label>
+
+      <label class="flex items-center gap-2">
+        <input type="checkbox" name="interest" value="Internship">
+        <span>Internship</span>
+      </label>
+
+      <label class="flex items-center gap-2">
+        <input type="checkbox" name="interest" value="Workshops">
+        <span>Workshops</span>
+      </label>
+
+      <label class="flex items-center gap-2">
+        <input type="checkbox" name="interest" value="Collaboration">
+        <span>Collaboration</span>
+      </label>
+
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <button
+    type="submit"
+    id="submitBtn"
     class="w-full bg-[#0f3d91] text-white py-3 rounded-xl font-semibold hover:opacity-90 transition">
+
     <span id="btnText">Submit</span>
+
   </button>
 
 </form>
@@ -235,6 +281,18 @@ const messageField = document.getElementById("messageField");
 
 leadForm.addEventListener("submit", async function(e) {
   e.preventDefault();
+
+  const phone = leadForm.querySelector('input[name="phone"]').value.trim();
+
+  if (!/^[6-9][0-9]{9}$/.test(phone)) {
+    Swal.fire({
+      icon: "warning",
+      title: "Invalid Number",
+      text: "Enter a valid 10 digit mobile number.",
+      confirmButtonColor: "#0f3d91"
+    });
+    return;
+  }
 
   const selected = Array.from(
     leadForm.querySelectorAll('input[name="interest"]:checked')

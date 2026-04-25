@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Aspiration Game - India</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <style>
+    .student-bg {
+      background:
+        radial-gradient(circle at 18% 16%, rgba(96, 165, 250, 0.34), transparent 34%),
+        radial-gradient(circle at 82% 14%, rgba(244, 114, 182, 0.3), transparent 31%),
+        radial-gradient(circle at 50% 86%, rgba(52, 211, 153, 0.24), transparent 36%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(79, 70, 229, 0.06) 0px,
+          rgba(79, 70, 229, 0.06) 1px,
+          transparent 1px,
+          transparent 44px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(14, 165, 233, 0.05) 0px,
+          rgba(14, 165, 233, 0.05) 1px,
+          transparent 1px,
+          transparent 44px
+        ),
+        linear-gradient(180deg, #dbeafe 0%, #e0f2fe 45%, #f5f3ff 100%);
+      background-attachment: fixed;
+      background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px, 100% 100%;
+      animation: gameGridDrift 20s linear infinite;
+    }
+
+    .bg-orb {
+      animation: orbFloat 8s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .bg-orb-delay-1 {
+      animation-delay: -2.5s;
+    }
+
+    .bg-orb-delay-2 {
+      animation-delay: -5s;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      50% {
+        transform: translate3d(0, -16px, 0) scale(1.05);
+      }
+    }
+
+    @keyframes gameGridDrift {
+      0% {
+        background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+      }
+      100% {
+        background-position: 0 0, 0 0, 0 0, 44px 0, 0 44px, 0 0;
+      }
+    }
+  </style>
+</head>
+<body class="student-bg text-slate-800 min-h-screen relative overflow-x-hidden">
+  <div class="bg-orb pointer-events-none absolute -top-10 -left-6 w-40 h-40 bg-sky-300/45 blur-3xl rounded-full"></div>
+  <div class="bg-orb bg-orb-delay-1 pointer-events-none absolute top-40 -right-8 w-48 h-48 bg-pink-300/45 blur-3xl rounded-full"></div>
+  <div class="bg-orb bg-orb-delay-2 pointer-events-none absolute bottom-0 left-1/3 w-56 h-56 bg-violet-300/35 blur-3xl rounded-full"></div>
+
+  <div class="max-w-5xl mx-auto px-4 py-8 relative z-10">
+    <header class="mb-6 bg-white/80 backdrop-blur-sm border border-indigo-100 rounded-2xl p-5 shadow-sm">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-semibold bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">For Students</span>
+        <span class="text-xs font-semibold bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">Fun Quiz</span>
+        <span class="text-xs font-semibold bg-pink-100 text-pink-700 px-3 py-1 rounded-full">Career Guidance</span>
+      </div>
+      <h1 class="text-3xl font-bold text-slate-900">Career Aspiration Game</h1>
+      <p class="text-slate-600 mt-2">Discover your thinking style, strengths, and suitable careers in India.</p>
+    </header>
+
+    <main id="app" class="bg-white/95 rounded-2xl shadow-xl border border-indigo-100 p-6 md:p-8"></main>
+  </div>
+
+  <script>
+    const GAME_DATA = {
+      meta: {
+        title: "Career Aspiration Game",
+        totalStages: 5,
+        questionsPerStage: 6,
+        totalQuestions: 30,
+        thinkingTypes: [
+          "Analytical Thinker",
+          "Creative Thinker",
+          "Practical Thinker",
+          "Social/People-Oriented Thinker",
+          "Leadership/Entrepreneurial Thinker"
+        ]
+      },
+      stageFeedback: [
+        "Great start! You are warming up well.",
+        "Nice thinking! Your style is becoming clear.",
+        "Halfway there! Keep going strong.",
+        "Excellent progress! One stage to go.",
+        "Amazing! You completed all stages."
+      ],
+      encouragingMessages: [
+        "Your future is built one decision at a time.",
+        "Every answer teaches you something about yourself.",
+        "There is no single right path, only your best-fit path.",
+        "Small choices today can create big opportunities tomorrow."
+      ],
+      strengthsWeaknesses: {
+        "Analytical Thinker": {
+          strengths: ["Logical", "Detail-focused", "Good with numbers", "Strong at planning"],
+          weaknesses: ["May overthink", "Can be less flexible", "Sometimes delays decisions"]
+        },
+        "Creative Thinker": {
+          strengths: ["Imaginative", "Original ideas", "Good visual sense", "Enjoys innovation"],
+          weaknesses: ["Can lose focus", "May avoid routine", "Sometimes ignores structure"]
+        },
+        "Practical Thinker": {
+          strengths: ["Hands-on", "Solution-focused", "Reliable", "Works well in real situations"],
+          weaknesses: ["May resist new ideas", "Can prefer short-term fixes", "Sometimes avoids theory"]
+        },
+        "Social/People-Oriented Thinker": {
+          strengths: ["Empathetic", "Team player", "Good communicator", "Builds trust quickly"],
+          weaknesses: ["May avoid conflict", "Can take feedback personally", "Sometimes over-commits"]
+        },
+        "Leadership/Entrepreneurial Thinker": {
+          strengths: ["Confident", "Initiative-taking", "Big-picture mindset", "Good at motivating others"],
+          weaknesses: ["May take risks quickly", "Can dominate discussions", "Sometimes impatient"]
+        }
+      },
+      careerMapping: {
+        "Analytical Thinker": {
+          careerFields: ["Engineering", "Data Science & AI", "Finance & Banking", "Research", "Cybersecurity"],
+          jobRoles: ["Software Engineer", "Data Analyst", "Investment Analyst", "Research Associate", "Cybersecurity Analyst"]
+        },
+        "Creative Thinker": {
+          careerFields: ["Design", "Media & Content", "Advertising", "Animation & Gaming", "Architecture"],
+          jobRoles: ["UI/UX Designer", "Graphic Designer", "Content Creator", "Animator", "Architect"]
+        },
+        "Practical Thinker": {
+          careerFields: ["Skilled Trades & Technical Services", "Operations", "Healthcare Support", "Logistics", "Hospitality"],
+          jobRoles: ["Automobile Technician", "Operations Executive", "Lab Technician", "Supply Chain Coordinator", "Hotel Operations Associate"]
+        },
+        "Social/People-Oriented Thinker": {
+          careerFields: ["Teaching & Education", "Human Resources", "Counselling", "Social Work", "Public Relations"],
+          jobRoles: ["School Teacher", "HR Executive", "Career Counselor", "Social Worker", "PR Executive"]
+        },
+        "Leadership/Entrepreneurial Thinker": {
+          careerFields: ["Business Management", "Entrepreneurship", "Sales & Marketing", "Product Management", "Public Administration"],
+          jobRoles: ["Business Development Manager", "Startup Founder", "Marketing Manager", "Product Manager", "Civil Services Officer"]
+        }
+      },
+      stages: [
+        {
+          stage: 1,
+          theme: "Interests & Preferences",
+          questions: [
+            {
+              id: "S1Q1",
+              text: "On a free Sunday, what activity sounds best to you?",
+              options: {
+                A: { text: "Solve a puzzle or brain game", type: "Analytical Thinker" },
+                B: { text: "Draw, write, or make a short video", type: "Creative Thinker" },
+                C: { text: "Repair or build something at home", type: "Practical Thinker" },
+                D: { text: "Organize a hangout with friends", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S1Q2",
+              text: "Which school project do you enjoy most?",
+              options: {
+                A: { text: "Data-based survey with charts", type: "Analytical Thinker" },
+                B: { text: "Poster or storytelling presentation", type: "Creative Thinker" },
+                C: { text: "Model making and demonstration", type: "Practical Thinker" },
+                D: { text: "Leading the team and presenting", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            },
+            {
+              id: "S1Q3",
+              text: "What type of YouTube content do you watch more?",
+              options: {
+                A: { text: "Science facts and explainers", type: "Analytical Thinker" },
+                B: { text: "Art, filmmaking, and design", type: "Creative Thinker" },
+                C: { text: "DIY and skill tutorials", type: "Practical Thinker" },
+                D: { text: "Motivation and startup stories", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            },
+            {
+              id: "S1Q4",
+              text: "In school events, your natural role is:",
+              options: {
+                A: { text: "Plan schedule and resources", type: "Leadership/Entrepreneurial Thinker" },
+                B: { text: "Design posters and stage look", type: "Creative Thinker" },
+                C: { text: "Handle setup and logistics", type: "Practical Thinker" },
+                D: { text: "Coordinate volunteers and guests", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S1Q5",
+              text: "Which compliment makes you happiest?",
+              options: {
+                A: { text: "You think very smartly", type: "Analytical Thinker" },
+                B: { text: "Your ideas are unique", type: "Creative Thinker" },
+                C: { text: "You always get things done", type: "Practical Thinker" },
+                D: { text: "You inspire people", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            },
+            {
+              id: "S1Q6",
+              text: "If you could join one club, which one?",
+              options: {
+                A: { text: "Quiz or coding club", type: "Analytical Thinker" },
+                B: { text: "Drama or art club", type: "Creative Thinker" },
+                C: { text: "Robotics or workshop club", type: "Practical Thinker" },
+                D: { text: "Debate or student council", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            }
+          ]
+        },
+        {
+          stage: 2,
+          theme: "Problem Solving Style",
+          questions: [
+            {
+              id: "S2Q1",
+              text: "Your group has low marks in a test. What do you do first?",
+              options: {
+                A: { text: "Check mistakes topic by topic", type: "Analytical Thinker" },
+                B: { text: "Try a fresh learning method", type: "Creative Thinker" },
+                C: { text: "Make a practice timetable", type: "Practical Thinker" },
+                D: { text: "Motivate everyone to improve together", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S2Q2",
+              text: "A school app is confusing to use. Your approach:",
+              options: {
+                A: { text: "List errors and suggest fixes", type: "Analytical Thinker" },
+                B: { text: "Redesign interface idea", type: "Creative Thinker" },
+                C: { text: "Create simple user steps", type: "Practical Thinker" },
+                D: { text: "Collect feedback from students", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S2Q3",
+              text: "You have two assignments due tomorrow. You:",
+              options: {
+                A: { text: "Rank by marks and difficulty", type: "Analytical Thinker" },
+                B: { text: "Do the one where ideas are flowing", type: "Creative Thinker" },
+                C: { text: "Finish the easier one first quickly", type: "Practical Thinker" },
+                D: { text: "Discuss with teacher/team and decide", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            },
+            {
+              id: "S2Q4",
+              text: "A teammate is not contributing. What is your move?",
+              options: {
+                A: { text: "Measure work done and show facts", type: "Analytical Thinker" },
+                B: { text: "Give them a role matching interest", type: "Creative Thinker" },
+                C: { text: "Take over urgent tasks and finish", type: "Practical Thinker" },
+                D: { text: "Talk, resolve, and reassign tasks", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S2Q5",
+              text: "When stuck in maths or coding, you prefer:",
+              options: {
+                A: { text: "Break problem into smaller parts", type: "Analytical Thinker" },
+                B: { text: "Try a different creative approach", type: "Creative Thinker" },
+                C: { text: "Practice similar solved examples", type: "Practical Thinker" },
+                D: { text: "Ask peers and discuss solutions", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S2Q6",
+              text: "Your class wants a fundraiser plan. You focus on:",
+              options: {
+                A: { text: "Budget and expected numbers", type: "Analytical Thinker" },
+                B: { text: "Campaign theme and creative idea", type: "Creative Thinker" },
+                C: { text: "Venue, timing, and execution steps", type: "Practical Thinker" },
+                D: { text: "Team roles and overall leadership", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            }
+          ]
+        },
+        {
+          stage: 3,
+          theme: "Work Environment Preference",
+          questions: [
+            {
+              id: "S3Q1",
+              text: "Where do you perform best?",
+              options: {
+                A: { text: "Quiet place with clear goals", type: "Analytical Thinker" },
+                B: { text: "Flexible place with freedom", type: "Creative Thinker" },
+                C: { text: "Active place with tools and tasks", type: "Practical Thinker" },
+                D: { text: "Collaborative place with people", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S3Q2",
+              text: "Your ideal teacher or manager is someone who:",
+              options: {
+                A: { text: "Gives clear logic and structure", type: "Analytical Thinker" },
+                B: { text: "Encourages new ideas", type: "Creative Thinker" },
+                C: { text: "Shows practical methods", type: "Practical Thinker" },
+                D: { text: "Builds confidence and teamwork", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S3Q3",
+              text: "In a team task, you enjoy:",
+              options: {
+                A: { text: "Quality checking and analysis", type: "Analytical Thinker" },
+                B: { text: "Idea generation and design", type: "Creative Thinker" },
+                C: { text: "Execution and final delivery", type: "Practical Thinker" },
+                D: { text: "Managing team direction", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            },
+            {
+              id: "S3Q4",
+              text: "How do you like your daily routine?",
+              options: {
+                A: { text: "Planned with defined goals", type: "Analytical Thinker" },
+                B: { text: "Varied and dynamic", type: "Creative Thinker" },
+                C: { text: "Task-based with deadlines", type: "Practical Thinker" },
+                D: { text: "Mix of meetings and decisions", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            },
+            {
+              id: "S3Q5",
+              text: "Which internship setting attracts you most?",
+              options: {
+                A: { text: "Research lab", type: "Analytical Thinker" },
+                B: { text: "Creative agency", type: "Creative Thinker" },
+                C: { text: "Factory or operations floor", type: "Practical Thinker" },
+                D: { text: "NGO or community outreach team", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S3Q6",
+              text: "What type of challenge excites you?",
+              options: {
+                A: { text: "Complex logical challenge", type: "Analytical Thinker" },
+                B: { text: "Create something new from scratch", type: "Creative Thinker" },
+                C: { text: "Complete a real task efficiently", type: "Practical Thinker" },
+                D: { text: "Lead people to a common goal", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            }
+          ]
+        },
+        {
+          stage: 4,
+          theme: "Personality & Behavior",
+          questions: [
+            {
+              id: "S4Q1",
+              text: "Friends usually come to you for:",
+              options: {
+                A: { text: "Logical advice", type: "Analytical Thinker" },
+                B: { text: "Fresh ideas", type: "Creative Thinker" },
+                C: { text: "Practical help", type: "Practical Thinker" },
+                D: { text: "Emotional support", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S4Q2",
+              text: "When you make a mistake, you usually:",
+              options: {
+                A: { text: "Analyze what went wrong", type: "Analytical Thinker" },
+                B: { text: "Try a new method next time", type: "Creative Thinker" },
+                C: { text: "Correct quickly and move on", type: "Practical Thinker" },
+                D: { text: "Discuss with someone for insight", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S4Q3",
+              text: "In competitions, your natural mindset is:",
+              options: {
+                A: { text: "Prepare deeply with strategy", type: "Analytical Thinker" },
+                B: { text: "Stand out with unique style", type: "Creative Thinker" },
+                C: { text: "Focus on execution and speed", type: "Practical Thinker" },
+                D: { text: "Take charge and motivate team", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            },
+            {
+              id: "S4Q4",
+              text: "If plans suddenly change, you:",
+              options: {
+                A: { text: "Recalculate and adjust carefully", type: "Analytical Thinker" },
+                B: { text: "Adapt with creative alternatives", type: "Creative Thinker" },
+                C: { text: "Choose quickest workable option", type: "Practical Thinker" },
+                D: { text: "Coordinate people and reset direction", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            },
+            {
+              id: "S4Q5",
+              text: "What gives you confidence the most?",
+              options: {
+                A: { text: "Having full information", type: "Analytical Thinker" },
+                B: { text: "Expressing ideas freely", type: "Creative Thinker" },
+                C: { text: "Seeing practical progress", type: "Practical Thinker" },
+                D: { text: "Winning trust of people", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S4Q6",
+              text: "Which sentence feels most like you?",
+              options: {
+                A: { text: "I think before I act.", type: "Analytical Thinker" },
+                B: { text: "I imagine what is possible.", type: "Creative Thinker" },
+                C: { text: "I do what works best.", type: "Practical Thinker" },
+                D: { text: "I like guiding others.", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            }
+          ]
+        },
+        {
+          stage: 5,
+          theme: "Decision Making & Goals",
+          questions: [
+            {
+              id: "S5Q1",
+              text: "When choosing a career stream, your first filter is:",
+              options: {
+                A: { text: "Future demand and data", type: "Analytical Thinker" },
+                B: { text: "Personal passion and creativity", type: "Creative Thinker" },
+                C: { text: "Skills I can apply quickly", type: "Practical Thinker" },
+                D: { text: "Opportunity to lead or create impact", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            },
+            {
+              id: "S5Q2",
+              text: "If you get two career options, you decide by:",
+              options: {
+                A: { text: "Comparing pros and cons", type: "Analytical Thinker" },
+                B: { text: "Choosing the one that inspires me", type: "Creative Thinker" },
+                C: { text: "Picking the one with clear path", type: "Practical Thinker" },
+                D: { text: "Talking to mentors and people", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S5Q3",
+              text: "Your long-term dream looks like:",
+              options: {
+                A: { text: "Becoming an expert specialist", type: "Analytical Thinker" },
+                B: { text: "Creating original work people remember", type: "Creative Thinker" },
+                C: { text: "Building a stable successful career", type: "Practical Thinker" },
+                D: { text: "Building a company or leading change", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            },
+            {
+              id: "S5Q4",
+              text: "A new opportunity appears but has risk. You:",
+              options: {
+                A: { text: "Study all details before deciding", type: "Analytical Thinker" },
+                B: { text: "Take it if it allows innovation", type: "Creative Thinker" },
+                C: { text: "Take it if practical benefits are clear", type: "Practical Thinker" },
+                D: { text: "Take initiative and mobilize support", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            },
+            {
+              id: "S5Q5",
+              text: "Success for you means:",
+              options: {
+                A: { text: "Solving important complex problems", type: "Analytical Thinker" },
+                B: { text: "Making meaningful creative impact", type: "Creative Thinker" },
+                C: { text: "Doing dependable quality work", type: "Practical Thinker" },
+                D: { text: "Helping and uplifting many people", type: "Social/People-Oriented Thinker" }
+              }
+            },
+            {
+              id: "S5Q6",
+              text: "After Class 12, your first action would likely be:",
+              options: {
+                A: { text: "Research best courses and entrance exams", type: "Analytical Thinker" },
+                B: { text: "Build portfolio and creative projects", type: "Creative Thinker" },
+                C: { text: "Take certification with hands-on exposure", type: "Practical Thinker" },
+                D: { text: "Network, intern, and explore leadership opportunities", type: "Leadership/Entrepreneurial Thinker" }
+              }
+            }
+          ]
+        }
+      ]
+    };
+
+    const app = document.getElementById("app");
+
+    const state = {
+      started: false,
+      stageIndex: 0,
+      questionIndex: 0,
+      scores: Object.fromEntries(GAME_DATA.meta.thinkingTypes.map((t) => [t, 0])),
+      answers: {},
+      answerOrder: [],
+      studentInfo: {
+        name: "",
+        age: "",
+        className: "",
+        school: "",
+        city: "",
+        phone: ""
+      }
+    };
+
+    function totalAnswered() {
+      return Object.keys(state.answers).length;
+    }
+
+    function totalQuestions() {
+      return GAME_DATA.meta.totalQuestions;
+    }
+
+    function getCurrentStage() {
+      return GAME_DATA.stages[state.stageIndex];
+    }
+
+    function getCurrentQuestion() {
+      const stage = getCurrentStage();
+      return stage.questions[state.questionIndex];
+    }
+
+    function getQuestionKey(stageIndex, questionIndex) {
+      return `${stageIndex}-${questionIndex}`;
+    }
+
+    function getAnswerForCurrentQuestion() {
+      const key = getQuestionKey(state.stageIndex, state.questionIndex);
+      return state.answers[key] || null;
+    }
+
+    function setAnswerForCurrentQuestion(choiceKey) {
+      const q = getCurrentQuestion();
+      const selected = q.options[choiceKey];
+      const key = getQuestionKey(state.stageIndex, state.questionIndex);
+      const previous = state.answers[key];
+
+      if (previous) {
+        state.scores[previous.thinkingType] -= 1;
+      } else {
+        state.answerOrder.push(key);
+      }
+
+      state.scores[selected.type] += 1;
+      state.answers[key] = {
+        stage: state.stageIndex + 1,
+        questionId: q.id,
+        choice: choiceKey,
+        thinkingType: selected.type
+      };
+    }
+
+    function getSortedScores() {
+      return Object.entries(state.scores).sort((a, b) => b[1] - a[1]);
+    }
+
+    function getPrimarySecondary() {
+      const sorted = getSortedScores();
+      return {
+        primary: sorted[0][0],
+        primaryScore: sorted[0][1],
+        secondary: sorted[1][0],
+        secondaryScore: sorted[1][1]
+      };
+    }
+
+    function getMotivation(primary, secondary) {
+      const messages = [
+        `You are a strong ${primary} with supportive ${secondary} traits.`,
+        "Your mix of skills can create a great career path in India.",
+        GAME_DATA.encouragingMessages[Math.floor(Math.random() * GAME_DATA.encouragingMessages.length)]
+      ];
+      return messages.join(" ");
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function renderStart() {
+      app.innerHTML = `
+        <div>
+          <form id="studentInfoForm" class="bg-slate-50 rounded-xl p-5 space-y-4 border border-slate-200">
+            <h2 class="text-xl font-semibold text-slate-900">Student Details</h2>
+            <p class="text-sm text-slate-600">Fill your basic details and start the career game.</p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <label class="text-sm font-medium text-slate-700">
+                Name *
+                <input name="name" required value="${escapeHtml(state.studentInfo.name)}" class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+              </label>
+              <label class="text-sm font-medium text-slate-700">
+                Age *
+                <input name="age" type="number" min="10" max="30" required value="${escapeHtml(state.studentInfo.age)}" class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+              </label>
+              <label class="text-sm font-medium text-slate-700">
+                Class *
+                <input name="className" required placeholder="e.g. 10th / 12th" value="${escapeHtml(state.studentInfo.className)}" class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+              </label>
+              <label class="text-sm font-medium text-slate-700">
+                School *
+                <input name="school" required value="${escapeHtml(state.studentInfo.school)}" class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+              </label>
+              <label class="text-sm font-medium text-slate-700">
+                City
+                <input name="city" value="${escapeHtml(state.studentInfo.city)}" class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+              </label>
+              <label class="text-sm font-medium text-slate-700">
+                Phone
+                <input name="phone" value="${escapeHtml(state.studentInfo.phone)}" class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+              </label>
+            </div>
+            <div class="text-sm text-slate-700 bg-white border border-slate-200 rounded-lg p-3 space-y-1">
+              <p><strong>Next:</strong> Start the game with 5 stages x 6 questions (30 total).</p>
+              <p><strong>Result:</strong> Thinking type, strengths, and career suggestions.</p>
+            </div>
+            <button type="submit" class="w-full md:w-auto px-6 py-3 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition">
+              Start Game
+            </button>
+          </form>
+        </div>
+      `;
+
+      document.getElementById("studentInfoForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        state.studentInfo = {
+          name: form.name.value.trim(),
+          age: form.age.value.trim(),
+          className: form.className.value.trim(),
+          school: form.school.value.trim(),
+          city: form.city.value.trim(),
+          phone: form.phone.value.trim()
+        };
+        state.started = true;
+        render();
+      });
+    }
+
+    function renderQuestion() {
+      const stage = getCurrentStage();
+      const q = getCurrentQuestion();
+      const currentAnswer = getAnswerForCurrentQuestion();
+      const progress = Math.round((totalAnswered() / totalQuestions()) * 100);
+      const stageProgress = Math.round((state.questionIndex / GAME_DATA.meta.questionsPerStage) * 100);
+      const isFirstQuestion = state.questionIndex === 0;
+      const canGoNext = Boolean(currentAnswer);
+
+      app.innerHTML = `
+        <div class="space-y-6">
+          <div>
+            <div class="flex items-center justify-between text-sm text-slate-600 mb-2">
+              <span>Stage ${stage.stage}: ${stage.theme}</span>
+              <span>Question ${state.questionIndex + 1} / ${GAME_DATA.meta.questionsPerStage}</span>
+            </div>
+            <div class="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
+              <div class="h-3 bg-indigo-600 transition-all" style="width:${progress}%"></div>
+            </div>
+            <p class="text-xs text-slate-500 mt-2">Overall Progress: ${progress}% | Stage Progress: ${stageProgress}%</p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-5">
+            <h3 class="text-lg font-semibold">${q.text}</h3>
+          </div>
+
+          <div class="grid gap-3">
+            ${Object.entries(q.options).map(([key, opt]) => `
+              <button
+                class="option-btn text-left p-4 border rounded-xl transition ${currentAnswer?.choice === key ? "border-indigo-500 bg-indigo-50" : "hover:border-indigo-400 hover:bg-indigo-50"}"
+                data-choice="${key}">
+                <span class="font-semibold mr-2">${key}.</span>${opt.text}
+              </button>
+            `).join("")}
+          </div>
+
+          <div class="flex items-center justify-between gap-3">
+            <button
+              id="prevQuestionBtn"
+              class="px-5 py-2 rounded-xl border border-slate-300 text-slate-700 ${isFirstQuestion ? "opacity-50 cursor-not-allowed" : "hover:bg-slate-50"} transition"
+              ${isFirstQuestion ? "disabled" : ""}>
+              Previous Question
+            </button>
+            <button
+              id="nextQuestionBtn"
+              class="px-5 py-2 rounded-xl bg-indigo-600 text-white ${canGoNext ? "hover:bg-indigo-700" : "opacity-50 cursor-not-allowed"} transition"
+              ${canGoNext ? "" : "disabled"}>
+              Next Question
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.querySelectorAll(".option-btn").forEach((btn) => {
+        btn.addEventListener("click", () => handleAnswer(btn.dataset.choice));
+      });
+
+      document.getElementById("prevQuestionBtn").addEventListener("click", goToPreviousQuestion);
+      document.getElementById("nextQuestionBtn").addEventListener("click", goToNextQuestion);
+    }
+
+    function handleAnswer(choiceKey) {
+      setAnswerForCurrentQuestion(choiceKey);
+      renderQuestion();
+    }
+
+    function goToNextQuestion() {
+      const isLastQuestionInStage = state.questionIndex === GAME_DATA.meta.questionsPerStage - 1;
+      const isLastStage = state.stageIndex === GAME_DATA.meta.totalStages - 1;
+
+      if (isLastQuestionInStage) {
+        if (isLastStage) {
+          renderResult();
+          return;
+        }
+        renderStageComplete();
+        return;
+      }
+
+      state.questionIndex += 1;
+      renderQuestion();
+    }
+
+    function goToPreviousQuestion() {
+      if (state.questionIndex === 0) {
+        return;
+      }
+      state.questionIndex -= 1;
+      renderQuestion();
+    }
+
+    function renderStageComplete() {
+      const feedback = GAME_DATA.stageFeedback[state.stageIndex];
+      app.innerHTML = `
+        <div class="space-y-5">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+            <h3 class="text-xl font-semibold text-emerald-900">Stage ${state.stageIndex + 1} Complete!</h3>
+            <p class="text-emerald-800 mt-2">${feedback}</p>
+          </div>
+          <button id="nextStageBtn" class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition">
+            Go to Stage ${state.stageIndex + 2}
+          </button>
+        </div>
+      `;
+
+      document.getElementById("nextStageBtn").addEventListener("click", () => {
+        state.stageIndex += 1;
+        state.questionIndex = 0;
+        renderQuestion();
+      });
+    }
+
+    function renderResult() {
+      const { primary, secondary, primaryScore, secondaryScore } = getPrimarySecondary();
+      const primaryProfile = GAME_DATA.strengthsWeaknesses[primary];
+      const secondaryProfile = GAME_DATA.strengthsWeaknesses[secondary];
+      const careers = GAME_DATA.careerMapping[primary];
+
+      const resultJson = {
+        primaryThinkingType: primary,
+        secondaryThinkingType: secondary,
+        scoreSummary: {
+          ...state.scores
+        },
+        strengths: [...primaryProfile.strengths, ...secondaryProfile.strengths.slice(0, 2)],
+        weaknesses: [...primaryProfile.weaknesses, ...secondaryProfile.weaknesses.slice(0, 1)],
+        bestCareerFields: careers.careerFields,
+        recommendedRoles: careers.jobRoles,
+        fitExplanation: `You scored highest in ${primary} (${primaryScore}) and also showed strong ${secondary} traits (${secondaryScore}). This means you naturally approach tasks in a way that matches these career paths.`,
+        motivationalMessage: getMotivation(primary, secondary)
+      };
+
+      app.innerHTML = `
+        <div class="space-y-6">
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Student Information</h3>
+            <div class="grid md:grid-cols-2 gap-2 text-slate-700 mt-3 text-sm">
+              <p><strong>Name:</strong> ${escapeHtml(state.studentInfo.name)}</p>
+              <p><strong>Age:</strong> ${escapeHtml(state.studentInfo.age)}</p>
+              <p><strong>Class:</strong> ${escapeHtml(state.studentInfo.className)}</p>
+              <p><strong>School:</strong> ${escapeHtml(state.studentInfo.school)}</p>
+              <p><strong>City:</strong> ${escapeHtml(state.studentInfo.city || "-")}</p>
+              <p><strong>Phone:</strong> ${escapeHtml(state.studentInfo.phone || "-")}</p>
+            </div>
+          </div>
+
+          <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-5">
+            <h2 class="text-2xl font-bold text-indigo-900">Your Career Profile</h2>
+            <p class="text-indigo-800 mt-2">Primary: <strong>${primary}</strong> | Secondary: <strong>${secondary}</strong></p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-slate-50 rounded-xl p-4">
+              <h3 class="font-semibold mb-2">Strengths</h3>
+              <ul class="list-disc pl-5 space-y-1">${resultJson.strengths.map((s) => `<li>${s}</li>`).join("")}</ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4">
+              <h3 class="font-semibold mb-2">Growth Areas</h3>
+              <ul class="list-disc pl-5 space-y-1">${resultJson.weaknesses.map((w) => `<li>${w}</li>`).join("")}</ul>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-4">
+            <h3 class="font-semibold mb-2">Best Career Fields (India)</h3>
+            <p>${careers.careerFields.join(" | ")}</p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-4">
+            <h3 class="font-semibold mb-2">Recommended Roles</h3>
+            <p>${careers.jobRoles.join(" | ")}</p>
+          </div>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+            <h3 class="font-semibold mb-2">Why These Careers Fit</h3>
+            <p>${resultJson.fitExplanation}</p>
+          </div>
+
+          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+            <h3 class="font-semibold mb-2">Motivation</h3>
+            <p>${resultJson.motivationalMessage}</p>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <button id="downloadPdfBtn" class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition">
+              Download PDF
+            </button>
+            <button id="restartBtn" class="px-6 py-3 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition">
+              Play Again
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("downloadPdfBtn").addEventListener("click", () => downloadResultPdf(resultJson));
+      document.getElementById("restartBtn").addEventListener("click", resetAndStart);
+    }
+
+    function downloadResultPdf(resultJson) {
+      const jsPDF = window.jspdf?.jsPDF;
+      if (!jsPDF) {
+        alert("PDF generator could not load. Please check internet and try again.");
+        return;
+      }
+
+      const doc = new jsPDF();
+      const left = 14;
+      let y = 16;
+      const maxWidth = 180;
+
+      function addLine(text, size = 11, spacing = 7) {
+        doc.setFontSize(size);
+        const wrapped = doc.splitTextToSize(text, maxWidth);
+        doc.text(wrapped, left, y);
+        y += wrapped.length * spacing;
+      }
+
+      addLine("Career Aspiration Game - Result Report", 16, 8);
+      y += 2;
+      addLine(`Name: ${state.studentInfo.name}`);
+      addLine(`Age: ${state.studentInfo.age}`);
+      addLine(`Class: ${state.studentInfo.className}`);
+      addLine(`School: ${state.studentInfo.school}`);
+      addLine(`City: ${state.studentInfo.city || "-"}`);
+      addLine(`Phone: ${state.studentInfo.phone || "-"}`);
+      y += 3;
+      addLine(`Primary Thinking Type: ${resultJson.primaryThinkingType}`);
+      addLine(`Secondary Thinking Type: ${resultJson.secondaryThinkingType}`);
+      y += 3;
+      addLine(`Strengths: ${resultJson.strengths.join(", ")}`);
+      addLine(`Growth Areas: ${resultJson.weaknesses.join(", ")}`);
+      y += 3;
+      addLine(`Best Career Fields: ${resultJson.bestCareerFields.join(", ")}`);
+      addLine(`Recommended Roles: ${resultJson.recommendedRoles.join(", ")}`);
+      y += 3;
+      addLine(`Why it fits: ${resultJson.fitExplanation}`);
+      addLine(`Motivation: ${resultJson.motivationalMessage}`);
+
+      const safeName = (state.studentInfo.name || "student").replace(/[^a-z0-9]+/gi, "-").toLowerCase();
+      doc.save(`career-report-${safeName}.pdf`);
+    }
+
+    function resetAndStart() {
+      state.started = true;
+      state.stageIndex = 0;
+      state.questionIndex = 0;
+      state.answers = {};
+      state.answerOrder = [];
+      GAME_DATA.meta.thinkingTypes.forEach((t) => { state.scores[t] = 0; });
+      renderQuestion();
+    }
+
+    function render() {
+      if (!state.started) {
+        renderStart();
+      } else {
+        renderQuestion();
+      }
+    }
+
+    render();
+  </script>
+</body>
+</html>

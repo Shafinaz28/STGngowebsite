@@ -196,70 +196,65 @@
         <!-- Form -->
         <div class="p-6 md:p-8">
 
-          <form class="space-y-4">
+          <form id="contactForm" class="space-y-4">
 
-            <!-- Name -->
-            <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
-              <input type="text"
-                placeholder="Enter your name"
-                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition">
-            </div>
+  <div>
+    <label class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+    <input type="text" name="name" placeholder="Enter your name"
+      class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition" required>
+  </div>
 
-            <!-- Email + Phone -->
-            <div class="grid md:grid-cols-2 gap-4">
+  <div class="grid md:grid-cols-2 gap-4">
 
-              <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                <input type="email"
-                  placeholder="you@example.com"
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition">
-              </div>
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+      <input type="email" name="email" placeholder="you@example.com"
+        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition" required>
+    </div>
 
-              <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Mobile</label>
-                <input type="tel"
-                  placeholder="+91 98765 43210"
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition">
-              </div>
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-2">Mobile</label>
+      <input type="tel" name="phone" placeholder="+91 98765 43210"
+        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition" required>
+    </div>
 
-            </div>
+  </div>
 
-            <!-- Dropdown -->
-            <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">How Did You Hear About Us?</label>
+<div>
+  <label class="block text-sm font-semibold text-gray-700 mb-2">
+    How Did You Hear About Us?
+  </label>
 
-              <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition bg-white">
+  <select name="message"
+    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition bg-white"
+    required>
 
-                <option>Select an option</option>
-                <option>Social Media</option>
-                <option>Friends / Family</option>
-                <option>Teachers / School</option>
-                <option>Event / Workshop</option>
-                <option>Others</option>
+    <option value="">Select an option</option>
+    <option value="Social Media">Social Media</option>
+    <option value="Friends / Family">Friends / Family</option>
+    <option value="Teachers / School">Teachers / School</option>
+    <option value="Event / Workshop">Event / Workshop</option>
+    <option value="Others">Others</option>
 
-              </select>
-            </div>
+  </select>
+</div>
 
-            <!-- Message -->
-            <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+  <div>
+    <label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+    <textarea name="intrest" rows="4" placeholder="Tell us how we can help..."
+      class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition resize-none" required></textarea>
+  </div>
 
-              <textarea rows="4"
-                placeholder="Tell us how we can help..."
-                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary transition resize-none"></textarea>
-            </div>
+  <input type="hidden" name="source_page" value="Contact Page">
+  <input type="hidden" name="interest" value="Contact Enquiry">
 
-            <!-- Button -->
-            <button type="submit"
-              class="w-full py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition flex items-center justify-center gap-2 shadow-lg">
+  <button type="submit" id="contactSubmitBtn"
+    class="w-full py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition flex items-center justify-center gap-2 shadow-lg">
+    <i class="fa-solid fa-paper-plane"></i>
+    <span id="contactBtnText">Send Message</span>
+  </button>
 
-              <i class="fa-solid fa-paper-plane"></i>
-              <span>Send Message</span>
-
-            </button>
-
-          </form>
+</form>
 
         </div>
 
@@ -287,5 +282,71 @@
       }
     })();
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbygblI_5CjYljY7WtBk6Fs1KQqBFOWpQZWxZG5_YAhTVZ_LpLuPrqTX3t_GvQl7t16T/exec";
+
+const contactForm = document.getElementById("contactForm");
+const contactBtn = document.getElementById("contactSubmitBtn");
+const contactBtnText = document.getElementById("contactBtnText");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    contactBtn.disabled = true;
+    contactBtnText.textContent = "Submitting...";
+
+    const formData = new FormData(contactForm);
+    const body = new URLSearchParams();
+
+    formData.forEach((value, key) => {
+      body.append(key, value);
+    });
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"
+        },
+        body: body.toString()
+      });
+
+      contactForm.reset();
+
+      Swal.fire({
+        icon: "success",
+        title: "Submitted Successfully!",
+        text: "We will contact you shortly.",
+        confirmButtonColor: "#0f3d91"
+      });
+
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Submission Failed",
+        text: "Please try again."
+      });
+
+    } finally {
+      contactBtn.disabled = false;
+      contactBtnText.textContent = "Send Message";
+    }
+  });
+}
+</script>
 </body>
 </html>

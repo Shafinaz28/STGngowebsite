@@ -136,58 +136,76 @@
 
 
 <!-- FORM SECTION -->
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- FORM SECTION -->
 <section id="form" class="py-16 md:py-24 bg-[#f7f4ea]">
   <div class="max-w-3xl mx-auto px-4">
 
-    <!-- Heading -->
     <div class="text-center mb-10">
-
       <div class="flex items-center justify-center gap-3 mb-3">
         <div class="w-12 h-[2px] bg-[#cbb58a]"></div>
-
         <h2 class="text-[24px] md:text-[30px] font-extrabold text-[#0f3d91]">
           Get Involved
         </h2>
-
         <div class="w-12 h-[2px] bg-[#cbb58a]"></div>
       </div>
 
       <p class="text-[#6f6a5f]">
         Fill the form below and become part of positive change.
       </p>
-
     </div>
 
-    <!-- Form -->
-    <form class="bg-white p-8 rounded-3xl shadow-soft border border-[#e6e0d1] space-y-4">
+   <form id="leadForm" class="bg-white p-8 rounded-3xl shadow-soft border border-[#e6e0d1] space-y-4">
+<input type="hidden" name="message" id="messageField" value="">
+  <input type="text" name="name" placeholder="Full Name"
+    class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
+    required>
 
-      <input type="text" placeholder="Full Name"
-        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]" required>
+  <input type="tel" name="phone" placeholder="Phone Number"
+    class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
+    required>
 
-      <input type="tel" placeholder="Phone Number"
-        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]" required>
+  <input type="email" name="email" placeholder="Email Address"
+    class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
+    required>
+<div>
+  <p class="font-semibold text-[#4b3f2b] mb-3">How Would You Like To Get Involved?</p>
 
-      <input type="email" placeholder="Email Address"
-        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]" required>
+  <div class="grid grid-cols-2 gap-3 text-sm text-[#6f6a5f]">
 
-      <!-- Interests -->
-      <div>
-        <p class="font-semibold text-[#4b3f2b] mb-3">Interest Selection</p>
+    <label>
+      <input type="checkbox" name="interest" value="Volunteering" class="mr-2">
+      Volunteering
+    </label>
 
-        <div class="grid grid-cols-2 gap-3 text-sm text-[#6f6a5f]">
-          <label><input type="checkbox" class="mr-2">Volunteering</label>
-          <label><input type="checkbox" class="mr-2">Internship</label>
-          <label><input type="checkbox" class="mr-2">Workshops</label>
-          <label><input type="checkbox" class="mr-2">Collaboration</label>
-        </div>
-      </div>
+    <label>
+      <input type="checkbox" name="interest" value="Internship" class="mr-2">
+      Internship
+    </label>
 
-      <button type="submit"
-        class="w-full bg-[#0f3d91] text-white py-3 rounded-xl font-semibold hover:opacity-90 transition">
-        Submit
-      </button>
+    <label>
+      <input type="checkbox" name="interest" value="Workshops" class="mr-2">
+      Workshops
+    </label>
 
-    </form>
+    <label>
+      <input type="checkbox" name="interest" value="Collaboration" class="mr-2">
+      Collaboration
+    </label>
+
+  </div>
+</div>
+  <input type="hidden" name="source_page" value="Get Involved Page">
+  <input type="hidden" name="heard_about" value="">
+
+  <button type="submit" id="submitBtn"
+    class="w-full bg-[#0f3d91] text-white py-3 rounded-xl font-semibold hover:opacity-90 transition">
+    <span id="btnText">Submit</span>
+  </button>
+
+</form>
 
     <p class="text-sm text-[#6f6a5f] mt-6 text-center">
       Queries related to:<br>
@@ -200,6 +218,67 @@
   <div id="site-footer"></div>
 
   <script src="includes/load-header-footer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbygblI_5CjYljY7WtBk6Fs1KQqBFOWpQZWxZG5_YAhTVZ_LpLuPrqTX3t_GvQl7t16T/exec";
+
+const leadForm = document.getElementById("leadForm");
+const submitBtn = document.getElementById("submitBtn");
+const btnText = document.getElementById("btnText");
+const messageField = document.getElementById("messageField");
+
+leadForm.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const selected = Array.from(
+    leadForm.querySelectorAll('input[name="interest"]:checked')
+  ).map(item => item.value);
+
+  if (selected.length === 0) {
+    Swal.fire("Select Interest", "Please select at least one option.", "warning");
+    return;
+  }
+
+  messageField.value = selected.join(", ");
+
+  submitBtn.disabled = true;
+  btnText.textContent = "Submitting...";
+
+  const formData = new FormData(leadForm);
+  const body = new URLSearchParams();
+
+  formData.forEach((value, key) => {
+    body.append(key, value);
+  });
+
+  try {
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: body
+    });
+
+    leadForm.reset();
+
+    Swal.fire({
+      icon: "success",
+      title: "Submitted Successfully!",
+      text: "We will contact you shortly.",
+      confirmButtonColor: "#0f3d91"
+    });
+
+  } finally {
+    submitBtn.disabled = false;
+    btnText.textContent = "Submit";
+  }
+});
+</script>
 </body>
 </html>
 

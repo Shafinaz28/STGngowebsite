@@ -44,33 +44,45 @@
 
 <!-- Centered Compact Hero Section -->
 <section class="relative overflow-hidden bg-gradient-to-r from-primary to-[#0b2cb8] text-white">
+  
   <div class="absolute inset-0 bg-[url('Assests/carousel_5.jpeg')] bg-cover bg-center opacity-10"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-14 text-center">
+    
     <div class="max-w-2xl mx-auto">
 
+      <!-- Top Tag -->
       <span class="inline-block text-sm font-semibold uppercase tracking-widest mb-3 text-white/80">
         Learn Program
       </span>
 
+      <!-- Heading -->
       <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
         Career Counseling Program
       </h1>
 
-      <p class="text-white/80 text-sm md:text-base mb-5 leading-relaxed">
+      <!-- Description -->
+      <p class="text-white/80 text-sm md:text-base mb-7 leading-relaxed">
         Get expert guidance to choose the right career path with clarity and confidence.
       </p>
 
-      <a href="career aspiration.html"
-              class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[14px] md:text-[16px] font-semibold px-7 py-3 rounded-md shadow-[0_8px_20px_rgba(0,0,0,0.12)]">
-              Start Career Discovery
-            </a>
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 
-       <a href="#enroll-form"
-              class="inline-block bg-[#c84532] hover:bg-[#b53b29] text-white text-[14px] md:text-[16px] font-semibold px-7 py-3 rounded-md shadow-[0_8px_20px_rgba(0,0,0,0.12)]">
-              Book Career Counseling
-            </a>
+        <a href="career aspiration.html"
+          class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[14px] md:text-[16px] font-semibold px-7 py-3 rounded-md shadow-[0_8px_20px_rgba(0,0,0,0.12)]">
+          Start Career Discovery
+        </a>
+
+        <a href="#enroll-form"
+          class="inline-block bg-[#c84532] hover:bg-[#b53b29] text-white text-[14px] md:text-[16px] font-semibold px-7 py-3 rounded-md shadow-[0_8px_20px_rgba(0,0,0,0.12)]">
+          Book Career Counseling
+        </a>
+
+      </div>
+
     </div>
+
   </div>
 </section>
 
@@ -489,59 +501,90 @@
       <!-- RIGHT PANEL -->
       <div class="bg-white rounded-[24px] shadow-xl border border-[#e7e7e7] p-6 md:p-8 reveal-right">
 
-        <form class="space-y-4">
+        <form id="programForm" class="space-y-4">
 
-          <!-- Name + Phone Same Row -->
-          <div class="grid md:grid-cols-2 gap-4">
+  <!-- Hidden -->
+  <input type="hidden" name="source_page" value="Program Enquiry Page">
+  <input type="hidden" name="heard_about" value="">
+  <input type="hidden" name="interest" value="Program Enquiry">
 
-            <div>
-              <label class="block text-sm font-medium mb-2">Full Name</label>
-              <input type="text"
-                class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
-                placeholder="Enter full name">
-            </div>
+  <!-- Name + Phone -->
+  <div class="grid md:grid-cols-2 gap-4">
 
-            <div>
-              <label class="block text-sm font-medium mb-2">Phone Number</label>
-              <input type="tel"
-                class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
-                placeholder="Enter phone number">
-            </div>
+    <div>
+      <label class="block text-sm font-medium mb-2">Full Name</label>
+      <input
+        type="text"
+        name="name"
+        required
+        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
+        placeholder="Enter full name">
+    </div>
 
-          </div>
+    <div>
+      <label class="block text-sm font-medium mb-2">Phone Number</label>
+      <input
+        type="tel"
+        name="phone"
+        required
+        inputmode="numeric"
+        pattern="[6-9][0-9]{9}"
+        maxlength="10"
+        oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
+        placeholder="Enter phone number">
+    </div>
 
-          <!-- Email -->
-          <div>
-            <label class="block text-sm font-medium mb-2">Email Address</label>
-            <input type="email"
-              class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
-              placeholder="Enter email address">
-          </div>
+  </div>
 
-          <!-- Student Class -->
-          <div>
-            <label class="block text-sm font-medium mb-2">Student Class / Level</label>
-            <input type="text"
-              class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
-              placeholder="Example: 10th / 12th / Degree">
-          </div>
+  <!-- Email -->
+  <div>
+    <label class="block text-sm font-medium mb-2">Email Address</label>
+    <input
+      type="email"
+      name="email"
+      required
+      class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
+      placeholder="Enter email address">
+  </div>
 
-          <!-- Message -->
-          <div>
-            <label class="block text-sm font-medium mb-2">Message</label>
-            <textarea rows="3"
-              placeholder="Write your query or interest"
-              class="w-full border border-gray-300 rounded-xl px-4 py-3 resize-none focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"></textarea>
-          </div>
+  <!-- Class -->
+  <div>
+    <label class="block text-sm font-medium mb-2">Student Class / Level</label>
+    <input
+      type="text"
+      id="studentClass"
+      class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"
+      placeholder="Example: 10th / 12th / Degree">
+  </div>
 
-          <!-- Button -->
-          <button type="submit"
-            class="w-full bg-[#0f3d91] text-white py-3 rounded-xl font-semibold hover:bg-[#0c3278] transition">
-            <i class="fa-solid fa-paper-plane mr-2"></i>
-            Enroll the Program
-          </button>
+  <!-- Message -->
+  <div>
+    <label class="block text-sm font-medium mb-2">Message</label>
+    <textarea
+      rows="3"
+      id="programMessage"
+      placeholder="Write your query or interest"
+      class="w-full border border-gray-300 rounded-xl px-4 py-3 resize-none focus:outline-none focus:ring-2 focus:ring-[#0f3d91]"></textarea>
+  </div>
 
-        </form>
+  <!-- Hidden final message -->
+  <input type="hidden" name="message" id="programHiddenMessage">
+
+  <!-- Button -->
+  <button
+    type="submit"
+    id="programSubmitBtn"
+    class="w-full bg-[#0f3d91] text-white py-3 rounded-xl font-semibold hover:bg-[#0c3278] transition">
+
+    <span id="programBtnText">
+      <i class="fa-solid fa-paper-plane mr-2"></i>
+      Enroll the Program
+    </span>
+
+  </button>
+
+</form>
 
       </div>
 
@@ -588,5 +631,61 @@
   <div id="site-footer"></div>
 
   <script src="includes/load-header-footer.js"></script>
+  <script>
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbygblI_5CjYljY7WtBk6Fs1KQqBFOWpQZWxZG5_YAhTVZ_LpLuPrqTX3t_GvQl7t16T/exec";
+
+const programForm = document.getElementById("programForm");
+const btn = document.getElementById("programSubmitBtn");
+const btnText = document.getElementById("programBtnText");
+
+programForm.addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const phone = programForm.querySelector('input[name="phone"]').value.trim();
+
+  if(!/^[6-9][0-9]{9}$/.test(phone)){
+    Swal.fire("Invalid Number","Enter valid 10 digit mobile number.","warning");
+    return;
+  }
+
+  const studentClass = document.getElementById("studentClass").value.trim();
+  const msg = document.getElementById("programMessage").value.trim();
+
+  document.getElementById("programHiddenMessage").value =
+    "Class/Level: " + studentClass + " | Message: " + msg;
+
+  btn.disabled = true;
+  btnText.innerHTML = "Submitting...";
+
+  const fd = new FormData(programForm);
+  const body = new URLSearchParams();
+
+  fd.forEach((value,key)=>{
+    body.append(key,value);
+  });
+
+  try{
+    await fetch(GOOGLE_SCRIPT_URL,{
+      method:"POST",
+      mode:"no-cors",
+      body:body
+    });
+
+    programForm.reset();
+
+    Swal.fire({
+      icon:"success",
+      title:"Submitted Successfully!",
+      text:"We will contact you shortly.",
+      confirmButtonColor:"#0f3d91"
+    });
+
+  }finally{
+    btn.disabled = false;
+    btnText.innerHTML = '<i class="fa-solid fa-paper-plane mr-2"></i>Enroll the Program';
+  }
+});
+</script>
 </body>
 </html>

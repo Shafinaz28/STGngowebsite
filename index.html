@@ -365,15 +365,16 @@
 
       <!-- Left Side Video -->
       <div class="reveal">
-        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-[#e8ecf3] aspect-video">
-          <iframe 
-            class="w-full h-full"
-            src="Assests/Video1.mp4"
-            title="About Us Video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-[#e8ecf3] aspect-video bg-[#0a1628]">
+          <video
+            class="w-full h-full object-cover"
+            controls
+            playsinline
+            preload="metadata"
+            title="About Us Video">
+            <source src="Assests/Video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
 
@@ -802,9 +803,16 @@
         <li>• Get career direction</li>
       </ul>
 
-      <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
-        Learn More →
-      </a>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
+          Learn More →
+        </a>
+        <a href="donate.html"
+          class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1.5 rounded-md bg-donate text-white hover:bg-[#cf412f] transition">
+          <i class="fa-solid fa-heart text-[10px]"></i>
+          Donate
+        </a>
+      </div>
     </div>
   </div>
 
@@ -821,9 +829,16 @@
         <li>• Climate Awareness</li>
       </ul>
 
-      <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
-        Learn More →
-      </a>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
+          Learn More →
+        </a>
+        <a href="donate.html"
+          class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1.5 rounded-md bg-donate text-white hover:bg-[#cf412f] transition">
+          <i class="fa-solid fa-heart text-[10px]"></i>
+          Donate
+        </a>
+      </div>
     </div>
   </div>
 
@@ -840,9 +855,16 @@
         <li>• Goal setting</li>
       </ul>
 
-      <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
-        Learn More →
-      </a>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
+          Learn More →
+        </a>
+        <a href="donate.html"
+          class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1.5 rounded-md bg-donate text-white hover:bg-[#cf412f] transition">
+          <i class="fa-solid fa-heart text-[10px]"></i>
+          Donate
+        </a>
+      </div>
     </div>
   </div>
 
@@ -859,9 +881,16 @@
         <li>• Action plan</li>
       </ul>
 
-      <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
-        Learn More →
-      </a>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
+          Learn More →
+        </a>
+        <a href="donate.html"
+          class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1.5 rounded-md bg-donate text-white hover:bg-[#cf412f] transition">
+          <i class="fa-solid fa-heart text-[10px]"></i>
+          Donate
+        </a>
+      </div>
     </div>
   </div>
 
@@ -886,47 +915,45 @@
 
   <!-- SECTION 7: CSR -->
 
-  <section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
-
-    <!-- Soft background glow -->
-    <div class="absolute inset-0 pointer-events-none opacity-30">
-      <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
-    </div>
+  <section class="py-12 md:py-16 bg-[#082852] relative">
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
 
       <!-- Box -->
       <div
-        class="bg-gradient-to-r from-[#eef4ff] to-[#edf8ea] rounded-[20px] p-8 md:p-12 shadow-[0_6px_18px_rgba(0,0,0,0.06)] text-center reveal border border-[#e2e6d9]">
+        class="relative rounded-[22px] p-8 md:p-12 text-center reveal border border-[#2a5cb0] bg-[#0f3d91] shadow-[0_8px_28px_rgba(0,0,0,0.22)]">
+
+        <div class="relative z-10">
 
         <!-- Heading with Lines -->
         <div class="flex items-center justify-center gap-4 mb-4">
 
           <!-- Left Line -->
-          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+          <div class="w-12 md:w-20 h-[2px] bg-[#8eb8ff] rounded-full"></div>
 
           <!-- Heading -->
-          <h2 class="text-[24px] md:text-[30px] font-extrabold text-[#0f3d91] whitespace-nowrap">
+          <h2 class="text-[24px] md:text-[30px] font-extrabold text-[#e8f1ff] whitespace-nowrap tracking-tight">
             Partner With Us
           </h2>
 
           <!-- Right Line -->
-          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+          <div class="w-12 md:w-20 h-[2px] bg-[#8eb8ff] rounded-full"></div>
 
         </div>
 
         <!-- Content -->
-        <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mb-6 leading-relaxed">
+        <p class="text-[13px] md:text-[14px] text-[#b8d0f0] max-w-2xl mx-auto mb-6 leading-relaxed">
           Collaborate through CSR partnerships to create visible and meaningful impact in education and community
           development.
         </p>
 
         <!-- Button -->
-        <a href="sponsors.html"
-          class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[12px] font-semibold px-6 py-2.5 rounded-sm tracking-wide uppercase">
+        <a href="team.html"
+          class="inline-block bg-[#e8f1ff] text-[#0f3d91] hover:bg-white text-[12px] font-semibold px-6 py-2.5 rounded-md tracking-wide uppercase shadow-lg shadow-[#041a3d]/40 ring-1 ring-white/30 transition-colors duration-300">
           Become CSR Partner
         </a>
+
+        </div>
 
       </div>
     </div>

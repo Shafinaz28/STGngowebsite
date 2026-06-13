@@ -47,6 +47,13 @@ body.donate-page {
 .donate-top-bg {
   background: url('../images/bannardonate.jpg') left center / cover no-repeat;
 }
+.donate-hero-panel,
+.donate-form-panel {
+  min-width: 0;
+}
+.donate-hero-panel {
+  position: relative;
+}
 .donate-top-overlay {
   background: linear-gradient(
     90deg,
@@ -138,32 +145,68 @@ body.donate-page {
 }
 @media (max-width: 1023px) {
   .donate-top-zone {
-    padding: 1rem 0 1.25rem;
+    padding: 0;
     min-height: auto;
+    background: #fff;
+    overflow: visible;
   }
-  .donate-top-bg {
-    background-position: 22% center;
-    background-size: cover;
-    opacity: 1;
+  .donate-top-bg--zone,
+  .donate-top-overlay--zone {
+    display: none;
+  }
+  .donate-top-inner {
+    gap: 0;
+    padding: 0;
+  }
+  .donate-hero-panel {
+    position: relative;
+    overflow: hidden;
+    padding: 1.25rem 1rem 1.5rem;
+    min-height: 19rem;
+    background: var(--softbg, #f7f4ea);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .donate-hero-panel::before,
+  .donate-hero-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .donate-hero-panel::before {
     z-index: 0;
+    background-image: url('../images/bannardonate.jpg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 100%;
   }
-  .donate-top-overlay {
+  .donate-hero-panel::after {
     z-index: 1;
     background: linear-gradient(
       180deg,
-      rgba(11, 47, 115, 0.38) 0%,
-      rgba(247, 244, 234, 0.45) 28%,
-      rgba(247, 244, 234, 0.72) 48%,
-      rgba(247, 244, 234, 0.9) 62%,
-      rgba(247, 244, 234, 0.97) 100%
+      rgba(11, 47, 115, 0.42) 0%,
+      rgba(11, 47, 115, 0.28) 45%,
+      rgba(11, 47, 115, 0.18) 100%
     );
   }
-  .donate-top-inner {
-    gap: 1rem;
-    padding: 0 1rem;
-  }
   .donate-hero-copy {
+    position: relative;
+    z-index: 2;
     max-width: none;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .donate-form-panel {
+    background: #fff;
+    padding: 1.25rem 0 1.5rem;
+    border-top: 1px solid rgba(15, 61, 145, 0.08);
+    box-shadow: 0 -8px 24px rgba(15, 61, 145, 0.06);
   }
   .donate-hero-copy h1 {
     font-size: clamp(1.5rem, 6vw, 1.875rem);
@@ -171,6 +214,8 @@ body.donate-page {
     text-wrap: balance;
     color: #fff;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 22rem;
   }
   .donate-hero-copy .hero-accent {
     color: var(--primary, #0f3d91);
@@ -179,22 +224,26 @@ body.donate-page {
   .hero-lead {
     font-size: 0.9375rem;
     margin-top: 0.5rem;
-    max-width: none;
+    max-width: 20rem;
     line-height: 1.55;
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+    text-align: center;
   }
   .hero-badge {
     font-size: 0.6875rem;
     padding: 0.4rem 0.75rem;
     margin-bottom: 0.625rem;
     letter-spacing: 0.07em;
+    align-self: center;
   }
   .hero-chips {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
     margin-top: 0.875rem;
+    width: 100%;
+    max-width: 20rem;
   }
   .hero-chip {
     font-size: 0.75rem;
@@ -215,7 +264,7 @@ body.donate-page {
   }
   #donate-card {
     border-radius: 1rem;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(15, 61, 145, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(15, 61, 145, 0.06);
   }
   .donate-card-inner {
     padding: 0.875rem 1rem 1rem;
@@ -239,6 +288,14 @@ body.donate-page {
     margin-left: -1rem;
     margin-right: -1rem;
   }
+  .donate-hero-panel {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .donate-form-panel {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 @media (min-width: 640px) and (max-width: 1023px) {
   .donate-top-zone {
@@ -246,8 +303,17 @@ body.donate-page {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
+  .donate-hero-panel,
+  .donate-form-panel {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 @media (max-width: 380px) {
+  .donate-hero-panel::before {
+    background-size: auto 100%;
+    background-position: left 32%;
+  }
   .amount-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1200,6 +1266,10 @@ body.donate-page {
   .donate-top-zone {
     padding: 2.25rem 0 2.5rem;
     min-height: 26rem;
+  }
+  .donate-hero-panel,
+  .donate-form-panel {
+    display: contents;
   }
   .donate-top-inner {
     display: grid;

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -43,624 +43,752 @@
     };
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/donate-page.css" />
 
   <style>
-    .donate-hero {
-      background: linear-gradient(135deg, #0f3d91 0%, #0b2f73 100%);
-      position: relative;
-      overflow: hidden;
+    /* Do not override Tailwind .hidden — breaks responsive header (hidden md:flex, etc.) */
+    .donate-hidden { display: none !important; }
+    :root {
+      --primary: #0f3d91;
+      --secondary: #0b2f73;
+      --accent: #df5030;
+      --donate: #df5030;
+      --softbg: #f7f4ea;
+      --cardblue: #eef4ff;
     }
-    .donate-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 10% 80%, rgba(255,255,255,0.06) 0%, transparent 40%);
-      pointer-events: none;
-    }
-    .amount-btn.active {
-      background: #0f3d91;
-      color: #fff;
-      border-color: #0f3d91;
-    }
-    .freq-btn.active {
-      background: #0f3d91;
-      color: #fff;
-    }
-    .donor-tab.active {
-      color: #0f3d91;
-      border-bottom: 2px solid #0f3d91;
-      font-weight: 700;
-    }
-    .faq-item.open .faq-answer { display: block; }
-    .faq-item.open .faq-icon { transform: rotate(180deg); }
-    .faq-answer { display: none; }
-    .program-impact-panel {
-      background: linear-gradient(135deg, #eef4ff 0%, #ffffff 50%, #f7f4ea 100%);
-    }
-    .program-row {
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-    .program-row:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 36px rgba(15, 61, 145, 0.08);
-    }
-    .why-card {
-      background: #eef6fc;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .why-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(15,61,145,0.08);
-    }
-    .testimonial-slide { display: none; }
-    .testimonial-slide.active { display: block; }
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.show { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 
-<body class="font-sans antialiased text-gray-800 bg-white">
+<body class="donate-page font-sans antialiased text-gray-800 bg-white">
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1292689785798523&ev=PageView&noscript=1" alt="" /></noscript>
 
   <div id="site-header"></div>
 
-  <!-- HERO + DONATION CARD -->
-  <section class="donate-hero text-white py-12 md:py-16 lg:py-20">
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+  <!-- Hero + form scroll together; content sections below -->
+  <div id="donate-sticky-region">
+    <div class="donate-grid max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div class="reveal">
-          <p class="text-white/80 text-sm font-semibold uppercase tracking-widest mb-3">Support Us</p>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-            Choose To Make A Difference Today!
-          </h1>
-          <p class="text-lg text-white/90 leading-relaxed max-w-xl">
-            Together we can see our grand vision come true — a world where every bright student has access to quality education and caring mentorship.
-          </p>
-        </div>
+      <div class="donate-layout">
 
-        <!-- Donation card -->
-        <div id="donate-card" class="reveal bg-white rounded-2xl shadow-card text-gray-800 p-6 md:p-8">
-          <div class="flex gap-6 mb-5 text-sm font-medium">
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="radio" name="donor-type" value="indian" checked class="accent-primary w-4 h-4" />
-              Indian
-            </label>
-            
-          </div>
-
-          <div class="flex rounded-lg overflow-hidden border border-gray-200 mb-6">
-            <button type="button" id="freq-onetime" class="freq-btn active flex-1 py-2.5 text-sm font-semibold transition">One-time</button>
-            <button type="button" id="freq-monthly" class="freq-btn flex-1 py-2.5 text-sm font-semibold bg-gray-50 text-gray-600 transition">Monthly</button>
-          </div>
-
-          <p class="text-sm font-semibold text-gray-700 mb-3">Select amount (₹)</p>
-          <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 mb-3">
-            <button type="button" class="amount-btn border border-gray-200 rounded-lg py-2.5 text-sm font-semibold hover:border-primary transition" data-amount="500">500</button>
-            <button type="button" class="amount-btn border border-gray-200 rounded-lg py-2.5 text-sm font-semibold hover:border-primary transition" data-amount="1000">1000</button>
-            <button type="button" class="amount-btn active border rounded-lg py-2.5 text-sm font-semibold transition" data-amount="2000">2000</button>
-            <button type="button" class="amount-btn border border-gray-200 rounded-lg py-2.5 text-sm font-semibold hover:border-primary transition" data-amount="5000">5000</button>
-            <button type="button" class="amount-btn border border-gray-200 rounded-lg py-2.5 text-sm font-semibold hover:border-primary transition" data-amount="10000">10K</button>
-            <button type="button" class="amount-btn border border-gray-200 rounded-lg py-2.5 text-sm font-semibold hover:border-primary transition" data-amount="custom">Other</button>
-          </div>
-
-          <div class="mb-5">
-            <input type="number" id="custom-amount" placeholder="Enter custom amount" min="1"
-              class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary hidden" />
-          </div>
-
-          <label class="flex items-start gap-2 mb-5 cursor-pointer text-sm text-gray-600">
-            <input type="checkbox" id="specific-cause" class="mt-1 accent-primary w-4 h-4 rounded" />
-            <span>Donate to a specific cause</span>
-          </label>
-
-          <div id="cause-select" class="mb-5 hidden">
-            <select id="cause-option" class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40">
-              <option value="child">Sponsor a Child</option>
-              <option value="kit">Sponsor a School Kit</option>
-              <option value="books">Sponsor Books &amp; Study Materials</option>
-              <option value="general">Way to Give (General)</option>
-            </select>
-          </div>
-
-          <div class="flex items-center gap-3 mb-5 text-gray-400 text-xl">
-            <i class="fa-brands fa-cc-visa"></i>
-            <i class="fa-brands fa-cc-mastercard"></i>
-            <i class="fa-solid fa-indian-rupee-sign text-base"></i>
-            <i class="fa-solid fa-mobile-screen text-base"></i>
-            <span class="text-xs text-gray-500 ml-auto">Secure payment via Razorpay</span>
-          </div>
-
-          <a id="proceed-donate" href="https://pages.razorpay.com/pl_SpvRnpzek1B4KJ/view"
-            class="block w-full text-center py-3.5 bg-donate hover:bg-[#cf412f] text-white font-bold rounded-lg transition shadow-md">
-            Proceed to donate
-          </a>
-
-          <p class="text-xs text-gray-500 text-center mt-4 leading-relaxed">
-            Your contribution supports education programs, outreach initiatives, and community impact. Every gift creates lasting change.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- IMPACT STATS -->
-  <section class="py-14 md:py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center reveal">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-primary mb-10">
-        Online Donations To Empower Hope In India
-      </h2>
-
-      <div class="flex flex-wrap justify-center gap-10 md:gap-16 mb-10">
-        <div class="flex flex-col items-center max-w-[220px]">
-          <div class="w-24 h-24 rounded-full bg-softbg border-4 border-primary/30 flex items-center justify-center mb-3">
-            <i class="fa-solid fa-graduation-cap text-3xl text-primary"></i>
-          </div>
-          <p class="text-2xl md:text-3xl font-extrabold text-gray-800">5000+</p>
-          <p class="text-sm text-gray-600 font-medium">Students impacted till date</p>
-        </div>
-        <div class="flex flex-col items-center max-w-[220px]">
-          <div class="w-24 h-24 rounded-full bg-softbg border-4 border-primary/30 flex items-center justify-center mb-3">
-            <i class="fa-solid fa-school text-3xl text-primary"></i>
-          </div>
-          <p class="text-2xl md:text-3xl font-extrabold text-gray-800">60+</p>
-          <p class="text-sm text-gray-600 font-medium">Schools reached</p>
-        </div>
-      </div>
-
-      <div class="max-w-3xl mx-auto text-left md:text-center space-y-4 text-gray-600 text-[15px] leading-relaxed">
-        <p>
-          Sri Takshashila Gurukul is a mission-driven organization dedicated to nurturing students and creating sustainable community impact through education, awareness, and future-ready skill development.
-        </p>
-        <p>
-          Every contribution creates impact. Support a child, provide school essentials, sponsor study materials, or contribute directly to our mission — empowering students through education, awareness, and technology.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WAYS TO GIVE / DONORS STYLE -->
-  <section class="py-14 md:py-20 bg-[#f7f4ea]">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 reveal">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-primary text-center mb-8">Ways To Support</h2>
-
-      <div class="flex justify-center gap-8 border-b border-gray-300 mb-6">
-        <button type="button" class="donor-tab active pb-3 text-sm md:text-base transition" data-tab="causes">Popular Causes</button>
-        <button type="button" class="donor-tab pb-3 text-sm md:text-base text-gray-500 transition" data-tab="general">General Giving</button>
-      </div>
-
-      <div id="tab-causes" class="tab-panel space-y-4">
-        <div class="bg-white rounded-xl p-4 flex items-center gap-4 shadow-sm border border-gray-100">
-          <span class="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center text-primary shrink-0"><i class="fa-solid fa-check"></i></span>
-          <div class="flex-1 min-w-0">
-            <p class="font-semibold text-gray-800">Sponsor a Child</p>
-            <p class="text-xs text-gray-500">Help a deserving student continue their education</p>
-          </div>
-          <span class="text-primary font-bold shrink-0">₹2000+</span>
-        </div>
-        <div class="bg-white rounded-xl p-4 flex items-center gap-4 shadow-sm border border-gray-100">
-          <span class="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center text-primary shrink-0"><i class="fa-solid fa-check"></i></span>
-          <div class="flex-1 min-w-0">
-            <p class="font-semibold text-gray-800">Sponsor a School Kit</p>
-            <p class="text-xs text-gray-500">Stationery, bags, and school supplies</p>
-          </div>
-          <span class="text-primary font-bold shrink-0">₹1000+</span>
-        </div>
-        <div class="bg-white rounded-xl p-4 flex items-center gap-4 shadow-sm border border-gray-100">
-          <span class="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center text-primary shrink-0"><i class="fa-solid fa-check"></i></span>
-          <div class="flex-1 min-w-0">
-            <p class="font-semibold text-gray-800">Sponsor Books &amp; Study Materials</p>
-            <p class="text-xs text-gray-500">Books, guides, and learning resources</p>
-          </div>
-          <span class="text-primary font-bold shrink-0">₹500+</span>
-        </div>
-        <div class="bg-white rounded-xl p-4 flex items-center gap-4 shadow-sm border border-gray-100">
-          <span class="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center text-primary shrink-0"><i class="fa-solid fa-check"></i></span>
-          <div class="flex-1 min-w-0">
-            <p class="font-semibold text-gray-800">Way to Give (Money)</p>
-            <p class="text-xs text-gray-500">Fund programs and community outreach</p>
-          </div>
-          <span class="text-primary font-bold shrink-0">Any amount</span>
-        </div>
-      </div>
-
-      <div id="tab-general" class="tab-panel hidden space-y-4">
-        <div class="bg-white rounded-xl p-5 text-center shadow-sm border border-gray-100">
-          <p class="text-gray-600 text-sm leading-relaxed mb-4">
-            Contribute directly and help us fund educational programs, outreach initiatives, and community impact. Your support strengthens Kalpavruksha, Sustainable Communities, and Impact Catalyst programs.
-          </p>
-          <a href="https://pages.razorpay.com/pl_SpvRnpzek1B4KJ/view"
-            class="inline-block px-6 py-2.5 bg-donate text-white font-semibold rounded-lg hover:opacity-90 transition">
-            Donate Now
-          </a>
-        </div>
-      </div>
-
-      <div class="mt-8 bg-primary rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-white">
-        <p class="font-semibold text-center sm:text-left">Ready to transform a student's future?</p>
-        <a href="#donate-card" class="px-6 py-2.5 bg-donate text-white font-bold rounded-lg hover:bg-[#cf412f] transition shrink-0">
-          Donate Now
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAMS & IMPACT -->
-  <section class="py-14 md:py-20 bg-[#f7f4ea] relative overflow-hidden">
-    <div class="absolute inset-0 pointer-events-none opacity-30">
-      <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
-    </div>
-
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-      <div class="text-center mb-10 md:mb-14 reveal">
-        <div class="flex items-center justify-center gap-3 md:gap-4 mb-3">
-          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-          <h2 class="text-[24px] md:text-[30px] font-extrabold text-primary whitespace-nowrap">
-            Our Programs And Their Impact
-          </h2>
-          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-        </div>
-        <p class="text-[14px] md:text-[15px] text-[#7a7468] max-w-2xl mx-auto leading-relaxed">
-          From awareness to impact — your donation strengthens the programs that empower students and communities across India.
-        </p>
-      </div>
-
-      <div class="space-y-8 md:space-y-10">
-
-        <!-- Kalpavruksha -->
-        <article class="program-row reveal bg-white rounded-2xl border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] overflow-hidden">
-          <div class="grid md:grid-cols-2 md:min-h-[280px]">
-            <div class="p-6 md:p-8 flex flex-col justify-center order-2 md:order-1">
-              <span class="inline-block text-[11px] font-bold uppercase tracking-widest text-donate mb-2">Program 01</span>
-              <h3 class="text-xl md:text-2xl font-bold text-[#4b3f2b] mb-3">Kalpavruksha Program</h3>
-              <p class="text-[14px] text-[#7a7468] leading-relaxed mb-4">
-                A holistic journey that empowers students at every stage — from discovery and awareness to real-world readiness and measurable community impact.
-              </p>
-              <ul class="text-[13px] text-[#7a7468] space-y-1.5 mb-6">
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> Scholarships for deserving students</li>
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> STEM learning opportunities</li>
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> Digital awareness programs</li>
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> Future-focused development initiatives</li>
-              </ul>
-              <div class="flex flex-wrap gap-3">
-                <a href="KalpavrukshaProgram.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-[#0c3278] transition">
-                  Learn More <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-                <a href="https://pages.razorpay.com/pl_SpvRnpzek1B4KJ/view" class="inline-flex items-center gap-2 px-5 py-2.5 border border-primary text-primary text-sm font-semibold rounded-lg hover:bg-primary/5 transition">
-                  <i class="fa-solid fa-heart"></i> Donate
-                </a>
-              </div>
-            </div>
-            <div class="program-impact-panel p-6 md:p-8 flex flex-col items-center justify-center text-center border-t md:border-t-0 md:border-l border-[#e6e0d1] order-1 md:order-2">
-              <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <i class="fa-solid fa-seedling text-4xl text-primary"></i>
-              </div>
-              <p class="text-sm font-bold text-primary uppercase tracking-wide mb-1">Root to Forest</p>
-              <p class="text-[13px] text-[#7a7468] max-w-[220px] leading-relaxed">
-                Nurturing students from early support to lasting transformation.
-              </p>
+      <section class="donate-top-zone">
+        <div class="donate-top-bg" aria-hidden="true"></div>
+        <div class="donate-top-overlay" aria-hidden="true"></div>
+        <div class="donate-top-inner">
+          <div class="donate-hero-copy reveal">
+            <span class="hero-badge"><i class="fa-solid fa-heart"></i> Empower Through Education</span>
+            <h1>Choose To Make A&nbsp;<span class="hero-accent">Difference</span> Today</h1>
+            <p class="hero-lead">
+              Together we can see our grand vision come true — every bright student deserves quality education and caring mentorship.
+            </p>
+            <div class="hero-chips">
+              <span class="hero-chip"><strong>5000+</strong> Students</span>
+              <span class="hero-chip"><strong>60+</strong> Schools</span>
+              <span class="hero-chip hero-chip--accent"><strong>₹2000</strong> = 1 Student</span>
             </div>
           </div>
-        </article>
 
-        <!-- Sustainable Communities -->
-        <article class="program-row reveal bg-white rounded-2xl border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] overflow-hidden">
-          <div class="grid md:grid-cols-2 md:min-h-[280px]">
-            <div class="program-impact-panel p-6 md:p-8 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-[#e6e0d1]">
-              <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <i class="fa-solid fa-people-group text-4xl text-primary"></i>
-              </div>
-              <p class="text-sm font-bold text-primary uppercase tracking-wide mb-1">Community First</p>
-              <p class="text-[13px] text-[#7a7468] max-w-[220px] leading-relaxed">
-                Building healthier communities through awareness and action.
-              </p>
-            </div>
-            <div class="p-6 md:p-8 flex flex-col justify-center">
-              <span class="inline-block text-[11px] font-bold uppercase tracking-widest text-donate mb-2">Program 02</span>
-              <h3 class="text-xl md:text-2xl font-bold text-[#4b3f2b] mb-3">Sustainable Communities</h3>
-              <p class="text-[14px] text-[#7a7468] leading-relaxed mb-4">
-                Outreach and social impact drives that strengthen local ecosystems — from health awareness to environmental responsibility.
-              </p>
-              <ul class="text-[13px] text-[#7a7468] space-y-1.5 mb-6">
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> Community health awareness programs</li>
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> Environmental sustainability initiatives</li>
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> Outreach and social impact drives</li>
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> Building healthier communities</li>
-              </ul>
-              <div class="flex flex-wrap gap-3">
-                <a href="SustainableCommunities.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-[#0c3278] transition">
-                  Learn More <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-                <a href="https://pages.razorpay.com/pl_SpvRnpzek1B4KJ/view" class="inline-flex items-center gap-2 px-5 py-2.5 border border-primary text-primary text-sm font-semibold rounded-lg hover:bg-primary/5 transition">
-                  <i class="fa-solid fa-heart"></i> Donate
-                </a>
-              </div>
+          <div class="donate-aside">
+      <aside id="donate-sidebar" class="donate-sidebar w-full">
+        <div id="donate-card">
+          <div class="dc-header">
+            <div class="dc-header-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <div>
+              <h3 class="dc-title">Make a Donation</h3>
+              <p class="dc-subtitle">Secure payment via Razorpay</p>
             </div>
           </div>
-        </article>
+          <div class="dc-steps" aria-hidden="true">
+            <span class="dc-step active" data-step="amount"></span>
+            <span class="dc-step" data-step="confirm"></span>
+            <span class="dc-step" data-step="bank"></span>
+          </div>
+          <div class="donate-card-inner">
 
-        <!-- Impact Catalyst -->
-        <article class="program-row reveal bg-white rounded-2xl border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] overflow-hidden">
-          <div class="grid md:grid-cols-2 md:min-h-[280px]">
-            <div class="p-6 md:p-8 flex flex-col justify-center order-2 md:order-1">
-              <span class="inline-block text-[11px] font-bold uppercase tracking-widest text-donate mb-2">Program 03</span>
-              <h3 class="text-xl md:text-2xl font-bold text-[#4b3f2b] mb-3">Impact Catalyst</h3>
-              <p class="text-[14px] text-[#7a7468] leading-relaxed mb-4">
-                Leadership and volunteer programs that turn passion into action — creating future changemakers who lead community transformation.
-              </p>
-              <ul class="text-[13px] text-[#7a7468] space-y-1.5 mb-6">
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> Leadership development programs</li>
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> Volunteer engagement initiatives</li>
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> Community action projects</li>
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check text-primary text-xs mt-1 shrink-0"></i> Creating future changemakers</li>
-              </ul>
-              <div class="flex flex-wrap gap-3">
-                <a href="Impactcatalyst.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-[#0c3278] transition">
-                  Learn More <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-                <a href="https://pages.razorpay.com/pl_SpvRnpzek1B4KJ/view" class="inline-flex items-center gap-2 px-5 py-2.5 border border-primary text-primary text-sm font-semibold rounded-lg hover:bg-primary/5 transition">
-                  <i class="fa-solid fa-heart"></i> Donate
-                </a>
+            <!-- Step 1: Amount -->
+            <div id="panel-amount" class="donate-panel active">
+
+              <label class="field-label-sm">Choose your amount (₹)</label>
+              <div class="amount-grid">
+                <button type="button" class="amount-btn" data-amount="10000">₹10,000</button>
+                <button type="button" class="amount-btn" data-amount="5000">₹5,000</button>
+                <button type="button" class="amount-btn" data-amount="3000">₹3,000</button>
+                <button type="button" class="amount-btn active" data-amount="2000">₹2,000</button>
+                <button type="button" class="amount-btn" data-amount="1000">₹1,000</button>
+                <button type="button" class="amount-btn" data-amount="500">₹500</button>
+              </div>
+
+              <div class="amount-input-wrap">
+                <input type="number" id="donation-amount" value="2000" placeholder="Enter custom amount" min="500" step="1" />
+                <p class="amount-hint">Minimum donation is INR 500</p>
+              </div>
+
+              <div id="pledge-line" class="pledge-box">
+                Your donation helps support <strong>1</strong> student's education journey.
+              </div>
+
+              <label class="cause-toggle">
+                <input type="checkbox" id="specific-cause" class="accent-primary w-4 h-4 rounded shrink-0" />
+                <span>Donate to a specific cause</span>
+              </label>
+
+              <div id="cause-select" class="donate-hidden">
+                <select id="cause-option">
+                  <option value="child">Sponsor a Child</option>
+                  <option value="kit">Sponsor a School Kit</option>
+                  <option value="books">Sponsor Books &amp; Study Materials</option>
+                  <option value="general">Way to Give (General)</option>
+                </select>
+              </div>
+
+              <div class="trust-row">
+                <i class="fa-brands fa-cc-visa trust-visa" aria-hidden="true"></i>
+                <i class="fa-brands fa-cc-mastercard trust-mc" aria-hidden="true"></i>
+                <i class="fa-brands fa-cc-amex trust-amex" aria-hidden="true"></i>
+                <i class="fa-solid fa-indian-rupee-sign trust-rupay" aria-hidden="true"></i>
+                <span class="badge-upi">UPI</span>
+              </div>
+
+              <button type="button" id="proceed-donate" class="donate-cta-btn">
+                <i class="fa-solid fa-lock text-sm"></i> Proceed to Donate
+              </button>
+
+              <p class="secure-note">Secure payment via Razorpay · Every donation creates lasting change</p>
+
+              <div class="donate-form-footer">
+                Prefer bank transfer?
+                <button type="button" id="bank-transfer-link">Click here</button>
               </div>
             </div>
-            <div class="program-impact-panel p-6 md:p-8 flex flex-col items-center justify-center text-center border-t md:border-t-0 md:border-l border-[#e6e0d1] order-1 md:order-2">
-              <div class="w-20 h-20 rounded-full bg-donate/10 flex items-center justify-center mb-4">
-                <i class="fa-solid fa-hand-holding-heart text-4xl text-donate"></i>
+
+            <!-- Step 2: Confirm (online) -->
+            <div id="panel-confirm" class="donate-panel has-back">
+              <button type="button" class="card-back-btn back-to-amount inline-flex items-center justify-center w-9 h-9 rounded-full hover:opacity-90" aria-label="Back">
+                <i class="fa-solid fa-arrow-left text-sm"></i>
+              </button>
+              <div class="donate-step-head">
+                <div class="donate-step-icon">
+                  <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <h2>Complete Your Donation</h2>
+                <div class="donate-step-accent"></div>
+                <p>Enter your details to proceed to secure payment.</p>
               </div>
-              <p class="text-sm font-bold text-primary uppercase tracking-wide mb-1">Lead &amp; Serve</p>
-              <p class="text-[13px] text-[#7a7468] max-w-[220px] leading-relaxed">
-                Engaging volunteers and youth to drive lasting community change.
-              </p>
+
+              <div class="donate-summary-bar">
+                <span class="text-gray-600">Donation amount</span>
+                <strong id="summary-amount">₹0</strong>
+              </div>
+
+              <form id="confirm-form">
+                <div class="donate-form-row-2">
+                  <div class="donate-field">
+                    <label class="donate-field-label">Full Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="name" required placeholder="Full name" class="form-input" />
+                  </div>
+                  <div class="donate-field">
+                    <label class="donate-field-label">Contact No <span class="text-red-500">*</span></label>
+                    <input type="tel" name="phone" required maxlength="10" pattern="[6-9][0-9]{9}" inputmode="numeric"
+                      oninput="this.value=this.value.replace(/[^0-9]/g,'')" placeholder="10 digit mobile" class="form-input" />
+                  </div>
+                </div>
+                <div class="donate-field">
+                  <label class="donate-field-label">Email Address</label>
+                  <input type="email" name="email" placeholder="your@email.com" class="form-input" />
+                </div>
+                <div class="donate-form-row-2">
+                  <div class="donate-field">
+                    <label class="donate-field-label">PAN (optional)</label>
+                    <input type="text" name="pan" placeholder="ABCDE1234F" maxlength="10" class="form-input uppercase" />
+                  </div>
+                  <div class="donate-field">
+                    <label class="donate-field-label">Donation Date</label>
+                    <input type="date" name="donation_date" id="donation-date" class="form-input" />
+                  </div>
+                </div>
+                <label class="donate-check-row cursor-pointer">
+                  <input type="checkbox" name="whatsapp_updates" checked class="accent-primary w-4 h-4 rounded" />
+                  <span>Send me updates on WhatsApp</span>
+                </label>
+                <button type="submit" class="donate-submit-btn">Donate Now</button>
+                <p class="donate-legal">
+                  I agree to the <a href="coming-soon.html" class="underline text-primary">terms</a> and <a href="coming-soon.html" class="underline text-primary">privacy policy</a>.
+                </p>
+              </form>
+            </div>
+
+            <!-- Step 3: Bank transfer -->
+            <div id="panel-bank" class="donate-panel has-back">
+              <button type="button" class="card-back-btn back-to-amount inline-flex items-center justify-center w-9 h-9 rounded-full hover:opacity-90" aria-label="Back">
+                <i class="fa-solid fa-arrow-left text-sm"></i>
+              </button>
+              <div class="donate-step-head">
+                <div class="donate-step-icon donate-step-icon--bank">
+                  <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <h2>Confirm Your Contribution</h2>
+                <div class="donate-step-accent"></div>
+                <p>Share your details and payment screenshot after completing the bank transfer.</p>
+              </div>
+
+              <div class="donate-summary-bar">
+                <span class="text-gray-600">Donation amount</span>
+                <strong id="bank-summary-amount">₹0</strong>
+              </div>
+
+              <form id="bank-form">
+                <input type="hidden" id="messageField" value="" />
+                <input type="hidden" id="bank-amount" name="bank_amount" value="" />
+
+                <div class="donate-form-row-2">
+                  <div class="donate-field">
+                    <label class="donate-field-label">Full Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="bank_name" required placeholder="Full name" class="form-input" />
+                  </div>
+                  <div class="donate-field">
+                    <label class="donate-field-label">Contact No <span class="text-red-500">*</span></label>
+                    <input type="tel" name="bank_phone" required maxlength="10" pattern="[6-9][0-9]{9}" inputmode="numeric"
+                      oninput="this.value=this.value.replace(/[^0-9]/g,'')" placeholder="10 digit mobile" class="form-input" />
+                  </div>
+                </div>
+
+                <div class="donate-field">
+                  <label class="donate-field-label">Email Address <span class="text-red-500">*</span></label>
+                  <input type="email" name="bank_email" required placeholder="your@email.com" class="form-input" />
+                </div>
+
+                <div class="donate-field">
+                  <label class="donate-field-label">Upload Screenshot <span class="text-red-500">*</span></label>
+                  <div class="donate-file-upload">
+                    <label class="donate-file-btn">
+                      Choose File
+                      <input type="file" id="screenshot" accept="image/*,.pdf" class="hidden" required />
+                    </label>
+                    <span id="file-name" class="donate-file-name">No file chosen</span>
+                  </div>
+                  <p class="donate-field-hint">Upload your bank transfer receipt (PNG, JPG or PDF).</p>
+                </div>
+
+                <button type="submit" id="submit-btn" class="donate-submit-btn is-primary">
+                  <span id="btn-text">Submit Contribution</span>
+                </button>
+                <p class="donate-legal">We will verify your transfer and contact you within 2–3 business days.</p>
+              </form>
+            </div>
+
+          </div>
+        </div>
+          </aside>
+          </div>
+
+        </div><!-- /.donate-top-inner -->
+      </section><!-- /.donate-top-zone -->
+
+      <div class="donate-page-sections">
+      <!-- IMPACT -->
+      <section class="donate-sec donate-sec--white">
+        <div class="donate-impact-wrap reveal donate-sec-inner">
+          <div class="donate-sec-head lg:text-left text-center">
+            <p class="donate-sec-eyebrow">Your Impact</p>
+            <h2 class="donate-sec-title">Online Donations To Empower Hope In India</h2>
+            <div class="donate-sec-accent lg:mx-0 mx-auto"></div>
+          </div>
+
+          <div class="impact-bento">
+            <div class="impact-stat">
+              <div class="impact-stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
+              <p class="impact-stat-num">5000+</p>
+              <p class="impact-stat-label">Students Impacted</p>
+            </div>
+            <div class="impact-stat">
+              <div class="impact-stat-icon"><i class="fa-solid fa-school"></i></div>
+              <p class="impact-stat-num">60+</p>
+              <p class="impact-stat-label">Schools Reached</p>
+            </div>
+            <div class="impact-stat impact-stat--wide">
+              <div class="impact-stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <p class="impact-stat-num">₹2000</p>
+              <p class="impact-stat-label">Supports One Student's Journey</p>
             </div>
           </div>
-        </article>
+          <p class="impact-date lg:text-left text-center">Updated as on: <span id="stats-date"></span></p>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY DONATE -->
-  <section class="py-14 md:py-20 bg-[#f7f4ea]">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 reveal">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-primary text-center mb-10">
-        Why Donate With Sri Takshashila Gurukul?
-      </h2>
-
-      <div class="grid sm:grid-cols-2 gap-6">
-        <div class="why-card rounded-2xl p-6 md:p-8">
-          <i class="fa-solid fa-eye text-2xl text-primary mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-800 mb-2">Transparency</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">As a non-profit, we focus on holistic development with clear purpose — empowering young minds for a brighter future.</p>
-        </div>
-        <div class="why-card rounded-2xl p-6 md:p-8">
-          <i class="fa-solid fa-chart-line text-2xl text-primary mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-800 mb-2">Measurable Impact</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">5000+ students impacted, 60+ schools and 26+ communities reached — your gift fuels real outcomes.</p>
-        </div>
-        <div class="why-card rounded-2xl p-6 md:p-8">
-          <i class="fa-solid fa-heart text-2xl text-donate mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-800 mb-2">Mission-Driven</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">We seek no personal gain — only the fulfillment of nurturing passionate learners through education and awareness.</p>
-        </div>
-        <div class="why-card rounded-2xl p-6 md:p-8">
-          <i class="fa-solid fa-bolt text-2xl text-primary mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-800 mb-2">Easy Online Giving</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">Secure Razorpay checkout — choose amount, cause, and donate in minutes from anywhere in India or abroad.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="py-14 md:py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center reveal">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-primary mb-10">
-        Hear Stories Of Our Beloved Supporters <span class="text-donate">♥</span>
-      </h2>
-
-      <div id="testimonial-wrap" class="relative min-h-[200px]">
-        <div class="testimonial-slide active">
-          <p class="text-gray-600 text-lg md:text-xl leading-relaxed italic mb-8">
-            "Sri Takshashila Gurukul is a sanctuary of wisdom for those who have the zeal to learn and grow. Supporting their mission means investing in students who will shape tomorrow's communities."
-          </p>
-          <div class="flex flex-col items-center gap-2">
-            <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">ST</div>
-            <p class="font-bold text-gray-800">Community Partner</p>
-            <p class="text-sm text-gray-500">Education Supporter</p>
+          <div class="impact-body lg:text-left text-center">
+            <p>Sri Takshashila Gurukul is a mission-driven organization dedicated to nurturing students and creating sustainable community impact through education, awareness, and future-ready skill development.</p>
+            <p>Every contribution creates impact. Support a child, provide school essentials, sponsor study materials, or contribute directly to our mission — empowering students through education, awareness, and technology.</p>
           </div>
         </div>
-        <div class="testimonial-slide">
-          <p class="text-gray-600 text-lg md:text-xl leading-relaxed italic mb-8">
-            "Every contribution creates impact — from sponsoring school kits to funding scholarships. It is rewarding to see students gain confidence and direction for their futures."
-          </p>
-          <div class="flex flex-col items-center gap-2">
-            <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-primary font-bold text-lg">VG</div>
-            <p class="font-bold text-gray-800">Volunteer &amp; Mentor</p>
-            <p class="text-sm text-gray-500">Get Involved Participant</p>
-          </div>
-        </div>
-        <div class="testimonial-slide">
-          <p class="text-gray-600 text-lg md:text-xl leading-relaxed italic mb-8">
-            "From Seeds to Forest — the growth model resonates deeply. Donating here means supporting a journey from early care to lasting community ecosystems of impact."
-          </p>
-          <div class="flex flex-col items-center gap-2">
-            <div class="w-14 h-14 rounded-full bg-donate/10 flex items-center justify-center text-donate font-bold text-lg">DN</div>
-            <p class="font-bold text-gray-800">Donor</p>
-            <p class="text-sm text-gray-500">CSR Collaborator</p>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <div class="flex justify-center gap-4 mt-8">
-        <button type="button" id="testimonial-prev" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition" aria-label="Previous">
-          <i class="fa-solid fa-chevron-left text-sm"></i>
-        </button>
-        <button type="button" id="testimonial-next" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition" aria-label="Next">
-          <i class="fa-solid fa-chevron-right text-sm"></i>
-        </button>
-      </div>
-    </div>
-  </section>
+      <!-- OUR DONORS -->
+      <section class="donate-sec donate-sec--givers">
+        <div class="reveal donate-sec-inner">
+          <div class="givers-grid">
+            <div class="givers-intro">
+              <p class="donate-sec-eyebrow">Community Of Givers</p>
+              <h2 class="donate-sec-title">Our Donors</h2>
+              <div class="donate-sec-accent"></div>
+              <p class="givers-lead">Every rupee empowers a student. Thank you to everyone who makes quality education possible.</p>
 
-  <!-- FAQ -->
-  <section class="py-14 md:py-20 bg-[#f7f4ea]">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 reveal">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-primary text-center mb-10">
-        Frequently Asked Questions
-      </h2>
+              <div class="givers-stats">
+                <div class="givers-stat">
+                  <span class="givers-stat-icon"><i class="fa-solid fa-users"></i></span>
+                  <p class="givers-stat-num">5000+</p>
+                  <p class="givers-stat-label">Students reached</p>
+                </div>
+                <div class="givers-stat">
+                  <span class="givers-stat-icon"><i class="fa-solid fa-school"></i></span>
+                  <p class="givers-stat-num">60+</p>
+                  <p class="givers-stat-label">Schools supported</p>
+                </div>
+                <div class="givers-stat givers-stat--accent">
+                  <span class="givers-stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+                  <p class="givers-stat-num">₹2000</p>
+                  <p class="givers-stat-label">= 1 student / year</p>
+                </div>
+              </div>
 
-      <div class="space-y-3" id="faq-list">
-        <div class="faq-item open bg-white rounded-xl border border-gray-100 overflow-hidden">
-          <button type="button" class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-gray-800">
-            How can I donate to Sri Takshashila Gurukul?
-            <i class="faq-icon fa-solid fa-chevron-down text-gray-400 transition-transform"></i>
-          </button>
-          <div class="faq-answer px-5 pb-4 text-gray-600 text-sm leading-relaxed">
-            Select your amount on this page and click "Proceed to donate" to complete payment securely via Razorpay. You can also choose a specific cause such as sponsoring a child, school kit, or books.
-          </div>
-        </div>
-        <div class="faq-item bg-white rounded-xl border border-gray-100 overflow-hidden">
-          <button type="button" class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-gray-800">
-            What are the different ways I can support?
-            <i class="faq-icon fa-solid fa-chevron-down text-gray-400 transition-transform"></i>
-          </button>
-          <div class="faq-answer px-5 pb-4 text-gray-600 text-sm leading-relaxed">
-            You may sponsor a child, sponsor a school kit, sponsor books and study materials, or make a general monetary contribution. Each option supports education programs, outreach, and community impact.
-          </div>
-        </div>
-        <div class="faq-item bg-white rounded-xl border border-gray-100 overflow-hidden">
-          <button type="button" class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-gray-800">
-            Is my donation secure?
-            <i class="faq-icon fa-solid fa-chevron-down text-gray-400 transition-transform"></i>
-          </button>
-          <div class="faq-answer px-5 pb-4 text-gray-600 text-sm leading-relaxed">
-            Yes. Payments are processed through Razorpay with industry-standard encryption. We do not store your card details on our website.
-          </div>
-        </div>
-        <div class="faq-item bg-white rounded-xl border border-gray-100 overflow-hidden">
-          <button type="button" class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-gray-800">
-            Can I volunteer instead of donating money?
-            <i class="faq-icon fa-solid fa-chevron-down text-gray-400 transition-transform"></i>
-          </button>
-          <div class="faq-answer px-5 pb-4 text-gray-600 text-sm leading-relaxed">
-            Absolutely. Visit our <a href="get-involved.html" class="text-primary font-semibold hover:underline">Get Involved</a> page to volunteer as a teacher, intern, mentor, or partner with us.
-          </div>
-        </div>
-        <div class="faq-item bg-white rounded-xl border border-gray-100 overflow-hidden">
-          <button type="button" class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-gray-800">
-            How do I contact the team for CSR or large gifts?
-            <i class="faq-icon fa-solid fa-chevron-down text-gray-400 transition-transform"></i>
-          </button>
-          <div class="faq-answer px-5 pb-4 text-gray-600 text-sm leading-relaxed">
-            Email <a href="mailto:sritakshashila@gmail.com" class="text-primary font-semibold hover:underline">sritakshashila@gmail.com</a> or call <a href="tel:+916361664811" class="text-primary font-semibold hover:underline">+91 63616 64811</a>. Explore <a href="collaborations.html" class="text-primary font-semibold hover:underline">CSR collaborations</a> for corporate partnerships.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+              <div class="givers-cta">
+                <div class="givers-cta-icon"><i class="fa-solid fa-heart"></i></div>
+                <div>
+                  <h3>Join Our Circle Of Hope</h3>
+                  <p>Your donation today shapes a student's tomorrow.</p>
+                </div>
+                <a href="#donate-card" class="givers-cta-btn">Donate Now <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
 
-  <div id="site-footer"></div>
+            <div class="givers-board">
+              <div class="givers-board-head">
+                <h3 class="givers-board-title"><i class="fa-solid fa-trophy"></i> Donor Leaderboard</h3>
+                <div class="donor-tabs">
+                  <button type="button" class="donor-tab active" data-tab="top">Top Donations</button>
+                  <button type="button" class="donor-tab" data-tab="recent">Recent</button>
+                </div>
+              </div>
+
+              <div class="donor-list-panel">
+                <div id="tab-top" class="tab-panel">
+                  <article class="donor-card donor-card--gold">
+                    <span class="donor-medal"><i class="fa-solid fa-crown"></i></span>
+                    <span class="donor-avatar bg-primary">A</span>
+                    <div class="donor-card-body">
+                      <p class="donor-name">Anonymous Supporter</p>
+                      <p class="donor-meta">One-time donation</p>
+                      <span class="donor-impact">5 students supported</span>
+                    </div>
+                    <div class="donor-card-end">
+                      <p class="donor-amount">₹10,000</p>
+                      <p class="donor-time">2 weeks ago</p>
+                    </div>
+                  </article>
+                  <article class="donor-card donor-card--silver">
+                    <span class="donor-medal">2</span>
+                    <span class="donor-avatar donor-avatar--orange">R</span>
+                    <div class="donor-card-body">
+                      <p class="donor-name">Rajesh K.</p>
+                      <p class="donor-meta">Sponsor a Child</p>
+                      <span class="donor-impact">2 students supported</span>
+                    </div>
+                    <div class="donor-card-end">
+                      <p class="donor-amount">₹4,000</p>
+                      <p class="donor-time">1 month ago</p>
+                    </div>
+                  </article>
+                  <article class="donor-card donor-card--bronze">
+                    <span class="donor-medal">3</span>
+                    <span class="donor-avatar donor-avatar--sky">P</span>
+                    <div class="donor-card-body">
+                      <p class="donor-name">Priya M.</p>
+                      <p class="donor-meta">School Kit</p>
+                      <span class="donor-impact">1 student supported</span>
+                    </div>
+                    <div class="donor-card-end">
+                      <p class="donor-amount">₹2,000</p>
+                      <p class="donor-time">3 weeks ago</p>
+                    </div>
+                  </article>
+                </div>
+
+                <div id="tab-recent" class="tab-panel donate-hidden">
+                  <article class="donor-card">
+                    <span class="donor-medal donor-medal--live"><i class="fa-solid fa-bolt"></i></span>
+                    <span class="donor-avatar bg-primary">S</span>
+                    <div class="donor-card-body">
+                      <p class="donor-name">Suresh N.</p>
+                      <p class="donor-meta">One-time donation</p>
+                      <span class="donor-impact">1 student supported</span>
+                    </div>
+                    <div class="donor-card-end">
+                      <p class="donor-amount">₹2,000</p>
+                      <p class="donor-time">Today</p>
+                    </div>
+                  </article>
+                  <article class="donor-card">
+                    <span class="donor-medal donor-medal--live"><i class="fa-solid fa-bolt"></i></span>
+                    <span class="donor-avatar donor-avatar--orange">M</span>
+                    <div class="donor-card-body">
+                      <p class="donor-name">Meera D.</p>
+                      <p class="donor-meta">Books &amp; Materials</p>
+                      <span class="donor-impact">1 student supported</span>
+                    </div>
+                    <div class="donor-card-end">
+                      <p class="donor-amount">₹1,000</p>
+                      <p class="donor-time">Yesterday</p>
+                    </div>
+                  </article>
+                  <article class="donor-card">
+                    <span class="donor-medal donor-medal--live"><i class="fa-solid fa-bolt"></i></span>
+                    <span class="donor-avatar donor-avatar--sky">V</span>
+                    <div class="donor-card-body">
+                      <p class="donor-name">Vikram S.</p>
+                      <p class="donor-meta">General giving</p>
+                      <span class="donor-impact">1 student supported</span>
+                    </div>
+                    <div class="donor-card-end">
+                      <p class="donor-amount">₹500</p>
+                      <p class="donor-time">2 days ago</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY DONATE -->
+      <section class="donate-sec donate-sec--cream">
+        <div class="reveal donate-sec-inner">
+          <div class="donate-sec-head text-center lg:text-left">
+            <p class="donate-sec-eyebrow">Why Give</p>
+            <h2 class="donate-sec-title">Why Donate With Sri Takshashila Gurukul?</h2>
+            <div class="donate-sec-accent lg:mx-0 mx-auto"></div>
+          </div>
+
+          <div class="why-grid">
+            <div class="why-card reveal">
+              <div class="why-icon"><i class="fa-solid fa-eye"></i></div>
+              <h3>Transparency</h3>
+              <p>As a non-profit, we focus on holistic development with clear purpose — empowering young minds for a brighter future.</p>
+            </div>
+            <div class="why-card reveal">
+              <div class="why-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <h3>Measurable Impact</h3>
+              <p>5000+ students impacted, 60+ schools and 26+ communities reached — your donation fuels real outcomes.</p>
+            </div>
+            <div class="why-card reveal">
+              <div class="why-icon"><i class="fa-solid fa-heart text-accent"></i></div>
+              <h3>Mission-Driven</h3>
+              <p>We seek no personal gain — only the fulfillment of nurturing passionate learners through education and awareness.</p>
+            </div>
+            <div class="why-card reveal">
+              <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
+              <h3>Easy Online Giving</h3>
+              <p>Secure Razorpay checkout — choose amount, cause, and donate in minutes from anywhere in India or abroad.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      </div><!-- /.donate-page-sections -->
+
+      </div><!-- /.donate-layout -->
+
+    </div><!-- /.donate-grid -->
+  </div><!-- /#donate-sticky-region -->
+
+  <div id="site-footer" class="w-full"></div>
 
   <script src="includes/load-header-footer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
+    /* Paste your Razorpay Key ID here (Dashboard → Settings → API Keys).
+       Example: rzp_live_xxxxxxxx  or  rzp_test_xxxxxxxx
+       Do NOT put Key Secret in this file — secret stays on server only. */
+    const RAZORPAY_KEY_ID = 'rzp_live_Sz5ZDnSXo7GiZk';
+
+    /* Fallback if Key ID is empty — Razorpay payment page link */
     const RAZORPAY_URL = 'https://pages.razorpay.com/pl_SpvRnpzek1B4KJ/view';
-    let selectedAmount = 2000;
+    const GOOGLE_SCRIPT_URL =
+      'https://script.google.com/macros/s/AKfycbygblI_5CjYljY7WtBk6Fs1KQqBFOWpQZWxZG5_YAhTVZ_LpLuPrqTX3t_GvQl7t16T/exec';
+    const MIN_DONATION_AMOUNT = 500;
+
+    const amountInput = document.getElementById('donation-amount');
+    const panels = {
+      amount: document.getElementById('panel-amount'),
+      confirm: document.getElementById('panel-confirm'),
+      bank: document.getElementById('panel-bank')
+    };
+
+    function showPanel(name) {
+      Object.keys(panels).forEach((key) => {
+        panels[key]?.classList.toggle('active', key === name);
+      });
+      const order = { amount: 0, confirm: 1, bank: 2 };
+      document.querySelectorAll('.dc-step').forEach((dot) => {
+        const step = dot.dataset.step;
+        const idx = order[step];
+        const activeIdx = order[name];
+        dot.classList.toggle('active', step === name);
+        dot.classList.toggle('done', idx < activeIdx);
+      });
+    }
+
+    function getDonationAmount() {
+      const val = parseInt(amountInput.value, 10);
+      return Number.isFinite(val) && val > 0 ? val : null;
+    }
+
+    function setDonationAmount(value) {
+      amountInput.value = value;
+    }
+
+    function clearAmountButtonActive() {
+      document.querySelectorAll('.amount-btn').forEach((b) => b.classList.remove('active'));
+    }
+
+    function activateAmountButton(btn) {
+      clearAmountButtonActive();
+      btn.classList.add('active');
+    }
+
+    function highlightAmountInput() {
+      amountInput.focus();
+      amountInput.style.borderColor = '#df5030';
+      amountInput.style.boxShadow = '0 0 0 3px rgba(223, 80, 48, 0.15)';
+      setTimeout(() => {
+        amountInput.style.borderColor = '';
+        amountInput.style.boxShadow = '';
+      }, 2000);
+    }
+
+    function showMinAmountAlert() {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Minimum Amount',
+        text: 'Minimum amount is INR 500.',
+        confirmButtonColor: '#0f3d91'
+      });
+    }
+
+    function validateAmount() {
+      const amount = getDonationAmount();
+      if (!amount) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Enter Amount',
+          text: 'Please enter a donation amount.',
+          confirmButtonColor: '#0f3d91'
+        });
+        highlightAmountInput();
+        return false;
+      }
+      if (amount < MIN_DONATION_AMOUNT) {
+        showMinAmountAlert();
+        highlightAmountInput();
+        return false;
+      }
+      return true;
+    }
+
+    function validateBankAmount(amount) {
+      if (!amount || amount < MIN_DONATION_AMOUNT) {
+        showMinAmountAlert();
+        showPanel('amount');
+        return false;
+      }
+      return true;
+    }
+
+    function openRazorpayCheckout(form) {
+      const amount = getDonationAmount();
+      const options = {
+        key: RAZORPAY_KEY_ID,
+        amount: amount * 100,
+        currency: 'INR',
+        name: 'Sri Takshashila Gurukul',
+        description: 'Donation',
+        image: 'Assests/Logo.png',
+        prefill: {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          contact: form.phone.value.trim()
+        },
+        theme: { color: '#0f3d91' },
+        handler: function (response) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Thank you for your donation!',
+            text: 'Payment ID: ' + response.razorpay_payment_id,
+            confirmButtonColor: '#0f3d91'
+          }).then(() => showPanel('amount'));
+        }
+      };
+      const rzp = new Razorpay(options);
+      rzp.on('payment.failed', function (res) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Payment failed',
+          text: res.error?.description || 'Please try again.',
+          confirmButtonColor: '#0f3d91'
+        });
+      });
+      rzp.open();
+    }
+
+    function startOnlinePayment(form) {
+      if (RAZORPAY_KEY_ID && RAZORPAY_KEY_ID.startsWith('rzp_')) {
+        openRazorpayCheckout(form);
+      } else {
+        window.location.href = RAZORPAY_URL;
+      }
+    }
 
     document.querySelectorAll('.amount-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.amount-btn').forEach((b) => {
-          b.classList.remove('active');
-          b.classList.add('border-gray-200');
-        });
-        btn.classList.add('active');
-        btn.classList.remove('border-gray-200');
-
-        const customInput = document.getElementById('custom-amount');
-        if (btn.dataset.amount === 'custom') {
-          customInput.classList.remove('hidden');
-          customInput.focus();
-          selectedAmount = parseInt(customInput.value, 10) || '';
-        } else {
-          customInput.classList.add('hidden');
-          selectedAmount = parseInt(btn.dataset.amount, 10);
+        activateAmountButton(btn);
+        if (btn.dataset.amount === 'other') {
+          setDonationAmount('');
+          amountInput.focus();
+          return;
         }
+        setDonationAmount(btn.dataset.amount);
       });
     });
 
-    document.getElementById('custom-amount')?.addEventListener('input', (e) => {
-      selectedAmount = parseInt(e.target.value, 10) || '';
+    amountInput.addEventListener('input', clearAmountButtonActive);
+
+    document.querySelectorAll('.back-to-amount').forEach((btn) => {
+      btn.addEventListener('click', () => showPanel('amount'));
     });
 
-    document.getElementById('freq-onetime')?.addEventListener('click', function () {
-      this.classList.add('active');
-      document.getElementById('freq-monthly').classList.remove('active');
-      document.getElementById('freq-monthly').classList.add('bg-gray-50', 'text-gray-600');
-      this.classList.remove('bg-gray-50', 'text-gray-600');
+    document.getElementById('proceed-donate')?.addEventListener('click', () => {
+      if (!validateAmount()) return;
+      const amount = getDonationAmount();
+      document.getElementById('summary-amount').textContent = '₹' + amount.toLocaleString('en-IN');
+      const dateEl = document.getElementById('donation-date');
+      if (dateEl && !dateEl.value) dateEl.valueAsDate = new Date();
+      showPanel('confirm');
+      document.getElementById('donate-card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
 
-    document.getElementById('freq-monthly')?.addEventListener('click', function () {
-      this.classList.add('active');
-      document.getElementById('freq-onetime').classList.remove('active');
-      document.getElementById('freq-onetime').classList.add('bg-gray-50', 'text-gray-600');
-      this.classList.remove('bg-gray-50', 'text-gray-600');
+    document.getElementById('bank-transfer-link')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (!validateAmount()) return;
+      const amount = getDonationAmount();
+      document.getElementById('bank-amount').value = amount;
+      document.getElementById('bank-summary-amount').textContent = '₹' + amount.toLocaleString('en-IN');
+      showPanel('bank');
+      document.getElementById('donate-card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
+
+    document.getElementById('confirm-form')?.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!validateAmount()) return;
+      const phone = this.phone.value.trim();
+      if (!/^[6-9][0-9]{9}$/.test(phone)) {
+        Swal.fire({ icon: 'warning', title: 'Invalid Number', text: 'Enter a valid 10 digit mobile number.', confirmButtonColor: '#0f3d91' });
+        return;
+      }
+      startOnlinePayment(this);
+    });
+
+    document.getElementById('screenshot')?.addEventListener('change', function () {
+      document.getElementById('file-name').textContent = this.files[0]?.name || 'No file chosen';
+    });
+
+    document.getElementById('bank-form')?.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const phone = this.bank_phone.value.trim();
+      const amount = parseInt(document.getElementById('bank-amount').value, 10);
+
+      if (!/^[6-9][0-9]{9}$/.test(phone)) {
+        Swal.fire({ icon: 'warning', title: 'Invalid Number', text: 'Enter a valid 10 digit mobile number.', confirmButtonColor: '#0f3d91' });
+        return;
+      }
+      if (!validateBankAmount(amount)) return;
+      if (!document.getElementById('screenshot').files.length) {
+        Swal.fire({ icon: 'warning', title: 'Screenshot Required', text: 'Please upload your bank transfer screenshot.', confirmButtonColor: '#0f3d91' });
+        return;
+      }
+
+      const fileName = document.getElementById('screenshot').files[0].name;
+      const submitBtn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+      submitBtn.disabled = true;
+      btnText.textContent = 'Submitting...';
+
+      const body = new URLSearchParams();
+      body.append('name', this.bank_name.value.trim());
+      body.append('phone', phone);
+      body.append('email', this.bank_email.value.trim());
+      body.append('source_page', 'Bank Donation Confirmation');
+      body.append('message', `Bank transfer | Amount: ₹${amount} | File: ${fileName}`);
+      body.append('heard_about', 'Bank Transfer');
+
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body });
+        Swal.fire({
+          icon: 'success',
+          title: 'Submitted Successfully!',
+          text: 'We will verify your bank transfer and contact you shortly.',
+          confirmButtonColor: '#0f3d91'
+        }).then(() => {
+          this.reset();
+          document.getElementById('file-name').textContent = 'No file chosen';
+          showPanel('amount');
+        });
+      } catch (_) {
+        Swal.fire({ icon: 'error', title: 'Submission Failed', text: 'Please try again or email sritakshashila@gmail.com', confirmButtonColor: '#0f3d91' });
+      } finally {
+        submitBtn.disabled = false;
+        btnText.textContent = 'Submit Contribution';
+      }
+    });
+
+    const PLEDGE_PER_STUDENT = 2000;
+    function updatePledgeLine() {
+      const el = document.getElementById('pledge-line');
+      const amount = getDonationAmount();
+      if (!el) return;
+      const students = amount ? Math.max(1, Math.floor(amount / PLEDGE_PER_STUDENT)) : 0;
+      const label = students === 1 ? "student's" : "students'";
+      el.innerHTML = students
+        ? `Your donation helps support <strong>${students}</strong> ${label} education journey.`
+        : 'Enter an amount to see your impact.';
+    }
+    updatePledgeLine();
+    amountInput?.addEventListener('input', updatePledgeLine);
+    document.querySelectorAll('.amount-btn').forEach((btn) => {
+      btn.addEventListener('click', () => setTimeout(updatePledgeLine, 0));
+    });
+
+    const statsDate = document.getElementById('stats-date');
+    if (statsDate) {
+      const d = new Date();
+      statsDate.textContent = String(d.getDate()).padStart(2, '0') + '/' +
+        String(d.getMonth() + 1).padStart(2, '0') + '/' + d.getFullYear();
+    }
 
     document.getElementById('specific-cause')?.addEventListener('change', (e) => {
-      document.getElementById('cause-select').classList.toggle('hidden', !e.target.checked);
+      document.getElementById('cause-select').classList.toggle('donate-hidden', !e.target.checked);
     });
 
     document.querySelectorAll('.donor-tab').forEach((tab) => {
       tab.addEventListener('click', () => {
-        document.querySelectorAll('.donor-tab').forEach((t) => {
-          t.classList.remove('active');
-          t.classList.add('text-gray-500');
-        });
+        document.querySelectorAll('.donor-tab').forEach((t) => t.classList.remove('active'));
         tab.classList.add('active');
-        tab.classList.remove('text-gray-500');
 
-        const isCauses = tab.dataset.tab === 'causes';
-        document.getElementById('tab-causes').classList.toggle('hidden', !isCauses);
-        document.getElementById('tab-general').classList.toggle('hidden', isCauses);
+        const isTop = tab.dataset.tab === 'top';
+        document.getElementById('tab-top')?.classList.toggle('donate-hidden', !isTop);
+        document.getElementById('tab-recent')?.classList.toggle('donate-hidden', isTop);
       });
-    });
-
-    document.querySelectorAll('.faq-trigger').forEach((trigger) => {
-      trigger.addEventListener('click', () => {
-        const item = trigger.closest('.faq-item');
-        const wasOpen = item.classList.contains('open');
-
-        document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('open'));
-        if (!wasOpen) item.classList.add('open');
-      });
-    });
-
-    let testimonialIndex = 0;
-    const slides = document.querySelectorAll('.testimonial-slide');
-
-    function showTestimonial(i) {
-      slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
-    }
-
-    document.getElementById('testimonial-prev')?.addEventListener('click', () => {
-      testimonialIndex = (testimonialIndex - 1 + slides.length) % slides.length;
-      showTestimonial(testimonialIndex);
-    });
-
-    document.getElementById('testimonial-next')?.addEventListener('click', () => {
-      testimonialIndex = (testimonialIndex + 1) % slides.length;
-      showTestimonial(testimonialIndex);
     });
 
     const revealEls = document.querySelectorAll('.reveal');
@@ -673,6 +801,6 @@
       });
     }, { threshold: 0.12 });
     revealEls.forEach((el) => revealObserver.observe(el));
-  </script>
+</script>
 </body>
 </html>

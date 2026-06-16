@@ -126,8 +126,7 @@
               </div>
 
               <div class="amount-input-wrap">
-                <input type="number" id="donation-amount" value="2000" placeholder="Enter custom amount" min="500" step="1" />
-                <p class="amount-hint">Minimum donation is INR 500</p>
+                <input type="number" id="donation-amount" value="2000" placeholder="Enter custom amount" min="1" step="1" />
               </div>
 
               <div id="pledge-line" class="pledge-box">
@@ -521,7 +520,6 @@
     const RAZORPAY_URL = 'https://pages.razorpay.com/pl_SpvRnpzek1B4KJ/view';
     const GOOGLE_SCRIPT_URL =
       'https://script.google.com/macros/s/AKfycbygblI_5CjYljY7WtBk6Fs1KQqBFOWpQZWxZG5_YAhTVZ_LpLuPrqTX3t_GvQl7t16T/exec';
-    const MIN_DONATION_AMOUNT = 500;
 
     const amountInput = document.getElementById('donation-amount');
     const panels = {
@@ -572,15 +570,6 @@
       }, 2000);
     }
 
-    function showMinAmountAlert() {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Minimum Amount',
-        text: 'Minimum amount is INR 500.',
-        confirmButtonColor: '#0f3d91'
-      });
-    }
-
     function validateAmount() {
       const amount = getDonationAmount();
       if (!amount) {
@@ -593,17 +582,17 @@
         highlightAmountInput();
         return false;
       }
-      if (amount < MIN_DONATION_AMOUNT) {
-        showMinAmountAlert();
-        highlightAmountInput();
-        return false;
-      }
       return true;
     }
 
     function validateBankAmount(amount) {
-      if (!amount || amount < MIN_DONATION_AMOUNT) {
-        showMinAmountAlert();
+      if (!amount || amount <= 0) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Enter Amount',
+          text: 'Please enter a donation amount.',
+          confirmButtonColor: '#0f3d91'
+        });
         showPanel('amount');
         return false;
       }

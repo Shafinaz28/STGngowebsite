@@ -58,8 +58,9 @@
         <p class="text-[14px] md:text-[15px] text-[#6f6a5f] leading-relaxed mb-8">
           Your support helps us empower students and strengthen communities. If you have any questions, please write to us at
           <a href="mailto:sritakshashila@gmail.com" class="text-primary font-semibold hover:underline">sritakshashila@gmail.com</a>.
-        
         </p>
+
+        <p id="payment-ref" class="hidden text-sm text-[#64748b] mb-8 font-medium"></p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a href="index.html"
@@ -68,7 +69,7 @@
             Back to Home
           </a>
           <a href="donate.html"
-            class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-xl hover:bg-[#67a936] transition shadow-md w-full sm:w-auto">
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-donate text-white font-semibold rounded-xl hover:bg-[#cf412f] transition shadow-md w-full sm:w-auto">
             <i class="fa-solid fa-heart"></i>
             Donate Again
           </a>
@@ -80,5 +81,14 @@
   <div id="site-footer"></div>
 
   <script src="includes/load-header-footer.js"></script>
+  <script>
+    (function () {
+      const paymentId = new URLSearchParams(window.location.search).get('payment_id');
+      const refEl = document.getElementById('payment-ref');
+      if (!paymentId || !refEl) return;
+      refEl.textContent = 'Payment reference: ' + paymentId;
+      refEl.classList.remove('hidden');
+    })();
+  </script>
 </body>
 </html>

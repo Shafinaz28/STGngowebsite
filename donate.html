@@ -626,12 +626,12 @@
         },
         theme: { color: '#0f3d91' },
         handler: function (response) {
-          Swal.fire({
-            icon: 'success',
-            title: 'Thank you for your donation!',
-            text: 'Payment ID: ' + response.razorpay_payment_id,
-            confirmButtonColor: '#0f3d91'
-          }).then(() => showPanel('amount'));
+          const params = new URLSearchParams();
+          if (response.razorpay_payment_id) {
+            params.set('payment_id', response.razorpay_payment_id);
+          }
+          const query = params.toString();
+          window.location.href = 'thankyou.html' + (query ? '?' + query : '');
         }
       };
       const rzp = new Razorpay(options);

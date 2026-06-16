@@ -3,9 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Donate online – Sponsor a child, school kit, books, or support Sri Takshashila Gurukul's education mission." />
+  <meta name="description" content="Donate online to Sri Takshashila Gurukul — sponsor a child, school kit, or books. Secure Razorpay payments. Empower 5000+ students across 60+ schools in India." />
+  <meta name="keywords" content="donate, Sri Takshashila Gurukul, sponsor a child, education donation, NGO India, school kit, Razorpay donation, charity education" />
+  <meta name="author" content="Sri Takshashila Gurukul" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f3d91" />
   <title>Donate | Sri Takshashila Gurukul</title>
-  <link rel="icon" href="Assests/Logo.png" />
+  <link rel="icon" href="Assests/Logo.png" type="image/png" />
+  <link rel="stylesheet" href="css/site-common.css" />
+  <link rel="shortcut icon" href="Assests/Logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="Assests/Logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sri Takshashila Gurukul" />
+  <meta property="og:title" content="Donate | Sri Takshashila Gurukul" />
+  <meta property="og:description" content="Make a secure online donation to empower students through education, mentorship, and community impact across India." />
+  <meta property="og:image" content="images/bannardonate.jpg" />
+  <meta property="og:url" content="donate.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Donate | Sri Takshashila Gurukul" />
+  <meta name="twitter:description" content="Sponsor a child or support education programs. Secure donations via Razorpay." />
+  <meta name="twitter:image" content="images/bannardonate.jpg" />
 
   <script>
     !function(f,b,e,v,n,t,s)
@@ -45,9 +62,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
   <link rel="stylesheet" href="css/donate-page.css" />
+
+  <script src="includes/load-header-footer.js" defer></script>
 
   <style>
     /* Do not override Tailwind .hidden — breaks responsive header (hidden md:flex, etc.) */
@@ -64,6 +84,15 @@
 </head>
 
 <body class="donate-page font-sans antialiased text-gray-800 bg-white">
+  <div id="page-loader" role="status" aria-label="Loading">
+    <img src="Assests/Logo.png" alt="" class="page-loader-logo" width="120" height="120" decoding="async" fetchpriority="high" />
+    <span class="page-loader-name">Sri Takshashila Gurukul</span>
+    <div class="page-loader-dots" aria-hidden="true">
+      <span class="page-loader-dot"></span>
+      <span class="page-loader-dot"></span>
+      <span class="page-loader-dot"></span>
+    </div>
+  </div>
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1292689785798523&ev=PageView&noscript=1" alt="" /></noscript>
 
@@ -80,13 +109,13 @@
         <div class="donate-top-overlay donate-top-overlay--zone" aria-hidden="true"></div>
         <div class="donate-top-inner">
           <div class="donate-hero-panel">
-            <div class="donate-hero-copy reveal">
-              <span class="hero-badge"><i class="fa-solid fa-heart"></i> Empower Through Education</span>
-              <h1>Choose To Make A&nbsp;<span class="hero-accent">Difference</span> Today</h1>
-              <p class="hero-lead">
+            <div class="donate-hero-copy">
+              <span class="hero-badge hero-enter hero-enter--1"><i class="fa-solid fa-heart"></i> Empower Through Education</span>
+              <h1 class="hero-enter hero-enter--2">Choose To Make A&nbsp;<span class="hero-accent">Difference</span> Today</h1>
+              <p class="hero-lead hero-enter hero-enter--3">
                 Together we can see our grand vision come true — every bright student deserves quality education and caring mentorship.
               </p>
-              <div class="hero-chips">
+              <div class="hero-chips hero-enter hero-enter--4">
                 <span class="hero-chip"><strong>5000+</strong> Students</span>
                 <span class="hero-chip"><strong>60+</strong> Schools</span>
                 <span class="hero-chip hero-chip--accent"><strong>₹2000</strong> = 1 Student</span>
@@ -302,17 +331,17 @@
           </div>
 
           <div class="impact-bento">
-            <div class="impact-stat">
+            <div class="impact-stat reveal reveal--child">
               <div class="impact-stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
               <p class="impact-stat-num">5000+</p>
               <p class="impact-stat-label">Students Impacted</p>
             </div>
-            <div class="impact-stat">
+            <div class="impact-stat reveal reveal--child">
               <div class="impact-stat-icon"><i class="fa-solid fa-school"></i></div>
               <p class="impact-stat-num">60+</p>
               <p class="impact-stat-label">Schools Reached</p>
             </div>
-            <div class="impact-stat impact-stat--wide">
+            <div class="impact-stat impact-stat--wide reveal reveal--child">
               <div class="impact-stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
               <p class="impact-stat-num">₹2000</p>
               <p class="impact-stat-label">Supports One Student's Journey</p>
@@ -338,17 +367,17 @@
               <p class="givers-lead">Every rupee empowers a student. Thank you to everyone who makes quality education possible.</p>
 
               <div class="givers-stats">
-                <div class="givers-stat">
+                <div class="givers-stat reveal reveal--child">
                   <span class="givers-stat-icon"><i class="fa-solid fa-users"></i></span>
                   <p class="givers-stat-num">5000+</p>
                   <p class="givers-stat-label">Students reached</p>
                 </div>
-                <div class="givers-stat">
+                <div class="givers-stat reveal reveal--child">
                   <span class="givers-stat-icon"><i class="fa-solid fa-school"></i></span>
                   <p class="givers-stat-num">60+</p>
                   <p class="givers-stat-label">Schools supported</p>
                 </div>
-                <div class="givers-stat givers-stat--accent">
+                <div class="givers-stat givers-stat--accent reveal reveal--child">
                   <span class="givers-stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span>
                   <p class="givers-stat-num">₹2000</p>
                   <p class="givers-stat-label">= 1 student / year</p>
@@ -376,7 +405,7 @@
 
               <div class="donor-list-panel">
                 <div id="tab-top" class="tab-panel">
-                  <article class="donor-card donor-card--gold">
+                  <article class="donor-card reveal reveal--child donor-card--gold">
                     <span class="donor-medal"><i class="fa-solid fa-crown"></i></span>
                     <span class="donor-avatar bg-primary">A</span>
                     <div class="donor-card-body">
@@ -389,7 +418,7 @@
                       <p class="donor-time">2 weeks ago</p>
                     </div>
                   </article>
-                  <article class="donor-card donor-card--silver">
+                  <article class="donor-card reveal reveal--child donor-card--silver">
                     <span class="donor-medal">2</span>
                     <span class="donor-avatar donor-avatar--orange">R</span>
                     <div class="donor-card-body">
@@ -402,7 +431,7 @@
                       <p class="donor-time">1 month ago</p>
                     </div>
                   </article>
-                  <article class="donor-card donor-card--bronze">
+                  <article class="donor-card reveal reveal--child donor-card--bronze">
                     <span class="donor-medal">3</span>
                     <span class="donor-avatar donor-avatar--sky">P</span>
                     <div class="donor-card-body">
@@ -418,7 +447,7 @@
                 </div>
 
                 <div id="tab-recent" class="tab-panel donate-hidden">
-                  <article class="donor-card">
+                  <article class="donor-card reveal reveal--child">
                     <span class="donor-medal donor-medal--live"><i class="fa-solid fa-bolt"></i></span>
                     <span class="donor-avatar bg-primary">S</span>
                     <div class="donor-card-body">
@@ -431,7 +460,7 @@
                       <p class="donor-time">Today</p>
                     </div>
                   </article>
-                  <article class="donor-card">
+                  <article class="donor-card reveal reveal--child">
                     <span class="donor-medal donor-medal--live"><i class="fa-solid fa-bolt"></i></span>
                     <span class="donor-avatar donor-avatar--orange">M</span>
                     <div class="donor-card-body">
@@ -444,7 +473,7 @@
                       <p class="donor-time">Yesterday</p>
                     </div>
                   </article>
-                  <article class="donor-card">
+                  <article class="donor-card reveal reveal--child">
                     <span class="donor-medal donor-medal--live"><i class="fa-solid fa-bolt"></i></span>
                     <span class="donor-avatar donor-avatar--sky">V</span>
                     <div class="donor-card-body">
@@ -507,10 +536,43 @@
 
   <div id="site-footer" class="w-full"></div>
 
-  <script src="includes/load-header-footer.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
+    let swalPromise = null;
+    let razorpayPromise = null;
+
+    function loadSwal() {
+      if (window.Swal) return Promise.resolve(window.Swal);
+      if (!swalPromise) {
+        swalPromise = new Promise(function (resolve, reject) {
+          var s = document.createElement('script');
+          s.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
+          s.async = true;
+          s.onload = function () { resolve(window.Swal); };
+          s.onerror = reject;
+          document.head.appendChild(s);
+        });
+      }
+      return swalPromise;
+    }
+
+    function fireAlert(options) {
+      return loadSwal().then(function (Swal) { return Swal.fire(options); });
+    }
+
+    function loadRazorpay() {
+      if (window.Razorpay) return Promise.resolve(window.Razorpay);
+      if (!razorpayPromise) {
+        razorpayPromise = new Promise(function (resolve, reject) {
+          var s = document.createElement('script');
+          s.src = 'https://checkout.razorpay.com/v1/checkout.js';
+          s.async = true;
+          s.onload = function () { resolve(window.Razorpay); };
+          s.onerror = reject;
+          document.head.appendChild(s);
+        });
+      }
+      return razorpayPromise;
+    }
     /* Paste your Razorpay Key ID here (Dashboard → Settings → API Keys).
        Example: rzp_live_xxxxxxxx  or  rzp_test_xxxxxxxx
        Do NOT put Key Secret in this file — secret stays on server only. */
@@ -573,7 +635,7 @@
     function validateAmount() {
       const amount = getDonationAmount();
       if (!amount) {
-        Swal.fire({
+        fireAlert({
           icon: 'warning',
           title: 'Enter Amount',
           text: 'Please enter a donation amount.',
@@ -587,7 +649,7 @@
 
     function validateBankAmount(amount) {
       if (!amount || amount <= 0) {
-        Swal.fire({
+        fireAlert({
           icon: 'warning',
           title: 'Enter Amount',
           text: 'Please enter a donation amount.',
@@ -601,38 +663,47 @@
 
     function openRazorpayCheckout(form) {
       const amount = getDonationAmount();
-      const options = {
-        key: RAZORPAY_KEY_ID,
-        amount: amount * 100,
-        currency: 'INR',
-        name: 'Sri Takshashila Gurukul',
-        description: 'Donation',
-        image: 'Assests/Logo.png',
-        prefill: {
-          name: form.name.value.trim(),
-          email: form.email.value.trim(),
-          contact: form.phone.value.trim()
-        },
-        theme: { color: '#0f3d91' },
-        handler: function (response) {
-          const params = new URLSearchParams();
-          if (response.razorpay_payment_id) {
-            params.set('payment_id', response.razorpay_payment_id);
+      loadRazorpay().then(function (Razorpay) {
+        const options = {
+          key: RAZORPAY_KEY_ID,
+          amount: amount * 100,
+          currency: 'INR',
+          name: 'Sri Takshashila Gurukul',
+          description: 'Donation',
+          image: 'Assests/Logo.png',
+          prefill: {
+            name: form.name.value.trim(),
+            email: form.email.value.trim(),
+            contact: form.phone.value.trim()
+          },
+          theme: { color: '#0f3d91' },
+          handler: function (response) {
+            const params = new URLSearchParams();
+            if (response.razorpay_payment_id) {
+              params.set('payment_id', response.razorpay_payment_id);
+            }
+            const query = params.toString();
+            window.location.href = 'thankyou.html' + (query ? '?' + query : '');
           }
-          const query = params.toString();
-          window.location.href = 'thankyou.html' + (query ? '?' + query : '');
-        }
-      };
-      const rzp = new Razorpay(options);
-      rzp.on('payment.failed', function (res) {
-        Swal.fire({
+        };
+        const rzp = new Razorpay(options);
+        rzp.on('payment.failed', function (res) {
+          fireAlert({
+            icon: 'error',
+            title: 'Payment failed',
+            text: res.error?.description || 'Please try again.',
+            confirmButtonColor: '#0f3d91'
+          });
+        });
+        rzp.open();
+      }).catch(function () {
+        fireAlert({
           icon: 'error',
-          title: 'Payment failed',
-          text: res.error?.description || 'Please try again.',
+          title: 'Payment unavailable',
+          text: 'Could not load payment gateway. Please check your connection and try again.',
           confirmButtonColor: '#0f3d91'
         });
       });
-      rzp.open();
     }
 
     function startOnlinePayment(form) {
@@ -686,7 +757,7 @@
       if (!validateAmount()) return;
       const phone = this.phone.value.trim();
       if (!/^[6-9][0-9]{9}$/.test(phone)) {
-        Swal.fire({ icon: 'warning', title: 'Invalid Number', text: 'Enter a valid 10 digit mobile number.', confirmButtonColor: '#0f3d91' });
+        fireAlert({ icon: 'warning', title: 'Invalid Number', text: 'Enter a valid 10 digit mobile number.', confirmButtonColor: '#0f3d91' });
         return;
       }
       startOnlinePayment(this);
@@ -702,12 +773,12 @@
       const amount = parseInt(document.getElementById('bank-amount').value, 10);
 
       if (!/^[6-9][0-9]{9}$/.test(phone)) {
-        Swal.fire({ icon: 'warning', title: 'Invalid Number', text: 'Enter a valid 10 digit mobile number.', confirmButtonColor: '#0f3d91' });
+        fireAlert({ icon: 'warning', title: 'Invalid Number', text: 'Enter a valid 10 digit mobile number.', confirmButtonColor: '#0f3d91' });
         return;
       }
       if (!validateBankAmount(amount)) return;
       if (!document.getElementById('screenshot').files.length) {
-        Swal.fire({ icon: 'warning', title: 'Screenshot Required', text: 'Please upload your bank transfer screenshot.', confirmButtonColor: '#0f3d91' });
+        fireAlert({ icon: 'warning', title: 'Screenshot Required', text: 'Please upload your bank transfer screenshot.', confirmButtonColor: '#0f3d91' });
         return;
       }
 
@@ -727,7 +798,7 @@
 
       try {
         await fetch(GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body });
-        Swal.fire({
+        fireAlert({
           icon: 'success',
           title: 'Submitted Successfully!',
           text: 'We will verify your bank transfer and contact you shortly.',
@@ -738,7 +809,7 @@
           showPanel('amount');
         });
       } catch (_) {
-        Swal.fire({ icon: 'error', title: 'Submission Failed', text: 'Please try again or email sritakshashila@gmail.com', confirmButtonColor: '#0f3d91' });
+        fireAlert({ icon: 'error', title: 'Submission Failed', text: 'Please try again or email sritakshashila@gmail.com', confirmButtonColor: '#0f3d91' });
       } finally {
         submitBtn.disabled = false;
         btnText.textContent = 'Submit Contribution';
@@ -784,16 +855,6 @@
       });
     });
 
-    const revealEls = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach((el) => revealObserver.observe(el));
 </script>
 </body>
 </html>

@@ -1,0 +1,106 @@
+/* Sri Takshashila Gurukul — shared page loader & scroll reveal */
+html { scroll-behavior: smooth; }
+
+@keyframes stkFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-loader-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.03); }
+}
+
+@keyframes page-loader-bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-8px); }
+}
+
+#page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+#page-loader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#page-loader .page-loader-logo {
+  width: 120px;
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+  animation: page-loader-pulse 1.5s ease-in-out infinite;
+}
+
+#page-loader .page-loader-name {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f3d91;
+  letter-spacing: 0.02em;
+}
+
+#page-loader .page-loader-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+
+#page-loader .page-loader-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0f3d91;
+  animation: page-loader-bounce 1.4s ease-in-out infinite both;
+}
+
+#page-loader .page-loader-dot:nth-child(1) { animation-delay: 0s; }
+#page-loader .page-loader-dot:nth-child(2) { animation-delay: 0.2s; }
+#page-loader .page-loader-dot:nth-child(3) { animation-delay: 0.4s; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--child:nth-child(1) { transition-delay: 0.05s; }
+.reveal--child:nth-child(2) { transition-delay: 0.15s; }
+.reveal--child:nth-child(3) { transition-delay: 0.25s; }
+.reveal--child:nth-child(4) { transition-delay: 0.35s; }
+.reveal--child:nth-child(5) { transition-delay: 0.45s; }
+.reveal--child:nth-child(6) { transition-delay: 0.55s; }
+
+.hero-enter {
+  opacity: 0;
+  animation: stkFadeUp 0.75s ease forwards;
+}
+
+.hero-enter--1 { animation-delay: 0.15s; }
+.hero-enter--2 { animation-delay: 0.3s; }
+.hero-enter--3 { animation-delay: 0.45s; }
+.hero-enter--4 { animation-delay: 0.6s; }

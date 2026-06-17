@@ -45,7 +45,7 @@ body.donate-page {
   pointer-events: none;
 }
 .donate-top-bg {
-  background: url('../images/bannardonate.jpg') left center / cover no-repeat;
+  background: url('../images/bannardonate-desktop.jpg') left center / cover no-repeat;
 }
 .donate-hero-panel,
 .donate-form-panel {
@@ -178,7 +178,7 @@ body.donate-page {
   }
   .donate-hero-panel::before {
     z-index: 0;
-    background-image: url('../images/bannardonate.jpg');
+    background-image: url('../images/bannardonate-mobile.jpg');
     background-repeat: no-repeat;
     background-position: left center;
     background-size: auto 100%;

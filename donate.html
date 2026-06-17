@@ -24,45 +24,32 @@
   <meta name="twitter:description" content="Sponsor a child or support education programs. Secure donations via Razorpay." />
   <meta name="twitter:image" content="images/bannardonate.jpg" />
 
+  <link rel="preload" href="css/donate-page.css" as="style" />
+  <link rel="preload" href="images/bannardonate-mobile.jpg" as="image" media="(max-width: 1023px)" />
+  <link rel="preload" href="images/bannardonate-desktop.jpg" as="image" media="(min-width: 1024px)" />
+
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1292689785798523');
-    fbq('track', 'PageView');
+    /* Hide loader immediately on mobile — show content first */
+    if (window.matchMedia('(max-width: 1023px)').matches) {
+      document.documentElement.classList.add('donate-mobile-fast');
+    }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#0f3d91',
-            secondary: '#0b2f73',
-            accent: '#df5030',
-            donate: '#df5030',
-            softbg: '#f7f4ea',
-            cardblue: '#eef4ff'
-          },
-          fontFamily: { sans: ['Outfit', 'system-ui', 'sans-serif'] },
-          boxShadow: {
-            card: '0 8px 32px rgba(0,0,0,0.10)',
-            lift: '0 16px 40px rgba(0,0,0,0.12)'
-          }
-        }
-      }
-    };
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1292689785798523');
+        fbq('track', 'PageView');
+      }, 2500);
+    });
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site-common.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
   <link rel="stylesheet" href="css/donate-page.css" />
@@ -72,6 +59,10 @@
   <style>
     /* Do not override Tailwind .hidden — breaks responsive header (hidden md:flex, etc.) */
     .donate-hidden { display: none !important; }
+    html.donate-mobile-fast #page-loader { display: none !important; }
+    @media (max-width: 1023px) {
+      body.donate-page { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    }
     :root {
       --primary: #0f3d91;
       --secondary: #0b2f73;
@@ -297,7 +288,7 @@
                   <div class="donate-file-upload">
                     <label class="donate-file-btn">
                       Choose File
-                      <input type="file" id="screenshot" accept="image/*,.pdf" class="hidden" required />
+                      <input type="file" id="screenshot" accept="image/*,.pdf" class="donate-hidden" required />
                     </label>
                     <span id="file-name" class="donate-file-name">No file chosen</span>
                   </div>
@@ -856,5 +847,40 @@
     });
 
 </script>
+  <script defer src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function initDonateTailwind() {
+      if (!window.tailwind) return;
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0f3d91',
+              secondary: '#0b2f73',
+              accent: '#df5030',
+              donate: '#df5030',
+              softbg: '#f7f4ea',
+              cardblue: '#eef4ff'
+            },
+            fontFamily: { sans: ['Outfit', 'system-ui', 'sans-serif'] },
+            boxShadow: {
+              card: '0 8px 32px rgba(0,0,0,0.10)',
+              lift: '0 16px 40px rgba(0,0,0,0.12)'
+            }
+          }
+        }
+      };
+    }
+    document.querySelector('script[src*="tailwindcss"]')?.addEventListener('load', initDonateTailwind);
+    document.addEventListener('DOMContentLoaded', function () {
+      initDonateTailwind();
+      if (!document.querySelector('link[href*="fonts.googleapis.com/css2?family=Outfit"]')) {
+        var font = document.createElement('link');
+        font.rel = 'stylesheet';
+        font.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap';
+        document.head.appendChild(font);
+      }
+    });
+  </script>
 </body>
 </html>

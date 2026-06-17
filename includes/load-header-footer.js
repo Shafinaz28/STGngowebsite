@@ -3,7 +3,7 @@
   base = base ? base.getAttribute('src').replace(/\/[^/]+$/, '') : 'includes';
   var headerEl = document.getElementById('site-header');
   var footerEl = document.getElementById('site-footer');
-  var LOADER_MAX_MS = 1800;
+  var LOADER_MAX_MS = 1200;
 
   function hidePageLoader() {
     var el = document.getElementById('page-loader');

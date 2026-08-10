@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K46BXWZH');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Check your selection result — Sri Takshashila Gurukul." />
+  <meta name="author" content="Sri Takshashila Gurukul" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f3d91" />
+  <title>Results | Sri Takshashila Gurukul</title>
+
+  <link rel="icon" href="Assests/Logo.png" type="image/png" />
+  <link rel="shortcut icon" href="Assests/Logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="Assests/Logo.png" />
+  <link rel="stylesheet" href="css/site-common.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f3d91',
+            secondary: '#0b2f73',
+            accent: '#78b943',
+            donate: '#df5030',
+            softbg: '#f7f4ea'
+          },
+          fontFamily: { sans: ['Outfit', 'system-ui', 'sans-serif'] },
+          boxShadow: { soft: '0 12px 35px rgba(0,0,0,0.08)' }
+        }
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    .result-seal {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      position: relative;
+      animation: sealPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      z-index: 2;
+    }
+    .result-seal::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255, 255, 255, 0.55);
+    }
+    .result-seal.selected {
+      background: radial-gradient(circle at 30% 30%, #8fd45a, #4a9e1c 55%, #2f7a0f);
+      box-shadow: 0 12px 32px rgba(74, 158, 28, 0.45), inset 0 0 0 6px rgba(255, 255, 255, 0.18);
+    }
+    .result-seal.not-selected {
+      background: radial-gradient(circle at 30% 30%, #f07860, #df5030 55%, #b83218);
+      box-shadow: 0 12px 32px rgba(223, 80, 48, 0.4), inset 0 0 0 6px rgba(255, 255, 255, 0.15);
+    }
+    .result-card {
+      animation: fadeUp 0.45s ease both;
+      position: relative;
+      overflow: hidden;
+    }
+    .motivate-box {
+      margin: 0 auto 1.5rem;
+      max-width: 28rem;
+      padding: 0.85rem 1rem;
+      border-radius: 0.9rem;
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 500;
+    }
+    .motivate-box.selected {
+      background: linear-gradient(135deg, #f0fbe8, #e6f6d6);
+      color: #2f5e14;
+      border: 1px solid #c6e6a8;
+    }
+    #celebrate-layer {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      overflow: hidden;
+    }
+    .petal, .cracker {
+      position: absolute;
+      top: -40px;
+      will-change: transform, opacity;
+      animation-name: fallSpin;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+    .petal {
+      font-size: 18px;
+      line-height: 1;
+    }
+    .cracker {
+      width: 8px;
+      height: 14px;
+      border-radius: 2px;
+      opacity: 0.95;
+    }
+    @keyframes sealPop {
+      from { opacity: 0; transform: scale(0.55) rotate(-8deg); }
+      to { opacity: 1; transform: scale(1) rotate(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fallSpin {
+      0% { transform: translate3d(0, -10vh, 0) rotate(0deg) scale(1); opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translate3d(var(--drift), 110vh, 0) rotate(720deg) scale(0.85); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased text-gray-800 bg-[#f5f7fb] min-h-screen flex flex-col">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K46BXWZH"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div id="site-header"></div>
+  <div id="celebrate-layer" aria-hidden="true"></div>
+
+  <!-- Hero -->
+  <section class="bg-[#0b2f73] text-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16 text-center">
+      <p class="text-[#8eb8ff] text-[12px] font-bold uppercase tracking-[0.22em] mb-3">Sri Takshashila Gurukul</p>
+      <h1 class="text-[30px] md:text-[40px] font-extrabold leading-tight mb-3">Check Your Result</h1>
+      <p class="text-[14px] md:text-[15px] text-[#c8d9f0] max-w-xl mx-auto">
+        Enter your USN to view your selection status.
+      </p>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <section class="flex-1 py-10 md:py-14">
+    <div class="max-w-xl mx-auto px-4 sm:px-6">
+
+      <form id="result-form" class="bg-white border border-[#e5eaf3] rounded-2xl shadow-soft p-5 md:p-7 mb-8">
+        <label for="usn-input" class="block text-[13px] font-bold text-[#0f3d91] mb-2">
+          Enter USN
+        </label>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input
+            id="usn-input"
+            type="text"
+            autocomplete="off"
+            placeholder="e.g. STG001DA2026"
+            class="flex-1 border border-[#d7dee9] rounded-xl px-4 py-3 text-[14px] focus:outline-none focus:ring-2 focus:ring-[#0f3d91]/30 focus:border-[#0f3d91] uppercase"
+            required
+          />
+          <button type="submit"
+            class="inline-flex items-center justify-center gap-2 bg-[#0f3d91] hover:bg-[#0c3278] text-white text-[13px] font-bold px-6 py-3 rounded-xl transition shrink-0">
+            <i class="fa-solid fa-magnifying-glass"></i> Check Result
+          </button>
+        </div>
+      </form>
+
+      <!-- Result area -->
+      <div id="result-area" class="hidden"></div>
+
+      <p id="loading-msg" class="hidden text-center text-[13px] text-[#64748b] py-6">
+        <i class="fa-solid fa-spinner fa-spin mr-2"></i> Loading results…
+      </p>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="includes/load-header-footer.js"></script>
+  <script>
+    (function () {
+      var resultsData = [];
+      var form = document.getElementById('result-form');
+      var input = document.getElementById('usn-input');
+      var area = document.getElementById('result-area');
+      var loading = document.getElementById('loading-msg');
+      var celebrateLayer = document.getElementById('celebrate-layer');
+
+      var flowers = ['🌸', '🌺', '🌼', '🌻', '🌷', '💮', '🏵️', '💐'];
+      var crackerColors = ['#df5030', '#78b943', '#0f3d91', '#f5c542', '#e85d8e', '#2bb3c0', '#ff7a3d'];
+
+      function normalize(val) {
+        return String(val || '').trim().toUpperCase().replace(/\s+/g, '');
+      }
+
+      function getStatus(row) {
+        return String(row.status || row.Status || row.STATUS || '').trim().toUpperCase();
+      }
+
+      function getUsn(row) {
+        return normalize(row.SRN || row.USN || row.srn || row.usn || '');
+      }
+
+      function getName(row) {
+        return String(row.NAME || row.Name || row.name || '—').trim();
+      }
+
+      function getPhone(row) {
+        return String(row['PHONE NO.'] || row['PHONE NO'] || row.PHONE || row.Phone || row.phone || '—').trim();
+      }
+
+      function isSelected(status) {
+        return status === 'SELECTED';
+      }
+
+      function pick(list) {
+        return list[Math.floor(Math.random() * list.length)];
+      }
+
+      function clearCelebration() {
+        celebrateLayer.innerHTML = '';
+      }
+
+      function launchCelebration() {
+        clearCelebration();
+        var count = 56;
+        for (var i = 0; i < count; i++) {
+          var isFlower = Math.random() > 0.42;
+          var el = document.createElement('span');
+          el.className = isFlower ? 'petal' : 'cracker';
+          el.style.left = Math.random() * 100 + 'vw';
+          el.style.setProperty('--drift', (Math.random() * 120 - 60) + 'px');
+          el.style.animationDuration = (2.4 + Math.random() * 2.6) + 's';
+          el.style.animationDelay = (Math.random() * 0.55) + 's';
+          el.style.fontSize = (16 + Math.random() * 14) + 'px';
+          if (isFlower) {
+            el.textContent = pick(flowers);
+          } else {
+            el.style.background = pick(crackerColors);
+            el.style.transform = 'rotate(' + (Math.random() * 50) + 'deg)';
+          }
+          celebrateLayer.appendChild(el);
+        }
+        setTimeout(clearCelebration, 5200);
+      }
+
+      function renderSelected(row) {
+        return (
+          '<div class="result-card bg-white border border-[#cfe8b8] rounded-2xl shadow-soft p-6 md:p-8 text-center">' +
+            '<div class="result-seal selected text-white">' +
+              '<i class="fa-solid fa-check text-[36px] mb-1"></i>' +
+              '<span class="text-[12px] font-extrabold uppercase tracking-wider">Selected</span>' +
+            '</div>' +
+            '<p class="text-[28px] mb-1">🎉</p>' +
+            '<h2 class="text-[22px] md:text-[26px] font-extrabold text-[#2f7a0f] mb-2">Congratulations! You are Selected</h2>' +
+            '<p class="motivate-box selected">Your hard work has paid off — keep growing and make every opportunity count.</p>' +
+            detailsBlock(row, true) +
+          '</div>'
+        );
+      }
+
+      function renderNotSelected(row) {
+        var details = row ? detailsBlock(row, false) : '';
+
+        return (
+          '<div class="result-card bg-white border border-[#f5c4b8] rounded-2xl shadow-soft p-6 md:p-8 text-center">' +
+            '<div class="result-seal not-selected text-white">' +
+              '<i class="fa-solid fa-xmark text-[36px] mb-1"></i>' +
+              '<span class="text-[11px] font-extrabold uppercase tracking-wider text-center px-2 leading-tight">Not<br>Selected</span>' +
+            '</div>' +
+            '<h2 class="text-[22px] md:text-[26px] font-extrabold text-[#b83218] mb-2">You are Not Selected</h2>' +
+            '<p class="text-[14px] text-[#64748b] mb-6">Thank you for applying. We appreciate your interest and effort.</p>' +
+            details +
+          '</div>'
+        );
+      }
+
+      function detailsBlock(row, selected) {
+        var badge = selected
+          ? '<span class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wide bg-[#edf8ea] text-[#2f7a0f] px-3 py-1 rounded-full"><i class="fa-solid fa-circle-check"></i> Selected</span>'
+          : '<span class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wide bg-[#fde8e8] text-[#b83218] px-3 py-1 rounded-full"><i class="fa-solid fa-circle-xmark"></i> Not Selected</span>';
+
+        return (
+          '<div class="text-left bg-[#f8fafc] border border-[#e8ecf3] rounded-xl p-4 md:p-5 space-y-3">' +
+            '<div class="flex items-center justify-between gap-3 flex-wrap">' +
+              '<p class="text-[12px] font-bold uppercase tracking-wide text-[#0f3d91]">Candidate Details</p>' +
+              badge +
+            '</div>' +
+            '<div class="grid sm:grid-cols-2 gap-3 text-[13px]">' +
+              '<div><p class="text-[11px] text-[#94a3b8] font-semibold uppercase mb-0.5">USN</p><p class="font-bold text-[#132238]">' + escapeHtml(getUsn(row)) + '</p></div>' +
+              '<div><p class="text-[11px] text-[#94a3b8] font-semibold uppercase mb-0.5">Name</p><p class="font-bold text-[#132238]">' + escapeHtml(getName(row)) + '</p></div>' +
+              '<div class="sm:col-span-2"><p class="text-[11px] text-[#94a3b8] font-semibold uppercase mb-0.5">Phone</p><p class="font-bold text-[#132238]">' + escapeHtml(getPhone(row)) + '</p></div>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function checkResult(usnRaw) {
+        var usn = normalize(usnRaw);
+        if (!usn) return;
+
+        clearCelebration();
+
+        var match = null;
+        for (var i = 0; i < resultsData.length; i++) {
+          if (getUsn(resultsData[i]) === usn) {
+            match = resultsData[i];
+            break;
+          }
+        }
+
+        area.classList.remove('hidden');
+
+        // 1) Found + SELECTED → congratulations + flowers/crackers
+        // 2) Found + NOT SELECTED → not selected + motivation
+        // 3) Not found → also not selected (never "USN Not Found")
+        if (match && isSelected(getStatus(match))) {
+          area.innerHTML = renderSelected(match);
+          launchCelebration();
+        } else if (match) {
+          area.innerHTML = renderNotSelected(match);
+        } else {
+          area.innerHTML = renderNotSelected(null);
+        }
+
+        area.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        checkResult(input.value);
+      });
+
+      loading.classList.remove('hidden');
+      fetch('data/results.json')
+        .then(function (r) {
+          if (!r.ok) throw new Error('Could not load results');
+          return r.json();
+        })
+        .then(function (data) {
+          resultsData = Array.isArray(data) ? data : [];
+          loading.classList.add('hidden');
+        })
+        .catch(function () {
+          loading.classList.add('hidden');
+          area.classList.remove('hidden');
+          area.innerHTML =
+            '<div class="bg-white border border-[#f5c4b8] rounded-2xl p-6 text-center text-[14px] text-[#b83218]">' +
+            'Unable to load results right now. Please try again later or open this page via a local server.' +
+            '</div>';
+        });
+    })();
+  </script>
+</body>
+</html>

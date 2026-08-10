@@ -104,3 +104,44 @@ html { scroll-behavior: smooth; }
 .hero-enter--2 { animation-delay: 0.3s; }
 .hero-enter--3 { animation-delay: 0.45s; }
 .hero-enter--4 { animation-delay: 0.6s; }
+
+/* Floating WhatsApp (SVG icon — no Font Awesome needed) */
+#stk-float-whatsapp {
+  position: fixed;
+  right: 16px;
+  bottom: 20px;
+  z-index: 9990;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+#stk-float-whatsapp:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
+}
+#stk-float-whatsapp svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  display: block;
+}
+@media (max-width: 640px) {
+  #stk-float-whatsapp {
+    right: 12px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+  }
+  #stk-float-whatsapp svg {
+    width: 28px;
+    height: 28px;
+  }
+}

@@ -43,6 +43,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1292689785798523');
   fbq('track', 'PageView');
+
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1292689785798523&ev=PageView&noscript=1"
@@ -268,6 +269,97 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transform: translateY(-4px);
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
     }
+
+    .gallery-marquee {
+      overflow: hidden;
+      width: 100%;
+      mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+    }
+
+    .gallery-marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 1rem;
+      animation: gallerySlideLeft 40s linear infinite;
+    }
+
+    .gallery-marquee:hover .gallery-marquee-track {
+      animation-play-state: paused;
+    }
+
+    .gallery-marquee-item {
+      flex: 0 0 auto;
+      width: 280px;
+      height: 200px;
+      border-radius: 0.9rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    @media (min-width: 768px) {
+      .gallery-marquee-item {
+        width: 340px;
+        height: 240px;
+      }
+    }
+
+    @keyframes gallerySlideLeft {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-marquee-track {
+        animation: none;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .stories-marquee {
+      overflow: hidden;
+      width: 100%;
+      mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    }
+
+    .stories-marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 1.25rem;
+      animation: storiesSlideLeft 35s linear infinite;
+    }
+
+    .stories-marquee:hover .stories-marquee-track {
+      animation-play-state: paused;
+    }
+
+    .stories-marquee-card {
+      flex: 0 0 auto;
+      width: 260px;
+    }
+
+    @media (min-width: 768px) {
+      .stories-marquee-card {
+        width: 300px;
+      }
+    }
+
+    @keyframes storiesSlideLeft {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stories-marquee-track {
+        animation: none;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 
@@ -391,209 +483,139 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
   </section>
 
-  <!-- RESULTS CHECK BANNER -->
-  <section class="bg-[#0b2f73] border-y border-[#0a275f]">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 md:py-7 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-      <div>
-        <p class="text-[#8eb8ff] text-[11px] font-bold uppercase tracking-[0.2em] mb-1">Selection Result</p>
-        <h2 class="text-white text-[18px] md:text-[22px] font-extrabold leading-snug">Check your result with USN</h2>
+  <!-- KALPAVRUKSHA SECTION -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-[#f4f7fb] via-white to-[#f7f4ea]">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#cbb58a]/70 to-transparent"></div>
+      <div class="absolute -top-24 right-[8%] w-[28rem] h-[28rem] rounded-full bg-[#78b943]/10 blur-3xl"></div>
+      <div class="absolute -bottom-28 left-[5%] w-[26rem] h-[26rem] rounded-full bg-[#0f3d91]/10 blur-3xl"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 relative z-10">
+      <div class="reveal text-center mb-10 md:mb-12">
+        <div class="flex items-center justify-center gap-4">
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+          <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91] whitespace-nowrap">
+            Kalpavruksha
+          </h2>
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+        </div>
       </div>
-      <a href="results.html"
-        class="inline-flex items-center gap-2 bg-accent hover:bg-[#67a936] text-white text-[13px] font-bold px-6 py-3 rounded-xl transition shrink-0">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        Check Result
-      </a>
+
+      <!-- 5 Stages Process -->
+      <div class="reveal relative mb-10 md:mb-12">
+        <div class="flex justify-center mb-8 md:mb-10">
+          <div class="inline-flex items-center px-5 py-2 rounded-xl bg-[#e8f1ff] border border-[#c9daf5] text-[#0f3d91] text-[13px] md:text-[14px] font-bold shadow-sm">
+            5 Stages Process
+          </div>
+        </div>
+
+        <div class="relative">
+          <!-- connector line (desktop) -->
+          <div class="hidden md:block absolute top-[34px] left-[10%] right-[10%] h-[2px] bg-[#d5deea] z-0"></div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-3 relative z-10">
+
+            <!-- 1 Mulam -->
+            <div class="flex flex-col items-center text-center">
+              <div class="w-[68px] h-[68px] rounded-2xl bg-white border border-[#d7e3f4] shadow-soft flex items-center justify-center mb-2">
+                <span class="w-11 h-11 rounded-full bg-gradient-to-br from-[#78b943] to-[#5f9e2f] text-white flex items-center justify-center text-lg">
+                  <i class="fa-solid fa-seedling"></i>
+                </span>
+              </div>
+              <div class="text-[#78b943] text-[14px] leading-none mb-2"><i class="fa-solid fa-caret-down"></i></div>
+              <div class="w-full rounded-xl px-2 py-2.5 mb-3 text-white text-[12px] md:text-[13px] font-bold leading-snug shadow-md bg-gradient-to-r from-[#78b943] to-[#5f9e2f]">
+                1. Root
+              </div>
+              <div class="w-full flex-1 rounded-xl bg-[#eef4ff] border border-[#dbe6f7] px-3 py-4 text-left min-h-[110px]">
+                <p class="text-[13px] font-semibold text-[#334155]">Discovery</p>
+                <p class="text-[12px] text-[#64748b] mt-2 leading-relaxed">Strong foundation for aspiration.</p>
+              </div>
+            </div>
+
+            <!-- 2 Bijam -->
+            <div class="flex flex-col items-center text-center">
+              <div class="w-[68px] h-[68px] rounded-2xl bg-white border border-[#d7e3f4] shadow-soft flex items-center justify-center mb-2">
+                <span class="w-11 h-11 rounded-full bg-[#0f3d91] text-white flex items-center justify-center text-lg">
+                  <i class="fa-solid fa-spa"></i>
+                </span>
+              </div>
+              <div class="text-[#0f3d91] text-[14px] leading-none mb-2"><i class="fa-solid fa-caret-down"></i></div>
+              <div class="w-full rounded-xl px-2 py-2.5 mb-3 text-white text-[12px] md:text-[13px] font-bold leading-snug shadow-md bg-[#0b2f73]">
+                2. Seed
+              </div>
+              <div class="w-full flex-1 rounded-xl bg-[#eef4ff] border border-[#dbe6f7] px-3 py-4 text-left min-h-[110px]">
+                <p class="text-[13px] font-semibold text-[#334155]">Nurture</p>
+                <p class="text-[12px] text-[#64748b] mt-2 leading-relaxed">Aspiration enables talent growth.</p>
+              </div>
+            </div>
+
+            <!-- 3 Ankura -->
+            <div class="flex flex-col items-center text-center">
+              <div class="w-[68px] h-[68px] rounded-2xl bg-white border border-[#d7e3f4] shadow-soft flex items-center justify-center mb-2">
+                <span class="w-11 h-11 rounded-full bg-gradient-to-br from-[#78b943] to-[#5f9e2f] text-white flex items-center justify-center text-lg">
+                  <i class="fa-solid fa-leaf"></i>
+                </span>
+              </div>
+              <div class="text-[#78b943] text-[14px] leading-none mb-2"><i class="fa-solid fa-caret-down"></i></div>
+              <div class="w-full rounded-xl px-2 py-2.5 mb-3 text-white text-[12px] md:text-[13px] font-bold leading-snug shadow-md bg-gradient-to-r from-[#78b943] to-[#5f9e2f]">
+                3. Shoot
+              </div>
+              <div class="w-full flex-1 rounded-xl bg-[#eef4ff] border border-[#dbe6f7] px-3 py-4 text-left min-h-[110px]">
+                <p class="text-[13px] font-semibold text-[#334155]">Team Work</p>
+                <p class="text-[12px] text-[#64748b] mt-2 leading-relaxed">Talent grows through collaboration.</p>
+              </div>
+            </div>
+
+            <!-- 4 Vikasa -->
+            <div class="flex flex-col items-center text-center">
+              <div class="w-[68px] h-[68px] rounded-2xl bg-white border border-[#d7e3f4] shadow-soft flex items-center justify-center mb-2">
+                <span class="w-11 h-11 rounded-full bg-[#0f3d91] text-white flex items-center justify-center text-lg">
+                  <i class="fa-solid fa-tree"></i>
+                </span>
+              </div>
+              <div class="text-[#0f3d91] text-[14px] leading-none mb-2"><i class="fa-solid fa-caret-down"></i></div>
+              <div class="w-full rounded-xl px-2 py-2.5 mb-3 text-white text-[12px] md:text-[13px] font-bold leading-snug shadow-md bg-[#0b2f73]">
+                4. Growth
+              </div>
+              <div class="w-full flex-1 rounded-xl bg-[#eef4ff] border border-[#dbe6f7] px-3 py-4 text-left min-h-[110px]">
+                <p class="text-[13px] font-semibold text-[#334155]">Ownership</p>
+                <p class="text-[12px] text-[#64748b] mt-2 leading-relaxed">Development builds ownership.</p>
+              </div>
+            </div>
+
+            <!-- 5 Siddhi -->
+            <div class="flex flex-col items-center text-center">
+              <div class="w-[68px] h-[68px] rounded-2xl bg-white border border-[#d7e3f4] shadow-soft flex items-center justify-center mb-2">
+                <span class="w-11 h-11 rounded-full bg-gradient-to-br from-[#78b943] to-[#5f9e2f] text-white flex items-center justify-center text-lg">
+                  <i class="fa-solid fa-hands-holding-circle"></i>
+                </span>
+              </div>
+              <div class="text-[#78b943] text-[14px] leading-none mb-2"><i class="fa-solid fa-caret-down"></i></div>
+              <div class="w-full rounded-xl px-2 py-2.5 mb-3 text-white text-[11px] md:text-[12px] font-bold leading-snug shadow-md bg-gradient-to-r from-[#78b943] to-[#5f9e2f]">
+                5. Fulfilment &amp; Replication
+              </div>
+              <div class="w-full flex-1 rounded-xl bg-[#eef4ff] border border-[#dbe6f7] px-3 py-4 text-left min-h-[110px]">
+                <p class="text-[13px] font-semibold text-[#334155]">Leadership &amp; Contribution</p>
+                <p class="text-[12px] text-[#64748b] mt-2 leading-relaxed">Replication &amp; wider social impact.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal text-center">
+        <a href="KalpavrukshaProgram.html"
+          class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#0f3d91] hover:bg-[#0c3278] text-white text-[14px] font-bold rounded-xl shadow-[0_12px_28px_rgba(15,61,145,0.28)] transition-all duration-300 hover:-translate-y-0.5">
+          Explore Kalpavruksha
+          <i class="fa-solid fa-arrow-right text-[12px]"></i>
+        </a>
+      </div>
     </div>
   </section>
 
-<!-- ABOUT US SECTION -->
-<section class="py-14 md:py-20 bg-white relative overflow-hidden">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-
-    <!-- Main Section Heading -->
-    <div class="text-center mb-12 reveal">
-      <div class="flex items-center justify-center gap-4 mb-3">
-        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-
-        <h2 class="text-[24px] md:text-[30px] font-extrabold text-[#0f3d91] whitespace-nowrap">
-          About Us
-        </h2>
-
-        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-      </div>
-
-      <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto">
-        Building brighter futures through education, awareness, and impact.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-
-      <!-- Left Side Video -->
-      <div class="reveal">
-        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-[#e8ecf3] aspect-video bg-[#0a1628]">
-          <video
-            class="w-full h-full object-cover"
-            controls
-            playsinline
-            preload="metadata"
-            title="About Us Video">
-            <source src="Assests/Video1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-
-      <!-- Right Side Content -->
-      <div class="reveal">
-
-        <h3 class="text-[28px] md:text-[40px] leading-tight font-extrabold text-[#0f3d91] mb-4">
-          Empowering Students.<br>
-          Transforming Communities.
-        </h3>
-
-        <p class="text-[14px] md:text-[15px] text-[#666] leading-relaxed mb-6">
-          Sri Takshashila Gurukul is a mission-driven organization dedicated to nurturing 
-          students and creating sustainable community impact through education, awareness, 
-          and future-ready skill development.
-        </p>
-
-        <!-- Points -->
-        <div class="space-y-4 mb-7">
-
-          <div class="flex gap-3">
-            <div class="w-10 h-10 rounded-full bg-[#eef4ff] flex items-center justify-center text-[#0f3d91]">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-[#222] text-[14px]">Student Growth</h4>
-              <p class="text-[13px] text-gray-600">Helping young minds unlock confidence, creativity, and leadership.</p>
-            </div>
-          </div>
-
-          <div class="flex gap-3">
-            <div class="w-10 h-10 rounded-full bg-[#eef8ea] flex items-center justify-center text-[#6d8f2f]">
-              <i class="fa-solid fa-seedling"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-[#222] text-[14px]">Community Impact</h4>
-              <p class="text-[13px] text-gray-600">Building awareness programs that uplift families and communities.</p>
-            </div>
-          </div>
-
-          <div class="flex gap-3">
-            <div class="w-10 h-10 rounded-full bg-[#fff4e8] flex items-center justify-center text-[#d97706]">
-              <i class="fa-solid fa-lightbulb"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-[#222] text-[14px]">Future Skills</h4>
-              <p class="text-[13px] text-gray-600">Equipping students with digital literacy and practical life skills.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- CTA -->
-        <a href="about-us.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#0f3d91] text-white font-semibold rounded-xl hover:bg-[#0c3278] transition-all duration-300 hover:scale-105">
-          Learn More
-          <i class="fa-solid fa-arrow-right text-[13px]"></i>
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- SECTION 2: ROOT TO FOREST -->
-<section class="py-10 md:py-14 relative overflow-hidden bg-gradient-to-b from-[#f9f7ef] via-[#f3f8ec] to-[#e8f3df]">
-
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-
-    <!-- Heading -->
-    <div class="text-center mb-8 reveal">
-      <div class="flex items-center justify-center gap-4 mb-2">
-        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-
-        <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91] whitespace-nowrap">
-          Our Growth Model
-        </h2>
-
-        <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-      </div>
-
-      <p class="text-[13px] md:text-[14px] text-gray-600 mt-1 max-w-xl mx-auto">
-        From Roots to Forest – A Journey of Impact
-      </p>
-    </div>
-
-    <!-- Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-
-      <!-- ROOT -->
-      <div class="rounded-2xl overflow-hidden shadow-xl bg-white hover-lift">
-        <div class="relative h-56">
-          <img src="Assests/mossy-roots-tree-forest.jpg" class="w-full h-full object-cover" alt="Root">
-          <div class="absolute inset-0 bg-black/35"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-4 text-white">
-            <h3 class="text-xl font-bold mb-1">ROOT</h3>
-            <p class="text-sm leading-relaxed">
-              Plant trust and care through early support and strong foundations.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- SEED -->
-      <div class="rounded-2xl overflow-hidden shadow-xl bg-white hover-lift">
-        <div class="relative h-56">
-          <img src="Assests/Seed.jpg" class="w-full h-full object-cover" alt="Seed">
-          <div class="absolute inset-0 bg-black/35"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-4 text-white">
-            <h3 class="text-xl font-bold mb-1">SEED</h3>
-            <p class="text-sm leading-relaxed">
-              Nurture young minds with opportunities to learn and grow.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- TREE -->
-      <div class="rounded-2xl overflow-hidden shadow-xl bg-white hover-lift">
-        <div class="relative h-56">
-          <img src="Assests/TREE.jpg" class="w-full h-full object-cover" alt="Tree">
-          <div class="absolute inset-0 bg-black/35"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-4 text-white">
-            <h3 class="text-xl font-bold mb-1">TREE</h3>
-            <p class="text-sm leading-relaxed">
-              Build skills, awareness, and confidence through programs.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- FOREST -->
-      <div class="rounded-2xl overflow-hidden shadow-xl bg-white hover-lift">
-        <div class="relative h-56">
-          <img src="Assests/FOREST.jpg" class="w-full h-full object-cover" alt="Forest">
-          <div class="absolute inset-0 bg-black/35"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-4 text-white">
-            <h3 class="text-xl font-bold mb-1">FOREST</h3>
-            <p class="text-sm leading-relaxed">
-              Create lasting ecosystems of impact across generations.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- SECTION 4: PROGRAMS -->
+<!-- SECTION 4: PROGRAMS (kept for later — not removed)
 <section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none opacity-30">
     <div class="absolute top-0 left-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
@@ -602,7 +624,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
 
-    <!-- Heading -->
     <div class="text-center mb-8 reveal">
       <div class="flex items-center justify-center gap-4">
         <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
@@ -615,10 +636,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <!-- Cards -->
     <div class="grid md:grid-cols-3 gap-5 md:gap-6">
 
-      <!-- Card 1 -->
       <div class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-1">
         <img src="Assests/carousel_10.jpeg" alt="Kalpavruksha Program" class="w-full h-44 object-cover">
         <div class="p-5 text-center">
@@ -638,7 +657,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <!-- Card 2 -->
       <div class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-2">
         <img src="Assests/carousel_11.jpeg" alt="Sustainable Communities" class="w-full h-44 object-cover">
         <div class="p-5 text-center">
@@ -658,7 +676,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <!-- Card 3 -->
       <div class="bg-white rounded-md overflow-hidden border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)] hover-lift reveal stagger-3">
         <img src="Assests/carousel_5.jpeg" alt="Impact Catalyst" class="w-full h-44 object-cover">
         <div class="p-5 text-center">
@@ -681,6 +698,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
+-->
 
     <!-- SECTION 3: IMPACT COUNTERS -->
   <section class="py-10 md:py-14 relative overflow-hidden">
@@ -763,205 +781,111 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
 <!-- SECTION 5: LEARN & EXPLORE -->
-<section class="py-12 md:py-16 bg-white relative overflow-hidden">
-
-  <!-- Soft background shapes -->
+<section class="py-10 md:py-12 bg-white relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none opacity-30">
     <div class="absolute top-0 right-0 w-80 h-80 bg-[#e8efd8] rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 left-0 w-72 h-72 bg-[#eef4ff] rounded-full blur-3xl"></div>
   </div>
-
   <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-
-    <!-- Heading -->
-    <div class="text-center mb-10 reveal">
-      <div class="flex items-center justify-center gap-4 mb-3">
+    <div class="text-center mb-6 reveal">
+      <div class="flex items-center justify-center gap-4 mb-2">
         <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-
-        <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91] whitespace-nowrap">
-          Learn &amp; Explore
-        </h2>
-
+        <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91] whitespace-nowrap">Learn &amp; Explore</h2>
         <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
       </div>
-
-      <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto mt-3 leading-relaxed">
-        Engaging learning experiences that help students discover strengths, build skills, explore careers, and receive guided mentorship for the future.
+      <p class="text-[13px] text-[#7a7468] max-w-2xl mx-auto leading-relaxed">
+        Engaging learning experiences that help students discover strengths, build skills, explore careers, and receive guided mentorship.
       </p>
     </div>
-
-    <!-- Main Layout -->
-    <div class="grid lg:grid-cols-2 gap-0 items-stretch overflow-hidden rounded-[20px] border border-[#ddd8c8] shadow-[0_6px_18px_rgba(0,0,0,0.06)]">
-
-      <!-- LEFT FEATURE BLOCK -->
-      <div class="bg-gradient-to-br from-[#f7f4ea] to-[#edf8ea] p-6 md:p-7 border-b lg:border-b-0 lg:border-r border-[#ddd8c8] h-full flex flex-col justify-between">
-
-        <div>
-          <span class="inline-block text-[11px] font-semibold uppercase tracking-wide text-[#6d8f2f] bg-[#edf8ea] px-3 py-1 rounded-full mb-4">
-            Learning Journey
-          </span>
-
-          <h3 class="text-[24px] md:text-[30px] font-extrabold text-[#4b3f2b] leading-tight mb-4">
-            Building Future-Ready Students Through Guided Learning
-          </h3>
-
-          <p class="text-[14px] text-[#7a7468] leading-relaxed mb-6">
-            We create accessible and engaging learning experiences that help students gain clarity, confidence, life skills, and direction for the future.
-          </p>
-
-          <div class="space-y-4">
-
-            <div class="flex gap-3">
-              <div class="w-10 h-10 rounded-full bg-[#eef4ff] flex items-center justify-center text-[#0f3d91] shrink-0">
-                <i class="fa-solid fa-compass"></i>
-              </div>
-              <div>
-                <h4 class="text-[16px] font-bold text-[#4b3f2b]">Career Discovery</h4>
-                <p class="text-[13px] text-[#7a7468]">Discover strengths, interests, and career direction.</p>
-              </div>
+    <div class="grid lg:grid-cols-12 gap-4 items-start">
+      <div class="lg:col-span-8 grid sm:grid-cols-2 gap-3 reveal">
+        <div class="bg-white border border-[#ddd8c8] rounded-xl overflow-hidden hover-lift">
+          <img src="Assests/carousel_10.jpeg" alt="Career Discovery" class="w-full h-28 object-cover">
+          <div class="p-3.5">
+            <h3 class="text-[15px] font-bold text-[#4b3f2b] mb-0.5">Career Discovery</h3>
+            <p class="text-[11px] text-[#7a7468] font-medium mb-1.5">Gamified Assessment</p>
+            <ul class="text-[11px] text-[#7a7468] leading-snug mb-2.5 space-y-0.5">
+              <li>• Discover strengths</li>
+              <li>• Understand interests</li>
+              <li>• Get career direction</li>
+            </ul>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">Learn More →</a>
+              <a href="donate.html" class="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-md bg-donate text-white hover:bg-[#cf412f] transition"><i class="fa-solid fa-heart text-[9px]"></i> Donate</a>
             </div>
-
-            <div class="flex gap-3">
-              <div class="w-10 h-10 rounded-full bg-[#edf8ea] flex items-center justify-center text-[#6d8f2f] shrink-0">
-                <i class="fa-solid fa-laptop-code"></i>
-              </div>
-              <div>
-                <h4 class="text-[16px] font-bold text-[#4b3f2b]">Skill Builder</h4>
-                <p class="text-[13px] text-[#7a7468]">CyberSafety, life skills, and climate awareness learning.</p>
-              </div>
-            </div>
-
-            <div class="flex gap-3">
-              <div class="w-10 h-10 rounded-full bg-[#fff3e8] flex items-center justify-center text-[#c86d2f] shrink-0">
-                <i class="fa-solid fa-user-graduate"></i>
-              </div>
-              <div>
-                <h4 class="text-[16px] font-bold text-[#4b3f2b]">Guidance &amp; Mentorship</h4>
-                <p class="text-[13px] text-[#7a7468]">1:1 counseling, mentor connect, and action plans.</p>
-              </div>
-            </div>
-
           </div>
         </div>
-
-        <div class="mt-6">
-          <a href="learn.html"
-            class="inline-block bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[12px] font-semibold px-6 py-3 rounded-sm tracking-wide uppercase">
-            Explore Learning
-          </a>
+        <div class="bg-white border border-[#ddd8c8] rounded-xl overflow-hidden hover-lift">
+          <img src="Assests/carousel_11.jpeg" alt="Skill Builder" class="w-full h-28 object-cover">
+          <div class="p-3.5">
+            <h3 class="text-[15px] font-bold text-[#4b3f2b] mb-0.5">Skill Builder</h3>
+            <p class="text-[11px] text-[#7a7468] font-medium mb-1.5">Gamified Courses</p>
+            <ul class="text-[11px] text-[#7a7468] leading-snug mb-2.5 space-y-0.5">
+              <li>• CyberSafety</li>
+              <li>• Health &amp; Life Skills</li>
+              <li>• Climate Awareness</li>
+            </ul>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">Learn More →</a>
+              <a href="donate.html" class="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-md bg-donate text-white hover:bg-[#cf412f] transition"><i class="fa-solid fa-heart text-[9px]"></i> Donate</a>
+            </div>
+          </div>
         </div>
-
+        <div class="bg-white border border-[#ddd8c8] rounded-xl overflow-hidden hover-lift">
+          <img src="Assests/carousel_5.jpeg" alt="Career Explorer" class="w-full h-28 object-cover">
+          <div class="p-3.5">
+            <h3 class="text-[15px] font-bold text-[#4b3f2b] mb-0.5">Career Explorer</h3>
+            <p class="text-[11px] text-[#7a7468] font-medium mb-1.5">Career Aspiration / Path Selection</p>
+            <ul class="text-[11px] text-[#7a7468] leading-snug mb-2.5 space-y-0.5">
+              <li>• Explore career options</li>
+              <li>• Stream selection (10th / 12th)</li>
+              <li>• Goal setting</li>
+            </ul>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">Learn More →</a>
+              <a href="donate.html" class="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-md bg-donate text-white hover:bg-[#cf412f] transition"><i class="fa-solid fa-heart text-[9px]"></i> Donate</a>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white border border-[#ddd8c8] rounded-xl overflow-hidden hover-lift">
+          <img src="Assests/carousel_6.jpeg" alt="Guidance and Mentorship" class="w-full h-28 object-cover">
+          <div class="p-3.5">
+            <h3 class="text-[15px] font-bold text-[#4b3f2b] mb-0.5">Guidance &amp; Mentorship</h3>
+            <p class="text-[11px] text-[#7a7468] font-medium mb-1.5">Career Counseling</p>
+            <ul class="text-[11px] text-[#7a7468] leading-snug mb-2.5 space-y-0.5">
+              <li>• 1:1 counseling</li>
+              <li>• Mentor connect</li>
+              <li>• Action plan</li>
+            </ul>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">Learn More →</a>
+              <a href="donate.html" class="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-md bg-donate text-white hover:bg-[#cf412f] transition"><i class="fa-solid fa-heart text-[9px]"></i> Donate</a>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- RIGHT SIDE 2x2 CARDS -->
-<div class="grid md:grid-cols-2 md:grid-rows-2 gap-0 h-full">
-
-  <!-- Card 1 -->
-  <div class="bg-white border-b md:border-r border-[#ddd8c8] overflow-hidden hover-lift h-full flex flex-col">
-    <img src="Assests/carousel_10.jpeg" alt="Career Discovery" class="w-full h-36 md:h-40 object-cover shrink-0">
-    <div class="p-4 md:p-5 flex flex-col flex-1">
-      <h3 class="text-[18px] font-bold text-[#4b3f2b] mb-1">Career Discovery</h3>
-      <p class="text-[12px] text-[#7a7468] font-medium mb-2">Gamified Assessment</p>
-
-      <ul class="text-[12px] text-[#7a7468] leading-tight mb-3 space-y-1">
-        <li>• Discover strengths</li>
-        <li>• Understand interests</li>
-        <li>• Get career direction</li>
-      </ul>
-
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
-          Learn More →
-        </a>
-        <a href="donate.html"
-          class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1.5 rounded-md bg-donate text-white hover:bg-[#cf412f] transition">
-          <i class="fa-solid fa-heart text-[10px]"></i>
-          Donate
-        </a>
+      <div class="lg:col-span-4 reveal">
+        <div class="bg-gradient-to-br from-[#f7f4ea] to-[#edf8ea] border border-[#ddd8c8] rounded-xl p-5">
+          <span class="inline-block text-[10px] font-semibold uppercase tracking-wide text-[#6d8f2f] bg-white/70 px-2.5 py-1 rounded-full mb-3">Learning Journey</span>
+          <h3 class="text-[20px] md:text-[22px] font-extrabold text-[#4b3f2b] leading-snug mb-2">Building Future-Ready Students</h3>
+          <p class="text-[13px] text-[#7a7468] leading-relaxed mb-4">Accessible learning that builds clarity, confidence, life skills, and direction.</p>
+          <div class="space-y-3 mb-5">
+            <div class="flex gap-2.5 items-start">
+              <div class="w-8 h-8 rounded-full bg-[#eef4ff] flex items-center justify-center text-[#0f3d91] shrink-0 text-sm"><i class="fa-solid fa-compass"></i></div>
+              <div><h4 class="text-[13px] font-bold text-[#4b3f2b]">Career Discovery</h4><p class="text-[12px] text-[#7a7468]">Strengths, interests &amp; direction.</p></div>
+            </div>
+            <div class="flex gap-2.5 items-start">
+              <div class="w-8 h-8 rounded-full bg-[#edf8ea] flex items-center justify-center text-[#6d8f2f] shrink-0 text-sm"><i class="fa-solid fa-laptop-code"></i></div>
+              <div><h4 class="text-[13px] font-bold text-[#4b3f2b]">Skill Builder</h4><p class="text-[12px] text-[#7a7468]">CyberSafety, life skills &amp; climate.</p></div>
+            </div>
+            <div class="flex gap-2.5 items-start">
+              <div class="w-8 h-8 rounded-full bg-[#fff3e8] flex items-center justify-center text-[#c86d2f] shrink-0 text-sm"><i class="fa-solid fa-user-graduate"></i></div>
+              <div><h4 class="text-[13px] font-bold text-[#4b3f2b]">Guidance &amp; Mentorship</h4><p class="text-[12px] text-[#7a7468]">Counseling &amp; action plans.</p></div>
+            </div>
+          </div>
+          <a href="learn.html" class="inline-block w-full text-center bg-[#6d8f2f] hover:bg-[#5e7d28] text-white text-[12px] font-semibold px-5 py-2.5 rounded-md tracking-wide uppercase">Explore Learning</a>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Card 2 -->
-  <div class="bg-white border-b md:border-b md:border-r-0 border-[#ddd8c8] overflow-hidden hover-lift h-full flex flex-col">
-    <img src="Assests/carousel_11.jpeg" alt="Skill Builder" class="w-full h-36 md:h-40 object-cover shrink-0">
-    <div class="p-4 md:p-5 flex flex-col flex-1">
-      <h3 class="text-[18px] font-bold text-[#4b3f2b] mb-1">Skill Builder</h3>
-      <p class="text-[12px] text-[#7a7468] font-medium mb-2">Gamified Courses</p>
-
-      <ul class="text-[12px] text-[#7a7468] leading-tight mb-3 space-y-1">
-        <li>• CyberSafety</li>
-        <li>• Health &amp; Life Skills</li>
-        <li>• Climate Awareness</li>
-      </ul>
-
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
-          Learn More →
-        </a>
-        <a href="donate.html"
-          class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1.5 rounded-md bg-donate text-white hover:bg-[#cf412f] transition">
-          <i class="fa-solid fa-heart text-[10px]"></i>
-          Donate
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="bg-white border-b md:border-b-0 md:border-r border-[#ddd8c8] overflow-hidden hover-lift h-full flex flex-col">
-    <img src="Assests/carousel_5.jpeg" alt="Career Explorer" class="w-full h-36 md:h-40 object-cover shrink-0">
-    <div class="p-4 md:p-5 flex flex-col flex-1">
-      <h3 class="text-[18px] font-bold text-[#4b3f2b] mb-1">Career Explorer</h3>
-      <p class="text-[12px] text-[#7a7468] font-medium mb-2">Career Aspiration / Path Selection</p>
-
-      <ul class="text-[12px] text-[#7a7468] leading-tight mb-3 space-y-1">
-        <li>• Explore career options</li>
-        <li>• Stream selection (10th / 12th)</li>
-        <li>• Goal setting</li>
-      </ul>
-
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
-          Learn More →
-        </a>
-        <a href="donate.html"
-          class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1.5 rounded-md bg-donate text-white hover:bg-[#cf412f] transition">
-          <i class="fa-solid fa-heart text-[10px]"></i>
-          Donate
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card 4 -->
-  <div class="bg-white overflow-hidden hover-lift h-full flex flex-col">
-    <img src="Assests/carousel_6.jpeg" alt="Guidance & Mentorship" class="w-full h-36 md:h-40 object-cover shrink-0">
-    <div class="p-4 md:p-5 flex flex-col flex-1">
-      <h3 class="text-[18px] font-bold text-[#4b3f2b] mb-1">Guidance &amp; Mentorship</h3>
-      <p class="text-[12px] text-[#7a7468] font-medium mb-2">Career Counseling</p>
-
-      <ul class="text-[12px] text-[#7a7468] leading-tight mb-3 space-y-1">
-        <li>• 1:1 counseling</li>
-        <li>• Mentor connect</li>
-        <li>• Action plan</li>
-      </ul>
-
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <a href="learn.html" class="text-[12px] font-semibold text-[#0f3d91] hover:underline">
-          Learn More →
-        </a>
-        <a href="donate.html"
-          class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1.5 rounded-md bg-donate text-white hover:bg-[#cf412f] transition">
-          <i class="fa-solid fa-heart text-[10px]"></i>
-          Donate
-        </a>
-      </div>
-    </div>
-  </div>
-
-</div>
-
     </div>
   </div>
 </section>
@@ -1014,7 +938,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </p>
 
         <!-- Button -->
-        <a href="team.html"
+        <a href="collaborations.html"
           class="inline-block bg-[#e8f1ff] text-[#0f3d91] hover:bg-white text-[12px] font-semibold px-6 py-2.5 rounded-md tracking-wide uppercase shadow-lg shadow-[#041a3d]/40 ring-1 ring-white/30 transition-colors duration-300">
           Become CSR Partner
         </a>
@@ -1022,6 +946,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section class="py-12 md:py-16 bg-[#f7f4ea] relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-30">
+      <div class="absolute top-0 right-0 w-72 h-72 bg-[#dfe8c9] rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-72 h-72 bg-[#e8efd8] rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center mb-8 reveal">
+        <div class="flex items-center justify-center gap-4 mb-3">
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+          <h2 class="text-[24px] md:text-[28px] font-extrabold text-[#0f3d91] whitespace-nowrap">
+            Gallery
+          </h2>
+          <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
+        </div>
+        <p class="text-[13px] md:text-[14px] text-[#7a7468] max-w-2xl mx-auto leading-relaxed">
+          Moments from our programs, workshops, and community in action.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right-to-left image slider -->
+    <div class="gallery-marquee reveal mb-8">
+      <div class="gallery-marquee-track">
+        <div class="gallery-marquee-item"><img src="Assests/carousel_10.jpeg" alt="Programs" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item"><img src="Assests/carousel_11.jpeg" alt="Community" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item"><img src="Assests/carousel_5.jpeg" alt="Impact" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item"><img src="images/isro5.jpg" alt="Space Day" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item"><img src="Assests/carousel_12.jpeg" alt="Workshop" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item"><img src="images/ed7.jpg" alt="Environment Day" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item"><img src="images/spe4.jpg" alt="School Painting" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item"><img src="images/Darshan.jpg" alt="Scholarship" class="w-full h-full object-cover" /></div>
+
+        <!-- duplicate for seamless loop -->
+        <div class="gallery-marquee-item" aria-hidden="true"><img src="Assests/carousel_10.jpeg" alt="" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item" aria-hidden="true"><img src="Assests/carousel_11.jpeg" alt="" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item" aria-hidden="true"><img src="Assests/carousel_5.jpeg" alt="" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item" aria-hidden="true"><img src="images/isro5.jpg" alt="" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item" aria-hidden="true"><img src="Assests/carousel_12.jpeg" alt="" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item" aria-hidden="true"><img src="images/ed7.jpg" alt="" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item" aria-hidden="true"><img src="images/spe4.jpg" alt="" class="w-full h-full object-cover" /></div>
+        <div class="gallery-marquee-item" aria-hidden="true"><img src="images/Darshan.jpg" alt="" class="w-full h-full object-cover" /></div>
+      </div>
+    </div>
+
+    <div class="text-center reveal">
+      <a href="gallery.html"
+        class="inline-flex items-center gap-2 px-7 py-3 bg-[#0f3d91] hover:bg-[#0c3278] text-white text-[13px] font-bold rounded-xl transition-all duration-300 hover:-translate-y-0.5">
+        View Full Gallery
+        <i class="fa-solid fa-arrow-right text-[12px]"></i>
+      </a>
     </div>
   </section>
 

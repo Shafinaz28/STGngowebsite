@@ -155,15 +155,15 @@
         }
       });
     });
-    var programsBtn = document.querySelector('.nav-mobile-programs-btn');
-    var programsContent = document.getElementById('nav-mobile-programs-content');
-    if (programsBtn && programsContent) {
-      programsBtn.addEventListener('click', function () {
-        var open = programsContent.classList.toggle('open');
-        programsBtn.classList.toggle('open', open);
-        programsBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.querySelectorAll('.nav-mobile-accordion-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var content = btn.nextElementSibling;
+        if (!content) return;
+        var open = content.classList.toggle('open');
+        btn.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
-    }
+    });
     setActiveNav();
   }
 

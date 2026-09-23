@@ -139,7 +139,26 @@
     }
   }
 
-  /* Mobile Programs sub-menu */
+  /* Mobile accordion sub-menus */
+  .nav-mobile-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-mobile-accordion-content.open {
+    max-height: 22rem;
+  }
+
+  .nav-mobile-accordion-btn.open i {
+    transform: rotate(180deg);
+  }
+
+  .nav-mobile-accordion-btn i {
+    transition: transform 0.25s ease;
+  }
+
+  /* Mobile Programs sub-menu (legacy) */
   .nav-mobile-programs-content {
     max-height: 0;
     overflow: hidden;
@@ -147,7 +166,7 @@
   }
 
   .nav-mobile-programs-content.open {
-    max-height: 20rem;
+    max-height: 22rem;
   }
 
   .nav-mobile-programs-btn.open i {
@@ -334,30 +353,26 @@
         <a href="about-us.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">About</a>
 
         <div class="dropdown relative group">
-          <a href="ourprograms.html"
-            class="programs-main-link px-2 py-2 text-gray-700 font-medium flex items-center gap-1 whitespace-nowrap">
-            Programs
+          <a href="KalpavrukshaProgram.html"
+            class="programs-main-link kalpavruksha-main-link px-2 py-2 text-gray-700 font-medium flex items-center gap-1 whitespace-nowrap">
+            Kalpavruksha
             <i class="fa-solid fa-chevron-down text-[10px]"></i>
           </a>
 
           <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 bg-white rounded-lg shadow-xl border py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-            <a href="KalpavrukshaProgram.html" class="block px-4 py-2 text-gray-600 text-sm">Kalpavruksha Program</a>
             <a href="SustainableCommunities.html" class="block px-4 py-2 text-gray-600 text-sm">Sustainable Communities</a>
+            <a href="get-involved.html" class="block px-4 py-2 text-gray-600 text-sm">Get Involved</a>
+            <a href="learn.html" class="block px-4 py-2 text-gray-600 text-sm">Learn</a>
+            <a href="results.html" class="block px-4 py-2 text-gray-600 text-sm">Result</a>
             <a href="Impactcatalyst.html" class="block px-4 py-2 text-gray-600 text-sm">Impact Catalyst</a>
           </div>
         </div>
-
-        <a href="get-involved.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Get Involved</a>
 
         <a href="collaborations.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">CSR</a>
 
         <a href="gallery.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Gallery</a>
 
-        <a href="blog" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Blogs</a>
-
-        <a href="learn.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Learn</a>
-
-        <a href="results.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Results</a>
+        <a href="blog" class="blogs-main-link nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Blogs</a>
 
         <a href="contact-us.html" class="nav-link px-2 py-2 text-gray-700 font-medium whitespace-nowrap">Contact</a>
       </div>
@@ -395,40 +410,39 @@
           About
         </a>
 
-        <!-- Programs -->
-        <div class="md:hidden">
+        <!-- Kalpavruksha -->
+        <div class="nav-mobile-group md:hidden">
           <button type="button"
-            class="nav-mobile-programs-btn flex items-center justify-between w-full gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100 text-left"
-            aria-expanded="false" aria-controls="nav-mobile-programs-content">
-            <span>Programs</span>
+            class="nav-mobile-accordion-btn flex items-center justify-between w-full gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100 text-left"
+            aria-expanded="false" aria-controls="nav-mobile-kalpavruksha-content">
+            <span>Kalpavruksha</span>
             <i class="fa-solid fa-chevron-down text-sm text-gray-500"></i>
           </button>
 
-          <div id="nav-mobile-programs-content" class="nav-mobile-programs-content bg-gray-50/80 rounded-lg mx-2"
-            role="region" aria-label="Programs submenu">
-          
-
-            <a href="KalpavrukshaProgram.html"
-              class="nav-mobile-sub flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
-              Kalpavruksha Program
-            </a>
-
+          <div id="nav-mobile-kalpavruksha-content" class="nav-mobile-accordion-content bg-gray-50/80 rounded-lg mx-2"
+            role="region" aria-label="Kalpavruksha submenu">
             <a href="SustainableCommunities.html"
               class="nav-mobile-sub flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
               Sustainable Communities
             </a>
-
+            <a href="get-involved.html"
+              class="nav-mobile-sub flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
+              Get Involved
+            </a>
+            <a href="learn.html"
+              class="nav-mobile-sub flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
+              Learn
+            </a>
+            <a href="results.html"
+              class="nav-mobile-sub flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
+              Result
+            </a>
             <a href="Impactcatalyst.html"
               class="nav-mobile-sub flex items-center gap-3 pl-6 pr-4 py-2.5 text-gray-600 hover:text-primary hover:bg-primary/5 text-sm font-medium">
               Impact Catalyst
             </a>
           </div>
         </div>
-
-        <a href="get-involved.html"
-          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
-          Get Involved
-        </a>
 
         <a href="collaborations.html"
           class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
@@ -440,19 +454,10 @@
           Gallery
         </a>
 
+        <!-- Blogs -->
         <a href="blog"
           class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
           Blogs
-        </a>
-
-        <a href="learn.html"
-          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
-          Learn
-        </a>
-
-        <a href="results.html"
-          class="nav-mobile-item flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-100">
-          Results
         </a>
 
         <a href="contact-us.html"
@@ -500,55 +505,45 @@
 document.addEventListener("DOMContentLoaded", function () {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-  /* Desktop nav links active */
   document.querySelectorAll(".nav-link").forEach(link => {
-    const href = link.getAttribute("href");
-    if (href === currentPage) {
+    if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }
   });
 
-  /* Programs dropdown active */
-  const programPages = [
-    "ourprograms.html",
+  const kalpavrukshaPages = [
     "KalpavrukshaProgram.html",
     "SustainableCommunities.html",
-    "Impactcatalyst.html",
-    "learn.html"
+    "get-involved.html",
+    "learn.html",
+    "results.html",
+    "Impactcatalyst.html"
   ];
 
-  if (programPages.includes(currentPage)) {
-    const desktopProgramMain = document.querySelector(".programs-main-link");
-    if (desktopProgramMain) {
-      desktopProgramMain.classList.add("nav-main-active");
-    }
-
-    document.querySelectorAll(".dropdown-menu a").forEach(link => {
-      const href = link.getAttribute("href");
-      if (href === currentPage) {
-        link.classList.add("active-submenu");
-      }
-    });
+  if (kalpavrukshaPages.includes(currentPage)) {
+    const desktopMain = document.querySelector(".kalpavruksha-main-link, .programs-main-link");
+    if (desktopMain) desktopMain.classList.add("nav-main-active");
   }
 
-  /* Mobile nav active */
+  document.querySelectorAll(".dropdown-menu a").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active-submenu");
+    }
+  });
+
   document.querySelectorAll(".nav-mobile-item").forEach(link => {
-    const href = link.getAttribute("href");
-    if (href === currentPage) {
+    if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }
   });
 
-  /* Mobile programs submenu active */
-  document.querySelectorAll("#nav-mobile-programs-content a").forEach(link => {
-    const href = link.getAttribute("href");
-
-    if (href === currentPage) {
+  document.querySelectorAll(".nav-mobile-accordion-content a").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
-
-      const btn = document.querySelector(".nav-mobile-programs-btn");
-      const content = document.getElementById("nav-mobile-programs-content");
-
+      const wrap = link.closest(".nav-mobile-group");
+      if (!wrap) return;
+      const btn = wrap.querySelector(".nav-mobile-accordion-btn");
+      const content = wrap.querySelector(".nav-mobile-accordion-content");
       if (btn && content) {
         btn.classList.add("open");
         btn.setAttribute("aria-expanded", "true");
@@ -556,92 +551,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const currentPage =
-    window.location.pathname.split("/").pop() || "index.html";
-
-  /* ===============================
-     DESKTOP NORMAL LINKS ACTIVE
-  =============================== */
-  document.querySelectorAll(".nav-link").forEach(link => {
-    const href = link.getAttribute("href");
-
-    if (href === currentPage) {
-      link.classList.add("active");
-    }
-  });
-
-  /* ===============================
-     PROGRAMS DROPDOWN ACTIVE
-  =============================== */
-  const programPages = [
-    "ourprograms.html",
-    "KalpavrukshaProgram.html",
-    "SustainableCommunities.html",
-    "Impactcatalyst.html",
-    "learn.html"
-  ];
-
-  if (programPages.includes(currentPage)) {
-
-    /* Main Programs Link */
-    const desktopProgramMain =
-      document.querySelector(".programs-main-link");
-
-    if (desktopProgramMain) {
-      desktopProgramMain.classList.add("nav-main-active");
-    }
-
-    /* Dropdown Submenu */
-    document.querySelectorAll(".dropdown-menu a").forEach(link => {
-      const href = link.getAttribute("href");
-
-      if (href === currentPage) {
-        link.classList.add("active-submenu");
-      }
-    });
-  }
-
-  /* ===============================
-     MOBILE MENU ACTIVE LINKS
-  =============================== */
-  document.querySelectorAll(".nav-mobile-item").forEach(link => {
-    const href = link.getAttribute("href");
-
-    if (href === currentPage) {
-      link.classList.add("active");
-    }
-  });
-
-  /* ===============================
-     MOBILE PROGRAMS SUBMENU
-  =============================== */
-  document.querySelectorAll("#nav-mobile-programs-content a")
-    .forEach(link => {
-
-      const href = link.getAttribute("href");
-
-      if (href === currentPage) {
-
-        link.classList.add("active");
-
-        const btn =
-          document.querySelector(".nav-mobile-programs-btn");
-
-        const content =
-          document.getElementById("nav-mobile-programs-content");
-
-        if (btn && content) {
-          btn.classList.add("open");
-          btn.setAttribute("aria-expanded", "true");
-          content.classList.add("open");
-        }
-      }
-    });
-
 });
 </script>

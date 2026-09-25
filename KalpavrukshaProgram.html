@@ -68,40 +68,6 @@
   <style>
     html { scroll-behavior: smooth; }
 
-    .stage-rail {
-      position: relative;
-    }
-    .stage-rail::before {
-      content: '';
-      position: absolute;
-      left: 1.35rem;
-      top: 0.5rem;
-      bottom: 0.5rem;
-      width: 2px;
-      background: linear-gradient(180deg, #cbb58a, #78b943 55%, #0f3d91);
-    }
-    @media (min-width: 768px) {
-      .stage-rail::before {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-
-    .stage-dot {
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: 9999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 0.8rem;
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(15, 61, 145, 0.25);
-      position: relative;
-      z-index: 1;
-    }
-
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -110,6 +76,250 @@
     .reveal.show {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Clean circular infographic (business-style) */
+    .kv-cycle-wrap {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0.25rem 0 0.5rem;
+    }
+    .kv-cycle {
+      position: relative;
+      width: min(620px, 94vw);
+      aspect-ratio: 1;
+      margin: 0 auto;
+    }
+    .kv-tree {
+      position: absolute;
+      inset: -3%;
+      background: url('Assests/kalpavruksha-tree.png') center / contain no-repeat;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .kv-cycle-center {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -50%);
+      width: min(190px, 32%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      z-index: 3;
+      background: radial-gradient(circle at 50% 45%, rgba(255, 251, 230, 0.97) 0%, rgba(255, 236, 160, 0.92) 55%, rgba(245, 200, 90, 0.85) 100%);
+      box-shadow:
+        0 0 0 6px rgba(255, 236, 160, 0.35),
+        0 0 40px rgba(255, 220, 120, 0.6);
+      pointer-events: none;
+    }
+    .kv-cycle-center strong {
+      display: block;
+      font-size: clamp(12px, 2vw, 16px);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #0f3d91;
+      line-height: 1.2;
+    }
+    .kv-cycle-center span {
+      display: block;
+      margin-top: 4px;
+      font-size: clamp(12px, 2.1vw, 17px);
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.2;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .kv-arrows {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
+    }
+
+    .kv-node {
+      position: absolute;
+      width: 24%;
+      aspect-ratio: 1;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+    }
+    .kv-node-1 { left: 50%;    top: 13%; }
+    .kv-node-2 { left: 85.19%; top: 38.57%; }
+    .kv-node-3 { left: 71.75%; top: 79.93%; }
+    .kv-node-4 { left: 28.25%; top: 79.93%; }
+    .kv-node-5 { left: 14.81%; top: 38.57%; }
+
+    .kv-bubble {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 14px 12px 12px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .kv-bubble:hover {
+      transform: scale(1.04);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.14);
+    }
+    .kv-bubble .kv-ico {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 8px;
+      flex-shrink: 0;
+    }
+    .kv-bubble .kv-h {
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      color: #1e293b;
+    }
+    .kv-bubble .kv-s {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .kv-bubble .kv-p {
+      font-size: 10px;
+      color: #94a3b8;
+      line-height: 1.3;
+      margin-top: 4px;
+      max-width: 118px;
+    }
+
+    .kv-node-1 .kv-bubble { border: 3px solid #6aa93a; }
+    .kv-node-1 .kv-ico { background: #6aa93a; }
+    .kv-node-2 .kv-bubble { border: 3px solid #0f3d91; }
+    .kv-node-2 .kv-ico { background: #0f3d91; }
+    .kv-node-3 .kv-bubble { border: 3px solid #6aa93a; }
+    .kv-node-3 .kv-ico { background: #6aa93a; }
+    .kv-node-4 .kv-bubble { border: 3px solid #0f3d91; }
+    .kv-node-4 .kv-ico { background: #0f3d91; }
+    .kv-node-5 .kv-bubble { border: 3px solid #6aa93a; }
+    .kv-node-5 .kv-ico { background: #6aa93a; }
+
+    @media (max-width: 520px) {
+      .kv-bubble { padding: 6px 4px; }
+      .kv-bubble .kv-ico { width: 28px; height: 28px; font-size: 12px; margin-bottom: 4px; }
+      .kv-bubble .kv-h { font-size: 11px; }
+      .kv-bubble .kv-s { font-size: 9px; }
+      .kv-bubble .kv-p { display: none; }
+    }
+
+    /* Horizontal info rectangles: heading left | info right */
+    .kv-stages {
+      max-width: 820px;
+      margin: 1.5rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .kv-stage-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 16px 20px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+      display: grid;
+      grid-template-columns: 44px minmax(150px, 0.9fr) minmax(220px, 1.4fr);
+      gap: 14px;
+      align-items: start;
+    }
+    .kv-stage-card .kv-dot {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 15px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .kv-stage-card .kv-num {
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin: 0;
+      padding-top: 10px;
+    }
+    .kv-stage-card .kv-desc {
+      margin: 0;
+      text-align: left;
+      border-left: 1px solid #e2e8f0;
+      padding-left: 16px;
+    }
+    .kv-stage-card .kv-desc strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .kv-stage-card .kv-desc span {
+      display: block;
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .kv-stage-card .kv-desc ul {
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .kv-stage-card .kv-desc li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.55;
+    }
+    .kv-stage-card .kv-desc li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: #6aa93a;
+      font-weight: 700;
+    }
+    @media (max-width: 640px) {
+      .kv-stage-card {
+        grid-template-columns: 40px 1fr;
+        gap: 10px 12px;
+      }
+      .kv-stage-card .kv-num { padding-top: 8px; }
+      .kv-stage-card .kv-desc {
+        border-left: none;
+        padding-left: 0;
+        grid-column: 2;
+      }
     }
   </style>
 </head>
@@ -128,8 +338,8 @@
       <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-24 text-center relative z-10">
         <div class="flex items-center justify-center gap-4">
           <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
-          <h1 class="text-[28px] md:text-[40px] font-extrabold text-white whitespace-nowrap">
-            Kalpavruksha
+          <h1 class="text-[24px] md:text-[36px] font-extrabold text-white leading-tight">
+            Kalpavruksha 5G Education Model
           </h1>
           <div class="w-12 md:w-20 h-[2px] bg-[#cbb58a] rounded-full"></div>
         </div>
@@ -148,103 +358,91 @@
       </div>
     </section>
 
-    <!-- 5 Stages Process -->
-    <section class="py-14 md:py-20 bg-gradient-to-b from-white via-[#f4f7fb] to-[#f7f4ea]">
+    <!-- Kalpavruksha 5G circular infographic + vertical info -->
+    <section class="py-10 md:py-14 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="reveal relative mb-10 md:mb-12">
-          <div class="flex justify-center mb-8 md:mb-10">
-            <div class="inline-flex items-center px-5 py-2 rounded-xl bg-[#e8f1ff] border border-[#c9daf5] text-[#0f3d91] text-[13px] md:text-[14px] font-bold shadow-sm">
-              5 Stages Process
+        <!-- Kalpavruksha 5G model image -->
+        <div class="reveal flex justify-center">
+          <img src="Assests/kalpavruksha-5g-model.png"
+            alt="Kalpavruksha 5G Education Model: Empower, Engage, Enact, Enrich and Excel around the Kalpavruksha tree"
+            class="w-full max-w-[560px] h-auto" loading="lazy">
+        </div>
+
+        <!-- Horizontal rectangles: heading left | more information right -->
+        <div class="kv-stages reveal">
+          <div class="kv-stage-card">
+            <div class="kv-dot" style="background:#6aa93a"><i class="fa-solid fa-seedling"></i></div>
+            <p class="kv-num" style="color:#5a9a2c">1. Empower — Seed</p>
+            <div class="kv-desc">
+              <strong>Identify &amp; nurture potential</strong>
+              <span>Identify potential and provide the right support to nurture it.</span>
+              <ul>
+                <li>Aptitude &amp; interest discovery assessments</li>
+                <li>Early mentoring and personalised guidance</li>
+                <li>Scholarships and access to learning resources</li>
+              </ul>
             </div>
           </div>
-
-          <div class="relative">
-            <div class="hidden md:block absolute top-[34px] left-[10%] right-[10%] h-[2px] bg-[#d5deea] z-0"></div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-3 relative z-10">
-
-              <div class="flex flex-col items-center text-center">
-                <div class="w-[68px] h-[68px] rounded-2xl bg-white border border-[#d7e3f4] shadow-soft flex items-center justify-center mb-2">
-                  <span class="w-11 h-11 rounded-full bg-gradient-to-br from-[#78b943] to-[#5f9e2f] text-white flex items-center justify-center text-lg">
-                    <i class="fa-solid fa-seedling"></i>
-                  </span>
-                </div>
-                <div class="text-[#78b943] text-[14px] leading-none mb-2"><i class="fa-solid fa-caret-down"></i></div>
-                <div class="w-full rounded-xl px-2 py-2.5 mb-3 text-white text-[12px] md:text-[13px] font-bold leading-snug shadow-md bg-gradient-to-r from-[#78b943] to-[#5f9e2f]">
-                  1. Root
-                </div>
-                <div class="w-full flex-1 rounded-xl bg-[#eef4ff] border border-[#dbe6f7] px-3 py-4 text-left min-h-[110px]">
-                  <p class="text-[13px] font-semibold text-[#334155]">Discovery</p>
-                  <p class="text-[12px] text-[#64748b] mt-2 leading-relaxed">Strong foundation for aspiration.</p>
-                </div>
-              </div>
-
-              <div class="flex flex-col items-center text-center">
-                <div class="w-[68px] h-[68px] rounded-2xl bg-white border border-[#d7e3f4] shadow-soft flex items-center justify-center mb-2">
-                  <span class="w-11 h-11 rounded-full bg-[#0f3d91] text-white flex items-center justify-center text-lg">
-                    <i class="fa-solid fa-spa"></i>
-                  </span>
-                </div>
-                <div class="text-[#0f3d91] text-[14px] leading-none mb-2"><i class="fa-solid fa-caret-down"></i></div>
-                <div class="w-full rounded-xl px-2 py-2.5 mb-3 text-white text-[12px] md:text-[13px] font-bold leading-snug shadow-md bg-[#0b2f73]">
-                  2. Seed
-                </div>
-                <div class="w-full flex-1 rounded-xl bg-[#eef4ff] border border-[#dbe6f7] px-3 py-4 text-left min-h-[110px]">
-                  <p class="text-[13px] font-semibold text-[#334155]">Nurture</p>
-                  <p class="text-[12px] text-[#64748b] mt-2 leading-relaxed">Aspiration enables talent growth.</p>
-                </div>
-              </div>
-
-              <div class="flex flex-col items-center text-center">
-                <div class="w-[68px] h-[68px] rounded-2xl bg-white border border-[#d7e3f4] shadow-soft flex items-center justify-center mb-2">
-                  <span class="w-11 h-11 rounded-full bg-gradient-to-br from-[#78b943] to-[#5f9e2f] text-white flex items-center justify-center text-lg">
-                    <i class="fa-solid fa-leaf"></i>
-                  </span>
-                </div>
-                <div class="text-[#78b943] text-[14px] leading-none mb-2"><i class="fa-solid fa-caret-down"></i></div>
-                <div class="w-full rounded-xl px-2 py-2.5 mb-3 text-white text-[12px] md:text-[13px] font-bold leading-snug shadow-md bg-gradient-to-r from-[#78b943] to-[#5f9e2f]">
-                  3. Shoot
-                </div>
-                <div class="w-full flex-1 rounded-xl bg-[#eef4ff] border border-[#dbe6f7] px-3 py-4 text-left min-h-[110px]">
-                  <p class="text-[13px] font-semibold text-[#334155]">Team Work</p>
-                  <p class="text-[12px] text-[#64748b] mt-2 leading-relaxed">Talent grows through collaboration.</p>
-                </div>
-              </div>
-
-              <div class="flex flex-col items-center text-center">
-                <div class="w-[68px] h-[68px] rounded-2xl bg-white border border-[#d7e3f4] shadow-soft flex items-center justify-center mb-2">
-                  <span class="w-11 h-11 rounded-full bg-[#0f3d91] text-white flex items-center justify-center text-lg">
-                    <i class="fa-solid fa-tree"></i>
-                  </span>
-                </div>
-                <div class="text-[#0f3d91] text-[14px] leading-none mb-2"><i class="fa-solid fa-caret-down"></i></div>
-                <div class="w-full rounded-xl px-2 py-2.5 mb-3 text-white text-[12px] md:text-[13px] font-bold leading-snug shadow-md bg-[#0b2f73]">
-                  4. Growth
-                </div>
-                <div class="w-full flex-1 rounded-xl bg-[#eef4ff] border border-[#dbe6f7] px-3 py-4 text-left min-h-[110px]">
-                  <p class="text-[13px] font-semibold text-[#334155]">Ownership</p>
-                  <p class="text-[12px] text-[#64748b] mt-2 leading-relaxed">Development builds ownership.</p>
-                </div>
-              </div>
-
-              <div class="flex flex-col items-center text-center">
-                <div class="w-[68px] h-[68px] rounded-2xl bg-white border border-[#d7e3f4] shadow-soft flex items-center justify-center mb-2">
-                  <span class="w-11 h-11 rounded-full bg-gradient-to-br from-[#78b943] to-[#5f9e2f] text-white flex items-center justify-center text-lg">
-                    <i class="fa-solid fa-hands-holding-circle"></i>
-                  </span>
-                </div>
-                <div class="text-[#78b943] text-[14px] leading-none mb-2"><i class="fa-solid fa-caret-down"></i></div>
-                <div class="w-full rounded-xl px-2 py-2.5 mb-3 text-white text-[11px] md:text-[12px] font-bold leading-snug shadow-md bg-gradient-to-r from-[#78b943] to-[#5f9e2f]">
-                  5. Fulfilment &amp; Replication
-                </div>
-                <div class="w-full flex-1 rounded-xl bg-[#eef4ff] border border-[#dbe6f7] px-3 py-4 text-left min-h-[110px]">
-                  <p class="text-[13px] font-semibold text-[#334155]">Leadership &amp; Contribution</p>
-                  <p class="text-[12px] text-[#64748b] mt-2 leading-relaxed">Replication &amp; wider social impact.</p>
-                </div>
-              </div>
-
+          <div class="kv-stage-card">
+            <div class="kv-dot" style="background:#0f3d91"><i class="fa-solid fa-hand-holding-droplet"></i></div>
+            <p class="kv-num" style="color:#0f3d91">2. Engage — Root</p>
+            <div class="kv-desc">
+              <strong>Foundation &amp; connection to learning</strong>
+              <span>Build strong connections, create a supportive environment and spark curiosity.</span>
+              <ul>
+                <li>Strong foundations in academics and life skills</li>
+                <li>Safe, caring and value-based learning spaces</li>
+                <li>Peer groups, mentors and family engagement</li>
+              </ul>
             </div>
           </div>
+          <div class="kv-stage-card">
+            <div class="kv-dot" style="background:#6aa93a"><i class="fa-solid fa-leaf"></i></div>
+            <p class="kv-num" style="color:#5a9a2c">3. Enact — Branch</p>
+            <div class="kv-desc">
+              <strong>Convert learning into action</strong>
+              <span>Turn learning into action through hands-on experience, projects and real-world exposure.</span>
+              <ul>
+                <li>Hands-on projects, labs and workshops</li>
+                <li>Exposure visits, internships and field learning</li>
+                <li>Teamwork, problem-solving and innovation challenges</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kv-stage-card">
+            <div class="kv-dot" style="background:#0f3d91"><i class="fa-solid fa-tree"></i></div>
+            <p class="kv-num" style="color:#0f3d91">4. Enrich — Tree</p>
+            <div class="kv-desc">
+              <strong>Build confidence &amp; skills</strong>
+              <span>Broaden knowledge, build skills, and create holistic development.</span>
+              <ul>
+                <li>Career exploration and stream selection guidance</li>
+                <li>Digital, communication and leadership skills</li>
+                <li>Health, well-being and climate awareness</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kv-stage-card">
+            <div class="kv-dot" style="background:#6aa93a"><i class="fa-solid fa-apple-whole"></i></div>
+            <p class="kv-num" style="color:#5a9a2c">5. Excel — Fruit</p>
+            <div class="kv-desc">
+              <strong>Achieve leadership &amp; meaningful outcomes</strong>
+              <span>Achieve goals, create impact and shape a brighter future.</span>
+              <ul>
+                <li>Higher education and career readiness support</li>
+                <li>Leadership roles and community contribution</li>
+                <li>Alumni mentoring to replicate the journey</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-8 reveal">
+          <a href="donate.html"
+            class="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-donate hover:bg-[#c8431f] text-white text-[14px] font-bold shadow-md transition">
+            <i class="fa-solid fa-heart"></i>
+            Contribute to Kalpavruksha
+          </a>
         </div>
       </div>
     </section>
